@@ -442,6 +442,7 @@ const now = new Date();
 const CURRENT_YEAR = now.getFullYear();
 const CURRENT_QUARTER = Math.ceil((now.getMonth() + 1) / 3);
 let liveSnapshot = null;
+let liveBackend = true; // 정적 배포(GitHub Pages 등)에서는 false로 내려가 '실시간 갱신' UI를 중립 안내로 바꾼다.
 let registryTimelineEvents = [];
 
 const activeRegistryStatuses = new Set([
@@ -916,12 +917,28 @@ function initReportTabs() {
   activateReportTab(location.hash.slice(1) || "master", false);
 }
 
+function setupMasterScrollSync() {
+  const top = document.getElementById("masterScrollTop");
+  const inner = document.getElementById("masterScrollTopInner");
+  const wrap = document.getElementById("masterTableWrap");
+  const table = wrap && wrap.querySelector(".master-table");
+  if (!top || !inner || !wrap || !table) return;
+  const sync = () => { inner.style.width = `${table.scrollWidth}px`; };
+  let lock = false;
+  top.addEventListener("scroll", () => { if (lock) return; lock = true; wrap.scrollLeft = top.scrollLeft; lock = false; }, { passive: true });
+  wrap.addEventListener("scroll", () => { if (lock) return; lock = true; top.scrollLeft = wrap.scrollLeft; lock = false; }, { passive: true });
+  window.addEventListener("resize", sync);
+  if (window.ResizeObserver) new ResizeObserver(sync).observe(table); // 행 변경·열 토글·창 크기 변화 시 상단 스크롤바 폭 자동 동기화
+  sync();
+}
+
 initReportTabs();
 initColumnSelector();
 renderMaster();
 renderTimeline();
 renderDossiers();
 renderSources();
+setupMasterScrollSync();
 
 document.querySelector("#masterTier").addEventListener("change", renderMaster);
 document.querySelector("#masterSearch").addEventListener("input", renderMaster);
@@ -1015,9 +1032,9 @@ async function initAutoRefresh() {
   const meta = document.querySelector("#syncMeta");
   document.querySelector(".header-meta b").textContent = `${CURRENT_YEAR} Q${CURRENT_QUARTER}`;
   if (location.protocol === "file:") {
-    status.textContent = "자동 갱신 서버가 꺼져 있습니다";
-    meta.textContent = "open-report.cmd로 열면 새로고침할 때 최신 임상등록값을 확인합니다.";
-    document.querySelector("#syncBar").classList.add("has-error");
+    liveBackend = false;
+    status.textContent = "저장된 스냅샷 표시 중";
+    meta.textContent = "이 화면은 정적 배포본입니다. 실시간 임상등록 갱신은 로컬 서버 실행 시 동작합니다.";
     return;
   }
   try {
@@ -1028,14 +1045,19 @@ async function initAutoRefresh() {
     const fresh = await requestSnapshot("/api/refresh");
     applyLiveSnapshot(fresh);
   } catch (error) {
-    status.textContent = "자동 갱신 연결 실패";
-    meta.textContent = `${error.message} · 기존 정적 데이터는 정상 표시됩니다.`;
-    document.querySelector("#syncBar").classList.add("has-error");
+    liveBackend = false;
+    status.textContent = "저장된 스냅샷 표시 중";
+    meta.textContent = "이 화면은 정적 배포본입니다. 실시간 임상등록 갱신은 로컬 서버 실행 시 동작합니다.";
   }
 }
 
 document.querySelector("#forceRefresh").addEventListener("click", async event => {
   const button = event.currentTarget;
+  if (!liveBackend) {
+    document.querySelector("#syncStatus").textContent = "저장된 스냅샷 표시 중";
+    document.querySelector("#syncMeta").textContent = "이 화면은 정적 배포본이라 ‘최신 정보 확인·반영’은 로컬 서버 실행 시에만 동작합니다.";
+    return;
+  }
   button.disabled = true;
   button.textContent = "최신 정보 확인 중…";
   try {
