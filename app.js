@@ -608,11 +608,15 @@ function applyLiveSnapshot(snapshot) {
 }
 
 const COLUMN_STORAGE_KEY = "competitor-master-hidden-columns";
+// 페이지를 처음 열 때(localStorage 없음) 기본으로 숨길 열. 나머지 열만 열린 상태로 표시된다.
+// 사용자가 '표시 항목'에서 바꾸면 그 선택이 localStorage에 저장돼 이 기본값을 대체한다.
+const DEFAULT_HIDDEN_COLUMNS = ["mechanism", "rights", "next"];
 let hiddenMasterColumns = new Set();
 try {
-  hiddenMasterColumns = new Set(JSON.parse(localStorage.getItem(COLUMN_STORAGE_KEY) || "[]"));
+  const stored = localStorage.getItem(COLUMN_STORAGE_KEY);
+  hiddenMasterColumns = new Set(stored ? JSON.parse(stored) : DEFAULT_HIDDEN_COLUMNS);
 } catch {
-  hiddenMasterColumns = new Set();
+  hiddenMasterColumns = new Set(DEFAULT_HIDDEN_COLUMNS);
 }
 
 function masterColumns() {
