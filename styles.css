@@ -568,7 +568,6 @@ table { width: 100%; border-collapse: collapse; }
 .caution b { font-size: 13px; }
 .caution p { margin: 0; color: var(--muted); font-size: 13px; }
 
-footer { padding: 20px max(28px, calc((100vw - 1480px) / 2)); display: flex; justify-content: space-between; color: #9fb3ba; background: var(--header-bg); font-size: 9px; }
 dialog { width: min(620px, calc(100% - 30px)); padding: 30px; border: 0; box-shadow: 0 25px 60px rgba(0,0,0,.25); }
 dialog::backdrop { background: rgba(23,32,51,.6); }
 dialog h2 { margin: 0 0 20px; }
@@ -593,7 +592,7 @@ dialog li { margin-bottom: 10px; font-size: 11px; }
 
 @media (max-width: 600px) {
   main { width: calc(100% - 24px); }
-  .app-header, .section-nav, footer { padding-left: 12px; padding-right: 12px; }
+  .app-header, .section-nav { padding-left: 12px; padding-right: 12px; }
   .section-nav { overflow-x: auto; }
   .section-nav a { white-space: nowrap; }
   .summary-strip { grid-template-columns: 1fr; }
@@ -624,7 +623,6 @@ body { font-size: 16px; }
 .section-nav a,
 .heading-note,
 .matrix-legend,
-footer { font-size: 14px; }
 input,
 select,
 .chip { font-size: 15px; }
