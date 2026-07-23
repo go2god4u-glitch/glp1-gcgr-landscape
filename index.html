@@ -80,7 +80,20 @@
           <thead>
             <tr>
               <th data-column-key="asset">물질 / 회사</th>
-              <th data-column-key="mechanism">분자 설계 / GLP-1R:GCGR 활성비</th>
+              <th data-column-key="mechanism">
+                <div class="ratio-heading">
+                  <span>분자 설계 / GLP-1R:GCGR 활성비</span>
+                  <button class="ratio-info-toggle" id="ratioInfoToggle" type="button"
+                    aria-expanded="false" aria-controls="ratioInfoPopover">해석 기준</button>
+                  <span class="ratio-info-popover" id="ratioInfoPopover" role="note" hidden>
+                    활성비는 공개자료의 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계, 혈장 유무, endpoint가 다른 값은 직접 비교할 수 없습니다.
+                    <span class="ratio-info-refs">
+                      <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/" target="_blank" rel="noopener">[SV-DESIGN]</a>
+                      <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/" target="_blank" rel="noopener">[RATIO-REVIEW]</a>
+                    </span>
+                  </span>
+                </div>
+              </th>
               <th data-column-key="stage">현재 단계</th>
               <th data-column-key="indication">주요 적응증</th>
               <th data-column-key="trial">핵심 임상</th>
@@ -94,10 +107,6 @@
           <tbody id="masterRows"></tbody>
         </table>
       </div>
-      <p class="table-note">활성비는 공개자료의 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계, 혈장 유무, endpoint가 다른 값은 직접 비교할 수 없습니다.
-        <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/" target="_blank" rel="noopener">[SV-DESIGN]</a>
-        <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/" target="_blank" rel="noopener">[RATIO-REVIEW]</a>
-      </p>
       <p id="masterEmpty" class="empty" hidden>조건에 맞는 자산이 없습니다.</p>
     </section>
 

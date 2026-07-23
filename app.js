@@ -637,9 +637,38 @@ function applyColumnVisibility() {
   const visible = columns.filter(column => !hiddenMasterColumns.has(column.key)).length;
   document.querySelector("#columnToggle").textContent = `표시 항목 ${visible}/${columns.length}`;
   document.querySelector(".master-table").style.minWidth = `${Math.max(900, visible * 210)}px`;
-  // 활성비(ratio) 안내문은 '분자 설계 / 활성비' 열이 켜져 있을 때만 표시한다(관련 열이 꺼지면 함께 숨김).
-  const ratioNote = document.querySelector(".table-note");
-  if (ratioNote) ratioNote.hidden = hiddenMasterColumns.has("mechanism");
+  if (hiddenMasterColumns.has("mechanism")) closeRatioInfo();
+}
+
+function closeRatioInfo() {
+  const toggle = document.querySelector("#ratioInfoToggle");
+  const popover = document.querySelector("#ratioInfoPopover");
+  if (!toggle || !popover) return;
+  popover.hidden = true;
+  toggle.setAttribute("aria-expanded", "false");
+}
+
+function initRatioInfo() {
+  const toggle = document.querySelector("#ratioInfoToggle");
+  const popover = document.querySelector("#ratioInfoPopover");
+  if (!toggle || !popover) return;
+  toggle.addEventListener("click", event => {
+    event.stopPropagation();
+    const opening = popover.hidden;
+    closeRatioInfo();
+    if (opening) {
+      popover.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+  });
+  popover.addEventListener("click", event => event.stopPropagation());
+  document.addEventListener("click", closeRatioInfo);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !popover.hidden) {
+      closeRatioInfo();
+      toggle.focus();
+    }
+  });
 }
 
 function initColumnSelector() {
@@ -940,6 +969,7 @@ function setupMasterScrollSync() {
 }
 
 initReportTabs();
+initRatioInfo();
 initColumnSelector();
 renderMaster();
 renderTimeline();
