@@ -1039,8 +1039,8 @@ async function initAutoRefresh() {
   document.querySelector(".header-meta b").textContent = `${CURRENT_YEAR} Q${CURRENT_QUARTER}`;
   if (location.protocol === "file:") {
     liveBackend = false;
-    status.textContent = "저장된 스냅샷 표시 중";
-    meta.textContent = "이 화면은 정적 배포본입니다. 실시간 임상등록 갱신은 로컬 서버 실행 시 동작합니다.";
+    status.textContent = "배포 시점 데이터 표시 중";
+    meta.textContent = "보이는 수치는 배포 시점 기준입니다. 최신 정보를 자동으로 모아 데이터를 업데이트하는 기능은 로컬 PC에서만 동작합니다.";
     return;
   }
   try {
@@ -1052,16 +1052,16 @@ async function initAutoRefresh() {
     applyLiveSnapshot(fresh);
   } catch (error) {
     liveBackend = false;
-    status.textContent = "저장된 스냅샷 표시 중";
-    meta.textContent = "이 화면은 정적 배포본입니다. 실시간 임상등록 갱신은 로컬 서버 실행 시 동작합니다.";
+    status.textContent = "배포 시점 데이터 표시 중";
+    meta.textContent = "보이는 수치는 배포 시점 기준입니다. 최신 정보를 자동으로 모아 데이터를 업데이트하는 기능은 로컬 PC에서만 동작합니다.";
   }
 }
 
 document.querySelector("#forceRefresh").addEventListener("click", async event => {
   const button = event.currentTarget;
   if (!liveBackend) {
-    document.querySelector("#syncStatus").textContent = "저장된 스냅샷 표시 중";
-    document.querySelector("#syncMeta").textContent = "이 화면은 정적 배포본이라 ‘최신 정보 확인·반영’은 로컬 서버 실행 시에만 동작합니다.";
+    document.querySelector("#syncStatus").textContent = "배포 시점 데이터 표시 중";
+    document.querySelector("#syncMeta").textContent = "정보 확인·반영(자동 수집·업데이트)은 로컬 PC에서만 동작합니다.";
     return;
   }
   button.disabled = true;
