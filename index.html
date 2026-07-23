@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GLP-1R/GCGR 이중작용제 경쟁물질 데이터 원장">
+  <title>GLP-1R/GCGR 이중작용제 경쟁 현황 및 개발 일정</title>
+  <link rel="stylesheet" href="styles.css?v=20260723-10">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>GLP-1R/GCGR 이중작용제 경쟁 현황 및 개발 일정</h1>
+    </div>
+    <div class="header-meta">
+      <span>기준 분기</span><b>2026 Q3</b>
+      <span>정보 업데이트</span><b id="infoUpdatedAt">2026-07-23</b>
+      <button id="openMethod">포함 기준</button>
+    </div>
+  </header>
+
+  <nav class="section-nav" aria-label="보고서 탭" role="tablist">
+    <a href="#master" role="tab" aria-selected="true" class="active">경쟁물질 비교표</a>
+    <a href="#timeline" role="tab" aria-selected="false">개발 경과 및 향후 일정</a>
+    <a href="#records" role="tab" aria-selected="false">물질별 원장</a>
+    <a href="#sources" role="tab" aria-selected="false">전체 레퍼런스</a>
+  </nav>
+
+  <main>
+    <section class="sync-bar" id="syncBar" aria-live="polite">
+      <div class="sync-state">
+        <i class="sync-dot" aria-hidden="true"></i>
+        <div><b id="syncStatus">최신 데이터 확인 준비</b><span id="syncMeta">로컬 캐시를 불러옵니다.</span></div>
+      </div>
+      <button id="forceRefresh" type="button">최신 정보 확인·반영</button>
+    </section>
+    <section class="refresh-progress" id="refreshProgress" hidden aria-live="polite">
+      <div class="progress-heading">
+        <b id="progressStage">준비</b>
+        <strong id="progressPercent">0%</strong>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <i id="progressFill"></i>
+      </div>
+      <div class="progress-detail"><span id="progressDetail">업데이트 작업을 준비합니다.</span><span id="progressCount"></span></div>
+    </section>
+    <section class="change-panel" id="changePanel" hidden>
+      <div class="change-heading"><b>최근 감지된 변경</b><button id="closeChanges" type="button">접기</button></div>
+      <div id="changeList"></div>
+    </section>
+
+    <section id="master" class="panel report-tab-panel" role="tabpanel">
+      <div class="panel-heading">
+        <div class="master-title-row">
+          <h2>경쟁물질 비교표</h2>
+          <div class="column-selector">
+            <button id="columnToggle" type="button" aria-expanded="false">표시 항목 10/10</button>
+            <div id="columnMenu" class="column-menu" hidden></div>
+          </div>
+        </div>
+        <div class="master-controls">
+          <label>
+            <span>자산군</span>
+            <select id="masterTier">
+              <option value="all">전체</option>
+              <option value="core" selected>현재 경쟁군</option>
+              <option value="watch">관찰군</option>
+              <option value="historical">중단군</option>
+            </select>
+          </label>
+          <label>
+            <span>검색</span>
+            <input id="masterSearch" type="search" placeholder="물질·별칭·회사">
+          </label>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="master-table">
+          <thead>
+            <tr>
+              <th data-column-key="asset">물질 / 회사</th>
+              <th data-column-key="mechanism">분자 설계 / GLP-1R:GCGR 활성비</th>
+              <th data-column-key="stage">현재 단계</th>
+              <th data-column-key="indication">주요 적응증</th>
+              <th data-column-key="trial">핵심 임상</th>
+              <th data-column-key="weight">체중효능: 시험약 / 대조군</th>
+              <th data-column-key="gi">GI 안전성</th>
+              <th data-column-key="discontinuation">중단</th>
+              <th data-column-key="rights">기원 / 권리 이력</th>
+              <th data-column-key="next">다음 확인사항</th>
+            </tr>
+          </thead>
+          <tbody id="masterRows"></tbody>
+        </table>
+      </div>
+      <p class="table-note">활성비는 공개자료의 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계, 혈장 유무, endpoint가 다른 값은 직접 비교할 수 없습니다.
+        <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/" target="_blank" rel="noopener">[SV-DESIGN]</a>
+        <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/" target="_blank" rel="noopener">[RATIO-REVIEW]</a>
+      </p>
+      <p id="masterEmpty" class="empty" hidden>조건에 맞는 자산이 없습니다.</p>
+    </section>
+
+    <section id="timeline" class="panel report-tab-panel" role="tabpanel" hidden>
+      <div class="panel-heading timeline-heading">
+        <div>
+          <p class="section-label">EVENT LOG</p>
+          <h2>경쟁물질별 개발 경과 및 향후 일정</h2>
+        </div>
+        <div class="timeline-controls">
+          <div class="timeline-inputs">
+            <input id="searchInput" type="search" placeholder="물질·회사·임상명·이벤트 검색">
+            <select id="rangeFilter" aria-label="표시 기간">
+              <option value="current" selected>현재 중심 2024–2031</option>
+              <option value="future">향후 2026–2031</option>
+              <option value="all">전체 2011–2031</option>
+            </select>
+          </div>
+          <div class="filter-group" aria-label="이벤트 유형">
+            <button class="chip active" data-filter="all" data-tooltip="계약·제휴, 임상 진행, 결과 발표, 허가·규제, 향후 일정, 중단 이벤트를 모두 표시합니다.">전체</button>
+            <button class="chip" data-filter="deal" data-tooltip="라이선스, 공동개발, 인수, 반환 등 개발·상업화 계약과 제휴의 변화를 표시합니다.">계약·제휴</button>
+            <button class="chip" data-filter="clinical" data-tooltip="임상시험 개시, 환자 등록, 단계 진입과 시험 완료 등 개발 진행 이벤트를 표시합니다.">임상 진행</button>
+            <button class="chip" data-filter="data" data-tooltip="중간·최종 결과, 학회 발표와 논문 공개 등 효능·안전성 결과 발표를 표시합니다.">결과 발표</button>
+            <button class="chip" data-filter="regulatory" data-tooltip="규제기관 지정, 허가 신청·승인과 기타 공식 인허가 결정을 표시합니다.">허가·규제</button>
+            <button class="chip" data-filter="future" data-tooltip="등록원장이나 회사 원문에 일정이 공개된 향후 시험 개시·완료·결과 발표를 표시합니다.">향후 일정</button>
+            <button class="chip" data-filter="stop" data-tooltip="임상시험, 용량군 또는 개발 프로그램의 중단·철회·반환을 표시합니다.">중단</button>
+          </div>
+        </div>
+      </div>
+      <div class="matrix-legend">
+        <span><i class="clinical"></i> 임상 진행</span>
+        <span><i class="data"></i> 결과 발표</span>
+        <span><i class="deal"></i> 계약·제휴</span>
+        <span><i class="regulatory"></i> 허가·규제</span>
+        <span><i class="stop"></i> 중단</span>
+        <span><i class="future"></i> 향후 일정</span>
+        <span><i class="unknown"></i> 공개자료에 연도만 제시</span>
+        <span><i class="current"></i> 현재 분기</span>
+        <span>이벤트 제목에 마우스를 올리면 상세 내용이 표시됩니다.</span>
+      </div>
+      <div class="timeline-axis-sticky" id="timelineAxis" aria-label="분기 날짜 축"></div>
+      <div class="matrix-scroll" id="timelineList" aria-live="polite"></div>
+      <p id="noResults" class="empty" hidden>조건에 맞는 기록이 없습니다.</p>
+    </section>
+
+    <section id="records" class="panel report-tab-panel" role="tabpanel" hidden>
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">ASSET RECORDS</p>
+          <h2>물질별 원장</h2>
+        </div>
+        <p class="heading-note">행을 열면 기원·권리 구조, 현재 판단, 다음 확인사항과 대표 근거를 볼 수 있습니다.</p>
+      </div>
+      <div class="dossier-tabs" role="tablist" aria-label="자산군">
+        <button role="tab" aria-selected="true" class="active" data-tier="core">현재 경쟁군</button>
+        <button role="tab" aria-selected="false" data-tier="watch">관찰군</button>
+        <button role="tab" aria-selected="false" data-tier="historical">중단군</button>
+      </div>
+      <div id="dossierGrid" class="record-list"></div>
+    </section>
+
+    <section id="sources" class="panel report-tab-panel" role="tabpanel" hidden>
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">REFERENCES</p>
+          <h2>전체 레퍼런스</h2>
+        </div>
+        <p class="heading-note">본문의 모든 인용번호는 아래 원문으로 연결됩니다.</p>
+      </div>
+      <div class="source-grid" id="sourceGrid"></div>
+      <div class="caution">
+        <b>비교 주의</b>
+        <p>시험 단계, 기간, 환자군, 용량, estimand가 달라 체중감량 수치를 단순 순위화하지 않습니다. “미공개”는 사건이 없다는 뜻이 아닙니다. 중국 단독 프로그램은 ClinicalTrials.gov에서 누락될 수 있습니다.
+          <a class="citation" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full" target="_blank" rel="noopener">[CLASS-REVIEW]</a>
+          <a class="citation" href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031602212.pdf" target="_blank" rel="noopener">[CMS-ANNUAL]</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Source of record: Obsidian Wiki</span>
+    <span>GLP-1R/GCGR dual agonist competitive landscape</span>
+  </footer>
+
+  <dialog id="methodDialog">
+    <button class="dialog-close" aria-label="닫기">×</button>
+    <p class="section-label">SCOPE</p>
+    <h2>포함·분류 기준</h2>
+    <ul>
+      <li><b>현재 경쟁군:</b> 하나의 분자가 GLP-1R와 GCGR를 직접 활성화하고 사람 임상에 진입했으며 현재 개발 또는 최근 적극적 개발 근거가 있는 자산. <a class="citation" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full" target="_blank" rel="noopener">[CLASS-REVIEW]</a></li>
+      <li><b>관찰군:</b> 같은 수용체 조합을 두 성분으로 구현한 고정용량 복합제 또는 후속 전략이 불명확한 자산. <a class="citation" href="https://diabetesjournals.org/diabetes/article/73/Supplement_1/768-P/156358/768-P-A-Phase-1b-2a-Trial-to-Assess-the-Safety" target="_blank" rel="noopener">[PB-ABSTRACT]</a></li>
+      <li><b>중단군:</b> 사람 임상에 진입했으나 개발이 중단·휴면되었거나 현재 활성 개발 근거가 없는 동일 기전 자산. <a class="citation" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full" target="_blank" rel="noopener">[CLASS-REVIEW]</a></li>
+      <li><b>제외:</b> GLP-1/GIP dual, GLP-1/GIP/GCGR triple, GLP-1/amylin 및 전임상 전용 자산. <a class="citation" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full" target="_blank" rel="noopener">[CLASS-REVIEW]</a></li>
+    </ul>
+  </dialog>
+
+  <script src="app.js?v=20260723-10"></script>
+</body>
+</html>
