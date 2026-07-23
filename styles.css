@@ -253,6 +253,11 @@ input:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgb
 .table-scroll-top::-webkit-scrollbar-thumb:hover { background: #6f7d90; }
 .table-wrap { max-height: 72vh; overflow: auto; border: 1px solid var(--line); }
 .master-table thead th { position: sticky; top: 0; z-index: 3; }
+/* 가로 스크롤 시 물질/회사(첫 열)도 좌측 고정 — 어느 물질 행인지 계속 보이게. */
+.master-table th:first-child,
+.master-table td:first-child { position: sticky; left: 0; z-index: 2; background: var(--panel); box-shadow: 2px 0 5px -2px rgba(23, 32, 51, .12); }
+.master-table thead th:first-child { z-index: 4; background: #f2f4f7; } /* 좌상단 코너: 세로·가로 고정 교차점이라 최상위 */
+.master-table tbody tr:hover td:first-child { background: #f8faff; }
 table { width: 100%; border-collapse: collapse; }
 .master-table { min-width: 2100px; table-layout: fixed; }
 .master-table th {
