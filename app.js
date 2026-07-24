@@ -440,7 +440,8 @@ const comparison = {
       {
         id: "ascend",
         label: "ASCEND",
-        meta: "D8460C00004 · P2 · 완료 · 비만·과체중",
+        meta: "NCT06862791 · P2 · 완료 · 비만·과체중",
+        nct: "NCT06862791",
         hasLiver: false,
         weight: "<b>결과 미공개</b><br>377명 시험 완료",
         liver: null,
@@ -564,6 +565,29 @@ function getComparisonTrials(entry) {
   return [];
 }
 
+/**
+ * 핵심 임상 원장 무결성.
+ * - trials[] 없으면 드롭다운/결과 연동 불가
+ * - defaultTrialId 보정
+ * - hasLiver와 liver 필드 정합
+ * 효능 수치는 자동 생성하지 않는다 (사람이 큐레이션한 블록만 사용).
+ */
+function normalizeComparisonEntries() {
+  for (const entry of Object.values(comparison)) {
+    if (!entry || !Array.isArray(entry.trials) || !entry.trials.length) continue;
+    if (!entry.defaultTrialId || !entry.trials.some(t => t.id === entry.defaultTrialId)) {
+      entry.defaultTrialId = entry.trials[0].id;
+    }
+    for (const trial of entry.trials) {
+      if (trial.hasLiver === undefined) trial.hasLiver = Boolean(trial.liver);
+      if (trial.hasLiver === false) trial.liver = trial.liver || null;
+      for (const key of TRIAL_RESULT_KEYS) {
+        if (!(key in trial)) trial[key] = key === "liver" ? null : null;
+      }
+    }
+  }
+}
+
 function getSelectedTrialId(assetId, entry) {
   const trials = getComparisonTrials(entry);
   if (!trials.length) return null;
@@ -583,9 +607,55 @@ function trialPublishesLiver(t) {
   return Boolean(t && t.hasLiver !== false && t.liver);
 }
 
-/** 드롭다운: 임상 블록이 2개 이상이면 표시 */
+/** 드롭다운: 사람 큐레이션 핵심 임상이 2개 이상일 때 */
 function shouldShowTrialSelect(entry) {
   return getComparisonTrials(entry).length > 1;
+}
+
+/** 최신 정보 반영 스냅샷에서 핵심 임상 NCT 조회 (등록 감시용) */
+function getLiveStudyForTrial(assetId, trial) {
+  if (!liveSnapshot || !trial?.nct) return null;
+  const program = liveSnapshot.programs?.[assetId];
+  if (!program?.studies?.length) return null;
+  return program.studies.find(study => study.nctId === trial.nct) || null;
+}
+
+function renderTrialLiveStatus(assetId, trial) {
+  const live = getLiveStudyForTrial(assetId, trial);
+  if (!trial?.nct) return "";
+  if (!liveSnapshot) return "";
+  if (!live) {
+    return `<div class="trial-live-status muted-cell">등록 감시 · ${escapeHtml(trial.nct)} 스냅샷 없음</div>`;
+  }
+  const updated = live.lastUpdate ? formatDate(live.lastUpdate) : "갱신일 미상";
+  return `<div class="trial-live-status"><span class="live-registry-label">등록 감시</span> ${escapeHtml(formatRegistryStatus(live.status))} · 최근 갱신 ${escapeHtml(updated)}</div>`;
+}
+
+/**
+ * 갱신 후 핵심 임상 연동 감사.
+ * 자동 승격은 하지 않고, 큐레이션 NCT가 스냅샷에 있는지·결과 블록이 온전한지만 확인.
+ */
+function auditKeyTrialBinding(snapshot) {
+  const issues = [];
+  for (const [assetId, entry] of Object.entries(comparison)) {
+    const trials = getComparisonTrials(entry);
+    if (!trials.length) continue;
+    if (trials.length > 1 && !entry.defaultTrialId) {
+      issues.push(`${assetId}: multi-trial without defaultTrialId`);
+    }
+    for (const trial of trials) {
+      for (const key of TRIAL_RESULT_KEYS) {
+        if (!(key in trial)) issues.push(`${assetId}/${trial.id}: missing result key ${key}`);
+      }
+      if (!trial.nct || !snapshot?.programs?.[assetId]) continue;
+      const found = (snapshot.programs[assetId].studies || []).some(s => s.nctId === trial.nct);
+      if (!found) issues.push(`${assetId}/${trial.id}: ${trial.nct} not in refresh snapshot`);
+    }
+  }
+  if (issues.length && typeof console !== "undefined") {
+    console.warn("[key-trial-binding]", issues);
+  }
+  return issues;
 }
 
 function missingForTrial(label) {
@@ -601,7 +671,7 @@ function hasTrialField(trial, key) {
 
 /**
  * 선택 임상 한 블록 → 결과 열 전체를 해석.
- * 다른 임상·자산 signal로 절대 폴백하지 않는다.
+ * 다른 임상·자산 signal·자동 갱신 등록 데이터로 절대 폴백하지 않는다.
  */
 function resolveTrialResults(trial) {
   const out = {};
@@ -646,13 +716,14 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
   const showSelect = shouldShowTrialSelect(entry);
   const refs = cite(trial?.refs?.trial || rowRefs);
   const nctBits = nctCitations(`${trial?.nct || ""} ${trial?.meta || ""}`);
+  const liveStatus = renderTrialLiveStatus(assetId, trial);
   if (!showSelect || !trial) {
     const html = trial
       ? `${escapeHtml(trial.label)}<br><span>${escapeHtml(trial.meta || "")}</span>`
       : "임상 미지정";
-    return `${html}<span class="cell-refs">${refs}</span>${nctBits}`;
+    return `${html}<span class="cell-refs">${refs}</span>${nctBits}${liveStatus}`;
   }
-  // 옵션은 임상명만. 표 안에 동작 설명 문구를 넣지 않음.
+  // 옵션은 큐레이션된 핵심 임상명만. 탐색 후보는 자동 추가하지 않음.
   const options = trials.map(t => {
     const selected = t.id === trial.id ? " selected" : "";
     return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
@@ -661,8 +732,10 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
     <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
     </label>
     <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
-    <span class="cell-refs">${refs}</span>${nctBits}</div>`;
+    <span class="cell-refs">${refs}</span>${nctBits}</div>${liveStatus}`;
 }
+
+normalizeComparisonEntries();
 
 const mechanismProfiles = {
   mazdutide: {
@@ -883,6 +956,9 @@ function renderChanges(snapshot, showComplete = false) {
 
 function applyLiveSnapshot(snapshot) {
   liveSnapshot = snapshot;
+  // 핵심 임상 원장 정합 유지 후 표 재구성 (선택 임상 localStorage 유지 → 결과 블록 동일 규칙)
+  normalizeComparisonEntries();
+  auditKeyTrialBinding(snapshot);
   rebuildRegistryTimeline(snapshot);
   const programCount = Object.keys(snapshot?.programs || {}).length;
   const studyCount = Object.values(snapshot?.programs || {}).reduce((sum, program) => sum + (program.studies?.length || 0), 0);
@@ -893,6 +969,7 @@ function applyLiveSnapshot(snapshot) {
   document.querySelector("#syncMeta").textContent =
     `${programCount}개 프로그램 · ${exactCheckedAt} 업데이트 (${relativeTime(snapshot?.registryCheckedAt)})${errors ? ` · 오류 ${errors}건은 캐시 유지` : ""}`;
   document.querySelector("#syncBar").classList.toggle("has-error", Boolean(errors));
+  // renderMaster: 드롭다운(2개+ 핵심 임상) + resolveTrialResults + 등록 감시 줄
   renderMaster();
   renderTimeline();
   renderSources();

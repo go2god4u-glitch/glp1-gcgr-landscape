@@ -271,6 +271,13 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 }
 .live-registry a { color: var(--blue); text-decoration: none; }
 .live-registry a:hover { text-decoration: underline; }
+.trial-live-status {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.trial-live-status .live-registry-label { margin-right: 4px; vertical-align: middle; }
 
 .master-controls { display: flex; gap: 12px; }
 .master-controls label { display: grid; gap: 4px; }
