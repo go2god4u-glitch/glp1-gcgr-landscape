@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260724-06">
+  <link rel="stylesheet" href="styles.css?v=20260724-07">
   <script>
     (function bootstrapDeployStamp() {
       document.addEventListener("DOMContentLoaded", function () {
         var el = document.getElementById("infoUpdatedAt");
         if (!el) return;
-        var url = new URL("data/latest.json?v=20260724-06", document.baseURI || location.href);
+        var url = new URL("data/latest.json?v=20260724-07", document.baseURI || location.href);
         fetch(url.href, { cache: "no-store" })
           .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
           .then(function (j) {
@@ -119,7 +118,7 @@
       <p class="table-note">활성비는 공개자료의 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계, 혈장 유무, endpoint가 다른 값은 직접 비교할 수 없습니다.
         <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/" target="_blank" rel="noopener">[SV-DESIGN]</a>
         <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/" target="_blank" rel="noopener">[RATIO-REVIEW]</a>
-        간 약효는 선택한 핵심 임상에 공개된 값만 표시합니다. 체중 기준 임상과 간 약효 임상이 다르면 핵심 임상 열 드롭다운에서 간 약효 임상을 고른 뒤에만 간 약효 열이 채워집니다. 시험·기간·모집단·estimand가 다르면 단순 순위 비교를 하지 않습니다.
+        체중·간·GI·중단 수치는 핵심 임상 열에서 고른 임상 결과와 항상 동일 블록입니다. 다른 임상의 수치를 섞지 않습니다. 시험·기간·모집단·estimand가 다르면 단순 순위 비교를 하지 않습니다.
       </p>
       <p id="masterEmpty" class="empty" hidden>조건에 맞는 자산이 없습니다.</p>
     </section>
@@ -213,6 +212,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260724-06"></script>
+  <script src="app.js?v=20260724-07"></script>
 </body>
 </html>

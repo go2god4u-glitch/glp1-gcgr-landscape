@@ -281,8 +281,8 @@ const typeNames = {
 
 /*
  * 비교표 필드 바인딩.
- * 결과값(체중·간·GI·중단)은 선택 임상(trial id)에 종속.
- * 간 약효는 선택 임상에 hasLiver+liver 데이터가 있을 때만 표시.
+ * 규칙: 핵심 임상(선택)이 결정 → 그 오른쪽 결과(체중·간·GI·중단)는 전부 그 임상 블록만 사용.
+ * 자산 단위 신호(a.signal)나 다른 임상 수치로 폴백하지 않는다.
  * 상세: docs/IDEAS_trial_driven_comparison.md
  */
 const COMPARISON_FIELD_BINDING = {
@@ -290,16 +290,19 @@ const COMPARISON_FIELD_BINDING = {
   mechanism: { trialDependent: false, role: "asset", note: "분자 설계·활성비" },
   stage: { trialDependent: false, role: "asset", note: "현재 단계" },
   indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약" },
-  trial: { trialDependent: false, role: "selection", note: "기준 임상 선택" },
-  weight: { trialDependent: true, role: "result", note: "체중효능(선택 임상)" },
-  liver: { trialDependent: true, role: "result", note: "간 약효(선택 임상에 공개값이 있을 때만)" },
-  gi: { trialDependent: true, role: "result", note: "GI 안전성(선택 임상)" },
-  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단(선택 임상)" },
+  trial: { trialDependent: false, role: "selection", note: "핵심 임상 선택(결과의 유일한 키)" },
+  weight: { trialDependent: true, role: "result", note: "체중효능 = 선택 임상" },
+  liver: { trialDependent: true, role: "result", note: "간 약효 = 선택 임상" },
+  gi: { trialDependent: true, role: "result", note: "GI 안전성 = 선택 임상" },
+  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단 = 선택 임상" },
   rights: { trialDependent: false, role: "asset", note: "기원/권리" },
-  next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위 유지)" },
+  next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위)" },
   nextNcts: { trialDependent: false, role: "asset", note: "다음 확인 NCT" },
   refs: { trialDependent: "per-key", role: "mixed", note: "trial 블록 refs" }
 };
+
+/** 핵심 임상 선택에 묶이는 결과 열 (표시 순서와 동일하게 유지) */
+const TRIAL_RESULT_KEYS = ["weight", "liver", "gi", "discontinuation"];
 
 const TRIAL_DEPENDENT_COMPARISON_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
   .filter(([, meta]) => meta.trialDependent === true)
@@ -587,9 +590,50 @@ function missingForTrial(label) {
   return `<span class="muted-cell">선택 임상 기준 ${label} 공개값 없음</span>`;
 }
 
-function liverCellForTrial(trial) {
-  if (trial?.hasLiver && trial.liver) return trial.liver;
-  return `<span class="muted-cell">선택 임상에 공개 간 약효 없음</span><br><small>간 약효가 있는 임상을 핵심 임상에서 선택하세요</small>`;
+function hasTrialField(trial, key) {
+  if (!trial) return false;
+  const value = trial[key];
+  return value != null && value !== "";
+}
+
+/**
+ * 선택 임상 한 블록 → 결과 열 전부 해석.
+ * 다른 임상·자산 signal로 절대 폴백하지 않는다.
+ */
+function resolveTrialResults(trial) {
+  const out = {};
+  for (const key of TRIAL_RESULT_KEYS) {
+    if (key === "liver") {
+      // hasLiver === false 이면 이 임상 블록에 간 약효를 붙이지 않음
+      out.liver = trial && trial.hasLiver !== false && hasTrialField(trial, "liver")
+        ? trial.liver
+        : null;
+    } else {
+      out[key] = hasTrialField(trial, key) ? trial[key] : null;
+    }
+  }
+  return out;
+}
+
+function resultBoundStamp(trial) {
+  if (!trial) return "";
+  const nct = trial.nct ? ` · ${trial.nct}` : "";
+  return `<div class="result-bound" title="이 셀 수치는 핵심 임상 선택과 동일 블록">결과 기준: ${escapeHtml(trial.label)}${escapeHtml(nct)}</div>`;
+}
+
+function renderResultCell(trial, key, htmlOrNull, refsHtml) {
+  const body = htmlOrNull != null && htmlOrNull !== ""
+    ? htmlOrNull
+    : missingForTrial({
+      weight: "체중효능",
+      liver: "간 약효",
+      gi: "GI 안전성",
+      discontinuation: "중단"
+    }[key] || key);
+  const nctBits = key === "liver" && htmlOrNull
+    ? nctCitations(`${trial?.nct || ""} ${htmlOrNull}`)
+    : "";
+  return `${resultBoundStamp(trial)}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
 }
 
 function renderTrialCell(assetId, entry, trial, rowRefs) {
@@ -604,15 +648,16 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
     return `${html}<span class="cell-refs">${refs}</span>${nctBits}`;
   }
   const options = trials.map(t => {
-    const tag = t.hasLiver && t.liver ? " · 간약효" : "";
     const selected = t.id === trial.id ? " selected" : "";
-    return `<option value="${escapeHtml(t.id)}"${selected}>${escapeHtml(t.label)}${escapeHtml(tag)}</option>`;
+    // value는 id 그대로(이스케이프 불필요·안전 문자). 표시명만 escape.
+    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
   }).join("");
-  return `<label class="trial-select-label"><span class="trial-select-caption">기준 임상</span>
-    <select class="trial-select" data-asset-id="${escapeHtml(assetId)}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
+  return `<label class="trial-select-label"><span class="trial-select-caption">핵심 임상 (결과 결정)</span>
+    <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
     </label>
     <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
-    <span class="cell-refs">${refs}</span>${nctBits}</div>`;
+    <span class="cell-refs">${refs}</span>${nctBits}</div>
+    <div class="trial-select-hint">오른쪽 체중·간·GI·중단은 위 선택 임상 결과만 표시</div>`;
 }
 
 const mechanismProfiles = {
@@ -953,37 +998,34 @@ function renderMaster() {
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
     const entry = getComparisonEntry(a.id);
     const trial = entry ? getActiveTrial(a.id, entry) : null;
+    const results = resolveTrialResults(trial);
     const indication = entry?.indication || "개발 중단·비활성 자산";
     const rights = entry?.rights || a.origin;
     const nextHtml = entry?.next || a.watch.join("<br>");
     const nextNcts = entry?.nextNcts || [];
     const rowRefs = assetReferenceMap[a.name] || [];
     const cellRefs = key => {
-      const keys = trial?.refs?.[key] || (key === "rights" ? entry?.rightsRefs : null) || rowRefs;
+      // 결과 열 인용은 선택 임상 블록 refs만 (자산 전체 맵으로 섞지 않음)
+      const keys = TRIAL_RESULT_KEYS.includes(key)
+        ? (trial?.refs?.[key] || [])
+        : (key === "rights" ? (entry?.rightsRefs || rowRefs) : (trial?.refs?.[key] || rowRefs));
       return `<span class="cell-refs">${cite(keys)}</span>`;
     };
-    const weight = trial?.weight || a.signal || missingForTrial("체중효능");
-    const gi = trial?.gi || missingForTrial("GI");
-    const disc = trial?.discontinuation || missingForTrial("중단");
-    const liverHtml = trial ? liverCellForTrial(trial) : missingForTrial("간 약효");
-    const liverNct = trial?.hasLiver && trial.liver
-      ? nctCitations(`${trial.nct || ""} ${trial.liver}`)
-      : "";
     const mechanism = mechanismProfiles[a.id] || { text: "공개 분자설계 정보 없음", refs: rowRefs };
     const statusClass = a.tier === "historical" ? "historical" : a.tier === "watch" ? "watch" : "";
     const trialCell = entry
       ? renderTrialCell(a.id, entry, trial, rowRefs)
       : `${a.phase}<br><span>현재 활성 개발 없음</span>`;
-    return `<tr data-asset-id="${a.id}">
+    return `<tr data-asset-id="${a.id}" data-active-trial="${trial?.id || ""}">
       <td><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
       <td>${mechanism.text}<span class="cell-refs">${cite(mechanism.refs)}</span></td>
       <td class="stage-cell"><span class="status ${statusClass}">${a.phase}</span></td>
       <td>${indication}</td>
       <td class="trial-cell">${trialCell}</td>
-      <td>${weight}${cellRefs("weight")}</td>
-      <td class="liver-cell">${liverHtml}${trial?.hasLiver && trial.liver ? cellRefs("liver") : ""}${liverNct}</td>
-      <td>${gi}${cellRefs("gi")}</td>
-      <td>${disc}${cellRefs("discontinuation")}</td>
+      <td class="result-cell" data-column-result="weight">${renderResultCell(trial, "weight", results.weight, cellRefs("weight"))}</td>
+      <td class="result-cell liver-cell" data-column-result="liver">${renderResultCell(trial, "liver", results.liver, cellRefs("liver"))}</td>
+      <td class="result-cell" data-column-result="gi">${renderResultCell(trial, "gi", results.gi, cellRefs("gi"))}</td>
+      <td class="result-cell" data-column-result="discontinuation">${renderResultCell(trial, "discontinuation", results.discontinuation, cellRefs("discontinuation"))}</td>
       <td>${rights}${cellRefs("rights")}</td>
       <td class="watch-cell"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${(nextNcts || []).map(registryCitation).join(" ")}<div class="muted-cell">${nextHtml}</div></td>
     </tr>`;
