@@ -614,40 +614,20 @@ function resolveTrialResults(trial) {
   return out;
 }
 
-/**
- * A 선택 중 간 약효 없음:
- * "A에서는 간 약효 공개 안 함. B에서만 공개 → 드롭다운에서 B 선택"
- * B 수치를 A 칸에 넣지 않음.
- */
-function liverEmptyMessage(selectedTrial, entry) {
-  const selectedLabel = selectedTrial?.label || "선택 임상";
-  const liverTrials = getComparisonTrials(entry).filter(trialPublishesLiver);
-  if (!liverTrials.length) {
-    return missingForTrial("간 약효");
-  }
-  const others = liverTrials.filter(t => t.id !== selectedTrial?.id);
-  if (!others.length) {
-    return missingForTrial("간 약효");
-  }
-  const list = others.map(t => escapeHtml(t.label)).join(", ");
-  return `<span class="muted-cell">${escapeHtml(selectedLabel)} 기준 간 약효 공개값 없음</span><br><small>다른 임상에서 확인: ${list} (핵심 임상에서 선택)</small>`;
-}
-
 function resultBoundStamp(trial) {
   if (!trial) return "";
-  const nct = trial.nct ? ` · ${trial.nct}` : "";
-  return `<div class="result-bound" title="이 셀 수치는 핵심 임상 선택과 동일 블록">결과 기준: ${escapeHtml(trial.label)}${escapeHtml(nct)}</div>`;
+  // 체중 열에만 한 번 표시 (네 칸 반복 방지)
+  return `<div class="result-bound" title="선택 임상과 동일 블록">기준 ${escapeHtml(trial.label)}</div>`;
 }
 
 function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
   let body;
   if (htmlOrNull != null && htmlOrNull !== "") {
     body = htmlOrNull;
-  } else if (key === "liver") {
-    body = liverEmptyMessage(trial, entry);
   } else {
     body = missingForTrial({
       weight: "체중효능",
+      liver: "간 약효",
       gi: "GI 안전성",
       discontinuation: "중단"
     }[key] || key);
@@ -655,7 +635,9 @@ function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
   const nctBits = key === "liver" && htmlOrNull
     ? nctCitations(`${trial?.nct || ""} ${htmlOrNull}`)
     : "";
-  return `${resultBoundStamp(trial)}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
+  // 결과 기준 스탬프는 첫 결과 열(weight)에만
+  const stamp = key === "weight" ? resultBoundStamp(trial) : "";
+  return `${stamp}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
 }
 
 function renderTrialCell(assetId, entry, trial, rowRefs) {
@@ -669,7 +651,7 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
       : "임상 미지정";
     return `${html}<span class="cell-refs">${refs}</span>${nctBits}`;
   }
-  // 옵션은 임상명만 통일. 간/체중 태그는 붙이지 않음(결과는 선택 임상 블록이 결정).
+  // 옵션은 임상명만. 표 안에 동작 설명 문구를 넣지 않음.
   const options = trials.map(t => {
     const selected = t.id === trial.id ? " selected" : "";
     return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
@@ -678,8 +660,7 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
     <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
     </label>
     <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
-    <span class="cell-refs">${refs}</span>${nctBits}</div>
-    <div class="trial-select-hint">오른쪽 체중·간·GI·중단은 선택한 임상 결과만 표시</div>`;
+    <span class="cell-refs">${refs}</span>${nctBits}</div>`;
 }
 
 const mechanismProfiles = {
