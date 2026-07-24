@@ -277,10 +277,75 @@ const typeNames = {
   stop: "중단"
 };
 
+/*
+ * 비교표 필드 바인딩 태그 (아이디어 단계 — 임상 선택 UI 미구현).
+ * 주요/피보탈 임상이 여러 개가 되면 trial 을 선택 축으로 두고,
+ * 선택 변경 시 TRIAL_DEPENDENT_* 만 오른쪽 결과로 교체한다.
+ * 상세: docs/IDEAS_trial_driven_comparison.md
+ *
+ * role:
+ *   asset      — 물질 단위 (임상 선택과 무관)
+ *   selection  — 임상 선택 컨트롤 자체
+ *   result     — 선택 임상에 종속 (핵심 임상 열 오른쪽)
+ *   mixed      — 일부 종속, 교체 시 규칙 재확인
+ */
+const COMPARISON_FIELD_BINDING = {
+  asset: { trialDependent: false, role: "asset", note: "물질/회사" },
+  mechanism: { trialDependent: false, role: "asset", note: "분자 설계·활성비" },
+  stage: { trialDependent: false, role: "asset", note: "현재 단계. 임상 선택으로 바꾸지 않음(추후 재논의 가능)" },
+  indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약. 수치 키가 아님" },
+  trial: { trialDependent: false, role: "selection", note: "기준 임상(향후 선택 UI)" },
+  weight: { trialDependent: true, role: "result", note: "체중효능" },
+  gi: { trialDependent: true, role: "result", note: "GI 안전성" },
+  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단" },
+  rights: { trialDependent: false, role: "asset", note: "기원/권리. 임상 선택과 독립" },
+  next: { trialDependent: true, role: "result", note: "다음 확인사항(경로·적응증 앵커에 따라 변경)" },
+  nextNcts: { trialDependent: true, role: "result", note: "다음 확인 관련 NCT" },
+  refs: { trialDependent: "per-key", role: "mixed", note: "아래 REF 키 목록 따름" }
+};
+
+/** 임상 선택 시 반드시 함께 바뀌는 comparison 키 */
+const TRIAL_DEPENDENT_COMPARISON_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
+  .filter(([, meta]) => meta.trialDependent === true)
+  .map(([key]) => key);
+
+/** refs 객체 안에서 임상에 종속인 인용 키 */
+const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "gi", "discontinuation", "next"];
+
+/** refs 객체 안에서 임상 선택과 독립인 인용 키 */
+const TRIAL_INDEPENDENT_REF_KEYS = ["rights"];
+
+function isTrialDependentComparisonKey(key) {
+  return TRIAL_DEPENDENT_COMPARISON_KEYS.includes(key);
+}
+
+function isTrialDependentRefKey(key) {
+  return TRIAL_DEPENDENT_REF_KEYS.includes(key);
+}
+
+/** 임상 선택 스왑용: 종속 필드만 골라 반환 (UI 미연결, 구조 준비) */
+function pickTrialDependentComparisonFields(block) {
+  if (!block || typeof block !== "object") return {};
+  const out = {};
+  for (const key of TRIAL_DEPENDENT_COMPARISON_KEYS) {
+    if (key in block) out[key] = block[key];
+  }
+  if (block.refs) {
+    out.refs = {};
+    for (const key of TRIAL_DEPENDENT_REF_KEYS) {
+      if (block.refs[key]) out.refs[key] = block.refs[key];
+    }
+  }
+  return out;
+}
+
 const comparison = {
+  // 각 자산: trial = 현재 기본 기준 임상. weight/gi/discontinuation/next/nextNcts = trial 종속.
+  // rights/indication = 자산 단위. 향후 trials[] 다중 블록으로 확장 예정.
   mazdutide: {
     indication: "비만·과체중, T2D 승인<br>OSA·MASH 등 확장",
     trial: "GLORY-2<br><span>NCT06164873 · P3 · 60주</span>",
+    // trial-dependent result block (기준: trial)
     weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
     gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
     discontinuation: "<b>GI 중단 0.3%</b>",
@@ -1033,14 +1098,34 @@ async function runFullRefreshWithProgress() {
   return requestSnapshot("/api/snapshot");
 }
 
+async function loadDeployedSnapshot() {
+  // GitHub Pages 등 정적 호스팅: 상대경로 data/latest.json (repo root 배포)
+  return requestSnapshot("data/latest.json");
+}
+
+function markStaticDeployMode(status, meta, snapshot) {
+  liveBackend = false;
+  status.textContent = "배포 시점 데이터 표시 중";
+  const when = snapshot?.registryCheckedAt
+    ? formatUpdateTimestamp(snapshot.registryCheckedAt)
+    : null;
+  meta.textContent = when
+    ? `보이는 수치는 배포 스냅샷 기준입니다 (${when}). 자동 수집·업데이트는 로컬 PC에서만 동작합니다.`
+    : "보이는 수치는 배포 시점 기준입니다. 최신 정보를 자동으로 모아 데이터를 업데이트하는 기능은 로컬 PC에서만 동작합니다.";
+}
+
 async function initAutoRefresh() {
   const status = document.querySelector("#syncStatus");
   const meta = document.querySelector("#syncMeta");
   document.querySelector(".header-meta b").textContent = `${CURRENT_YEAR} Q${CURRENT_QUARTER}`;
   if (location.protocol === "file:") {
-    liveBackend = false;
-    status.textContent = "배포 시점 데이터 표시 중";
-    meta.textContent = "보이는 수치는 배포 시점 기준입니다. 최신 정보를 자동으로 모아 데이터를 업데이트하는 기능은 로컬 PC에서만 동작합니다.";
+    try {
+      const deployed = await loadDeployedSnapshot();
+      if (deployed.registryCheckedAt) applyLiveSnapshot(deployed);
+      markStaticDeployMode(status, meta, deployed);
+    } catch {
+      markStaticDeployMode(status, meta, null);
+    }
     return;
   }
   try {
@@ -1051,9 +1136,14 @@ async function initAutoRefresh() {
     const fresh = await requestSnapshot("/api/refresh");
     applyLiveSnapshot(fresh);
   } catch (error) {
-    liveBackend = false;
-    status.textContent = "배포 시점 데이터 표시 중";
-    meta.textContent = "보이는 수치는 배포 시점 기준입니다. 최신 정보를 자동으로 모아 데이터를 업데이트하는 기능은 로컬 PC에서만 동작합니다.";
+    // API 없는 정적 배포(GitHub Pages): 커밋된 data/latest.json 사용
+    try {
+      const deployed = await loadDeployedSnapshot();
+      if (deployed.registryCheckedAt) applyLiveSnapshot(deployed);
+      markStaticDeployMode(status, meta, deployed);
+    } catch {
+      markStaticDeployMode(status, meta, null);
+    }
   }
 }
 

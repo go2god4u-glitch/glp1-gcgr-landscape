@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260723-16">
+  <link rel="stylesheet" href="styles.css?v=20260724-01">
 </head>
 <body>
   <header class="app-header">
@@ -14,7 +14,7 @@
     </div>
     <div class="header-meta">
       <span>기준 분기</span><b>2026 Q3</b>
-      <span>정보 업데이트</span><b id="infoUpdatedAt">2026-07-23</b>
+      <span>정보 업데이트</span><b id="infoUpdatedAt">2026-07-24</b>
       <button id="openMethod">포함 기준</button>
     </div>
   </header>
@@ -79,16 +79,17 @@
         <table class="master-table">
           <thead>
             <tr>
-              <th data-column-key="asset">물질 / 회사</th>
-              <th data-column-key="mechanism">분자 설계 / GLP-1R:GCGR 활성비</th>
-              <th data-column-key="stage">현재 단계</th>
-              <th data-column-key="indication">주요 적응증</th>
-              <th data-column-key="trial">핵심 임상</th>
-              <th data-column-key="weight">체중효능: 시험약 / 대조군</th>
-              <th data-column-key="gi">GI 안전성</th>
-              <th data-column-key="discontinuation">GI/치료 중단</th>
-              <th data-column-key="rights">기원 / 권리 이력</th>
-              <th data-column-key="next">다음 확인사항</th>
+              <!-- data-trial-binding: asset=물질단위, selection=임상선택, dependent=선택임상에 종속 -->
+              <th data-column-key="asset" data-trial-binding="asset">물질 / 회사</th>
+              <th data-column-key="mechanism" data-trial-binding="asset">분자 설계 / GLP-1R:GCGR 활성비</th>
+              <th data-column-key="stage" data-trial-binding="asset">현재 단계</th>
+              <th data-column-key="indication" data-trial-binding="asset">주요 적응증</th>
+              <th data-column-key="trial" data-trial-binding="selection">핵심 임상</th>
+              <th data-column-key="weight" data-trial-binding="dependent">체중효능: 시험약 / 대조군</th>
+              <th data-column-key="gi" data-trial-binding="dependent">GI 안전성</th>
+              <th data-column-key="discontinuation" data-trial-binding="dependent">GI/치료 중단</th>
+              <th data-column-key="rights" data-trial-binding="asset">기원 / 권리 이력</th>
+              <th data-column-key="next" data-trial-binding="dependent">다음 확인사항</th>
             </tr>
           </thead>
           <tbody id="masterRows"></tbody>
@@ -190,6 +191,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260723-16"></script>
+  <script src="app.js?v=20260724-01"></script>
 </body>
 </html>
