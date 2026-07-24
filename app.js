@@ -576,14 +576,13 @@ function getActiveTrial(assetId, entry) {
   return trials.find(t => t.id === id) || trials[0] || null;
 }
 
-/** 드롭다운: 기본 임상 + 간 약효 공개 임상이 둘 이상일 때 */
+function trialPublishesLiver(t) {
+  return Boolean(t && t.hasLiver !== false && t.liver);
+}
+
+/** 드롭다운: 임상 블록이 2개 이상이면 표시 */
 function shouldShowTrialSelect(entry) {
-  const trials = getComparisonTrials(entry);
-  if (trials.length <= 1) return false;
-  const hasLiverTrial = trials.some(t => t.hasLiver && t.liver);
-  const hasNonLiverDefault = trials.some(t => !t.hasLiver || !t.liver);
-  // 간 약효 임상이 기본과 분리되어 있거나, 선택 가능한 임상 블록이 2개 이상
-  return hasLiverTrial || trials.length > 1;
+  return getComparisonTrials(entry).length > 1;
 }
 
 function missingForTrial(label) {
@@ -597,22 +596,41 @@ function hasTrialField(trial, key) {
 }
 
 /**
- * 선택 임상 한 블록 → 결과 열 전부 해석.
+ * 선택 임상 한 블록 → 결과 열 전체를 해석.
  * 다른 임상·자산 signal로 절대 폴백하지 않는다.
  */
 function resolveTrialResults(trial) {
   const out = {};
   for (const key of TRIAL_RESULT_KEYS) {
     if (key === "liver") {
-      // hasLiver === false 이면 이 임상 블록에 간 약효를 붙이지 않음
-      out.liver = trial && trial.hasLiver !== false && hasTrialField(trial, "liver")
-        ? trial.liver
-        : null;
+      out.liver = trialPublishesLiver(trial) ? trial.liver : null;
     } else {
       out[key] = hasTrialField(trial, key) ? trial[key] : null;
     }
   }
   return out;
+}
+
+/**
+ * A 선택 중 간 약효 없음:
+ * "A에서는 간 약효 공개 안 함. B에서만 공개 → 드롭다운에서 B 선택"
+ * B 수치를 A 칸에 넣지 않음.
+ */
+function liverEmptyMessage(selectedTrial, entry) {
+  const selectedLabel = selectedTrial?.label || "선택 임상";
+  const liverTrials = getComparisonTrials(entry).filter(trialPublishesLiver);
+  if (!liverTrials.length) {
+    return `<span class="muted-cell"><b>${escapeHtml(selectedLabel)}</b>에서는 간 약효 공개 안 함</span><br><small>이 자산에 간 약효 공개 임상 블록이 아직 없음</small>`;
+  }
+  const others = liverTrials.filter(t => t.id !== selectedTrial?.id);
+  if (!others.length) {
+    return missingForTrial("간 약효");
+  }
+  const list = others.map(t => {
+    const nct = t.nct ? ` (${t.nct})` : "";
+    return `${escapeHtml(t.label)}${escapeHtml(nct)}`;
+  }).join(", ");
+  return `<span class="muted-cell"><b>${escapeHtml(selectedLabel)}</b>에서는 간 약효 공개 안 함</span><br><span class="muted-cell">간 약효는 <b>${list}</b>에서만 공개</span><br><small>앞 핵심 임상 드롭다운에서 해당 임상을 선택하면 체중·간·GI·중단이 그 임상 결과로 바뀜</small>`;
 }
 
 function resultBoundStamp(trial) {
@@ -621,15 +639,19 @@ function resultBoundStamp(trial) {
   return `<div class="result-bound" title="이 셀 수치는 핵심 임상 선택과 동일 블록">결과 기준: ${escapeHtml(trial.label)}${escapeHtml(nct)}</div>`;
 }
 
-function renderResultCell(trial, key, htmlOrNull, refsHtml) {
-  const body = htmlOrNull != null && htmlOrNull !== ""
-    ? htmlOrNull
-    : missingForTrial({
+function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
+  let body;
+  if (htmlOrNull != null && htmlOrNull !== "") {
+    body = htmlOrNull;
+  } else if (key === "liver") {
+    body = liverEmptyMessage(trial, entry);
+  } else {
+    body = missingForTrial({
       weight: "체중효능",
-      liver: "간 약효",
       gi: "GI 안전성",
       discontinuation: "중단"
     }[key] || key);
+  }
   const nctBits = key === "liver" && htmlOrNull
     ? nctCitations(`${trial?.nct || ""} ${htmlOrNull}`)
     : "";
@@ -649,15 +671,19 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
   }
   const options = trials.map(t => {
     const selected = t.id === trial.id ? " selected" : "";
-    // value는 id 그대로(이스케이프 불필요·안전 문자). 표시명만 escape.
-    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
+    const tag = trialPublishesLiver(t) ? " · 간약효 공개" : " · 간약효 없음";
+    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}${tag}</option>`;
   }).join("");
+  const liverNames = trials.filter(trialPublishesLiver).map(t => t.label).join(", ");
+  const liverHint = liverNames
+    ? `간 약효 공개 임상: ${escapeHtml(liverNames)}. 선택하면 오른쪽 결과 전체가 그 임상으로 바뀜.`
+    : "오른쪽 체중·간·GI·중단은 위 선택 임상 결과만 표시";
   return `<label class="trial-select-label"><span class="trial-select-caption">핵심 임상 (결과 결정)</span>
     <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
     </label>
     <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
     <span class="cell-refs">${refs}</span>${nctBits}</div>
-    <div class="trial-select-hint">오른쪽 체중·간·GI·중단은 위 선택 임상 결과만 표시</div>`;
+    <div class="trial-select-hint">${liverHint}</div>`;
 }
 
 const mechanismProfiles = {
@@ -1022,10 +1048,10 @@ function renderMaster() {
       <td class="stage-cell"><span class="status ${statusClass}">${a.phase}</span></td>
       <td>${indication}</td>
       <td class="trial-cell">${trialCell}</td>
-      <td class="result-cell" data-column-result="weight">${renderResultCell(trial, "weight", results.weight, cellRefs("weight"))}</td>
-      <td class="result-cell liver-cell" data-column-result="liver">${renderResultCell(trial, "liver", results.liver, cellRefs("liver"))}</td>
-      <td class="result-cell" data-column-result="gi">${renderResultCell(trial, "gi", results.gi, cellRefs("gi"))}</td>
-      <td class="result-cell" data-column-result="discontinuation">${renderResultCell(trial, "discontinuation", results.discontinuation, cellRefs("discontinuation"))}</td>
+      <td class="result-cell" data-column-result="weight">${renderResultCell(trial, "weight", results.weight, cellRefs("weight"), entry)}</td>
+      <td class="result-cell liver-cell" data-column-result="liver">${renderResultCell(trial, "liver", results.liver, cellRefs("liver"), entry)}</td>
+      <td class="result-cell" data-column-result="gi">${renderResultCell(trial, "gi", results.gi, cellRefs("gi"), entry)}</td>
+      <td class="result-cell" data-column-result="discontinuation">${renderResultCell(trial, "discontinuation", results.discontinuation, cellRefs("discontinuation"), entry)}</td>
       <td>${rights}${cellRefs("rights")}</td>
       <td class="watch-cell"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${(nextNcts || []).map(registryCitation).join(" ")}<div class="muted-cell">${nextHtml}</div></td>
     </tr>`;
