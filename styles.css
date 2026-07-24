@@ -231,19 +231,39 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 }
 .column-option span { font-size: 14px; line-height: 1.35; }
 .master-table .column-hidden { display: none; }
-.trial-select-label { display: grid; gap: 4px; margin: 0 0 6px; }
-.trial-select-caption { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .02em; }
-.master-table select.trial-select {
+/* 핵심 임상: 드롭다운 유무와 무관하게 이름/meta 글씨 통일 */
+.trial-block { display: grid; gap: 6px; }
+.trial-name-control,
+.master-table select.trial-select.trial-name-control {
   width: 100%;
   min-width: 0;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: inherit;
+  font-family: inherit;
+}
+.trial-name {
+  margin: 0;
+  padding: 0;
+}
+.master-table select.trial-select.trial-name-control {
   height: 34px;
   padding: 0 8px;
-  font-size: 12px;
-  font-weight: 700;
-  border-color: #9db0d6;
+  border: 1px solid #9db0d6;
+  border-radius: 6px;
   background: #f8faff;
 }
-.trial-select-meta { font-size: 12px; line-height: 1.45; color: var(--muted); }
+.trial-meta-line {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+  font-family: inherit;
+}
+.trial-meta-line .cell-refs { margin-left: 4px; }
 .liver-cell .muted-cell { color: var(--muted); }
 .result-bound {
   display: inline-block;

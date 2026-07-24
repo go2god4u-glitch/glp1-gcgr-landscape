@@ -735,22 +735,25 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
   const refs = cite(trial?.refs?.trial || rowRefs);
   const nctBits = nctCitations(`${trial?.nct || ""} ${trial?.meta || ""}`);
   const liveStatus = renderTrialLiveStatus(assetId, trial);
-  if (!showSelect || !trial) {
-    const html = trial
-      ? `${escapeHtml(trial.label)}<br><span>${escapeHtml(trial.meta || "")}</span>`
-      : "임상 미지정";
-    return `${html}<span class="cell-refs">${refs}</span>${nctBits}${liveStatus}`;
+  if (!trial) {
+    return `<div class="trial-block"><div class="trial-name">임상 미지정</div></div>`;
   }
-  // 옵션은 큐레이션된 핵심 임상명만. 탐색 후보는 자동 추가하지 않음.
-  const options = trials.map(t => {
-    const selected = t.id === trial.id ? " selected" : "";
-    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
-  }).join("");
-  return `<label class="trial-select-label"><span class="trial-select-caption">핵심 임상</span>
-    <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
-    </label>
-    <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
-    <span class="cell-refs">${refs}</span>${nctBits}</div>${liveStatus}`;
+  // 이름 행: 드롭다운 유무와 관계없이 동일 블록 구조 + meta 줄 동일 글씨
+  let nameRow;
+  if (showSelect) {
+    const options = trials.map(t => {
+      const selected = t.id === trial.id ? " selected" : "";
+      return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
+    }).join("");
+    nameRow = `<select class="trial-select trial-name-control" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>`;
+  } else {
+    nameRow = `<div class="trial-name trial-name-control">${escapeHtml(trial.label)}</div>`;
+  }
+  return `<div class="trial-block">
+    ${nameRow}
+    <div class="trial-meta-line">${escapeHtml(trial.meta || "")}<span class="cell-refs">${refs}</span>${nctBits}</div>
+    ${liveStatus}
+  </div>`;
 }
 
 normalizeComparisonEntries();
