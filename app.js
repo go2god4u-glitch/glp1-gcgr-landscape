@@ -362,10 +362,11 @@ const comparison = {
         meta: "NCT04771273 · P2 · 48주 · 조직학",
         nct: "NCT04771273",
         hasLiver: true,
-        weight: "<small>본 시험 주 endpoint는 조직학</small><br>체중 요약 수치는 이 블록에 넣지 않음",
+        // 이 임상에 체중·GI중단 공개 요약이 없으면 null → 선택 임상 기준 공개값 없음
+        weight: null,
         liver: "<b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>Sanyal et al. NEJM · PubMed 초록</small>",
         gi: "오심 66% vs 위약 23%<br>설사 49% vs 23%<br>구토 41% vs 4%<br><small>MASH P2 보고</small>",
-        discontinuation: "<small>본 블록에 GI 분리 중단률 미정리</small>",
+        discontinuation: null,
         refs: { trial: ["SV-MASH"], weight: ["SV-MASH"], liver: ["SV-MASH"], gi: ["SV-MASH"], discontinuation: ["SV-MASH"] }
       }
     ],
@@ -586,7 +587,8 @@ function shouldShowTrialSelect(entry) {
 }
 
 function missingForTrial(label) {
-  return `<span class="muted-cell">선택 임상 기준 ${label} 공개값 없음</span>`;
+  // 해당 임상에 결과 없으면 설명 없이 없음만 표기 (결과 기준 스탬프가 임상을 이미 표시)
+  return `<span class="muted-cell">${label} 공개값 없음</span>`;
 }
 
 function hasTrialField(trial, key) {

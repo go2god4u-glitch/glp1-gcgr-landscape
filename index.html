@@ -5,24 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260724-08">
-  <script>
-    (function bootstrapDeployStamp() {
-      document.addEventListener("DOMContentLoaded", function () {
-        var el = document.getElementById("infoUpdatedAt");
-        if (!el) return;
-        fetch(new URL("data/latest.json?v=20260724-08", document.baseURI || location.href).href, { cache: "no-store" })
-          .then(function (r) { return r.ok ? r.json() : null; })
-          .then(function (j) {
-            if (!j || !j.registryCheckedAt) return;
-            el.textContent = new Intl.DateTimeFormat("ko-KR", {
-              timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
-              hour: "2-digit", minute: "2-digit", hour12: false
-            }).format(new Date(j.registryCheckedAt)).replace(/\.$/, "");
-          }).catch(function () {});
-      });
-    })();
-  </script>
+  <link rel="stylesheet" href="styles.css?v=20260724-09">
 </head>
 <body>
   <header class="app-header">
@@ -210,6 +193,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260724-08"></script>
+  <script src="app.js?v=20260724-09"></script>
 </body>
 </html>
