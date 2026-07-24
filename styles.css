@@ -321,6 +321,16 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 .draft-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 4px; }
 .draft-actions button.secondary { background: #fff; color: #445; border: 1px solid var(--line-dark); }
 .draft-actions a { font-size: 12px; }
+.dossier-live {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+.dossier-live h4 { margin: 10px 0 6px; font-size: 13px; }
+.dossier-live ul { margin: 0; padding-left: 1.1em; font-size: 13px; line-height: 1.45; }
+.dossier-live li + li { margin-top: 4px; }
+.dossier-live-note { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.dossier-live a { color: var(--blue); }
 
 .master-controls { display: flex; gap: 12px; }
 .master-controls label { display: grid; gap: 4px; }

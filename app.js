@@ -878,23 +878,42 @@ function formatUpdateTimestamp(iso) {
 
 function rebuildRegistryTimeline(snapshot) {
   const cutoff = new Date().toISOString().slice(0, 10);
+  const pastFloor = `${CURRENT_YEAR - 2}-01-01`;
   registryTimelineEvents = Object.values(snapshot?.programs || {}).flatMap(program =>
     (program.studies || []).flatMap(study => {
-      const date = study.primaryCompletion || study.completion;
-      if (!date || date < cutoff) return [];
-      const match = String(date).match(/^(\d{4})-(\d{2})/);
-      if (!match) return [];
-      const year = Number(match[1]);
-      const quarter = Math.ceil(Number(match[2]) / 3);
-      return [{
-        year,
-        quarter,
-        asset: program.label,
-        sub: `${study.nctId} · ClinicalTrials.gov live`,
-        type: "future",
-        title: `${study.title} 주요 완료 예정`,
-        text: `${formatRegistryStatus(study.status)} · primary completion ${formatDate(study.primaryCompletion)} · study completion ${formatDate(study.completion)}`
-      }];
+      const out = [];
+      // 향후 완료 예정 (등록 기준)
+      const futureDate = study.primaryCompletion || study.completion;
+      if (futureDate && futureDate >= cutoff) {
+        const match = String(futureDate).match(/^(\d{4})-(\d{2})/);
+        if (match) {
+          out.push({
+            year: Number(match[1]),
+            quarter: Math.ceil(Number(match[2]) / 3),
+            asset: program.label,
+            sub: `${study.nctId} · 등록 감시`,
+            type: "future",
+            title: `${study.title || study.nctId} 주요 완료 예정`,
+            text: `${formatRegistryStatus(study.status)} · primary ${formatDate(study.primaryCompletion)} · completion ${formatDate(study.completion)}`
+          });
+        }
+      }
+      // 최근 등록 갱신 (과거 2년)
+      if (study.lastUpdate && study.lastUpdate >= pastFloor && study.lastUpdate <= cutoff) {
+        const match = String(study.lastUpdate).match(/^(\d{4})-(\d{2})/);
+        if (match) {
+          out.push({
+            year: Number(match[1]),
+            quarter: Math.ceil(Number(match[2]) / 3),
+            asset: program.label,
+            sub: `${study.nctId} · 등록 갱신`,
+            type: "clinical",
+            title: `등록 정보 갱신 ${study.nctId}`,
+            text: `${formatRegistryStatus(study.status)} · lastUpdate ${formatDate(study.lastUpdate)} · ${study.title || ""}`
+          });
+        }
+      }
+      return out;
     })
   );
 }
@@ -1166,28 +1185,42 @@ function initTrialDraftHandlers() {
   });
 }
 
-async function applyLiveSnapshot(snapshot) {
+/**
+ * 최신 스냅샷을 네 탭 + 공통 패널 전부에 반영.
+ * 1 비교표 2 일정 3 프로파일 4 레퍼런스 + 변경/초안 패널
+ */
+async function refreshAllViews(snapshot) {
   liveSnapshot = snapshot;
-  // 핵심 임상 원장 정합 유지 후 표 재구성 (선택 임상 localStorage 유지 → 결과 블록 동일 규칙)
   normalizeComparisonEntries();
   auditKeyTrialBinding(snapshot);
   rebuildRegistryTimeline(snapshot);
+
   const programCount = Object.keys(snapshot?.programs || {}).length;
   const studyCount = Object.values(snapshot?.programs || {}).reduce((sum, program) => sum + (program.studies?.length || 0), 0);
   const errors = snapshot?.errors?.length || 0;
+  const litCount = (snapshot?.literature || []).length;
+  const srcCount = Object.keys(snapshot?.sources || {}).length;
   const exactCheckedAt = formatUpdateTimestamp(snapshot?.registryCheckedAt);
   document.querySelector("#infoUpdatedAt").textContent = exactCheckedAt;
   document.querySelector("#syncStatus").textContent = `임상등록 ${studyCount}건 최신 확인`;
   document.querySelector("#syncMeta").textContent =
-    `${programCount}개 프로그램 · ${exactCheckedAt} 업데이트 (${relativeTime(snapshot?.registryCheckedAt)})${errors ? ` · 오류 ${errors}건은 캐시 유지` : ""}`;
+    `${programCount}개 프로그램 · PubMed ${litCount} · 원문 ${srcCount} · ${exactCheckedAt} 업데이트 (${relativeTime(snapshot?.registryCheckedAt)})${errors ? ` · 오류 ${errors}건은 캐시 유지` : ""}`;
   document.querySelector("#syncBar").classList.toggle("has-error", Boolean(errors));
+
   // 후보 초안 스캔(자동 승격 없음) → 승격분만 드롭다운 병합
   await refreshTrialDraftsFromServerOrLocal(snapshot);
-  // renderMaster: 드롭다운(2개+ 핵심 임상) + resolveTrialResults + 등록 감시 줄
-  renderMaster();
-  renderTimeline();
-  renderSources();
+
+  // 네 탭 전부 동일 스냅샷으로 재렌더
+  renderMaster();      // 비교표 + 등록 감시 줄 + 핵심 임상 드롭다운
+  renderTimeline();    // 정적 이벤트 + 등록 기반 향후/최근 갱신
+  renderDossiers();    // 프로파일 + 등록 감시 블록
+  renderSources();     // 정적 refs + 등록 NCT + PubMed + 감시 원문
   renderChanges(snapshot);
+  renderTrialDraftPanel();
+}
+
+async function applyLiveSnapshot(snapshot) {
+  await refreshAllViews(snapshot);
 }
 
 // v4: URL/첫 방문 시 간 약효(liver) 기본 표시. 키 변경으로 옛 localStorage(간 숨김)를 리셋한다.
@@ -1482,8 +1515,42 @@ function renderTimeline() {
   requestAnimationFrame(syncTimelineAxis);
 }
 
-function renderDossiers(tier = "core") {
-  document.querySelector("#dossierGrid").innerHTML = assets.filter(a => a.tier === tier).map(a => `
+let activeDossierTier = "core";
+
+function renderDossierLiveBlock(assetId) {
+  const program = liveSnapshot?.programs?.[assetId];
+  const entry = getComparisonEntry(assetId);
+  const trials = getComparisonTrials(entry, assetId);
+  const drafts = (trialDraftStore.drafts || []).filter(d => d.assetId === assetId && d.status === "draft");
+  const parts = [];
+  if (trials.length) {
+    parts.push(`<h4>핵심 임상</h4><ul>${trials.map(t =>
+      `<li><b>${escapeHtml(t.label)}</b> · ${escapeHtml(t.meta || t.nct || "")}${t.nct ? ` ${registryCitation(t.nct)}` : ""}</li>`
+    ).join("")}</ul>`);
+  }
+  if (program?.studies?.length) {
+    const rows = [...program.studies]
+      .sort((a, b) => String(b.lastUpdate || "").localeCompare(String(a.lastUpdate || "")))
+      .map(s => `<li><a href="https://clinicaltrials.gov/study/${escapeHtml(s.nctId)}" target="_blank" rel="noopener">${escapeHtml(s.nctId)}</a> · ${escapeHtml(formatRegistryStatus(s.status))} · 갱신 ${escapeHtml(formatDate(s.lastUpdate))}</li>`)
+      .join("");
+    parts.push(`<h4>등록 감시 (최신 반영)</h4><ul>${rows}</ul>`);
+    if (program.nextMilestone) {
+      const m = program.nextMilestone;
+      parts.push(`<p class="dossier-live-note">다음 등록 일정: <a href="https://clinicaltrials.gov/study/${escapeHtml(m.nctId)}" target="_blank" rel="noopener">${escapeHtml(m.nctId)}</a> · ${escapeHtml(formatDate(m.date))} ${m.kind === "primary completion" ? "주요 완료 예정" : "시험 완료 예정"}</p>`);
+    }
+  }
+  if (drafts.length) {
+    parts.push(`<h4>핵심 임상 후보 초안</h4><ul>${drafts.map(d =>
+      `<li>${escapeHtml(d.nct)} · ${escapeHtml(d.meta || d.label || "")} (승격 전)</li>`
+    ).join("")}</ul>`);
+  }
+  if (!parts.length) return "";
+  return `<div class="dossier-live">${parts.join("")}</div>`;
+}
+
+function renderDossiers(tier = activeDossierTier) {
+  activeDossierTier = tier || activeDossierTier;
+  document.querySelector("#dossierGrid").innerHTML = assets.filter(a => a.tier === activeDossierTier).map(a => `
     <article class="dossier" tabindex="0" data-id="${a.id}" aria-expanded="false">
       <div class="dossier-summary">
         <div><h3>${a.name}</h3><span class="aliases">${a.aliases}</span></div>
@@ -1492,7 +1559,7 @@ function renderDossiers(tier = "core") {
         <span class="expand" aria-hidden="true">+</span>
       </div>
       <div class="dossier-detail">
-        <div><h4>기원 / 권리</h4><p>${a.origin} ${cite(assetReferenceMap[a.name] || [])}</p><h4>현재 판단</h4><p>${a.strategy} ${cite(assetReferenceMap[a.name] || [])}</p></div>
+        <div><h4>기원 / 권리</h4><p>${a.origin} ${cite(assetReferenceMap[a.name] || [])}</p><h4>현재 판단</h4><p>${a.strategy} ${cite(assetReferenceMap[a.name] || [])}</p>${renderDossierLiveBlock(a.id)}</div>
         <div><h4>다음 확인사항</h4><ul>${a.watch.map(w => `<li>${w} ${cite(assetReferenceMap[a.name] || [])}</li>`).join("")}</ul><p><a href="${a.source}" target="_blank" rel="noopener">대표 근거 열기 ↗</a></p></div>
       </div>
     </article>`).join("");
@@ -1505,20 +1572,75 @@ function toggleDossier(card) {
 }
 
 function renderSources() {
-  const nctText = `${[...events, ...registryTimelineEvents].map(event => `${event.sub} ${event.text}`).join(" ")} ${JSON.stringify(comparison)}`;
+  const nctText = `${[...events, ...registryTimelineEvents].map(event => `${event.sub} ${event.text}`).join(" ")} ${JSON.stringify(comparison)} ${JSON.stringify(promotedTrialsByAsset)}`;
   const baseUrls = Object.values(references).map(ref => ref[2]);
-  const citedNcts = [...new Set(nctText.match(/NCT\d{8}/g) || [])].filter(nct => !baseUrls.some(url => url.includes(nct))).sort();
+  const staticNcts = new Set(nctText.match(/NCT\d{8}/g) || []);
+  // 스냅샷 등록 감시 NCT 전부
+  Object.values(liveSnapshot?.programs || {}).forEach(program => {
+    (program.studies || []).forEach(study => {
+      if (study.nctId) staticNcts.add(study.nctId);
+    });
+  });
+  // 초안·승격 NCT
+  (trialDraftStore.drafts || []).forEach(d => {
+    if (d.nct) staticNcts.add(d.nct);
+  });
+  const citedNcts = [...staticNcts].filter(nct => !baseUrls.some(url => url.includes(nct))).sort();
+
   const baseCards = Object.entries(references).map(([key, ref]) => `
     <article class="source-card" id="ref-${key}">
       <span class="source-num">[${key}]</span><b>${ref[0]}</b><p>${ref[1]}</p>
       <a href="${ref[2]}" target="_blank" rel="noopener">원문 열기 ↗</a>
     </article>`).join("");
-  const registryCards = citedNcts.map(nct => `
-    <article class="source-card" id="ref-${nct}">
-      <span class="source-num">[${nct}]</span><b>${nct} study record</b><p>ClinicalTrials.gov 등록시험 원장</p>
+
+  const registryCards = citedNcts.map(nct => {
+    let detail = "ClinicalTrials.gov 등록시험";
+    let status = "";
+    for (const program of Object.values(liveSnapshot?.programs || {})) {
+      const study = (program.studies || []).find(s => s.nctId === nct);
+      if (study) {
+        detail = study.title || detail;
+        status = `${formatRegistryStatus(study.status)} · 갱신 ${formatDate(study.lastUpdate)}`;
+        break;
+      }
+    }
+    return `<article class="source-card" id="ref-${nct}">
+      <span class="source-num">[${nct}]</span><b>${nct}</b>
+      <p>${escapeHtml(detail)}${status ? `<br><small>${escapeHtml(status)}</small>` : ""}</p>
       <a href="https://clinicaltrials.gov/study/${nct}" target="_blank" rel="noopener">원문 열기 ↗</a>
+    </article>`;
+  }).join("");
+
+  // 감시 원문 (회사 페이지 등)
+  const monitoredCards = Object.values(liveSnapshot?.sources || {}).map(src => `
+    <article class="source-card" id="ref-src-${escapeHtml(src.id || src.url)}">
+      <span class="source-num">[SRC]</span><b>${escapeHtml(src.label || src.id || "원문")}</b>
+      <p>${escapeHtml(src.publisher || "")}${src.checkedAt ? ` · 확인 ${escapeHtml(formatUpdateTimestamp(src.checkedAt))}` : ""}${src.ok === false ? " · 확인 실패" : ""}</p>
+      <a href="${escapeHtml(src.url)}" target="_blank" rel="noopener">원문 열기 ↗</a>
     </article>`).join("");
-  document.querySelector("#sourceGrid").innerHTML = baseCards + registryCards;
+
+  // PubMed 최신 반영
+  const literatureCards = (liveSnapshot?.literature || []).slice(0, 80).map(item => `
+    <article class="source-card" id="ref-pmid-${escapeHtml(item.pmid || "")}">
+      <span class="source-num">[PMID ${escapeHtml(item.pmid || "")}]</span>
+      <b>${escapeHtml(item.title || "PubMed")}</b>
+      <p>${escapeHtml(item.source || "")}${item.pubDate ? ` · ${escapeHtml(item.pubDate)}` : ""}</p>
+      <a href="${escapeHtml(item.url || `https://pubmed.ncbi.nlm.nih.gov/${item.pmid}/`)}" target="_blank" rel="noopener">원문 열기 ↗</a>
+    </article>`).join("");
+
+  // 탐색 후보 중 relevant
+  const discoveryCards = (liveSnapshot?.discoveredStudies || [])
+    .filter(s => s.relevant)
+    .slice(0, 40)
+    .map(s => `
+    <article class="source-card" id="ref-disc-${escapeHtml(s.nctId)}">
+      <span class="source-num">[탐색]</span><b>${escapeHtml(s.nctId)}</b>
+      <p>${escapeHtml(s.title || "")}<br><small>${escapeHtml(s.reviewReason || "후보")} · ${escapeHtml(formatRegistryStatus(s.status))}</small></p>
+      <a href="https://clinicaltrials.gov/study/${escapeHtml(s.nctId)}" target="_blank" rel="noopener">원문 열기 ↗</a>
+    </article>`).join("");
+
+  document.querySelector("#sourceGrid").innerHTML =
+    baseCards + monitoredCards + registryCards + literatureCards + discoveryCards;
 }
 
 function activateReportTab(tabId, updateHash = true) {
@@ -1688,7 +1810,7 @@ async function initAutoRefresh() {
   if (location.protocol === "file:") {
     try {
       const deployed = await loadDeployedSnapshot();
-      if (deployed.registryCheckedAt) applyLiveSnapshot(deployed);
+      if (deployed.registryCheckedAt) await applyLiveSnapshot(deployed);
       markStaticDeployMode(status, meta, deployed);
     } catch {
       markStaticDeployMode(status, meta, null);
@@ -1697,16 +1819,16 @@ async function initAutoRefresh() {
   }
   try {
     const cached = await requestSnapshot("/api/snapshot");
-    if (cached.registryCheckedAt) applyLiveSnapshot(cached);
+    if (cached.registryCheckedAt) await applyLiveSnapshot(cached);
     status.textContent = "ClinicalTrials.gov 최신값 확인 중";
     meta.textContent = "기존 데이터는 그대로 보이며 확인이 끝나면 자동 반영됩니다.";
     const fresh = await requestSnapshot("/api/refresh");
-    applyLiveSnapshot(fresh);
+    await applyLiveSnapshot(fresh);
   } catch (error) {
     // API 없는 정적 배포(GitHub Pages): 커밋된 data/latest.json 사용
     try {
       const deployed = await loadDeployedSnapshot();
-      if (deployed.registryCheckedAt) applyLiveSnapshot(deployed);
+      if (deployed.registryCheckedAt) await applyLiveSnapshot(deployed);
       markStaticDeployMode(status, meta, deployed);
     } catch {
       markStaticDeployMode(status, meta, null);
@@ -1725,7 +1847,7 @@ document.querySelector("#forceRefresh").addEventListener("click", async event =>
   button.textContent = "최신 정보 확인 중…";
   try {
     const refreshed = await runFullRefreshWithProgress();
-    applyLiveSnapshot(refreshed);
+    await applyLiveSnapshot(refreshed);
     renderChanges(refreshed, true);
     const newChanges = refreshed.currentChanges || [];
     if (!newChanges.length) {
