@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-24T02:30:25.392Z",
-  "registryCheckedAt": "2026-07-24T02:30:24.886Z",
+  "generatedAt": "2026-07-24T02:39:25.156Z",
+  "registryCheckedAt": "2026-07-24T02:39:24.684Z",
   "sourcesCheckedAt": "2026-07-24T02:15:53.654Z",
   "discoveryCheckedAt": "2026-07-24T02:15:36.625Z",
   "literatureCheckedAt": "2026-07-24T02:15:39.864Z",
@@ -9,7 +9,7 @@
     "pb718": {
       "id": "pb718",
       "label": "PB-718",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT06147544",
@@ -45,10 +45,93 @@
       ],
       "nextMilestone": null
     },
+    "dd01": {
+      "id": "dd01",
+      "label": "Zabopegdutide",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
+      "studies": [
+        {
+          "nctId": "NCT06410924",
+          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 67,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-06-13",
+          "primaryCompletion": "2025-05-20",
+          "completion": "2026-04-21",
+          "lastUpdate": "2026-05-01",
+          "leadSponsor": "Neuraly, Inc.",
+          "conditions": [
+            "NAFLD",
+            "NASH"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DD01",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "da1726": {
+      "id": "da1726",
+      "label": "DA-1726",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
+      "studies": [
+        {
+          "nctId": "NCT06252220",
+          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 139,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-03-25",
+          "primaryCompletion": "2026-11-09",
+          "completion": "2026-11-09",
+          "lastUpdate": "2026-04-09",
+          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DA-1726",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo to DA-1726",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06252220",
+        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+        "kind": "primary completion",
+        "date": "2026-11-09",
+        "status": "RECRUITING"
+      }
+    },
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -182,7 +265,7 @@
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT06862791",
@@ -384,93 +467,10 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
-    "dd01": {
-      "id": "dd01",
-      "label": "Zabopegdutide",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
-      "studies": [
-        {
-          "nctId": "NCT06410924",
-          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 67,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2024-06-13",
-          "primaryCompletion": "2025-05-20",
-          "completion": "2026-04-21",
-          "lastUpdate": "2026-05-01",
-          "leadSponsor": "Neuraly, Inc.",
-          "conditions": [
-            "NAFLD",
-            "NASH"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DD01",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
-    "da1726": {
-      "id": "da1726",
-      "label": "DA-1726",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
-      "studies": [
-        {
-          "nctId": "NCT06252220",
-          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 139,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-03-25",
-          "primaryCompletion": "2026-11-09",
-          "completion": "2026-11-09",
-          "lastUpdate": "2026-04-09",
-          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DA-1726",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo to DA-1726",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06252220",
-        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-        "kind": "primary completion",
-        "date": "2026-11-09",
-        "status": "RECRUITING"
-      }
-    },
     "efino": {
       "id": "efino",
       "label": "Efinopegdutide",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT04944992",
@@ -602,7 +602,7 @@
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -811,7 +811,7 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "checkedAt": "2026-07-24T02:39:24.684Z",
       "studies": [
         {
           "nctId": "NCT06164873",
@@ -15926,7 +15926,7 @@
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-24T02:30:25.392Z",
+    "checkedAt": "2026-07-24T02:39:25.156Z",
     "checks": {
       "registry": {
         "expected": 32,
