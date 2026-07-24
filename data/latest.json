@@ -1,15 +1,54 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-24T02:23:29.656Z",
-  "registryCheckedAt": "2026-07-24T02:23:29.176Z",
+  "generatedAt": "2026-07-24T02:30:25.392Z",
+  "registryCheckedAt": "2026-07-24T02:30:24.886Z",
   "sourcesCheckedAt": "2026-07-24T02:15:53.654Z",
   "discoveryCheckedAt": "2026-07-24T02:15:36.625Z",
   "literatureCheckedAt": "2026-07-24T02:15:39.864Z",
   "programs": {
+    "pb718": {
+      "id": "pb718",
+      "label": "PB-718",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "studies": [
+        {
+          "nctId": "NCT06147544",
+          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 36,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-07-06",
+          "primaryCompletion": "2024-04-16",
+          "completion": "2024-04-16",
+          "lastUpdate": "2024-04-19",
+          "leadSponsor": "PegBio Co., Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "PB-718",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -140,264 +179,10 @@
         "status": "RECRUITING"
       }
     },
-    "pb718": {
-      "id": "pb718",
-      "label": "PB-718",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
-      "studies": [
-        {
-          "nctId": "NCT06147544",
-          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 36,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-07-06",
-          "primaryCompletion": "2024-04-16",
-          "completion": "2024-04-16",
-          "lastUpdate": "2024-04-19",
-          "leadSponsor": "PegBio Co., Ltd.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "PB-718",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
-    "da1726": {
-      "id": "da1726",
-      "label": "DA-1726",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
-      "studies": [
-        {
-          "nctId": "NCT06252220",
-          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 139,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-03-25",
-          "primaryCompletion": "2026-11-09",
-          "completion": "2026-11-09",
-          "lastUpdate": "2026-04-09",
-          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DA-1726",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo to DA-1726",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06252220",
-        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-        "kind": "primary completion",
-        "date": "2026-11-09",
-        "status": "RECRUITING"
-      }
-    },
-    "efino": {
-      "id": "efino",
-      "label": "Efinopegdutide",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
-      "studies": [
-        {
-          "nctId": "NCT04944992",
-          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 145,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2021-08-04",
-          "primaryCompletion": "2022-10-19",
-          "completion": "2022-10-19",
-          "lastUpdate": "2023-11-15",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Nonalcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Efinopegdutide 20 mg/mL",
-              "otherNames": [
-                "MK-6024",
-                "HM12525A",
-                "JNJ-64565111"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide 1.34 mg/mL",
-              "otherNames": [
-                "Ozempic®"
-              ]
-            }
-          ]
-        },
-        {
-          "nctId": "NCT05877547",
-          "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 381,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-06-23",
-          "primaryCompletion": "2025-12-29",
-          "completion": "2025-12-29",
-          "lastUpdate": "2026-01-12",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Non-alcoholic Fatty Liver Disease",
-            "Fatty Liver, Nonalcoholic",
-            "NAFLD",
-            "Nonalcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Efinopegdutide",
-              "otherNames": [
-                "MK-6024",
-                "HM12525A",
-                "JNJ-64565111"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide",
-              "otherNames": [
-                "Wegovy"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06465186",
-          "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 80,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-07-12",
-          "primaryCompletion": "2026-08-06",
-          "completion": "2026-08-06",
-          "lastUpdate": "2026-03-02",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Non-alcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis",
-            "NAFLD",
-            "Metabolic Dysfunction-associated Steatotic Liver Disease",
-            "Metabolic Dysfunction-associated Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Efinopegdutide",
-              "otherNames": [
-                "MK-6024"
-              ]
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06465186",
-        "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
-        "kind": "primary completion",
-        "date": "2026-08-06",
-        "status": "ACTIVE_NOT_RECRUITING"
-      }
-    },
-    "dd01": {
-      "id": "dd01",
-      "label": "Zabopegdutide",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
-      "studies": [
-        {
-          "nctId": "NCT06410924",
-          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 67,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2024-06-13",
-          "primaryCompletion": "2025-05-20",
-          "completion": "2026-04-21",
-          "lastUpdate": "2026-05-01",
-          "leadSponsor": "Neuraly, Inc.",
-          "conditions": [
-            "NAFLD",
-            "NASH"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DD01",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
       "studies": [
         {
           "nctId": "NCT06862791",
@@ -599,10 +384,225 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
+    "dd01": {
+      "id": "dd01",
+      "label": "Zabopegdutide",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "studies": [
+        {
+          "nctId": "NCT06410924",
+          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 67,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-06-13",
+          "primaryCompletion": "2025-05-20",
+          "completion": "2026-04-21",
+          "lastUpdate": "2026-05-01",
+          "leadSponsor": "Neuraly, Inc.",
+          "conditions": [
+            "NAFLD",
+            "NASH"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DD01",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "da1726": {
+      "id": "da1726",
+      "label": "DA-1726",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "studies": [
+        {
+          "nctId": "NCT06252220",
+          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 139,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-03-25",
+          "primaryCompletion": "2026-11-09",
+          "completion": "2026-11-09",
+          "lastUpdate": "2026-04-09",
+          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DA-1726",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo to DA-1726",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06252220",
+        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+        "kind": "primary completion",
+        "date": "2026-11-09",
+        "status": "RECRUITING"
+      }
+    },
+    "efino": {
+      "id": "efino",
+      "label": "Efinopegdutide",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
+      "studies": [
+        {
+          "nctId": "NCT04944992",
+          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 145,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-08-04",
+          "primaryCompletion": "2022-10-19",
+          "completion": "2022-10-19",
+          "lastUpdate": "2023-11-15",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Nonalcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Efinopegdutide 20 mg/mL",
+              "otherNames": [
+                "MK-6024",
+                "HM12525A",
+                "JNJ-64565111"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide 1.34 mg/mL",
+              "otherNames": [
+                "Ozempic®"
+              ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05877547",
+          "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 381,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-06-23",
+          "primaryCompletion": "2025-12-29",
+          "completion": "2025-12-29",
+          "lastUpdate": "2026-01-12",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Non-alcoholic Fatty Liver Disease",
+            "Fatty Liver, Nonalcoholic",
+            "NAFLD",
+            "Nonalcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Efinopegdutide",
+              "otherNames": [
+                "MK-6024",
+                "HM12525A",
+                "JNJ-64565111"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide",
+              "otherNames": [
+                "Wegovy"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06465186",
+          "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 80,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-07-12",
+          "primaryCompletion": "2026-08-06",
+          "completion": "2026-08-06",
+          "lastUpdate": "2026-03-02",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Non-alcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis",
+            "NAFLD",
+            "Metabolic Dysfunction-associated Steatotic Liver Disease",
+            "Metabolic Dysfunction-associated Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Efinopegdutide",
+              "otherNames": [
+                "MK-6024"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06465186",
+        "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
+        "kind": "primary completion",
+        "date": "2026-08-06",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -811,7 +811,7 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "checkedAt": "2026-07-24T02:30:24.886Z",
       "studies": [
         {
           "nctId": "NCT06164873",
@@ -15926,7 +15926,7 @@
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-24T02:23:29.656Z",
+    "checkedAt": "2026-07-24T02:30:25.392Z",
     "checks": {
       "registry": {
         "expected": 32,
