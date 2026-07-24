@@ -916,13 +916,13 @@ function applyLiveSnapshot(snapshot) {
   renderChanges(snapshot);
 }
 
-// v2: liver 기본 숨김 반영. 키를 바꾸면 기존 localStorage 대신 DEFAULT_HIDDEN을 다시 적용한다.
-const COLUMN_STORAGE_KEY = "competitor-master-hidden-columns-v2";
+// v3: liver 기본 표시. 키를 바꾸면 기존 localStorage 대신 DEFAULT_HIDDEN을 다시 적용한다.
+const COLUMN_STORAGE_KEY = "competitor-master-hidden-columns-v3";
 // 페이지를 처음 열 때(localStorage 없음) 기본으로 숨길 열. 나머지 열만 열린 상태로 표시된다.
 // 사용자가 '표시 항목'에서 바꾸면 그 선택이 localStorage에 저장돼 이 기본값을 대체한다.
 // 새 열 규칙: index.html <th data-column-key="..."> 를 추가하면 masterColumns()/표시 항목에 자동 포함된다.
-// liver: 기본 숨김 → 사용자가 표시 항목에서 켠 뒤에만 보임
-const DEFAULT_HIDDEN_COLUMNS = ["mechanism", "liver", "rights", "next"];
+// liver: 기본 표시 (표시 항목에서 끌 수 있음)
+const DEFAULT_HIDDEN_COLUMNS = ["mechanism", "rights", "next"];
 let hiddenMasterColumns = new Set();
 try {
   const stored = localStorage.getItem(COLUMN_STORAGE_KEY);

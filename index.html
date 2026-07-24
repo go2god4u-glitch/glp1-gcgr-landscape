@@ -6,18 +6,17 @@
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260724-10">
+  <link rel="stylesheet" href="styles.css?v=20260724-11">
   <script>
     (function bootstrapDeployStamp() {
       document.addEventListener("DOMContentLoaded", function () {
         var el = document.getElementById("infoUpdatedAt");
         if (!el) return;
-        var url = new URL("data/latest.json?v=20260724-10", document.baseURI || location.href);
-        fetch(url.href, { cache: "no-store" })
-          .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        fetch(new URL("data/latest.json?v=20260724-11", document.baseURI || location.href).href, { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (j) {
+            if (!j || !(j.registryCheckedAt || j.generatedAt)) return;
             var iso = j.registryCheckedAt || j.generatedAt;
-            if (!iso) return;
             el.textContent = new Intl.DateTimeFormat("ko-KR", {
               timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
               hour: "2-digit", minute: "2-digit", hour12: false
@@ -213,6 +212,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260724-10"></script>
+  <script src="app.js?v=20260724-11"></script>
 </body>
 </html>
