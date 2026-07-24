@@ -350,7 +350,7 @@ const comparison = {
     indication: "비만·과체중, T2D 승인<br>OSA·MASH 등 확장",
     trial: "GLORY-2<br><span>NCT06164873 · P3 · 60주</span>",
     weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
-    liver: "<small>GLORY-2(비만)</small><br>간 조직학·MRI-PDFF 공개 결과 없음<br><small>MASH P2 NCT06937749 · MAFLD vs sema NCT06884293 결과 대기</small>",
+    liver: "<small>GLORY-2(비만 기준 임상)</small><br>간 조직학·MRI-PDFF 공개 결과 없음<br><small>간 관련 등록 시험 결과 대기: MASH P2 NCT06937749 · MAFLD vs sema NCT06884293</small>",
     gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
     discontinuation: "<b>GI 중단 0.3%</b>",
     rights: "Lilly 기원 OXM 유사체<br>Innovent: 중국 개발·상업화 권리",
@@ -362,7 +362,7 @@ const comparison = {
     indication: "비만·과체중<br>MASH·간경변",
     trial: "SYNCHRONIZE-1<br><span>NCT06066515 · P3 · 76주</span>",
     weight: "<b>Survodutide 최대 −16.6%</b><br><small>회사 공개 efficacy estimand</small><br>treatment-regimen: −12.2~−13.0%<br>위약 −5.4%",
-    liver: "<small>MASH P2 · NCT04771273 · 48주</small><br><b>MASH 개선(섬유화 비악화) 최대 62%</b> vs 위약 14%<br>MRI-PDFF ≥30% 감소 57–67% vs 14%<br>6.0 mg 평균 간지방 <b>−62.0%</b> vs 위약 −5.7%<br>섬유화 ≥1단계 개선 34–36% vs 22%<br><small>SYNCHRONIZE-1 체성분: 간지방 약 63% 감소</small>",
+    liver: "<small>MASH P2 · NCT04771273 · 48주 · Sanyal et al. NEJM</small><br><b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>별도: SYNCHRONIZE-1(비만) 회사 공개 체성분 분석 — 간지방 63% 감소</small>",
     gi: "전체 GI AE<br><b>80.9~89.7%</b>",
     discontinuation: "<b>GI 중단 약 19%</b>",
     rights: "Zealand·BI 공동 발명<br>2011 계약, BI 글로벌 권리",
@@ -374,7 +374,7 @@ const comparison = {
     indication: "비만, MASH<br>AUD·ALD",
     trial: "MOMENTUM<br><span>NCT05295875 · P2 · 48주</span>",
     weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주</small>",
-    liver: "<small>IMPACT · NCT05989711 · P2b · 24주</small><br><b>MASH 해소(섬유화 비악화)</b><br>1.2 mg 59.1% · 1.8 mg 52.1% vs 위약 19.1%<br>MRI-PDFF 간지방 <b>−58.0% / −62.8%</b> vs 위약 −16.2%<br>섬유화 개선(섬유화 비악화 MASH) 31.8–34.5% vs 25.9%<br><small>조직학 섬유화 primary는 미달 · AI·NIT 보조 신호</small>",
+    liver: "<small>IMPACT · NCT05989711 · P2b · 24주 · ITT(회사 topline)</small><br><b>MASH 해소(섬유화 비악화)</b><br>Pemvidutide 1.2 mg 59.1%<br>Pemvidutide 1.8 mg 52.1%<br>위약 19.1%<br>MRI-PDFF 간지방 감소<br>1.2 mg 58.0% · 1.8 mg 62.8% · 위약 16.2%<br>섬유화 개선(MASH 비악화, ITT)<br>1.2 mg 31.8% · 1.8 mg 34.5% · 위약 25.9%<br><small>섬유화 조직학 군간 차이는 통계적 유의성 없음(회사 ITT 표기)</small>",
     gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%",
     discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리</small>",
     rights: "Spitfire SP-1373 기원<br>2019 Altimmune 인수",
@@ -386,7 +386,7 @@ const comparison = {
     indication: "MASH<br>보상성 간경변",
     trial: "MK-6024-001<br><span>NCT04944992 · P2a · 24주</span>",
     weight: "<b>Efinopegdutide −8.5%</b><br>Semaglutide −7.1%",
-    liver: "<small>MK-6024-001 · NAFLD · 24주 · MRI-PDFF</small><br><b>상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소 14.9%p vs 8.8%p<br><small>primary endpoint · 조직학 결과 아님</small>",
+    liver: "<small>MK-6024-001 · NCT04944992 · 24주 · MRI-PDFF primary · CT.gov 결과</small><br><b>Efinopegdutide 상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소: Efinopegdutide 14.9%p · Semaglutide 8.8%p<br><small>조직학 endpoint 아님</small>",
     gi: "오심 27.8%<br>구토·설사·변비 각 16.7%",
     discontinuation: "<b>전체 치료중단 5.6%</b><br><small>GI 미분리</small>",
     rights: "Hanmi HM12525A<br>Janssen 반환 → 2020 Merck 도입",
@@ -410,7 +410,7 @@ const comparison = {
     indication: "MASLD·MASH<br>중국 비만",
     trial: "DD01 Phase 2<br><span>NCT06410924 · P2 · 48주</span>",
     weight: "평균 체중변화 미공개<br><b>DD01: &gt;5% 감소 달성 51.5%</b><br>위약 8.8%<br><small>24주 responder 분석</small>",
-    liver: "<small>NCT06410924 · 48주 조직학 · 소규모 PP n=35</small><br><b>섬유화 ≥1단계 개선 50.0%</b> vs 위약 15.8%<br><b>MASH 해소 62.5%</b> vs 위약 5.3%<br>둘 다 달성 37.5% vs 5.3%<br><small>12주 시점 빠른 간지방 감소 보고 · 정밀 %는 동일 PR 계열</small>",
+    liver: "<small>NCT06410924 · Week 48 조직학 · paired biopsy n=35 (40 mg 16 / 위약 19) · 회사 공개</small><br><b>섬유화 ≥1단계 개선(MASH 비악화) 50.0%</b><br>위약 15.8%<br><b>MASH 해소(섬유화 비악화) 62.5%</b><br>위약 5.3%<br>둘 다 달성 37.5% · 위약 5.3%",
     gi: "전체 GI disorder<br><b>79% vs 44%</b>",
     discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set</small>",
     rights: "D&D 자체 개발<br>중국 비만 권리: Salubris",
@@ -687,6 +687,8 @@ function applyLiveSnapshot(snapshot) {
 const COLUMN_STORAGE_KEY = "competitor-master-hidden-columns";
 // 페이지를 처음 열 때(localStorage 없음) 기본으로 숨길 열. 나머지 열만 열린 상태로 표시된다.
 // 사용자가 '표시 항목'에서 바꾸면 그 선택이 localStorage에 저장돼 이 기본값을 대체한다.
+// 새 열 규칙: index.html <th data-column-key="..."> 를 추가하면 masterColumns()/표시 항목에 자동 포함된다.
+// DEFAULT_HIDDEN_COLUMNS에 넣지 않는 한 신규 열은 기본 표시(visible).
 const DEFAULT_HIDDEN_COLUMNS = ["mechanism", "rights", "next"];
 let hiddenMasterColumns = new Set();
 try {
@@ -696,12 +698,28 @@ try {
   hiddenMasterColumns = new Set(DEFAULT_HIDDEN_COLUMNS);
 }
 
+/** 비교표 thead의 모든 th = 표시 항목 후보. 새 열 추가 시 여기 자동 반영. */
 function masterColumns() {
   return [...document.querySelectorAll(".master-table thead th")].map((header, index) => ({
     key: header.dataset.columnKey || `column-${index + 1}`,
     label: header.textContent.trim(),
     index
   }));
+}
+
+/** localStorage에 남은 삭제된 열 키를 버리고, 현재 thead 키만 유지 */
+function pruneHiddenColumnsToCurrent(columns) {
+  const valid = new Set(columns.map(column => column.key));
+  let changed = false;
+  for (const key of [...hiddenMasterColumns]) {
+    if (!valid.has(key)) {
+      hiddenMasterColumns.delete(key);
+      changed = true;
+    }
+  }
+  if (changed) {
+    localStorage.setItem(COLUMN_STORAGE_KEY, JSON.stringify([...hiddenMasterColumns]));
+  }
 }
 
 function applyColumnVisibility() {
@@ -720,6 +738,7 @@ function applyColumnVisibility() {
 
 function initColumnSelector() {
   const columns = masterColumns();
+  pruneHiddenColumnsToCurrent(columns);
   const menu = document.querySelector("#columnMenu");
   const selector = document.querySelector(".column-selector");
   const toggle = document.querySelector("#columnToggle");
@@ -733,6 +752,7 @@ function initColumnSelector() {
     menu.hidden = true;
     toggle.setAttribute("aria-expanded", "false");
   };
+  // thead th 전량 → 체크박스. 간 약효 등 신규 열도 data-column-key 있으면 자동 포함.
   menu.innerHTML = columns.map(column => `
     <label class="column-option">
       <input type="checkbox" value="${column.key}" ${hiddenMasterColumns.has(column.key) ? "" : "checked"}>
@@ -1113,9 +1133,8 @@ async function runFullRefreshWithProgress() {
 }
 
 function deployedSnapshotUrl() {
-  return new URL("data/latest.json?v=20260724-03", document.baseURI || location.href).href;
+  return new URL("data/latest.json?v=20260724-04", document.baseURI || location.href).href;
 }
-
 async function loadDeployedSnapshot() {
   return requestSnapshot(deployedSnapshotUrl());
 }
