@@ -201,9 +201,11 @@ const references = {
   "MZ-APPROVAL": ["Innovent (2025), Mazdutide chronic weight-management approval in China", "Sponsor / NMPA announcement", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=546"],
   "MZ-RESULTS": ["Innovent, Mazdutide 9 mg GLORY-2 results and development program", "Sponsor primary source", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=562"],
   "SV-P3": ["le Roux et al. (2026), Survodutide once weekly for adults with obesity", "New England Journal of Medicine / PubMed", "https://pubmed.ncbi.nlm.nih.gov/42253238/"],
+  "SV-MASH": ["Sanyal et al. (2024), Phase 2 survodutide in MASH and fibrosis", "New England Journal of Medicine / PubMed", "https://pubmed.ncbi.nlm.nih.gov/38847460/"],
   "SV-SAFETY": ["Zealand Pharma (2026), SYNCHRONIZE-1 safety and body-composition update", "Sponsor primary source", "https://www.globenewswire.com/news-release/2026/06/07/3307740/0/en/zealand-pharma-announces-boehringer-ingelheim-s-survodutide-phase-iii-trial-in-people-living-with-obesity-showed-targeted-34-visceral-and-63-liver-fat-reduction-while-minimizing-le.html"],
   "SV-DEAL": ["Zealand Pharma, Boehringer Ingelheim partnership and survodutide rights", "Sponsor partnering page", "https://www.zealandpharma.com/about-us/partnering/"],
   "PM-MOMENTUM": ["Altimmune, MOMENTUM 48-week Phase 2 obesity results", "Sponsor clinical-results deck", "https://ir.altimmune.com/node/15686/pdf"],
+  "PM-IMPACT": ["Altimmune (2025), IMPACT Phase 2b pemvidutide MASH topline", "Sponsor primary source", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-positive-topline-results-impact-phase-2b"],
   "PM-ACQ": ["Altimmune (2019), acquisition of Spitfire Pharma and ALT-801", "Sponsor transaction announcement", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-closing-acquisition-spitfire-pharma-inc"],
   "PM-UPDATE": ["Altimmune (2026), pemvidutide program and PERFORMA plan", "Sponsor corporate update", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-first-quarter-2026-financial-results-and"],
   "EF-P2": ["Merck, NCT04944992 posted Phase 2a results", "ClinicalTrials.gov API", "https://clinicaltrials.gov/study/NCT04944992"],
@@ -238,8 +240,8 @@ const references = {
 
 const assetReferenceMap = {
   Mazdutide: ["MZ-GLORY2", "MZ-APPROVAL", "MZ-RESULTS"],
-  Survodutide: ["SV-P3", "SV-SAFETY", "SV-DEAL"],
-  Pemvidutide: ["PM-MOMENTUM", "PM-ACQ", "PM-UPDATE"],
+  Survodutide: ["SV-P3", "SV-MASH", "SV-SAFETY", "SV-DEAL"],
+  Pemvidutide: ["PM-MOMENTUM", "PM-IMPACT", "PM-ACQ", "PM-UPDATE"],
   Efinopegdutide: ["EF-P2", "EF-DEAL", "EF-PIPELINE"],
   AZD9550: ["AZ-ASCEND", "AZ-CONTEMPO"],
   Zabopegdutide: ["DD-P2", "DD-CHINA"],
@@ -296,6 +298,7 @@ const COMPARISON_FIELD_BINDING = {
   indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약. 수치 키가 아님" },
   trial: { trialDependent: false, role: "selection", note: "기준 임상(향후 선택 UI)" },
   weight: { trialDependent: true, role: "result", note: "체중효능" },
+  liver: { trialDependent: true, role: "result", note: "간 약효(간지방·조직학). 근거 임상이 체중 기준 임상과 다를 수 있음 — 셀에 시험명 표기" },
   gi: { trialDependent: true, role: "result", note: "GI 안전성" },
   discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단" },
   rights: { trialDependent: false, role: "asset", note: "기원/권리. 임상 선택과 독립" },
@@ -310,7 +313,7 @@ const TRIAL_DEPENDENT_COMPARISON_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
   .map(([key]) => key);
 
 /** refs 객체 안에서 임상에 종속인 인용 키 */
-const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "gi", "discontinuation", "next"];
+const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "liver", "gi", "discontinuation", "next"];
 
 /** refs 객체 안에서 임상 선택과 독립인 인용 키 */
 const TRIAL_INDEPENDENT_REF_KEYS = ["rights"];
@@ -340,106 +343,115 @@ function pickTrialDependentComparisonFields(block) {
 }
 
 const comparison = {
-  // 각 자산: trial = 현재 기본 기준 임상. weight/gi/discontinuation/next/nextNcts = trial 종속.
+  // 각 자산: trial = 현재 기본 기준 임상(체중·개발 앵커). weight/gi/discontinuation = 그 trial 종속.
+  // liver = 간 약효. 근거 임상이 체중 기준 임상과 다르면 셀에 시험명을 명시한다.
   // rights/indication = 자산 단위. 향후 trials[] 다중 블록으로 확장 예정.
   mazdutide: {
     indication: "비만·과체중, T2D 승인<br>OSA·MASH 등 확장",
     trial: "GLORY-2<br><span>NCT06164873 · P3 · 60주</span>",
-    // trial-dependent result block (기준: trial)
     weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
+    liver: "<small>GLORY-2(비만)</small><br>간 조직학·MRI-PDFF 공개 결과 없음<br><small>MASH P2 NCT06937749 · MAFLD vs sema NCT06884293 결과 대기</small>",
     gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
     discontinuation: "<b>GI 중단 0.3%</b>",
     rights: "Lilly 기원 OXM 유사체<br>Innovent: 중국 개발·상업화 권리",
     next: "9 mg 허가<br>확장 적응증 P3",
-    refs: {trial:["MZ-GLORY2"], weight:["MZ-GLORY2"], gi:["MZ-GLORY2"], discontinuation:["MZ-GLORY2"], rights:["MZ-RESULTS"], next:["MZ-RESULTS"]},
+    refs: {trial:["MZ-GLORY2"], weight:["MZ-GLORY2"], liver:["MZ-GLORY2","MZ-RESULTS"], gi:["MZ-GLORY2"], discontinuation:["MZ-GLORY2"], rights:["MZ-RESULTS"], next:["MZ-RESULTS"]},
     nextNcts: ["NCT07000955", "NCT06862908", "NCT06931028", "NCT06937749"]
   },
   survodutide: {
     indication: "비만·과체중<br>MASH·간경변",
     trial: "SYNCHRONIZE-1<br><span>NCT06066515 · P3 · 76주</span>",
     weight: "<b>Survodutide 최대 −16.6%</b><br><small>회사 공개 efficacy estimand</small><br>treatment-regimen: −12.2~−13.0%<br>위약 −5.4%",
+    liver: "<small>MASH P2 · NCT04771273 · 48주</small><br><b>MASH 개선(섬유화 비악화) 최대 62%</b> vs 위약 14%<br>MRI-PDFF ≥30% 감소 57–67% vs 14%<br>6.0 mg 평균 간지방 <b>−62.0%</b> vs 위약 −5.7%<br>섬유화 ≥1단계 개선 34–36% vs 22%<br><small>SYNCHRONIZE-1 체성분: 간지방 약 63% 감소</small>",
     gi: "전체 GI AE<br><b>80.9~89.7%</b>",
     discontinuation: "<b>GI 중단 약 19%</b>",
     rights: "Zealand·BI 공동 발명<br>2011 계약, BI 글로벌 권리",
     next: "MASH P3<br>규제 제출 일정",
-    refs: {trial:["SV-P3"], weight:["SV-P3"], gi:["SV-P3"], discontinuation:["SV-SAFETY"], rights:["SV-DEAL"], next:["SV-P3"]},
+    refs: {trial:["SV-P3"], weight:["SV-P3"], liver:["SV-MASH","SV-SAFETY"], gi:["SV-P3"], discontinuation:["SV-SAFETY"], rights:["SV-DEAL"], next:["SV-P3"]},
     nextNcts: ["NCT05202353", "NCT06632457", "NCT06632444"]
   },
   pemvidutide: {
     indication: "비만, MASH<br>AUD·ALD",
     trial: "MOMENTUM<br><span>NCT05295875 · P2 · 48주</span>",
     weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주</small>",
+    liver: "<small>IMPACT · NCT05989711 · P2b · 24주</small><br><b>MASH 해소(섬유화 비악화)</b><br>1.2 mg 59.1% · 1.8 mg 52.1% vs 위약 19.1%<br>MRI-PDFF 간지방 <b>−58.0% / −62.8%</b> vs 위약 −16.2%<br>섬유화 개선(섬유화 비악화 MASH) 31.8–34.5% vs 25.9%<br><small>조직학 섬유화 primary는 미달 · AI·NIT 보조 신호</small>",
     gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%",
     discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리</small>",
     rights: "Spitfire SP-1373 기원<br>2019 Altimmune 인수",
     next: "PERFORMA P3<br>AUD·ALD 결과",
-    refs: {trial:["PM-MOMENTUM"], weight:["PM-MOMENTUM"], gi:["PM-MOMENTUM"], discontinuation:["PM-MOMENTUM"], rights:["PM-ACQ"], next:["PM-UPDATE"]},
-    nextNcts: ["NCT07009860"]
+    refs: {trial:["PM-MOMENTUM"], weight:["PM-MOMENTUM"], liver:["PM-IMPACT"], gi:["PM-MOMENTUM"], discontinuation:["PM-MOMENTUM"], rights:["PM-ACQ"], next:["PM-UPDATE"]},
+    nextNcts: ["NCT07009860", "NCT05989711"]
   },
   efino: {
     indication: "MASH<br>보상성 간경변",
     trial: "MK-6024-001<br><span>NCT04944992 · P2a · 24주</span>",
     weight: "<b>Efinopegdutide −8.5%</b><br>Semaglutide −7.1%",
+    liver: "<small>MK-6024-001 · NAFLD · 24주 · MRI-PDFF</small><br><b>상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소 14.9%p vs 8.8%p<br><small>primary endpoint · 조직학 결과 아님</small>",
     gi: "오심 27.8%<br>구토·설사·변비 각 16.7%",
     discontinuation: "<b>전체 치료중단 5.6%</b><br><small>GI 미분리</small>",
     rights: "Hanmi HM12525A<br>Janssen 반환 → 2020 Merck 도입",
     next: "조직학·간경변 결과<br>후기개발 전환",
-    refs: {trial:["EF-P2"], weight:["EF-P2"], gi:["EF-P2"], discontinuation:["EF-P2"], rights:["EF-DEAL"], next:["EF-PIPELINE"]},
+    refs: {trial:["EF-P2"], weight:["EF-P2"], liver:["EF-P2"], gi:["EF-P2"], discontinuation:["EF-P2"], rights:["EF-DEAL"], next:["EF-PIPELINE"]},
     nextNcts: ["NCT06465186"]
   },
   azd9550: {
     indication: "비만·과체중<br>대사질환",
     trial: "ASCEND<br><span>D8460C00004 · P2 · 완료</span>",
     weight: "<b>결과 미공개</b><br>377명 시험 완료",
+    liver: "<b>결과 미공개</b><br>ASCEND 간 관련 효능 미게시",
     gi: "결과 미공개",
     discontinuation: "미공개",
     rights: "AstraZeneca 내부 개발<br>공개 외부 라이선스 없음",
     next: "ASCEND 결과<br>후속 단계 선택",
-    refs: {trial:["AZ-ASCEND"], weight:["AZ-ASCEND"], gi:["AZ-ASCEND"], discontinuation:["AZ-ASCEND"], rights:["AZ-ASCEND"], next:["AZ-CONTEMPO"]},
+    refs: {trial:["AZ-ASCEND"], weight:["AZ-ASCEND"], liver:["AZ-ASCEND"], gi:["AZ-ASCEND"], discontinuation:["AZ-ASCEND"], rights:["AZ-ASCEND"], next:["AZ-CONTEMPO"]},
     nextNcts: ["NCT06151964"]
   },
   dd01: {
     indication: "MASLD·MASH<br>중국 비만",
     trial: "DD01 Phase 2<br><span>NCT06410924 · P2 · 48주</span>",
     weight: "평균 체중변화 미공개<br><b>DD01: &gt;5% 감소 달성 51.5%</b><br>위약 8.8%<br><small>24주 responder 분석</small>",
+    liver: "<small>NCT06410924 · 48주 조직학 · 소규모 PP n=35</small><br><b>섬유화 ≥1단계 개선 50.0%</b> vs 위약 15.8%<br><b>MASH 해소 62.5%</b> vs 위약 5.3%<br>둘 다 달성 37.5% vs 5.3%<br><small>12주 시점 빠른 간지방 감소 보고 · 정밀 %는 동일 PR 계열</small>",
     gi: "전체 GI disorder<br><b>79% vs 44%</b>",
     discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set</small>",
     rights: "D&D 자체 개발<br>중국 비만 권리: Salubris",
     next: "후속 임상 등록<br>글로벌 파트너링",
-    refs: {trial:["DD-P2"], weight:["DD-P2"], gi:["DD-P2"], discontinuation:["DD-P2"], rights:["DD-CHINA"], next:["DD-P2"]},
+    refs: {trial:["DD-P2"], weight:["DD-P2"], liver:["DD-P2","DD-RATIO"], gi:["DD-P2"], discontinuation:["DD-P2"], rights:["DD-CHINA"], next:["DD-P2"]},
     nextNcts: []
   },
   cms: {
     indication: "비만·대사질환<br>세부 적응증 미공개",
     trial: "China Phase 1<br><span>NCT 식별 안 됨</span>",
     weight: "<b>사람 효능 미공개</b>",
+    liver: "<b>사람 간 약효 미공개</b>",
     gi: "사람 안전성 미공개",
     discontinuation: "미공개",
     rights: "China Medical System<br>자체 개발",
     next: "P1 결과<br>등록번호·용량 공개",
-    refs: {trial:["CMS-ANNUAL"], weight:["CMS-ANNUAL"], gi:["CMS-ANNUAL"], discontinuation:["CMS-ANNUAL"], rights:["CMS-IND"], next:["CMS-ANNUAL"]},
+    refs: {trial:["CMS-ANNUAL"], weight:["CMS-ANNUAL"], liver:["CMS-ANNUAL"], gi:["CMS-ANNUAL"], discontinuation:["CMS-ANNUAL"], rights:["CMS-IND"], next:["CMS-ANNUAL"]},
     nextNcts: []
   },
   da1726: {
     indication: "비만<br>MASH·MetALD 계획",
     trial: "First-in-human<br><span>NCT06252220 · P1</span>",
     weight: "<b>DA-1726 기준선 대비 −9.1%</b><br>48 mg 비적정 · Day 54 · n=6<br><small>위약 체중값 미공개</small>",
+    liver: "<b>사람 간 약효 미공개</b><br>P1 비만 코호트 · 간 endpoint 미보고<br><small>MASH·MetALD 후속 계획</small>",
     gi: "GI disorder 5/6<br>구토 5/6 · 오심 3/6<br><small>소표본 해석 주의</small>",
     discontinuation: "<b>GI 중단 0/6</b>",
     rights: "Dong-A ST 개발<br>2022 MetaVia: 한국 제외 글로벌 권리",
     next: "Part 3 적정<br>48/64 mg 데이터",
-    refs: {trial:["DA-STATUS"], weight:["DA-DATA"], gi:["DA-DATA"], discontinuation:["DA-DATA"], rights:["DA-LICENSE"], next:["DA-STATUS"]},
+    refs: {trial:["DA-STATUS"], weight:["DA-DATA"], liver:["DA-DATA","DA-STATUS"], gi:["DA-DATA"], discontinuation:["DA-DATA"], rights:["DA-LICENSE"], next:["DA-STATUS"]},
     nextNcts: ["NCT06252220"]
   },
   pb718: {
     indication: "비만·T2D",
     trial: "Phase 1b/2a<br><span>NCT06147544 · 완료</span>",
     weight: "<b>비교 가능한 공개값 제한</b>",
+    liver: "<b>비교 가능한 공개 간 약효 제한</b>",
     gi: "공개 세부값 제한",
     discontinuation: "미공개",
     rights: "PegBio 자체 개발<br>PB-119 + PB-722 고정용량 복합",
     next: "후속 전략 결정<br>개발 재개 여부",
-    refs: {trial:["PB-ABSTRACT"], weight:["PB-ABSTRACT"], gi:["PB-ABSTRACT"], discontinuation:["PB-ABSTRACT"], rights:["PB-ABSTRACT"], next:["PB-ANNUAL"]},
+    refs: {trial:["PB-ABSTRACT"], weight:["PB-ABSTRACT"], liver:["PB-ABSTRACT"], gi:["PB-ABSTRACT"], discontinuation:["PB-ABSTRACT"], rights:["PB-ABSTRACT"], next:["PB-ANNUAL"]},
     nextNcts: ["NCT06147544"]
   }
 };
@@ -763,6 +775,7 @@ function renderMaster() {
       indication: "개발 중단·비활성 자산",
       trial: `${a.phase}<br><span>현재 활성 개발 없음</span>`,
       weight: a.signal,
+      liver: "간 약효 공개자료 확인 필요",
       gi: "기존 공개자료 참조",
       discontinuation: "공개자료 확인 필요",
       rights: a.origin,
@@ -779,6 +792,7 @@ function renderMaster() {
       <td>${c.indication}${cellRefs("trial")}</td>
       <td>${c.trial}${cellRefs("trial")}${nctCitations(c.trial)}</td>
       <td>${c.weight}${cellRefs("weight")}</td>
+      <td>${c.liver || "간 약효 미정리"}${cellRefs("liver")}${nctCitations(c.liver || "")}</td>
       <td>${c.gi}${cellRefs("gi")}</td>
       <td>${c.discontinuation}${cellRefs("discontinuation")}</td>
       <td>${c.rights}${cellRefs("rights")}</td>
@@ -1099,8 +1113,7 @@ async function runFullRefreshWithProgress() {
 }
 
 function deployedSnapshotUrl() {
-  // document.baseURI 기준 절대 URL (프로젝트 Pages 경로 /glp1-gcgr-landscape/ 대응)
-  return new URL("data/latest.json?v=20260724-02", document.baseURI || location.href).href;
+  return new URL("data/latest.json?v=20260724-03", document.baseURI || location.href).href;
 }
 
 async function loadDeployedSnapshot() {
