@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-24T02:01:08.736Z",
-  "registryCheckedAt": "2026-07-24T02:01:08.261Z",
-  "sourcesCheckedAt": "2026-07-24T01:43:22.452Z",
-  "discoveryCheckedAt": "2026-07-24T01:43:15.060Z",
-  "literatureCheckedAt": "2026-07-24T01:43:18.190Z",
+  "generatedAt": "2026-07-24T02:23:29.656Z",
+  "registryCheckedAt": "2026-07-24T02:23:29.176Z",
+  "sourcesCheckedAt": "2026-07-24T02:15:53.654Z",
+  "discoveryCheckedAt": "2026-07-24T02:15:36.625Z",
+  "literatureCheckedAt": "2026-07-24T02:15:39.864Z",
   "programs": {
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -143,7 +143,7 @@
     "pb718": {
       "id": "pb718",
       "label": "PB-718",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
       "studies": [
         {
           "nctId": "NCT06147544",
@@ -179,10 +179,186 @@
       ],
       "nextMilestone": null
     },
+    "da1726": {
+      "id": "da1726",
+      "label": "DA-1726",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "studies": [
+        {
+          "nctId": "NCT06252220",
+          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 139,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-03-25",
+          "primaryCompletion": "2026-11-09",
+          "completion": "2026-11-09",
+          "lastUpdate": "2026-04-09",
+          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DA-1726",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo to DA-1726",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06252220",
+        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
+        "kind": "primary completion",
+        "date": "2026-11-09",
+        "status": "RECRUITING"
+      }
+    },
+    "efino": {
+      "id": "efino",
+      "label": "Efinopegdutide",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "studies": [
+        {
+          "nctId": "NCT04944992",
+          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 145,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-08-04",
+          "primaryCompletion": "2022-10-19",
+          "completion": "2022-10-19",
+          "lastUpdate": "2023-11-15",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Nonalcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Efinopegdutide 20 mg/mL",
+              "otherNames": [
+                "MK-6024",
+                "HM12525A",
+                "JNJ-64565111"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide 1.34 mg/mL",
+              "otherNames": [
+                "Ozempic®"
+              ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05877547",
+          "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 381,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-06-23",
+          "primaryCompletion": "2025-12-29",
+          "completion": "2025-12-29",
+          "lastUpdate": "2026-01-12",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Non-alcoholic Fatty Liver Disease",
+            "Fatty Liver, Nonalcoholic",
+            "NAFLD",
+            "Nonalcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Efinopegdutide",
+              "otherNames": [
+                "MK-6024",
+                "HM12525A",
+                "JNJ-64565111"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide",
+              "otherNames": [
+                "Wegovy"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06465186",
+          "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 80,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-07-12",
+          "primaryCompletion": "2026-08-06",
+          "completion": "2026-08-06",
+          "lastUpdate": "2026-03-02",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Non-alcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis",
+            "NAFLD",
+            "Metabolic Dysfunction-associated Steatotic Liver Disease",
+            "Metabolic Dysfunction-associated Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Efinopegdutide",
+              "otherNames": [
+                "MK-6024"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06465186",
+        "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
+        "kind": "primary completion",
+        "date": "2026-08-06",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
     "dd01": {
       "id": "dd01",
       "label": "Zabopegdutide",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
       "studies": [
         {
           "nctId": "NCT06410924",
@@ -218,10 +394,215 @@
       ],
       "nextMilestone": null
     },
+    "azd9550": {
+      "id": "azd9550",
+      "label": "AZD9550",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
+      "studies": [
+        {
+          "nctId": "NCT06862791",
+          "title": "A Weight Loss Study Evaluating Subcutaneous Treatment With AZD9550 and AZD6234 in Combination Against Placebo or Each of the Drugs Alone",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 377,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-02-18",
+          "primaryCompletion": "2026-05-11",
+          "completion": "2026-05-11",
+          "lastUpdate": "2026-06-03",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Obesity or Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo comparator",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06151964",
+          "title": "A Trial to Learn How Safe AZD9550 Monotherapy and Combined With AZD6234 is in People With or Without Type 2 Diabetes Who Are Living With Obesity and Overweight",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 166,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-09-29",
+          "primaryCompletion": "2027-01-29",
+          "completion": "2027-01-29",
+          "lastUpdate": "2026-06-23",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Overweight and Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550 and AZD6234",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07013643",
+          "title": "A Study to Investigate the Effect of AZD6234, AZD9550, and a Combination of AZD9550 and AZD6234 on Pharmacokinetics of Combined Oral Contraceptive Ethinyl Estradiol/Levonorgestrel in Healthy Female Participants Living With Overweight or Obesity",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 50,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-06-04",
+          "primaryCompletion": "2027-07-09",
+          "completion": "2027-07-09",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Healthy Participants"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Ethinyl estradiol/Levonorgestrel (EE/LEVO)",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Acetaminophen (APAP)",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07017179",
+          "title": "This is a Multi-centre, Multi-drug, Platform Study in Chinese Participants Living With Obesity / Overweight",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 14,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-05-20",
+          "primaryCompletion": "2026-08-06",
+          "completion": "2026-08-06",
+          "lastUpdate": "2026-07-02",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Obesity/Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Plocebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD6234 in combination with AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07546760",
+          "title": "A Phase I Study to Investigate the Effect of Hepatic Impairment of AZD9550 and AZD6234",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 28,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-03-20",
+          "primaryCompletion": "2027-02-04",
+          "completion": "2027-02-04",
+          "lastUpdate": "2026-07-07",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Hepatic Impairment"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT07017179",
+        "title": "This is a Multi-centre, Multi-drug, Platform Study in Chinese Participants Living With Obesity / Overweight",
+        "kind": "primary completion",
+        "date": "2026-08-06",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -427,391 +808,10 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
-    "da1726": {
-      "id": "da1726",
-      "label": "DA-1726",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
-      "studies": [
-        {
-          "nctId": "NCT06252220",
-          "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 139,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-03-25",
-          "primaryCompletion": "2026-11-09",
-          "completion": "2026-11-09",
-          "lastUpdate": "2026-04-09",
-          "leadSponsor": "NeuroBo Pharmaceuticals Inc.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DA-1726",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo to DA-1726",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06252220",
-        "title": "First in Human Study in Subjects With Obesity, But Otherwise Healthy",
-        "kind": "primary completion",
-        "date": "2026-11-09",
-        "status": "RECRUITING"
-      }
-    },
-    "azd9550": {
-      "id": "azd9550",
-      "label": "AZD9550",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
-      "studies": [
-        {
-          "nctId": "NCT06862791",
-          "title": "A Weight Loss Study Evaluating Subcutaneous Treatment With AZD9550 and AZD6234 in Combination Against Placebo or Each of the Drugs Alone",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 377,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-02-18",
-          "primaryCompletion": "2026-05-11",
-          "completion": "2026-05-11",
-          "lastUpdate": "2026-06-03",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Obesity or Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo comparator",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06151964",
-          "title": "A Trial to Learn How Safe AZD9550 Monotherapy and Combined With AZD6234 is in People With or Without Type 2 Diabetes Who Are Living With Obesity and Overweight",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 166,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-09-29",
-          "primaryCompletion": "2027-01-29",
-          "completion": "2027-01-29",
-          "lastUpdate": "2026-06-23",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Overweight and Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550 and AZD6234",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07013643",
-          "title": "A Study to Investigate the Effect of AZD6234, AZD9550, and a Combination of AZD9550 and AZD6234 on Pharmacokinetics of Combined Oral Contraceptive Ethinyl Estradiol/Levonorgestrel in Healthy Female Participants Living With Overweight or Obesity",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 50,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2025-06-04",
-          "primaryCompletion": "2027-07-09",
-          "completion": "2027-07-09",
-          "lastUpdate": "2026-07-20",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Healthy Participants"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Ethinyl estradiol/Levonorgestrel (EE/LEVO)",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Acetaminophen (APAP)",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07017179",
-          "title": "This is a Multi-centre, Multi-drug, Platform Study in Chinese Participants Living With Obesity / Overweight",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 14,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-05-20",
-          "primaryCompletion": "2026-08-06",
-          "completion": "2026-08-06",
-          "lastUpdate": "2026-07-02",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Obesity/Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Plocebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD6234 in combination with AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07546760",
-          "title": "A Phase I Study to Investigate the Effect of Hepatic Impairment of AZD9550 and AZD6234",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 28,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-03-20",
-          "primaryCompletion": "2027-02-04",
-          "completion": "2027-02-04",
-          "lastUpdate": "2026-07-07",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Hepatic Impairment"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT07017179",
-        "title": "This is a Multi-centre, Multi-drug, Platform Study in Chinese Participants Living With Obesity / Overweight",
-        "kind": "primary completion",
-        "date": "2026-08-06",
-        "status": "ACTIVE_NOT_RECRUITING"
-      }
-    },
-    "efino": {
-      "id": "efino",
-      "label": "Efinopegdutide",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
-      "studies": [
-        {
-          "nctId": "NCT04944992",
-          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 145,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2021-08-04",
-          "primaryCompletion": "2022-10-19",
-          "completion": "2022-10-19",
-          "lastUpdate": "2023-11-15",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Nonalcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Efinopegdutide 20 mg/mL",
-              "otherNames": [
-                "MK-6024",
-                "HM12525A",
-                "JNJ-64565111"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide 1.34 mg/mL",
-              "otherNames": [
-                "Ozempic®"
-              ]
-            }
-          ]
-        },
-        {
-          "nctId": "NCT05877547",
-          "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 381,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-06-23",
-          "primaryCompletion": "2025-12-29",
-          "completion": "2025-12-29",
-          "lastUpdate": "2026-01-12",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Non-alcoholic Fatty Liver Disease",
-            "Fatty Liver, Nonalcoholic",
-            "NAFLD",
-            "Nonalcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Efinopegdutide",
-              "otherNames": [
-                "MK-6024",
-                "HM12525A",
-                "JNJ-64565111"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide",
-              "otherNames": [
-                "Wegovy"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06465186",
-          "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 80,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-07-12",
-          "primaryCompletion": "2026-08-06",
-          "completion": "2026-08-06",
-          "lastUpdate": "2026-03-02",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Non-alcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis",
-            "NAFLD",
-            "Metabolic Dysfunction-associated Steatotic Liver Disease",
-            "Metabolic Dysfunction-associated Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Efinopegdutide",
-              "otherNames": [
-                "MK-6024"
-              ]
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06465186",
-        "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
-        "kind": "primary completion",
-        "date": "2026-08-06",
-        "status": "ACTIVE_NOT_RECRUITING"
-      }
-    },
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-24T02:01:08.261Z",
+      "checkedAt": "2026-07-24T02:23:29.176Z",
       "studies": [
         {
           "nctId": "NCT06164873",
@@ -1193,7 +1193,7 @@
         "hostname": "en.innoventbio.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.190Z",
+      "checkedAt": "2026-07-24T02:15:39.865Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -1222,7 +1222,7 @@
         "hostname": "www.zealandpharma.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.192Z",
+      "checkedAt": "2026-07-24T02:15:39.866Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -1251,13 +1251,13 @@
         "hostname": "ir.altimmune.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.192Z",
+      "checkedAt": "2026-07-24T02:15:39.866Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
-      "bytes": 121780,
-      "etag": "\"1782646006\"",
-      "lastModified": "Sun, 28 Jun 2026 11:26:46 GMT",
+      "bytes": 122802,
+      "etag": "\"1782645459\"",
+      "lastModified": "Sun, 28 Jun 2026 11:17:39 GMT",
       "hash": "075d213967ee51d7c174d06b2f35216d6baf2779e30cf4325772c2b1699fbf8e",
       "fingerprint": "075d213967ee51d7c174d06b2f35216d6baf2779e30cf4325772c2b1699fbf8e",
       "changed": false,
@@ -1280,7 +1280,7 @@
         "hostname": "www.merck.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.193Z",
+      "checkedAt": "2026-07-24T02:15:39.867Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -1309,7 +1309,7 @@
         "hostname": "www.astrazenecaclinicaltrials.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.751Z",
+      "checkedAt": "2026-07-24T02:15:40.246Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
@@ -1338,7 +1338,7 @@
         "hostname": "www.sec.gov",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.884Z",
+      "checkedAt": "2026-07-24T02:15:40.500Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
@@ -1367,13 +1367,13 @@
         "hostname": "ddpharmatech.com",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.917Z",
+      "checkedAt": "2026-07-24T02:15:40.508Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "bytes": 47870,
       "etag": null,
-      "lastModified": "Fri, 24 Jul 2026 01:43:18 GMT",
+      "lastModified": "Fri, 24 Jul 2026 02:15:40 GMT",
       "hash": "8ec1217f7d6d56cae746e978c57da5ad5481615bc019cc6636bc77325a3003f9",
       "fingerprint": "8ec1217f7d6d56cae746e978c57da5ad5481615bc019cc6636bc77325a3003f9",
       "changed": false,
@@ -1396,7 +1396,7 @@
         "hostname": "www.hkexnews.hk",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:18.971Z",
+      "checkedAt": "2026-07-24T02:15:40.562Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -1425,7 +1425,7 @@
         "hostname": "www1.hkexnews.hk",
         "trusted": true
       },
-      "checkedAt": "2026-07-24T01:43:19.158Z",
+      "checkedAt": "2026-07-24T02:15:40.574Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -15926,7 +15926,7 @@
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-24T02:01:08.736Z",
+    "checkedAt": "2026-07-24T02:23:29.656Z",
     "checks": {
       "registry": {
         "expected": 32,
