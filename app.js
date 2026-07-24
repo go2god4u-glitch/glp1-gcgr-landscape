@@ -280,181 +280,340 @@ const typeNames = {
 };
 
 /*
- * 비교표 필드 바인딩 태그 (아이디어 단계 — 임상 선택 UI 미구현).
- * 주요/피보탈 임상이 여러 개가 되면 trial 을 선택 축으로 두고,
- * 선택 변경 시 TRIAL_DEPENDENT_* 만 오른쪽 결과로 교체한다.
+ * 비교표 필드 바인딩.
+ * 결과값(체중·간·GI·중단)은 선택 임상(trial id)에 종속.
+ * 간 약효는 선택 임상에 hasLiver+liver 데이터가 있을 때만 표시.
  * 상세: docs/IDEAS_trial_driven_comparison.md
- *
- * role:
- *   asset      — 물질 단위 (임상 선택과 무관)
- *   selection  — 임상 선택 컨트롤 자체
- *   result     — 선택 임상에 종속 (핵심 임상 열 오른쪽)
- *   mixed      — 일부 종속, 교체 시 규칙 재확인
  */
 const COMPARISON_FIELD_BINDING = {
   asset: { trialDependent: false, role: "asset", note: "물질/회사" },
   mechanism: { trialDependent: false, role: "asset", note: "분자 설계·활성비" },
-  stage: { trialDependent: false, role: "asset", note: "현재 단계. 임상 선택으로 바꾸지 않음(추후 재논의 가능)" },
-  indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약. 수치 키가 아님" },
-  trial: { trialDependent: false, role: "selection", note: "기준 임상(향후 선택 UI)" },
-  weight: { trialDependent: true, role: "result", note: "체중효능" },
-  liver: { trialDependent: true, role: "result", note: "간 약효(간지방·조직학). 근거 임상이 체중 기준 임상과 다를 수 있음 — 셀에 시험명 표기" },
-  gi: { trialDependent: true, role: "result", note: "GI 안전성" },
-  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단" },
-  rights: { trialDependent: false, role: "asset", note: "기원/권리. 임상 선택과 독립" },
-  next: { trialDependent: true, role: "result", note: "다음 확인사항(경로·적응증 앵커에 따라 변경)" },
-  nextNcts: { trialDependent: true, role: "result", note: "다음 확인 관련 NCT" },
-  refs: { trialDependent: "per-key", role: "mixed", note: "아래 REF 키 목록 따름" }
+  stage: { trialDependent: false, role: "asset", note: "현재 단계" },
+  indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약" },
+  trial: { trialDependent: false, role: "selection", note: "기준 임상 선택" },
+  weight: { trialDependent: true, role: "result", note: "체중효능(선택 임상)" },
+  liver: { trialDependent: true, role: "result", note: "간 약효(선택 임상에 공개값이 있을 때만)" },
+  gi: { trialDependent: true, role: "result", note: "GI 안전성(선택 임상)" },
+  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단(선택 임상)" },
+  rights: { trialDependent: false, role: "asset", note: "기원/권리" },
+  next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위 유지)" },
+  nextNcts: { trialDependent: false, role: "asset", note: "다음 확인 NCT" },
+  refs: { trialDependent: "per-key", role: "mixed", note: "trial 블록 refs" }
 };
 
-/** 임상 선택 시 반드시 함께 바뀌는 comparison 키 */
 const TRIAL_DEPENDENT_COMPARISON_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
   .filter(([, meta]) => meta.trialDependent === true)
   .map(([key]) => key);
 
-/** refs 객체 안에서 임상에 종속인 인용 키 */
-const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "liver", "gi", "discontinuation", "next"];
-
-/** refs 객체 안에서 임상 선택과 독립인 인용 키 */
+const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "liver", "gi", "discontinuation"];
 const TRIAL_INDEPENDENT_REF_KEYS = ["rights"];
-
-function isTrialDependentComparisonKey(key) {
-  return TRIAL_DEPENDENT_COMPARISON_KEYS.includes(key);
-}
-
-function isTrialDependentRefKey(key) {
-  return TRIAL_DEPENDENT_REF_KEYS.includes(key);
-}
-
-/** 임상 선택 스왑용: 종속 필드만 골라 반환 (UI 미연결, 구조 준비) */
-function pickTrialDependentComparisonFields(block) {
-  if (!block || typeof block !== "object") return {};
-  const out = {};
-  for (const key of TRIAL_DEPENDENT_COMPARISON_KEYS) {
-    if (key in block) out[key] = block[key];
-  }
-  if (block.refs) {
-    out.refs = {};
-    for (const key of TRIAL_DEPENDENT_REF_KEYS) {
-      if (block.refs[key]) out.refs[key] = block.refs[key];
-    }
-  }
-  return out;
-}
+const TRIAL_SELECT_STORAGE_KEY = "competitor-selected-trial-v1";
 
 const comparison = {
-  // 각 자산: trial = 현재 기본 기준 임상(체중·개발 앵커). weight/gi/discontinuation = 그 trial 종속.
-  // liver = 간 약효. 근거 임상이 체중 기준 임상과 다르면 셀에 시험명을 명시한다.
-  // rights/indication = 자산 단위. 향후 trials[] 다중 블록으로 확장 예정.
+  // 자산 단위: indication, rights, next, nextNcts, defaultTrialId, trials[]
+  // 임상 단위: id, label, meta, nct?, hasLiver, weight, liver, gi, discontinuation, refs
   mazdutide: {
     indication: "비만·과체중, T2D 승인<br>OSA·MASH 등 확장",
-    trial: "GLORY-2<br><span>NCT06164873 · P3 · 60주</span>",
-    weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
-    liver: "<small>GLORY-2(비만 기준 임상)</small><br>간 조직학·MRI-PDFF 공개 결과 없음<br><small>간 관련 등록 시험 결과 대기: MASH P2 NCT06937749 · MAFLD vs sema NCT06884293</small>",
-    gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
-    discontinuation: "<b>GI 중단 0.3%</b>",
     rights: "Lilly 기원 OXM 유사체<br>Innovent: 중국 개발·상업화 권리",
     next: "9 mg 허가<br>확장 적응증 P3",
-    refs: {trial:["MZ-GLORY2"], weight:["MZ-GLORY2"], liver:["MZ-GLORY2","MZ-RESULTS"], gi:["MZ-GLORY2"], discontinuation:["MZ-GLORY2"], rights:["MZ-RESULTS"], next:["MZ-RESULTS"]},
-    nextNcts: ["NCT07000955", "NCT06862908", "NCT06931028", "NCT06937749"]
+    nextNcts: ["NCT07000955", "NCT06862908", "NCT06931028", "NCT06937749"],
+    defaultTrialId: "glory2",
+    trials: [
+      {
+        id: "glory2",
+        label: "GLORY-2",
+        meta: "NCT06164873 · P3 · 60주",
+        nct: "NCT06164873",
+        hasLiver: false,
+        weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
+        liver: null,
+        gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
+        discontinuation: "<b>GI 중단 0.3%</b>",
+        refs: { trial: ["MZ-GLORY2"], weight: ["MZ-GLORY2"], gi: ["MZ-GLORY2"], discontinuation: ["MZ-GLORY2"] }
+      }
+    ],
+    rightsRefs: ["MZ-RESULTS"]
   },
   survodutide: {
     indication: "비만·과체중<br>MASH·간경변",
-    trial: "SYNCHRONIZE-1<br><span>NCT06066515 · P3 · 76주</span>",
-    weight: "<b>Survodutide 최대 −16.6%</b><br><small>회사 공개 efficacy estimand</small><br>treatment-regimen: −12.2~−13.0%<br>위약 −5.4%",
-    liver: "<small>MASH P2 · NCT04771273 · 48주 · Sanyal et al. NEJM</small><br><b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>별도: SYNCHRONIZE-1(비만) 회사 공개 체성분 분석 — 간지방 63% 감소</small>",
-    gi: "전체 GI AE<br><b>80.9~89.7%</b>",
-    discontinuation: "<b>GI 중단 약 19%</b>",
     rights: "Zealand·BI 공동 발명<br>2011 계약, BI 글로벌 권리",
     next: "MASH P3<br>규제 제출 일정",
-    refs: {trial:["SV-P3"], weight:["SV-P3"], liver:["SV-MASH","SV-SAFETY"], gi:["SV-P3"], discontinuation:["SV-SAFETY"], rights:["SV-DEAL"], next:["SV-P3"]},
-    nextNcts: ["NCT05202353", "NCT06632457", "NCT06632444"]
+    nextNcts: ["NCT05202353", "NCT06632457", "NCT06632444"],
+    defaultTrialId: "sync1",
+    trials: [
+      {
+        id: "sync1",
+        label: "SYNCHRONIZE-1",
+        meta: "NCT06066515 · P3 · 76주 · 비만",
+        nct: "NCT06066515",
+        hasLiver: true,
+        weight: "<b>Survodutide 최대 −16.6%</b><br><small>회사 공개 efficacy estimand</small><br>treatment-regimen: −12.2~−13.0%<br>위약 −5.4%",
+        liver: "<b>간지방 감소 63%</b><br><small>회사 공개 SYNCHRONIZE-1 사전명세 체성분 분석</small>",
+        gi: "전체 GI AE<br><b>80.9~89.7%</b>",
+        discontinuation: "<b>GI 중단 약 19%</b>",
+        refs: { trial: ["SV-P3"], weight: ["SV-P3"], liver: ["SV-SAFETY"], gi: ["SV-P3"], discontinuation: ["SV-SAFETY"] }
+      },
+      {
+        id: "mash_p2",
+        label: "MASH Phase 2",
+        meta: "NCT04771273 · P2 · 48주 · 조직학",
+        nct: "NCT04771273",
+        hasLiver: true,
+        weight: "<small>본 시험 주 endpoint는 조직학</small><br>체중 요약 수치는 이 블록에 넣지 않음",
+        liver: "<b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>Sanyal et al. NEJM · PubMed 초록</small>",
+        gi: "오심 66% vs 위약 23%<br>설사 49% vs 23%<br>구토 41% vs 4%<br><small>MASH P2 보고</small>",
+        discontinuation: "<small>본 블록에 GI 분리 중단률 미정리</small>",
+        refs: { trial: ["SV-MASH"], weight: ["SV-MASH"], liver: ["SV-MASH"], gi: ["SV-MASH"], discontinuation: ["SV-MASH"] }
+      }
+    ],
+    rightsRefs: ["SV-DEAL"]
   },
   pemvidutide: {
     indication: "비만, MASH<br>AUD·ALD",
-    trial: "MOMENTUM<br><span>NCT05295875 · P2 · 48주</span>",
-    weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주</small>",
-    liver: "<small>IMPACT · NCT05989711 · P2b · 24주 · ITT(회사 topline)</small><br><b>MASH 해소(섬유화 비악화)</b><br>Pemvidutide 1.2 mg 59.1%<br>Pemvidutide 1.8 mg 52.1%<br>위약 19.1%<br>MRI-PDFF 간지방 감소<br>1.2 mg 58.0% · 1.8 mg 62.8% · 위약 16.2%<br>섬유화 개선(MASH 비악화, ITT)<br>1.2 mg 31.8% · 1.8 mg 34.5% · 위약 25.9%<br><small>섬유화 조직학 군간 차이는 통계적 유의성 없음(회사 ITT 표기)</small>",
-    gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%",
-    discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리</small>",
     rights: "Spitfire SP-1373 기원<br>2019 Altimmune 인수",
     next: "PERFORMA P3<br>AUD·ALD 결과",
-    refs: {trial:["PM-MOMENTUM"], weight:["PM-MOMENTUM"], liver:["PM-IMPACT"], gi:["PM-MOMENTUM"], discontinuation:["PM-MOMENTUM"], rights:["PM-ACQ"], next:["PM-UPDATE"]},
-    nextNcts: ["NCT07009860", "NCT05989711"]
+    nextNcts: ["NCT07009860", "NCT05989711"],
+    defaultTrialId: "momentum",
+    trials: [
+      {
+        id: "momentum",
+        label: "MOMENTUM",
+        meta: "NCT05295875 · P2 · 48주 · 비만",
+        nct: "NCT05295875",
+        hasLiver: false,
+        weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주</small>",
+        liver: null,
+        gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%",
+        discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리</small>",
+        refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"] }
+      },
+      {
+        id: "impact",
+        label: "IMPACT",
+        meta: "NCT05989711 · P2b · 24주 · MASH · ITT",
+        nct: "NCT05989711",
+        hasLiver: true,
+        weight: "<b>Pemvidutide 1.2 mg −5.0%</b><br>1.8 mg −6.2%<br>위약 −1.0%<br><small>IMPACT 24주 · 회사 topline</small>",
+        liver: "<b>MASH 해소(섬유화 비악화, ITT)</b><br>Pemvidutide 1.2 mg 59.1%<br>Pemvidutide 1.8 mg 52.1%<br>위약 19.1%<br>MRI-PDFF 간지방 감소<br>1.2 mg 58.0% · 1.8 mg 62.8% · 위약 16.2%<br>섬유화 개선(MASH 비악화, ITT)<br>1.2 mg 31.8% · 1.8 mg 34.5% · 위약 25.9%<br><small>섬유화 조직학 군간 차이는 통계적 유의성 없음(회사 ITT)</small>",
+        gi: "<small>IMPACT 회사 topline</small><br>AE 관련 중단 1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%",
+        discontinuation: "<b>AE 관련 중단</b><br>1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%<br><small>회사 topline</small>",
+        refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], gi: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
+      }
+    ],
+    rightsRefs: ["PM-ACQ"]
   },
   efino: {
     indication: "MASH<br>보상성 간경변",
-    trial: "MK-6024-001<br><span>NCT04944992 · P2a · 24주</span>",
-    weight: "<b>Efinopegdutide −8.5%</b><br>Semaglutide −7.1%",
-    liver: "<small>MK-6024-001 · NCT04944992 · 24주 · MRI-PDFF primary · CT.gov 결과</small><br><b>Efinopegdutide 상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소: Efinopegdutide 14.9%p · Semaglutide 8.8%p<br><small>조직학 endpoint 아님</small>",
-    gi: "오심 27.8%<br>구토·설사·변비 각 16.7%",
-    discontinuation: "<b>전체 치료중단 5.6%</b><br><small>GI 미분리</small>",
     rights: "Hanmi HM12525A<br>Janssen 반환 → 2020 Merck 도입",
     next: "조직학·간경변 결과<br>후기개발 전환",
-    refs: {trial:["EF-P2"], weight:["EF-P2"], liver:["EF-P2"], gi:["EF-P2"], discontinuation:["EF-P2"], rights:["EF-DEAL"], next:["EF-PIPELINE"]},
-    nextNcts: ["NCT06465186"]
+    nextNcts: ["NCT06465186"],
+    defaultTrialId: "mk001",
+    trials: [
+      {
+        id: "mk001",
+        label: "MK-6024-001",
+        meta: "NCT04944992 · P2a · 24주 · NAFLD",
+        nct: "NCT04944992",
+        hasLiver: true,
+        weight: "<b>Efinopegdutide −8.5%</b><br>Semaglutide −7.1%",
+        liver: "<b>Efinopegdutide 상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소: Efinopegdutide 14.9%p · Semaglutide 8.8%p<br><small>MRI-PDFF primary · CT.gov 결과 · 조직학 endpoint 아님</small>",
+        gi: "오심 27.8%<br>구토·설사·변비 각 16.7%",
+        discontinuation: "<b>전체 치료중단 5.6%</b><br><small>GI 미분리</small>",
+        refs: { trial: ["EF-P2"], weight: ["EF-P2"], liver: ["EF-P2"], gi: ["EF-P2"], discontinuation: ["EF-P2"] }
+      }
+    ],
+    rightsRefs: ["EF-DEAL"]
   },
   azd9550: {
     indication: "비만·과체중<br>대사질환",
-    trial: "ASCEND<br><span>D8460C00004 · P2 · 완료</span>",
-    weight: "<b>결과 미공개</b><br>377명 시험 완료",
-    liver: "<b>결과 미공개</b><br>ASCEND 간 관련 효능 미게시",
-    gi: "결과 미공개",
-    discontinuation: "미공개",
     rights: "AstraZeneca 내부 개발<br>공개 외부 라이선스 없음",
     next: "ASCEND 결과<br>후속 단계 선택",
-    refs: {trial:["AZ-ASCEND"], weight:["AZ-ASCEND"], liver:["AZ-ASCEND"], gi:["AZ-ASCEND"], discontinuation:["AZ-ASCEND"], rights:["AZ-ASCEND"], next:["AZ-CONTEMPO"]},
-    nextNcts: ["NCT06151964"]
+    nextNcts: ["NCT06151964"],
+    defaultTrialId: "ascend",
+    trials: [
+      {
+        id: "ascend",
+        label: "ASCEND",
+        meta: "D8460C00004 · P2 · 완료",
+        hasLiver: false,
+        weight: "<b>결과 미공개</b><br>377명 시험 완료",
+        liver: null,
+        gi: "결과 미공개",
+        discontinuation: "미공개",
+        refs: { trial: ["AZ-ASCEND"], weight: ["AZ-ASCEND"], gi: ["AZ-ASCEND"], discontinuation: ["AZ-ASCEND"] }
+      }
+    ],
+    rightsRefs: ["AZ-ASCEND"]
   },
   dd01: {
     indication: "MASLD·MASH<br>중국 비만",
-    trial: "DD01 Phase 2<br><span>NCT06410924 · P2 · 48주</span>",
-    weight: "평균 체중변화 미공개<br><b>DD01: &gt;5% 감소 달성 51.5%</b><br>위약 8.8%<br><small>24주 responder 분석</small>",
-    liver: "<small>NCT06410924 · Week 48 조직학 · paired biopsy n=35 (40 mg 16 / 위약 19) · 회사 공개</small><br><b>섬유화 ≥1단계 개선(MASH 비악화) 50.0%</b><br>위약 15.8%<br><b>MASH 해소(섬유화 비악화) 62.5%</b><br>위약 5.3%<br>둘 다 달성 37.5% · 위약 5.3%",
-    gi: "전체 GI disorder<br><b>79% vs 44%</b>",
-    discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set</small>",
     rights: "D&D 자체 개발<br>중국 비만 권리: Salubris",
     next: "후속 임상 등록<br>글로벌 파트너링",
-    refs: {trial:["DD-P2"], weight:["DD-P2"], liver:["DD-P2","DD-RATIO"], gi:["DD-P2"], discontinuation:["DD-P2"], rights:["DD-CHINA"], next:["DD-P2"]},
-    nextNcts: []
+    nextNcts: [],
+    defaultTrialId: "dd_p2",
+    trials: [
+      {
+        id: "dd_p2",
+        label: "DD01 Phase 2",
+        meta: "NCT06410924 · P2 · 48주 · MASLD/MASH",
+        nct: "NCT06410924",
+        hasLiver: true,
+        weight: "평균 체중변화 미공개<br><b>DD01: &gt;5% 감소 달성 51.5%</b><br>위약 8.8%<br><small>24주 responder 분석</small>",
+        liver: "<b>섬유화 ≥1단계 개선(MASH 비악화) 50.0%</b><br>위약 15.8%<br><b>MASH 해소(섬유화 비악화) 62.5%</b><br>위약 5.3%<br>둘 다 달성 37.5% · 위약 5.3%<br><small>Week 48 · paired biopsy n=35 (40 mg 16 / 위약 19) · 회사 공개</small>",
+        gi: "전체 GI disorder<br><b>79% vs 44%</b>",
+        discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set</small>",
+        refs: { trial: ["DD-P2"], weight: ["DD-P2"], liver: ["DD-P2"], gi: ["DD-P2"], discontinuation: ["DD-P2"] }
+      }
+    ],
+    rightsRefs: ["DD-CHINA"]
   },
   cms: {
     indication: "비만·대사질환<br>세부 적응증 미공개",
-    trial: "China Phase 1<br><span>NCT 식별 안 됨</span>",
-    weight: "<b>사람 효능 미공개</b>",
-    liver: "<b>사람 간 약효 미공개</b>",
-    gi: "사람 안전성 미공개",
-    discontinuation: "미공개",
     rights: "China Medical System<br>자체 개발",
     next: "P1 결과<br>등록번호·용량 공개",
-    refs: {trial:["CMS-ANNUAL"], weight:["CMS-ANNUAL"], liver:["CMS-ANNUAL"], gi:["CMS-ANNUAL"], discontinuation:["CMS-ANNUAL"], rights:["CMS-IND"], next:["CMS-ANNUAL"]},
-    nextNcts: []
+    nextNcts: [],
+    defaultTrialId: "cms_p1",
+    trials: [
+      {
+        id: "cms_p1",
+        label: "China Phase 1",
+        meta: "NCT 식별 안 됨",
+        hasLiver: false,
+        weight: "<b>사람 효능 미공개</b>",
+        liver: null,
+        gi: "사람 안전성 미공개",
+        discontinuation: "미공개",
+        refs: { trial: ["CMS-ANNUAL"], weight: ["CMS-ANNUAL"], gi: ["CMS-ANNUAL"], discontinuation: ["CMS-ANNUAL"] }
+      }
+    ],
+    rightsRefs: ["CMS-IND"]
   },
   da1726: {
     indication: "비만<br>MASH·MetALD 계획",
-    trial: "First-in-human<br><span>NCT06252220 · P1</span>",
-    weight: "<b>DA-1726 기준선 대비 −9.1%</b><br>48 mg 비적정 · Day 54 · n=6<br><small>위약 체중값 미공개</small>",
-    liver: "<b>사람 간 약효 미공개</b><br>P1 비만 코호트 · 간 endpoint 미보고<br><small>MASH·MetALD 후속 계획</small>",
-    gi: "GI disorder 5/6<br>구토 5/6 · 오심 3/6<br><small>소표본 해석 주의</small>",
-    discontinuation: "<b>GI 중단 0/6</b>",
     rights: "Dong-A ST 개발<br>2022 MetaVia: 한국 제외 글로벌 권리",
     next: "Part 3 적정<br>48/64 mg 데이터",
-    refs: {trial:["DA-STATUS"], weight:["DA-DATA"], liver:["DA-DATA","DA-STATUS"], gi:["DA-DATA"], discontinuation:["DA-DATA"], rights:["DA-LICENSE"], next:["DA-STATUS"]},
-    nextNcts: ["NCT06252220"]
+    nextNcts: ["NCT06252220"],
+    defaultTrialId: "fih",
+    trials: [
+      {
+        id: "fih",
+        label: "First-in-human",
+        meta: "NCT06252220 · P1",
+        nct: "NCT06252220",
+        hasLiver: false,
+        weight: "<b>DA-1726 기준선 대비 −9.1%</b><br>48 mg 비적정 · Day 54 · n=6<br><small>위약 체중값 미공개</small>",
+        liver: null,
+        gi: "GI disorder 5/6<br>구토 5/6 · 오심 3/6<br><small>소표본 해석 주의</small>",
+        discontinuation: "<b>GI 중단 0/6</b>",
+        refs: { trial: ["DA-STATUS"], weight: ["DA-DATA"], gi: ["DA-DATA"], discontinuation: ["DA-DATA"] }
+      }
+    ],
+    rightsRefs: ["DA-LICENSE"]
   },
   pb718: {
     indication: "비만·T2D",
-    trial: "Phase 1b/2a<br><span>NCT06147544 · 완료</span>",
-    weight: "<b>비교 가능한 공개값 제한</b>",
-    liver: "<b>비교 가능한 공개 간 약효 제한</b>",
-    gi: "공개 세부값 제한",
-    discontinuation: "미공개",
     rights: "PegBio 자체 개발<br>PB-119 + PB-722 고정용량 복합",
     next: "후속 전략 결정<br>개발 재개 여부",
-    refs: {trial:["PB-ABSTRACT"], weight:["PB-ABSTRACT"], liver:["PB-ABSTRACT"], gi:["PB-ABSTRACT"], discontinuation:["PB-ABSTRACT"], rights:["PB-ABSTRACT"], next:["PB-ANNUAL"]},
-    nextNcts: ["NCT06147544"]
+    nextNcts: ["NCT06147544"],
+    defaultTrialId: "pb_p1b",
+    trials: [
+      {
+        id: "pb_p1b",
+        label: "Phase 1b/2a",
+        meta: "NCT06147544 · 완료",
+        nct: "NCT06147544",
+        hasLiver: false,
+        weight: "<b>비교 가능한 공개값 제한</b>",
+        liver: null,
+        gi: "공개 세부값 제한",
+        discontinuation: "미공개",
+        refs: { trial: ["PB-ABSTRACT"], weight: ["PB-ABSTRACT"], gi: ["PB-ABSTRACT"], discontinuation: ["PB-ABSTRACT"] }
+      }
+    ],
+    rightsRefs: ["PB-ABSTRACT"]
   }
 };
+
+function loadSelectedTrials() {
+  try {
+    return JSON.parse(localStorage.getItem(TRIAL_SELECT_STORAGE_KEY) || "{}") || {};
+  } catch {
+    return {};
+  }
+}
+
+function saveSelectedTrial(assetId, trialId) {
+  const map = loadSelectedTrials();
+  map[assetId] = trialId;
+  localStorage.setItem(TRIAL_SELECT_STORAGE_KEY, JSON.stringify(map));
+}
+
+function getComparisonEntry(assetId) {
+  return comparison[assetId] || null;
+}
+
+function getComparisonTrials(entry) {
+  if (!entry) return [];
+  if (Array.isArray(entry.trials) && entry.trials.length) return entry.trials;
+  return [];
+}
+
+function getSelectedTrialId(assetId, entry) {
+  const trials = getComparisonTrials(entry);
+  if (!trials.length) return null;
+  const stored = loadSelectedTrials()[assetId];
+  if (stored && trials.some(t => t.id === stored)) return stored;
+  if (entry.defaultTrialId && trials.some(t => t.id === entry.defaultTrialId)) return entry.defaultTrialId;
+  return trials[0].id;
+}
+
+function getActiveTrial(assetId, entry) {
+  const trials = getComparisonTrials(entry);
+  const id = getSelectedTrialId(assetId, entry);
+  return trials.find(t => t.id === id) || trials[0] || null;
+}
+
+/** 드롭다운: 기본 임상 + 간 약효 공개 임상이 둘 이상일 때 */
+function shouldShowTrialSelect(entry) {
+  const trials = getComparisonTrials(entry);
+  if (trials.length <= 1) return false;
+  const hasLiverTrial = trials.some(t => t.hasLiver && t.liver);
+  const hasNonLiverDefault = trials.some(t => !t.hasLiver || !t.liver);
+  // 간 약효 임상이 기본과 분리되어 있거나, 선택 가능한 임상 블록이 2개 이상
+  return hasLiverTrial || trials.length > 1;
+}
+
+function missingForTrial(label) {
+  return `<span class="muted-cell">선택 임상 기준 ${label} 공개값 없음</span>`;
+}
+
+function liverCellForTrial(trial) {
+  if (trial?.hasLiver && trial.liver) return trial.liver;
+  return `<span class="muted-cell">선택 임상에 공개 간 약효 없음</span><br><small>간 약효가 있는 임상을 핵심 임상에서 선택하세요</small>`;
+}
+
+function renderTrialCell(assetId, entry, trial, rowRefs) {
+  const trials = getComparisonTrials(entry);
+  const showSelect = shouldShowTrialSelect(entry);
+  const refs = cite(trial?.refs?.trial || rowRefs);
+  const nctBits = nctCitations(`${trial?.nct || ""} ${trial?.meta || ""}`);
+  if (!showSelect || !trial) {
+    const html = trial
+      ? `${escapeHtml(trial.label)}<br><span>${escapeHtml(trial.meta || "")}</span>`
+      : "임상 미지정";
+    return `${html}<span class="cell-refs">${refs}</span>${nctBits}`;
+  }
+  const options = trials.map(t => {
+    const tag = t.hasLiver && t.liver ? " · 간약효" : "";
+    const selected = t.id === trial.id ? " selected" : "";
+    return `<option value="${escapeHtml(t.id)}"${selected}>${escapeHtml(t.label)}${escapeHtml(tag)}</option>`;
+  }).join("");
+  return `<label class="trial-select-label"><span class="trial-select-caption">기준 임상</span>
+    <select class="trial-select" data-asset-id="${escapeHtml(assetId)}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
+    </label>
+    <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
+    <span class="cell-refs">${refs}</span>${nctBits}</div>`;
+}
 
 const mechanismProfiles = {
   mazdutide: {
@@ -792,37 +951,61 @@ function renderMaster() {
     return tierMatch && textMatch;
   });
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
-    const c = comparison[a.id] || {
-      indication: "개발 중단·비활성 자산",
-      trial: `${a.phase}<br><span>현재 활성 개발 없음</span>`,
-      weight: a.signal,
-      liver: "간 약효 공개자료 확인 필요",
-      gi: "기존 공개자료 참조",
-      discontinuation: "공개자료 확인 필요",
-      rights: a.origin,
-      next: a.watch.join("<br>")
-    };
+    const entry = getComparisonEntry(a.id);
+    const trial = entry ? getActiveTrial(a.id, entry) : null;
+    const indication = entry?.indication || "개발 중단·비활성 자산";
+    const rights = entry?.rights || a.origin;
+    const nextHtml = entry?.next || a.watch.join("<br>");
+    const nextNcts = entry?.nextNcts || [];
     const rowRefs = assetReferenceMap[a.name] || [];
-    const cellRefs = key => `<span class="cell-refs">${cite(c.refs?.[key] || rowRefs)}</span>`;
-    const mechanism = mechanismProfiles[a.id] || {text: "공개 분자설계 정보 없음", refs: rowRefs};
+    const cellRefs = key => {
+      const keys = trial?.refs?.[key] || (key === "rights" ? entry?.rightsRefs : null) || rowRefs;
+      return `<span class="cell-refs">${cite(keys)}</span>`;
+    };
+    const weight = trial?.weight || a.signal || missingForTrial("체중효능");
+    const gi = trial?.gi || missingForTrial("GI");
+    const disc = trial?.discontinuation || missingForTrial("중단");
+    const liverHtml = trial ? liverCellForTrial(trial) : missingForTrial("간 약효");
+    const liverNct = trial?.hasLiver && trial.liver
+      ? nctCitations(`${trial.nct || ""} ${trial.liver}`)
+      : "";
+    const mechanism = mechanismProfiles[a.id] || { text: "공개 분자설계 정보 없음", refs: rowRefs };
     const statusClass = a.tier === "historical" ? "historical" : a.tier === "watch" ? "watch" : "";
+    const trialCell = entry
+      ? renderTrialCell(a.id, entry, trial, rowRefs)
+      : `${a.phase}<br><span>현재 활성 개발 없음</span>`;
     return `<tr data-asset-id="${a.id}">
       <td><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
       <td>${mechanism.text}<span class="cell-refs">${cite(mechanism.refs)}</span></td>
-      <td class="stage-cell"><span class="status ${statusClass}">${a.phase}</span>${cellRefs("trial")}</td>
-      <td>${c.indication}${cellRefs("trial")}</td>
-      <td>${c.trial}${cellRefs("trial")}${nctCitations(c.trial)}</td>
-      <td>${c.weight}${cellRefs("weight")}</td>
-      <td>${c.liver || "간 약효 미정리"}${cellRefs("liver")}${nctCitations(c.liver || "")}</td>
-      <td>${c.gi}${cellRefs("gi")}</td>
-      <td>${c.discontinuation}${cellRefs("discontinuation")}</td>
-      <td>${c.rights}${cellRefs("rights")}</td>
-      <td class="watch-cell"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${cellRefs("next")}${(c.nextNcts || []).map(registryCitation).join(" ")}</td>
+      <td class="stage-cell"><span class="status ${statusClass}">${a.phase}</span></td>
+      <td>${indication}</td>
+      <td class="trial-cell">${trialCell}</td>
+      <td>${weight}${cellRefs("weight")}</td>
+      <td class="liver-cell">${liverHtml}${trial?.hasLiver && trial.liver ? cellRefs("liver") : ""}${liverNct}</td>
+      <td>${gi}${cellRefs("gi")}</td>
+      <td>${disc}${cellRefs("discontinuation")}</td>
+      <td>${rights}${cellRefs("rights")}</td>
+      <td class="watch-cell"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${(nextNcts || []).map(registryCitation).join(" ")}<div class="muted-cell">${nextHtml}</div></td>
     </tr>`;
   }).join("");
   document.querySelector("#masterEmpty").hidden = rows.length > 0;
   if (liveSnapshot) applyLiveRows(liveSnapshot);
   applyColumnVisibility();
+}
+
+function initTrialSelectHandlers() {
+  const tbody = document.querySelector("#masterRows");
+  if (!tbody || tbody.dataset.trialSelectBound === "1") return;
+  tbody.dataset.trialSelectBound = "1";
+  tbody.addEventListener("change", event => {
+    const select = event.target.closest("select.trial-select");
+    if (!select) return;
+    const assetId = select.dataset.assetId;
+    const trialId = select.value;
+    if (!assetId || !trialId) return;
+    saveSelectedTrial(assetId, trialId);
+    renderMaster();
+  });
 }
 
 let activeFilter = "all";
@@ -1040,6 +1223,7 @@ function setupMasterScrollSync() {
 
 initReportTabs();
 initColumnSelector();
+initTrialSelectHandlers();
 renderMaster();
 renderTimeline();
 renderDossiers();

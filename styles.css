@@ -231,6 +231,20 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 }
 .column-option span { font-size: 14px; line-height: 1.35; }
 .master-table .column-hidden { display: none; }
+.trial-select-label { display: grid; gap: 4px; margin: 0 0 6px; }
+.trial-select-caption { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+.master-table select.trial-select {
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-color: #9db0d6;
+  background: #f8faff;
+}
+.trial-select-meta { font-size: 12px; line-height: 1.45; color: var(--muted); }
+.liver-cell .muted-cell { color: var(--muted); }
 
 .master-controls { display: flex; gap: 12px; }
 .master-controls label { display: grid; gap: 4px; }
