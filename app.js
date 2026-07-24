@@ -686,8 +686,8 @@ function resolveTrialResults(trial) {
 
 function resultBoundStamp(trial) {
   if (!trial) return "";
-  // 체중 열에만 한 번 표시 (네 칸 반복 방지)
-  return `<div class="result-bound" title="선택 임상과 동일 블록">기준 ${escapeHtml(trial.label)}</div>`;
+  // 선택 임상에 종속되는 모든 결과 열(체중·간·GI·중단)에 동일 표시
+  return `<div class="result-bound" title="이 칸 결과는 선택한 핵심 임상 블록">기준 ${escapeHtml(trial.label)}</div>`;
 }
 
 function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
@@ -705,8 +705,7 @@ function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
   const nctBits = key === "liver" && htmlOrNull
     ? nctCitations(`${trial?.nct || ""} ${htmlOrNull}`)
     : "";
-  // 결과 기준 스탬프는 첫 결과 열(weight)에만
-  const stamp = key === "weight" ? resultBoundStamp(trial) : "";
+  const stamp = resultBoundStamp(trial);
   return `${stamp}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
 }
 
