@@ -315,6 +315,7 @@ const TRIAL_SELECT_STORAGE_KEY = "competitor-selected-trial-v1";
 const comparison = {
   // 자산 단위: indication, rights, next, nextNcts, defaultTrialId, trials[]
   // 임상 단위: id, label, meta, nct?, hasLiver, weight, liver, gi, discontinuation, refs
+  // meta 형식: "NCT · 단계 · 기간 · 대표적응증" (조직학·ITT 등 endpoint/분석세트 표기 금지)
   mazdutide: {
     indication: "비만·과체중, T2D 승인<br>OSA·MASH 등 확장",
     rights: "Lilly 기원 OXM 유사체<br>Innovent: 중국 개발·상업화 권리",
@@ -325,7 +326,7 @@ const comparison = {
       {
         id: "glory2",
         label: "GLORY-2",
-        meta: "NCT06164873 · P3 · 60주",
+        meta: "NCT06164873 · P3 · 60주 · 비만·과체중",
         nct: "NCT06164873",
         hasLiver: false,
         weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
@@ -359,7 +360,7 @@ const comparison = {
       {
         id: "mash_p2",
         label: "MASH Phase 2",
-        meta: "NCT04771273 · P2 · 48주 · 조직학",
+        meta: "NCT04771273 · P2 · 48주 · MASH",
         nct: "NCT04771273",
         hasLiver: true,
         // 이 임상에 체중·GI중단 공개 요약이 없으면 null → 선택 임상 기준 공개값 없음
@@ -394,7 +395,7 @@ const comparison = {
       {
         id: "impact",
         label: "IMPACT",
-        meta: "NCT05989711 · P2b · 24주 · MASH · ITT",
+        meta: "NCT05989711 · P2b · 24주 · MASH",
         nct: "NCT05989711",
         hasLiver: true,
         weight: "<b>Pemvidutide 1.2 mg −5.0%</b><br>1.8 mg −6.2%<br>위약 −1.0%<br><small>IMPACT 24주 · 회사 topline</small>",
@@ -417,7 +418,7 @@ const comparison = {
       {
         id: "mk001",
         label: "MK-6024-001",
-        meta: "NCT04944992 · P2a · 24주 · NAFLD",
+        meta: "NCT04944992 · P2a · 24주 · NAFLD/MASH",
         nct: "NCT04944992",
         hasLiver: true,
         weight: "<b>Efinopegdutide −8.5%</b><br>Semaglutide −7.1%",
@@ -439,7 +440,7 @@ const comparison = {
       {
         id: "ascend",
         label: "ASCEND",
-        meta: "D8460C00004 · P2 · 완료",
+        meta: "D8460C00004 · P2 · 완료 · 비만·과체중",
         hasLiver: false,
         weight: "<b>결과 미공개</b><br>377명 시험 완료",
         liver: null,
@@ -482,7 +483,7 @@ const comparison = {
       {
         id: "cms_p1",
         label: "China Phase 1",
-        meta: "NCT 식별 안 됨",
+        meta: "NCT 식별 안 됨 · 비만·대사질환",
         hasLiver: false,
         weight: "<b>사람 효능 미공개</b>",
         liver: null,
@@ -503,7 +504,7 @@ const comparison = {
       {
         id: "fih",
         label: "First-in-human",
-        meta: "NCT06252220 · P1",
+        meta: "NCT06252220 · P1 · 비만",
         nct: "NCT06252220",
         hasLiver: false,
         weight: "<b>DA-1726 기준선 대비 −9.1%</b><br>48 mg 비적정 · Day 54 · n=6<br><small>위약 체중값 미공개</small>",
@@ -525,7 +526,7 @@ const comparison = {
       {
         id: "pb_p1b",
         label: "Phase 1b/2a",
-        meta: "NCT06147544 · 완료",
+        meta: "NCT06147544 · 완료 · 비만·T2D",
         nct: "NCT06147544",
         hasLiver: false,
         weight: "<b>비교 가능한 공개값 제한</b>",
