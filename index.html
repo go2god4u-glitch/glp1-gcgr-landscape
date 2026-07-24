@@ -4,8 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260724-01">
+  <link rel="stylesheet" href="styles.css?v=20260724-02">
+  <!-- 캐시된 옛 HTML을 피하려면 URL에 ?v= 를 붙이거나 강력 새로고침(Ctrl+F5) -->
+  <script>
+    // app.js 로드 전에도 배포 스냅샷 시각을 헤더에 먼저 표시 (브라우저 캐시 대비)
+    (function bootstrapDeployStamp() {
+      var el = null;
+      function applyIso(iso) {
+        if (!iso || !el) return;
+        try {
+          el.textContent = new Intl.DateTimeFormat("ko-KR", {
+            timeZone: "Asia/Seoul",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+          }).format(new Date(iso)).replace(/\.$/, "");
+        } catch (e) {
+          el.textContent = String(iso).slice(0, 10);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        el = document.getElementById("infoUpdatedAt");
+        var url = new URL("data/latest.json?v=20260724-02", document.baseURI || location.href);
+        fetch(url.href, { cache: "no-store" })
+          .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+          .then(function (j) { applyIso(j.registryCheckedAt || j.generatedAt); })
+          .catch(function () { /* app.js 경로에서 재시도 */ });
+      });
+    })();
+  </script>
 </head>
 <body>
   <header class="app-header">
@@ -14,7 +47,7 @@
     </div>
     <div class="header-meta">
       <span>기준 분기</span><b>2026 Q3</b>
-      <span>정보 업데이트</span><b id="infoUpdatedAt">2026-07-24</b>
+      <span>정보 업데이트</span><b id="infoUpdatedAt">2026. 07. 24. 11:01</b>
       <button id="openMethod">포함 기준</button>
     </div>
   </header>
@@ -191,6 +224,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260724-01"></script>
+  <script src="app.js?v=20260724-02"></script>
 </body>
 </html>

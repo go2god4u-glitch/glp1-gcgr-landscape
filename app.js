@@ -1098,9 +1098,13 @@ async function runFullRefreshWithProgress() {
   return requestSnapshot("/api/snapshot");
 }
 
+function deployedSnapshotUrl() {
+  // document.baseURI 기준 절대 URL (프로젝트 Pages 경로 /glp1-gcgr-landscape/ 대응)
+  return new URL("data/latest.json?v=20260724-02", document.baseURI || location.href).href;
+}
+
 async function loadDeployedSnapshot() {
-  // GitHub Pages 등 정적 호스팅: 상대경로 data/latest.json (repo root 배포)
-  return requestSnapshot("data/latest.json");
+  return requestSnapshot(deployedSnapshotUrl());
 }
 
 function markStaticDeployMode(status, meta, snapshot) {
