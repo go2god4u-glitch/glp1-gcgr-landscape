@@ -2,6 +2,7 @@ const assets = [
   {
     id: "mazdutide", name: "Mazdutide", aliases: "IBI362 · LY3305677 · OXM3", company: "Innovent / Eli Lilly",
     phase: "승인 + Phase 3 확장", stage: 4, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "중국 체중관리·T2D 승인. GLORY-2 9 mg에서 60주 전체 efficacy estimand −18.55%.",
     origin: "Lilly가 개발한 oxyntomodulin 유사체. Innovent가 중국 개발·상업화 권리를 확보했다.",
     strategy: "클래스 최초 상업화 benchmark. OSA, MASH, 청소년, 고혈압, HFpEF와 고용량으로 확장 중.",
@@ -11,6 +12,7 @@ const assets = [
   {
     id: "survodutide", name: "Survodutide", aliases: "BI 456906", company: "Boehringer Ingelheim / Zealand Pharma",
     phase: "Phase 3", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "SYNCHRONIZE-1 76주 efficacy estimand 최대 −16.6%. GI AE 중단 약 19%가 핵심 부담.",
     origin: "Zealand와 BI가 공동 발명. 2011년 협업에서 BI가 글로벌 개발·상업화 권리를 확보했다.",
     strategy: "글로벌 비만·MASH 후기개발을 동시에 보유한 가장 큰 임상 위협.",
@@ -20,6 +22,7 @@ const assets = [
   {
     id: "pemvidutide", name: "Pemvidutide", aliases: "ALT-801 · SP-1373", company: "Altimmune",
     phase: "Phase 2b → Phase 3 준비", stage: 2.55, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "MOMENTUM 48주 −15.6%. MASH·AUD·ALD로 적응증을 넓히며 PERFORMA Phase 3를 준비.",
     origin: "Spitfire Pharma의 SP-1373. Altimmune이 2019년 Spitfire를 인수한 뒤 ALT-801, pemvidutide로 전환했다.",
     strategy: "DA-1726의 MetALD 방향과 가장 가까운 적응증 경쟁자.",
@@ -29,6 +32,7 @@ const assets = [
   {
     id: "efino", name: "Efinopegdutide", aliases: "MK-6024 · HM12525A · JNJ-64565111", company: "Merck / Hanmi",
     phase: "Phase 2", stage: 2.25, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "24주 체중 −8.5%; semaglutide 대비 간지방 감소 우위. MASH·보상성 간경변 집중.",
     origin: "Hanmi LAPSCOVERY 자산. Janssen 반환 후 2020년 Merck가 글로벌 독점 라이선스했다.",
     strategy: "체중보다 간 직접효과와 간경변 개발의 대형제약 benchmark.",
@@ -38,6 +42,7 @@ const assets = [
   {
     id: "azd9550", name: "AZD9550", aliases: "—", company: "AstraZeneca",
     phase: "Phase 2", stage: 2.15, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "ASCEND Phase 2가 2026년 5월 완료됐으나 결과 미공개. AZD6234 amylin 병용도 탐색.",
     origin: "AstraZeneca 내부 개발 자산. 공개된 외부 라이선스 이력은 확인되지 않았다.",
     strategy: "결과가 아직 보이지 않는 near-term blind spot. 단독과 amylin 병용을 동시에 검증한다.",
@@ -47,6 +52,7 @@ const assets = [
   {
     id: "dd01", name: "Zabopegdutide", aliases: "DD01", company: "D&D Pharmatech",
     phase: "Phase 2 완료", stage: 2, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "48주 조직학: 섬유화 개선 50.0% vs 15.8%, MASH 해소 62.5% vs 5.3% (소규모 PP).",
     origin: "D&D Pharmatech 자체 개발 장기지속형 자산. 중국 비만 권리는 Shenzhen Salubris에 이전.",
     strategy: "국내 기원 MASH 신호와 중국 비만 확장을 가진 직접 비교자. 다음 글로벌 시험은 미등록.",
@@ -56,6 +62,7 @@ const assets = [
   {
     id: "cms", name: "CMS-D005", aliases: "—", company: "China Medical System",
     phase: "China Phase 1", stage: 1.15, tier: "watch", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "중국 Phase 1 진행이 HKEX 공시로 확인되지만 공개 임상·약리 데이터는 제한적.",
     origin: "China Medical System 자체 개발 자산.",
     strategy: "ClinicalTrials.gov에 잡히지 않는 중국 레지스트리 사각지대.",
@@ -65,6 +72,7 @@ const assets = [
   {
     id: "da1726", name: "DA-1726", aliases: "—", company: "Dong-A ST / MetaVia",
     phase: "Phase 1 Part 3", stage: 1.45, tier: "core", tone: "internal",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "비적정 48 mg, n=6에서 Day 54 −9.1%. Part 3는 적정 48/64 mg 목표용량을 검증 중.",
     origin: "Dong-A ST 개발. 2022년 NeuroBo(현 MetaVia)가 한국 제외 글로벌 권리를 라이선스했다.",
     strategy: "내부 기준자산. 후기 경쟁력의 관문은 적정 후 목표용량 도달률과 GI 중단률.",
@@ -74,6 +82,7 @@ const assets = [
   {
     id: "pb718", name: "PB-718", aliases: "PB-119 + PB-722", company: "PegBio",
     phase: "Phase 1/2 완료 · 전략 검토", stage: 1.8, tier: "watch", tone: "watch",
+    mechanism: "GLP-1R+GCGR fixed-combo",
     signal: "두 작용제의 고정용량 복합제. 최신 등록시험 완료 후 후속 전략을 평가 중.",
     origin: "PegBio의 GLP-1RA PB-119와 GCGR agonist PB-722를 조합한 제품.",
     strategy: "동일 수용체쌍의 대체 아키텍처지만 unimolecular class와 직접 동급 비교하지 않는다.",
@@ -83,6 +92,7 @@ const assets = [
   {
     id: "cotadutide", name: "Cotadutide", aliases: "MEDI0382", company: "AstraZeneca / MedImmune",
     phase: "중단", stage: 2, tier: "historical", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "T2D·비만·NASH에서 Phase 2 신호를 만들었으나 현재 파이프라인에서 제외.",
     origin: "MedImmune/AstraZeneca의 균형형 GLP-1R/GCGR co-agonist.",
     strategy: "사람 POC가 있어도 포트폴리오 선택과 후기개발성이 별개임을 보여준다.",
@@ -92,6 +102,7 @@ const assets = [
   {
     id: "nn1177", name: "NN1177", aliases: "NNC9204-1177", company: "Novo Nordisk",
     phase: "중단", stage: 1, tier: "historical", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "Phase 1에서 체중감량 신호와 함께 내약성·심박수·혈당 우려가 나타나 개발 중단.",
     origin: "Novo Nordisk 내부 oxyntomodulin 계열 자산.",
     strategy: "GCGR 비중과 치료창 설계가 초기 임상의 존속을 결정하는 대표 사례.",
@@ -101,6 +112,7 @@ const assets = [
   {
     id: "sar425899", name: "SAR425899", aliases: "—", company: "Sanofi",
     phase: "중단", stage: 1, tier: "historical", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "Phase 1에서 혈당·체중 신호를 보였으나 후속 임상개발이 이어지지 않았다.",
     origin: "Sanofi 내부 개발 GLP-1R/GCGR dual agonist.",
     strategy: "초기 약리효능만으로 자산의 후기 경쟁력이 성립하지 않는 사례.",
@@ -110,6 +122,7 @@ const assets = [
   {
     id: "opk88003", name: "Pegapamodutide", aliases: "OPK-88003 · MOD-6031", company: "OPKO Health",
     phase: "휴면/중단", stage: 1, tier: "historical", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "주 1회 dual agonist로 사람 임상에 진입했지만 후속 활성 개발 근거가 없다.",
     origin: "OPKO의 장기지속형 oxyntomodulin 기반 자산.",
     strategy: "등록시험 완료와 개발 지속은 같은 의미가 아니라는 사례.",
@@ -119,6 +132,7 @@ const assets = [
   {
     id: "g3215", name: "G3215", aliases: "—", company: "Gubra",
     phase: "임상 1상 이후 비활성", stage: 1, tier: "historical", tone: "watch",
+    mechanism: "GLP-1R/GCGR dual",
     signal: "초기 임상 진입 기록 이후 현재 활성 개발을 뒷받침하는 공개 신호가 제한적.",
     origin: "Gubra peptide discovery 자산.",
     strategy: "공개정보 공백이 큰 자산은 중단과 미공개를 구분해 관리해야 한다.",
@@ -288,7 +302,7 @@ const typeNames = {
  */
 const COMPARISON_FIELD_BINDING = {
   asset: { trialDependent: false, role: "asset", note: "물질/회사" },
-  mechanism: { trialDependent: false, role: "asset", note: "분자 설계·활성비" },
+  mechanism: { trialDependent: false, role: "asset", note: "기전 축 + 분자 설계(targets/ratio/text)" },
   stage: { trialDependent: false, role: "asset", note: "현재 단계" },
   indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약" },
   trial: { trialDependent: false, role: "selection", note: "핵심 임상 선택(결과의 유일한 키)" },
@@ -775,64 +789,142 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
 
 normalizeComparisonEntries();
 
+/**
+ * 기전 상세 (자산 단위).
+ * targets: 수용체 코드 배열. format: unimolecular | fixed-combo | other.
+ * ratio: 공개 활성비만 (없으면 null). text: 분자 설계 HTML.
+ * 스키마: docs/PLATFORM_SCHEMA.md
+ */
 const mechanismProfiles = {
   mazdutide: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>Mammalian oxyntomodulin analogue</b><br>지방산 side chain 기반 장기지속 peptide<br>GLP-1R:GCGR functional ratio: <b>공개 수치 없음</b>",
     refs: ["MZ-DESIGN"]
   },
   survodutide: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "8:1",
     text: "<b>장기지속 단일분자 peptide</b><br>GLP-1R:GCGR ≈ <b>8:1</b><br><small>human plasma functional assay</small>",
     refs: ["SV-DESIGN"]
   },
   pemvidutide: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "1:1",
     text: "<b>29-aa 단일분자 peptide</b><br>glycolipid surfactant/EuPort 반감기 연장<br>GLP-1R:GCGR = <b>1:1</b>",
     refs: ["PM-DESIGN"]
   },
   efino: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>Modified OXM–PEG–IgG4 Fc conjugate</b><br>양 수용체 comparable potency<br>정확한 수치: <b>공개 없음</b>",
     refs: ["EF-DESIGN", "RATIO-REVIEW"]
   },
   azd9550: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>GLP-1R/GCGR 단일분자 이중작용제</b><br>parent scaffold·functional ratio: <b>공개 없음</b>",
     refs: ["AZ-ASCEND"]
   },
   dd01: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "11:1",
     text: "<b>Proprietary 장기지속 peptide</b><br>GLP-1R:GCGR = <b>11:1</b>",
     refs: ["DD-RATIO"]
   },
   cms: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>GLP-1R/GCGR 이중작용제</b><br>parent scaffold·functional ratio: <b>공개 없음</b>",
     refs: ["CMS-IND", "CMS-ANNUAL"]
   },
   da1726: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "3:1",
     text: "<b>Oxyntomodulin analogue</b><br>GLP-1R:GCGR = <b>3:1</b><br><small>회사 공개 receptor-activity ratio</small>",
     refs: ["DA-RATIO"]
   },
   pb718: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "fixed-combo",
+    ratio: null,
     text: "<b>PB-119 GLP-1RA + PB-722 GCGR agonist</b><br>고정용량 복합제 · 단일분자 아님<br>성분·활성비: <b>공개 수치 없음</b>",
     refs: ["PB-ABSTRACT", "PB-ANNUAL"]
   },
   cotadutide: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "5:1",
     text: "<b>OXM 기반 synthetic linear peptide</b><br>GLP-1R:GCGR = <b>5:1</b> in vitro<br>human plasma에서 약 <b>8:1</b>",
     refs: ["COT-P2", "SV-DESIGN"]
   },
   nn1177: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: "3:1",
     text: "<b>장기지속 GLP-1R/GCGR peptide</b><br>GLP-1R:GCGR ≈ <b>3:1</b><br><small>human plasma functional assay</small>",
     refs: ["NN-P1", "SV-DESIGN"]
   },
   sar425899: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>Synthetic dual-agonist polypeptide</b><br>양 수용체 유사 potency로 보고<br>표준화된 ratio: <b>공개 없음</b>",
     refs: ["SAR-P1", "RATIO-REVIEW"]
   },
   opk88003: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>장기지속 oxyntomodulin analogue</b><br>GLP-1R:GCGR ratio: <b>공개 수치 없음</b>",
     refs: ["OPK-TRIAL", "CLASS-REVIEW"]
   },
   g3215: {
+    targets: ["GLP-1R", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
     text: "<b>GLP-1R/GCGR co-agonist peptide</b><br>adaptive continuous infusion 개발<br>functional ratio: <b>공개 수치 없음</b>",
     refs: ["G3215-P1"]
   }
 };
+
+/** 기전 칸: 배지(자산.mechanism) + targets 칩 + 상세 text */
+function renderMechanismCell(asset, rowRefs) {
+  const profile = mechanismProfiles[asset.id] || {};
+  const group = asset.mechanism || "기전 미지정";
+  const targets = Array.isArray(profile.targets) ? profile.targets : [];
+  const targetsHtml = targets.length
+    ? `<div class="mech-targets">${targets.map(t => `<span class="mech-target">${escapeHtml(t)}</span>`).join("")}</div>`
+    : "";
+  const text = profile.text || "공개 분자설계 정보 없음";
+  const refs = profile.refs || rowRefs || [];
+  return `<div class="mech-group">${escapeHtml(group)}</div>${targetsHtml}<div class="mech-detail">${text}</div><span class="cell-refs">${cite(refs)}</span>`;
+}
+
+/** 데이터에 등장하는 기전 목록 (필터 옵션 자동 생성) */
+function uniqueMechanisms() {
+  return [...new Set(assets.map(a => a.mechanism).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+}
+
+function fillMechanismFilter() {
+  const sel = document.querySelector("#masterMechanism");
+  if (!sel) return;
+  const current = sel.value || "all";
+  const opts = uniqueMechanisms();
+  sel.innerHTML = `<option value="all">전체 기전</option>${opts.map(m =>
+    `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`
+  ).join("")}`;
+  if ([...sel.options].some(o => o.value === current)) sel.value = current;
+  else sel.value = "all";
+}
 
 const now = new Date();
 const CURRENT_YEAR = now.getFullYear();
@@ -1347,11 +1439,13 @@ function initColumnSelector() {
 
 function renderMaster() {
   const tier = document.querySelector("#masterTier").value;
+  const mechanismFilter = document.querySelector("#masterMechanism")?.value || "all";
   const query = document.querySelector("#masterSearch").value.trim().toLowerCase();
   const rows = assets.filter(a => {
     const tierMatch = tier === "all" || a.tier === tier;
-    const textMatch = !query || `${a.name} ${a.aliases} ${a.company}`.toLowerCase().includes(query);
-    return tierMatch && textMatch;
+    const mechMatch = mechanismFilter === "all" || a.mechanism === mechanismFilter;
+    const textMatch = !query || `${a.name} ${a.aliases} ${a.company} ${a.mechanism || ""}`.toLowerCase().includes(query);
+    return tierMatch && mechMatch && textMatch;
   });
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
     const entry = getComparisonEntry(a.id);
@@ -1369,7 +1463,6 @@ function renderMaster() {
         : (key === "rights" ? (entry?.rightsRefs || rowRefs) : (trial?.refs?.[key] || rowRefs));
       return `<span class="cell-refs">${cite(keys)}</span>`;
     };
-    const mechanism = mechanismProfiles[a.id] || { text: "공개 분자설계 정보 없음", refs: rowRefs };
     const statusClass = a.tier === "historical" ? "historical" : a.tier === "watch" ? "watch" : "";
     const trialCell = entry
       ? renderTrialCell(a.id, entry, trial, rowRefs)
@@ -1379,9 +1472,9 @@ function renderMaster() {
       const extra = key === "liver" ? " liver-cell" : "";
       return `<td class="result-cell${extra}" data-column-result="${key}" data-trial-binding="dependent">${renderResultCell(trial, key, results[key], cellRefs(key))}</td>`;
     }).join("");
-    return `<tr data-asset-id="${a.id}" data-active-trial="${trial?.id || ""}">
+    return `<tr data-asset-id="${a.id}" data-mechanism="${escapeHtml(a.mechanism || "")}" data-active-trial="${trial?.id || ""}">
       <td data-trial-binding="asset"><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
-      <td data-trial-binding="asset">${mechanism.text}<span class="cell-refs">${cite(mechanism.refs)}</span></td>
+      <td data-trial-binding="asset" data-column-result="mechanism">${renderMechanismCell(a, rowRefs)}</td>
       <td class="stage-cell" data-trial-binding="asset"><span class="status ${statusClass}">${a.phase}</span></td>
       <td data-trial-binding="asset">${indication}</td>
       <td class="trial-cell" data-trial-binding="selection">${trialCell}</td>
@@ -1574,15 +1667,16 @@ function renderDossierLiveBlock(assetId) {
 function renderDossiers(tier = activeDossierTier) {
   activeDossierTier = tier || activeDossierTier;
   document.querySelector("#dossierGrid").innerHTML = assets.filter(a => a.tier === activeDossierTier).map(a => `
-    <article class="dossier" tabindex="0" data-id="${a.id}" aria-expanded="false">
+    <article class="dossier" tabindex="0" data-id="${a.id}" data-mechanism="${escapeHtml(a.mechanism || "")}" aria-expanded="false">
       <div class="dossier-summary">
         <div><h3>${a.name}</h3><span class="aliases">${a.aliases}</span></div>
         <span class="company">${a.company}</span>
+        ${a.mechanism ? `<span class="mech-group">${escapeHtml(a.mechanism)}</span>` : ""}
         <p class="signal">${a.signal} ${cite(assetReferenceMap[a.name] || [])}</p>
         <span class="expand" aria-hidden="true">+</span>
       </div>
       <div class="dossier-detail">
-        <div><h4>기원 / 권리</h4><p>${a.origin} ${cite(assetReferenceMap[a.name] || [])}</p><h4>현재 판단</h4><p>${a.strategy} ${cite(assetReferenceMap[a.name] || [])}</p>${renderDossierLiveBlock(a.id)}</div>
+        <div><h4>기전</h4><p>${escapeHtml(a.mechanism || "미지정")} · targets: ${escapeHtml((mechanismProfiles[a.id]?.targets || []).join(", ") || "—")}</p><h4>기원 / 권리</h4><p>${a.origin} ${cite(assetReferenceMap[a.name] || [])}</p><h4>현재 판단</h4><p>${a.strategy} ${cite(assetReferenceMap[a.name] || [])}</p>${renderDossierLiveBlock(a.id)}</div>
         <div><h4>다음 확인사항</h4><ul>${a.watch.map(w => `<li>${w} ${cite(assetReferenceMap[a.name] || [])}</li>`).join("")}</ul><p><a href="${a.source}" target="_blank" rel="noopener">대표 근거 열기 ↗</a></p></div>
       </div>
     </article>`).join("");
@@ -1717,6 +1811,7 @@ initReportTabs();
 initColumnSelector();
 initTrialSelectHandlers();
 initTrialDraftHandlers();
+fillMechanismFilter();
 renderMaster();
 renderTimeline();
 renderDossiers();
@@ -1724,6 +1819,7 @@ renderSources();
 setupMasterScrollSync();
 
 document.querySelector("#masterTier").addEventListener("change", renderMaster);
+document.querySelector("#masterMechanism")?.addEventListener("change", renderMaster);
 document.querySelector("#masterSearch").addEventListener("input", renderMaster);
 document.querySelector("#searchInput").addEventListener("input", renderTimeline);
 document.querySelector("#rangeFilter").addEventListener("change", renderTimeline);
