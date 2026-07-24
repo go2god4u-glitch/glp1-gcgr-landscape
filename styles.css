@@ -257,6 +257,20 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
   line-height: 1.3;
 }
 .result-body { display: block; }
+.live-registry { margin-top: 8px; display: grid; gap: 2px; font-size: 12px; line-height: 1.4; }
+.live-registry-label {
+  display: inline-block;
+  width: fit-content;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #f0f2f5;
+  color: #59667a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.live-registry a { color: var(--blue); text-decoration: none; }
+.live-registry a:hover { text-decoration: underline; }
 
 .master-controls { display: flex; gap: 12px; }
 .master-controls label { display: grid; gap: 4px; }

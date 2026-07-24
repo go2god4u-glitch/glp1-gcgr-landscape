@@ -818,13 +818,20 @@ function applyLiveRows(snapshot) {
     const mostRecent = [...(program.studies || [])]
       .filter(study => study.lastUpdate)
       .sort((a, b) => b.lastUpdate.localeCompare(a.lastUpdate))[0];
+    // CT.gov 등록 감시 신호 (핵심 임상 드롭다운·효능 결과 블록과 무관)
     stageTarget.insertAdjacentHTML("beforeend", `
-      <div class="live-registry"><span>진행·모집 예정 임상 ${active.length}건 (추적 ${program.studies.length}건)</span>
-      ${mostRecent ? `<a href="https://clinicaltrials.gov/study/${mostRecent.nctId}" target="_blank" rel="noopener">등록정보 갱신일: ${formatDate(mostRecent.lastUpdate)} · ${mostRecent.nctId} · ${formatRegistryStatus(mostRecent.status)}</a>` : ""}</div>`);
+      <div class="live-registry">
+        <span class="live-registry-label">등록 감시</span>
+        <span>활성·모집 예정 ${active.length}건 · 추적 ${program.studies.length}건</span>
+        ${mostRecent ? `<a href="https://clinicaltrials.gov/study/${mostRecent.nctId}" target="_blank" rel="noopener">최근 갱신 ${formatDate(mostRecent.lastUpdate)} · ${mostRecent.nctId} · ${formatRegistryStatus(mostRecent.status)}</a>` : `<span class="muted-cell">최근 등록 갱신 기록 없음</span>`}
+      </div>`);
     const milestone = program.nextMilestone;
     if (milestone) {
       watchTarget.insertAdjacentHTML("beforeend", `
-        <div class="live-registry"><a href="https://clinicaltrials.gov/study/${milestone.nctId}" target="_blank" rel="noopener">다음 등록 일정: ${milestone.nctId} · ${formatDate(milestone.date)} ${milestone.kind === "primary completion" ? "주요 완료 예정" : "시험 완료 예정"}</a></div>`);
+        <div class="live-registry">
+          <span class="live-registry-label">등록 감시</span>
+          <a href="https://clinicaltrials.gov/study/${milestone.nctId}" target="_blank" rel="noopener">다음 일정 ${milestone.nctId} · ${formatDate(milestone.date)} ${milestone.kind === "primary completion" ? "주요 완료 예정" : "시험 완료 예정"}</a>
+        </div>`);
     }
   });
 }
