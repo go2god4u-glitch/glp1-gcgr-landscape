@@ -669,7 +669,8 @@ function auditKeyTrialBinding(snapshot) {
 
 function missingForTrial(label) {
   // 해당 임상에 결과 없으면 설명 없이 없음만 표기 (결과 기준 스탬프가 임상을 이미 표시)
-  return `<span class="muted-cell">${label} 공개값 없음</span>`;
+  // result-empty: 본문과 동일 글씨체·크기, 색만 muted로 구분 (muted-cell의 Consolas 사용 금지)
+  return `<span class="result-empty">${label} 공개값 없음</span>`;
 }
 
 function hasTrialField(trial, key) {
