@@ -278,6 +278,49 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
   color: var(--muted);
 }
 .trial-live-status .live-registry-label { margin-right: 4px; vertical-align: middle; }
+.draft-panel .draft-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.draft-count {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+.draft-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: #fbfcfe;
+}
+.draft-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.draft-card-head span { color: var(--muted); font-size: 12px; }
+.draft-title { margin: 0 0 10px; font-size: 13px; line-height: 1.4; color: #3a4556; }
+.draft-field { display: grid; gap: 4px; margin-bottom: 8px; font-size: 12px; }
+.draft-field span { color: var(--muted); font-weight: 700; }
+.draft-field input,
+.draft-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line-dark);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+  background: #fff;
+}
+.draft-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 4px; }
+.draft-actions button.secondary { background: #fff; color: #445; border: 1px solid var(--line-dark); }
+.draft-actions a { font-size: 12px; }
 
 .master-controls { display: flex; gap: 12px; }
 .master-controls label { display: grid; gap: 4px; }

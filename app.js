@@ -559,10 +559,28 @@ function getComparisonEntry(assetId) {
   return comparison[assetId] || null;
 }
 
-function getComparisonTrials(entry) {
-  if (!entry) return [];
-  if (Array.isArray(entry.trials) && entry.trials.length) return entry.trials;
-  return [];
+/** 승격된 초안 임상 (런타임 병합). 파일/API 또는 localStorage. */
+let promotedTrialsByAsset = {};
+let trialDraftStore = { schemaVersion: 1, drafts: [] };
+const TRIAL_DRAFT_STORAGE_KEY = "competitor-trial-drafts-v1";
+
+function getComparisonTrials(entry, assetId) {
+  const base = Array.isArray(entry?.trials) ? [...entry.trials] : [];
+  if (!assetId) return base;
+  const extra = promotedTrialsByAsset[assetId] || [];
+  const out = [...base];
+  for (const trial of extra) {
+    if (!out.some(b => (trial.nct && b.nct === trial.nct) || b.id === trial.id)) out.push(trial);
+  }
+  return out;
+}
+
+function getCuratedNctsByAsset() {
+  const map = {};
+  for (const [assetId, entry] of Object.entries(comparison)) {
+    map[assetId] = (entry.trials || []).map(t => t.nct).filter(Boolean);
+  }
+  return map;
 }
 
 /**
@@ -589,7 +607,7 @@ function normalizeComparisonEntries() {
 }
 
 function getSelectedTrialId(assetId, entry) {
-  const trials = getComparisonTrials(entry);
+  const trials = getComparisonTrials(entry, assetId);
   if (!trials.length) return null;
   const stored = loadSelectedTrials()[assetId];
   if (stored && trials.some(t => t.id === stored)) return stored;
@@ -598,7 +616,7 @@ function getSelectedTrialId(assetId, entry) {
 }
 
 function getActiveTrial(assetId, entry) {
-  const trials = getComparisonTrials(entry);
+  const trials = getComparisonTrials(entry, assetId);
   const id = getSelectedTrialId(assetId, entry);
   return trials.find(t => t.id === id) || trials[0] || null;
 }
@@ -607,9 +625,9 @@ function trialPublishesLiver(t) {
   return Boolean(t && t.hasLiver !== false && t.liver);
 }
 
-/** 드롭다운: 사람 큐레이션 핵심 임상이 2개 이상일 때 */
-function shouldShowTrialSelect(entry) {
-  return getComparisonTrials(entry).length > 1;
+/** 드롭다운: 큐레이션+승격 임상이 2개 이상일 때 */
+function shouldShowTrialSelect(entry, assetId) {
+  return getComparisonTrials(entry, assetId).length > 1;
 }
 
 /** 최신 정보 반영 스냅샷에서 핵심 임상 NCT 조회 (등록 감시용) */
@@ -638,7 +656,7 @@ function renderTrialLiveStatus(assetId, trial) {
 function auditKeyTrialBinding(snapshot) {
   const issues = [];
   for (const [assetId, entry] of Object.entries(comparison)) {
-    const trials = getComparisonTrials(entry);
+    const trials = getComparisonTrials(entry, assetId);
     if (!trials.length) continue;
     if (trials.length > 1 && !entry.defaultTrialId) {
       issues.push(`${assetId}: multi-trial without defaultTrialId`);
@@ -712,8 +730,8 @@ function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
 }
 
 function renderTrialCell(assetId, entry, trial, rowRefs) {
-  const trials = getComparisonTrials(entry);
-  const showSelect = shouldShowTrialSelect(entry);
+  const trials = getComparisonTrials(entry, assetId);
+  const showSelect = shouldShowTrialSelect(entry, assetId);
   const refs = cite(trial?.refs?.trial || rowRefs);
   const nctBits = nctCitations(`${trial?.nct || ""} ${trial?.meta || ""}`);
   const liveStatus = renderTrialLiveStatus(assetId, trial);
@@ -954,7 +972,201 @@ function renderChanges(snapshot, showComplete = false) {
   }).join("");
 }
 
-function applyLiveSnapshot(snapshot) {
+async function apiJson(url, options = {}) {
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: { "content-type": "application/json", ...(options.headers || {}) },
+    ...options
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+}
+
+function applyPromotedMap(map) {
+  promotedTrialsByAsset = map && typeof map === "object" ? map : {};
+}
+
+function readDraftField(draftId, field) {
+  const el = document.querySelector(`[data-draft-field="${draftId}:${field}"]`);
+  if (!el) return undefined;
+  const value = el.value.trim();
+  return value ? value.replaceAll("\n", "<br>") : null;
+}
+
+function renderTrialDraftPanel() {
+  const panel = document.querySelector("#trialDraftPanel");
+  const list = document.querySelector("#trialDraftList");
+  const countEl = document.querySelector("#trialDraftCount");
+  if (!panel || !list) return;
+  const drafts = (trialDraftStore.drafts || []).filter(d => d.status === "draft");
+  countEl.textContent = drafts.length ? `${drafts.length}건` : "";
+  panel.hidden = drafts.length === 0;
+  if (!drafts.length) {
+    list.innerHTML = "";
+    return;
+  }
+  const assetName = id => (assets.find(a => a.id === id)?.name || id);
+  list.innerHTML = drafts.map(d => `
+    <article class="draft-card" data-draft-id="${escapeHtml(d.id)}">
+      <div class="draft-card-head">
+        <b>${escapeHtml(assetName(d.assetId))}</b>
+        <span>${escapeHtml(d.nct)} · ${escapeHtml(d.registryStatus || "")}</span>
+      </div>
+      <p class="draft-title">${escapeHtml(d.title || "")}</p>
+      <label class="draft-field"><span>라벨</span><input data-draft-field="${escapeHtml(d.id)}:label" value="${escapeHtml(d.label || "")}"></label>
+      <label class="draft-field"><span>meta</span><input data-draft-field="${escapeHtml(d.id)}:meta" value="${escapeHtml(d.meta || "")}"></label>
+      <label class="draft-field"><span>체중효능 HTML</span><textarea data-draft-field="${escapeHtml(d.id)}:weight" rows="2" placeholder="없으면 비움">${escapeHtml((d.weight || "").replaceAll("<br>", "\n"))}</textarea></label>
+      <label class="draft-field"><span>간 약효 HTML</span><textarea data-draft-field="${escapeHtml(d.id)}:liver" rows="2" placeholder="없으면 비움">${escapeHtml((d.liver || "").replaceAll("<br>", "\n"))}</textarea></label>
+      <label class="draft-field"><span>GI 발생 HTML</span><textarea data-draft-field="${escapeHtml(d.id)}:gi" rows="2" placeholder="중단 수치 금지">${escapeHtml((d.gi || "").replaceAll("<br>", "\n"))}</textarea></label>
+      <label class="draft-field"><span>중단 HTML</span><textarea data-draft-field="${escapeHtml(d.id)}:discontinuation" rows="2">${escapeHtml((d.discontinuation || "").replaceAll("<br>", "\n"))}</textarea></label>
+      <div class="draft-actions">
+        <button type="button" data-draft-action="promote" data-draft-id="${escapeHtml(d.id)}">승격 (드롭다운 반영)</button>
+        <button type="button" class="secondary" data-draft-action="reject" data-draft-id="${escapeHtml(d.id)}">반려</button>
+        <a href="https://clinicaltrials.gov/study/${escapeHtml(d.nct)}" target="_blank" rel="noopener">CT.gov ↗</a>
+      </div>
+    </article>
+  `).join("");
+}
+
+async function refreshTrialDraftsFromServerOrLocal(snapshot) {
+  const curated = getCuratedNctsByAsset();
+  if (liveBackend) {
+    try {
+      const result = await apiJson("/api/trial-drafts/scan", {
+        method: "POST",
+        body: JSON.stringify({ snapshot, curatedNctsByAsset: curated })
+      });
+      trialDraftStore = { schemaVersion: 1, updatedAt: result.updatedAt, drafts: result.drafts || [] };
+      applyPromotedMap(result.promotedByAsset || {});
+      renderTrialDraftPanel();
+      return result;
+    } catch (error) {
+      console.warn("[trial-drafts] server scan failed", error);
+    }
+  }
+  // 정적 배포·서버 실패: localStorage 초안만 유지 (신규 스캔은 브라우저에서 최소 병합)
+  try {
+    const raw = localStorage.getItem(TRIAL_DRAFT_STORAGE_KEY);
+    if (raw) {
+      trialDraftStore = JSON.parse(raw);
+      const promoted = {};
+      for (const d of trialDraftStore.drafts || []) {
+        if (d.status !== "promoted") continue;
+        if (!promoted[d.assetId]) promoted[d.assetId] = [];
+        promoted[d.assetId].push({
+          id: d.promotedTrialId || String(d.nct).toLowerCase(),
+          label: d.label,
+          meta: d.meta,
+          nct: d.nct,
+          hasLiver: Boolean(d.liver),
+          weight: d.weight,
+          liver: d.liver,
+          gi: d.gi,
+          discontinuation: d.discontinuation,
+          refs: d.refs || {},
+          source: "promoted-draft"
+        });
+      }
+      applyPromotedMap(promoted);
+    }
+  } catch { /* ignore */ }
+  renderTrialDraftPanel();
+  return trialDraftStore;
+}
+
+async function patchDraft(id, patch) {
+  if (liveBackend) {
+    const result = await apiJson("/api/trial-drafts/update", {
+      method: "POST",
+      body: JSON.stringify({ id, ...patch })
+    });
+    trialDraftStore = result.store || trialDraftStore;
+    applyPromotedMap(result.promotedByAsset || promotedTrialsByAsset);
+    return result;
+  }
+  const draft = (trialDraftStore.drafts || []).find(d => d.id === id);
+  if (!draft) throw new Error("draft not found");
+  Object.assign(draft, patch, { updatedAt: new Date().toISOString() });
+  localStorage.setItem(TRIAL_DRAFT_STORAGE_KEY, JSON.stringify(trialDraftStore));
+  return { draft };
+}
+
+async function promoteDraft(id) {
+  const patch = {
+    label: readDraftField(id, "label"),
+    meta: readDraftField(id, "meta"),
+    weight: readDraftField(id, "weight"),
+    liver: readDraftField(id, "liver"),
+    gi: readDraftField(id, "gi"),
+    discontinuation: readDraftField(id, "discontinuation")
+  };
+  patch.hasLiver = Boolean(patch.liver);
+  if (liveBackend) {
+    const result = await apiJson("/api/trial-drafts/promote", {
+      method: "POST",
+      body: JSON.stringify({ id, ...patch })
+    });
+    const store = await apiJson("/api/trial-drafts");
+    trialDraftStore = store;
+    applyPromotedMap(store.promotedByAsset || result.promotedByAsset || {});
+    renderTrialDraftPanel();
+    renderMaster();
+    return result;
+  }
+  await patchDraft(id, patch);
+  const draft = trialDraftStore.drafts.find(d => d.id === id);
+  draft.status = "promoted";
+  draft.promotedTrialId = String(draft.nct).toLowerCase();
+  localStorage.setItem(TRIAL_DRAFT_STORAGE_KEY, JSON.stringify(trialDraftStore));
+  await refreshTrialDraftsFromServerOrLocal(liveSnapshot);
+  renderMaster();
+}
+
+async function rejectDraft(id) {
+  if (liveBackend) {
+    await apiJson("/api/trial-drafts/reject", { method: "POST", body: JSON.stringify({ id }) });
+    const store = await apiJson("/api/trial-drafts");
+    trialDraftStore = store;
+    applyPromotedMap(store.promotedByAsset || {});
+    renderTrialDraftPanel();
+    renderMaster();
+    return;
+  }
+  const draft = (trialDraftStore.drafts || []).find(d => d.id === id);
+  if (draft) draft.status = "rejected";
+  localStorage.setItem(TRIAL_DRAFT_STORAGE_KEY, JSON.stringify(trialDraftStore));
+  renderTrialDraftPanel();
+}
+
+function initTrialDraftHandlers() {
+  const list = document.querySelector("#trialDraftList");
+  const closeBtn = document.querySelector("#closeTrialDrafts");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      document.querySelector("#trialDraftPanel").hidden = true;
+    });
+  }
+  if (!list || list.dataset.bound === "1") return;
+  list.dataset.bound = "1";
+  list.addEventListener("click", async event => {
+    const button = event.target.closest("[data-draft-action]");
+    if (!button) return;
+    const id = button.dataset.draftId;
+    const action = button.dataset.draftAction;
+    button.disabled = true;
+    try {
+      if (action === "promote") await promoteDraft(id);
+      if (action === "reject") await rejectDraft(id);
+    } catch (error) {
+      console.error(error);
+      alert(`초안 처리 실패: ${error.message}`);
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
+async function applyLiveSnapshot(snapshot) {
   liveSnapshot = snapshot;
   // 핵심 임상 원장 정합 유지 후 표 재구성 (선택 임상 localStorage 유지 → 결과 블록 동일 규칙)
   normalizeComparisonEntries();
@@ -969,6 +1181,8 @@ function applyLiveSnapshot(snapshot) {
   document.querySelector("#syncMeta").textContent =
     `${programCount}개 프로그램 · ${exactCheckedAt} 업데이트 (${relativeTime(snapshot?.registryCheckedAt)})${errors ? ` · 오류 ${errors}건은 캐시 유지` : ""}`;
   document.querySelector("#syncBar").classList.toggle("has-error", Boolean(errors));
+  // 후보 초안 스캔(자동 승격 없음) → 승격분만 드롭다운 병합
+  await refreshTrialDraftsFromServerOrLocal(snapshot);
   // renderMaster: 드롭다운(2개+ 핵심 임상) + resolveTrialResults + 등록 감시 줄
   renderMaster();
   renderTimeline();
@@ -1357,6 +1571,7 @@ function setupMasterScrollSync() {
 initReportTabs();
 initColumnSelector();
 initTrialSelectHandlers();
+initTrialDraftHandlers();
 renderMaster();
 renderTimeline();
 renderDossiers();
