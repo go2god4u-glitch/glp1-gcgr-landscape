@@ -630,25 +630,6 @@ function shouldShowTrialSelect(entry, assetId) {
   return getComparisonTrials(entry, assetId).length > 1;
 }
 
-/** 최신 정보 반영 스냅샷에서 핵심 임상 NCT 조회 (등록 감시용) */
-function getLiveStudyForTrial(assetId, trial) {
-  if (!liveSnapshot || !trial?.nct) return null;
-  const program = liveSnapshot.programs?.[assetId];
-  if (!program?.studies?.length) return null;
-  return program.studies.find(study => study.nctId === trial.nct) || null;
-}
-
-function renderTrialLiveStatus(assetId, trial) {
-  const live = getLiveStudyForTrial(assetId, trial);
-  if (!trial?.nct) return "";
-  if (!liveSnapshot) return "";
-  if (!live) {
-    return `<div class="trial-live-status muted-cell">등록 감시 · ${escapeHtml(trial.nct)} 스냅샷 없음</div>`;
-  }
-  const updated = live.lastUpdate ? formatDate(live.lastUpdate) : "갱신일 미상";
-  return `<div class="trial-live-status"><span class="live-registry-label">등록 감시</span> ${escapeHtml(formatRegistryStatus(live.status))} · 최근 갱신 ${escapeHtml(updated)}</div>`;
-}
-
 /**
  * 갱신 후 핵심 임상 연동 감사.
  * 자동 승격은 하지 않고, 큐레이션 NCT가 스냅샷에 있는지·결과 블록이 온전한지만 확인.
@@ -734,7 +715,7 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
   const showSelect = shouldShowTrialSelect(entry, assetId);
   const refs = cite(trial?.refs?.trial || rowRefs);
   const nctBits = nctCitations(`${trial?.nct || ""} ${trial?.meta || ""}`);
-  const liveStatus = renderTrialLiveStatus(assetId, trial);
+  // 등록 감시는 현재 단계 칸(applyLiveRows)에만 표시. 핵심 임상 칸은 선택·meta만.
   if (!trial) {
     return `<div class="trial-block"><div class="trial-name">임상 미지정</div></div>`;
   }
@@ -752,7 +733,6 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
   return `<div class="trial-block">
     ${nameRow}
     <div class="trial-meta-line">${escapeHtml(trial.meta || "")}<span class="cell-refs">${refs}</span>${nctBits}</div>
-    ${liveStatus}
   </div>`;
 }
 
