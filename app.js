@@ -623,17 +623,14 @@ function liverEmptyMessage(selectedTrial, entry) {
   const selectedLabel = selectedTrial?.label || "선택 임상";
   const liverTrials = getComparisonTrials(entry).filter(trialPublishesLiver);
   if (!liverTrials.length) {
-    return `<span class="muted-cell"><b>${escapeHtml(selectedLabel)}</b>에서는 간 약효 공개 안 함</span><br><small>이 자산에 간 약효 공개 임상 블록이 아직 없음</small>`;
+    return missingForTrial("간 약효");
   }
   const others = liverTrials.filter(t => t.id !== selectedTrial?.id);
   if (!others.length) {
     return missingForTrial("간 약효");
   }
-  const list = others.map(t => {
-    const nct = t.nct ? ` (${t.nct})` : "";
-    return `${escapeHtml(t.label)}${escapeHtml(nct)}`;
-  }).join(", ");
-  return `<span class="muted-cell"><b>${escapeHtml(selectedLabel)}</b>에서는 간 약효 공개 안 함</span><br><span class="muted-cell">간 약효는 <b>${list}</b>에서만 공개</span><br><small>앞 핵심 임상 드롭다운에서 해당 임상을 선택하면 체중·간·GI·중단이 그 임상 결과로 바뀜</small>`;
+  const list = others.map(t => escapeHtml(t.label)).join(", ");
+  return `<span class="muted-cell">${escapeHtml(selectedLabel)} 기준 간 약효 공개값 없음</span><br><small>다른 임상에서 확인: ${list} (핵심 임상에서 선택)</small>`;
 }
 
 function resultBoundStamp(trial) {
@@ -672,21 +669,17 @@ function renderTrialCell(assetId, entry, trial, rowRefs) {
       : "임상 미지정";
     return `${html}<span class="cell-refs">${refs}</span>${nctBits}`;
   }
+  // 옵션은 임상명만 통일. 간/체중 태그는 붙이지 않음(결과는 선택 임상 블록이 결정).
   const options = trials.map(t => {
     const selected = t.id === trial.id ? " selected" : "";
-    const tag = trialPublishesLiver(t) ? " · 간약효 공개" : " · 간약효 없음";
-    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}${tag}</option>`;
+    return `<option value="${t.id}"${selected}>${escapeHtml(t.label)}</option>`;
   }).join("");
-  const liverNames = trials.filter(trialPublishesLiver).map(t => t.label).join(", ");
-  const liverHint = liverNames
-    ? `간 약효 공개 임상: ${escapeHtml(liverNames)}. 선택하면 오른쪽 결과 전체가 그 임상으로 바뀜.`
-    : "오른쪽 체중·간·GI·중단은 위 선택 임상 결과만 표시";
-  return `<label class="trial-select-label"><span class="trial-select-caption">핵심 임상 (결과 결정)</span>
+  return `<label class="trial-select-label"><span class="trial-select-caption">핵심 임상</span>
     <select class="trial-select" data-asset-id="${assetId}" aria-label="${escapeHtml(assetId)} 핵심 임상 선택">${options}</select>
     </label>
     <div class="trial-select-meta"><span>${escapeHtml(trial.meta || "")}</span>
     <span class="cell-refs">${refs}</span>${nctBits}</div>
-    <div class="trial-select-hint">${liverHint}</div>`;
+    <div class="trial-select-hint">오른쪽 체중·간·GI·중단은 선택한 임상 결과만 표시</div>`;
 }
 
 const mechanismProfiles = {
