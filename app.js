@@ -399,9 +399,10 @@ const comparison = {
         hasLiver: true,
         weight: "<b>Pemvidutide 1.2 mg −5.0%</b><br>1.8 mg −6.2%<br>위약 −1.0%<br><small>IMPACT 24주 · 회사 topline</small>",
         liver: "<b>MASH 해소(섬유화 비악화, ITT)</b><br>Pemvidutide 1.2 mg 59.1%<br>Pemvidutide 1.8 mg 52.1%<br>위약 19.1%<br>MRI-PDFF 간지방 감소<br>1.2 mg 58.0% · 1.8 mg 62.8% · 위약 16.2%<br>섬유화 개선(MASH 비악화, ITT)<br>1.2 mg 31.8% · 1.8 mg 34.5% · 위약 25.9%<br><small>섬유화 조직학 군간 차이는 통계적 유의성 없음(회사 ITT)</small>",
-        gi: "<small>IMPACT 회사 topline</small><br>AE 관련 중단 1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%",
-        discontinuation: "<b>AE 관련 중단</b><br>1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%<br><small>회사 topline</small>",
-        refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], gi: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
+        // GI AE 발생률(오심·구토 등) topline 요약 없음 → null. 중단율은 discontinuation만.
+        gi: null,
+        discontinuation: "<b>AE 관련 중단</b><br>1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%<br><small>IMPACT 회사 topline</small>",
+        refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
       }
     ],
     rightsRefs: ["PM-ACQ"]
