@@ -280,9 +280,10 @@ const typeNames = {
 };
 
 /*
- * 비교표 필드 바인딩.
- * 규칙: 핵심 임상(선택)이 결정 → 그 오른쪽 결과(체중·간·GI·중단)는 전부 그 임상 블록만 사용.
- * 자산 단위 신호(a.signal)나 다른 임상 수치로 폴백하지 않는다.
+ * 비교표 필드 바인딩 (단일 원천).
+ * 규칙: 핵심 임상 선택 → role:"result" & trialDependent:true 인 모든 칸이 그 임상 블록만 사용.
+ * 새 결과 열을 추가할 때: 여기 + index.html th(data-column-key, data-trial-binding="dependent")만 맞추면
+ * 스탬프·resolve·refs·normalize가 자동으로 따라간다.
  * 상세: docs/IDEAS_trial_driven_comparison.md
  */
 const COMPARISON_FIELD_BINDING = {
@@ -291,26 +292,35 @@ const COMPARISON_FIELD_BINDING = {
   stage: { trialDependent: false, role: "asset", note: "현재 단계" },
   indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약" },
   trial: { trialDependent: false, role: "selection", note: "핵심 임상 선택(결과의 유일한 키)" },
-  weight: { trialDependent: true, role: "result", note: "체중효능 = 선택 임상" },
-  liver: { trialDependent: true, role: "result", note: "간 약효 = 선택 임상" },
-  gi: { trialDependent: true, role: "result", note: "GI 안전성 = 선택 임상" },
-  discontinuation: { trialDependent: true, role: "result", note: "GI/치료 중단 = 선택 임상" },
+  weight: { trialDependent: true, role: "result", label: "체중효능", note: "체중효능 = 선택 임상" },
+  liver: { trialDependent: true, role: "result", label: "간 약효", note: "간 약효 = 선택 임상" },
+  gi: { trialDependent: true, role: "result", label: "GI 안전성", note: "GI 발생 = 선택 임상" },
+  discontinuation: { trialDependent: true, role: "result", label: "중단", note: "치료/GI 중단 = 선택 임상" },
   rights: { trialDependent: false, role: "asset", note: "기원/권리" },
-  next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위)" },
+  next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위, 등록 감시 부가)" },
   nextNcts: { trialDependent: false, role: "asset", note: "다음 확인 NCT" },
   refs: { trialDependent: "per-key", role: "mixed", note: "trial 블록 refs" }
 };
 
-/** 핵심 임상 선택에 묶이는 결과 열 (표시 순서와 동일하게 유지) */
-const TRIAL_RESULT_KEYS = ["weight", "liver", "gi", "discontinuation"];
+/** 선택 임상에 종속되는 결과 열 — binding에서 파생 (하드코드 목록 금지) */
+const TRIAL_RESULT_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
+  .filter(([, meta]) => meta.trialDependent === true && meta.role === "result")
+  .map(([key]) => key);
 
 const TRIAL_DEPENDENT_COMPARISON_KEYS = Object.entries(COMPARISON_FIELD_BINDING)
   .filter(([, meta]) => meta.trialDependent === true)
   .map(([key]) => key);
 
-const TRIAL_DEPENDENT_REF_KEYS = ["trial", "weight", "liver", "gi", "discontinuation"];
+const TRIAL_DEPENDENT_REF_KEYS = ["trial", ...TRIAL_RESULT_KEYS];
 const TRIAL_INDEPENDENT_REF_KEYS = ["rights"];
 const TRIAL_SELECT_STORAGE_KEY = "competitor-selected-trial-v1";
+const RESULT_FIELD_LABELS = Object.fromEntries(
+  TRIAL_RESULT_KEYS.map(key => [key, COMPARISON_FIELD_BINDING[key].label || key])
+);
+
+function isTrialResultKey(key) {
+  return TRIAL_RESULT_KEYS.includes(key);
+}
 
 const comparison = {
   // 자산 단위: indication, rights, next, nextNcts, defaultTrialId, trials[]
@@ -669,8 +679,9 @@ function hasTrialField(trial, key) {
 }
 
 /**
- * 선택 임상 한 블록 → 결과 열 전체를 해석.
- * 다른 임상·자산 signal·자동 갱신 등록 데이터로 절대 폴백하지 않는다.
+ * 선택 임상 한 블록 → TRIAL_RESULT_KEYS 전체 해석.
+ * 새 결과 키가 binding에 추가되면 여기 루프에 자동 포함.
+ * 다른 임상·자산 signal·등록 API로 폴백하지 않는다.
  */
 function resolveTrialResults(trial) {
   const out = {};
@@ -684,29 +695,55 @@ function resolveTrialResults(trial) {
   return out;
 }
 
+/** 선택 임상에 묶인 모든 결과 칸 공통 스탬프 */
 function resultBoundStamp(trial) {
-  if (!trial) return "";
-  // 선택 임상에 종속되는 모든 결과 열(체중·간·GI·중단)에 동일 표시
+  if (!trial) {
+    return `<div class="result-bound muted" title="선택 임상 없음">기준 임상 없음</div>`;
+  }
   return `<div class="result-bound" title="이 칸 결과는 선택한 핵심 임상 블록">기준 ${escapeHtml(trial.label)}</div>`;
 }
 
-function renderResultCell(trial, key, htmlOrNull, refsHtml, entry) {
+/**
+ * 결과 열 공통 렌더. isTrialResultKey 인 칸만 호출한다.
+ * 스탬프는 결과 열이면 항상 붙임 (향후 열 추가 시 자동).
+ */
+function renderResultCell(trial, key, htmlOrNull, refsHtml) {
+  if (!isTrialResultKey(key)) {
+    console.warn("[renderResultCell] non-result key", key);
+  }
+  const label = RESULT_FIELD_LABELS[key] || key;
   let body;
   if (htmlOrNull != null && htmlOrNull !== "") {
     body = htmlOrNull;
   } else {
-    body = missingForTrial({
-      weight: "체중효능",
-      liver: "간 약효",
-      gi: "GI 안전성",
-      discontinuation: "중단"
-    }[key] || key);
+    body = missingForTrial(label);
   }
-  const nctBits = key === "liver" && htmlOrNull
-    ? nctCitations(`${trial?.nct || ""} ${htmlOrNull}`)
-    : "";
+  // body HTML에 NCT가 있으면 인용 링크 보조
+  const nctBits = htmlOrNull ? nctCitations(String(htmlOrNull)) : "";
   const stamp = resultBoundStamp(trial);
-  return `${stamp}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
+  return `${stamp}<div class="result-body" data-result-key="${escapeHtml(key)}" data-trial-id="${escapeHtml(trial?.id || "")}" data-trial-binding="dependent">${body}</div>${htmlOrNull ? refsHtml : ""}${nctBits}`;
+}
+
+/** thead dependent 열과 TRIAL_RESULT_KEYS 정합 검사 (개발 시 누락 방지) */
+function auditMasterResultColumns() {
+  const table = document.querySelector(".master-table");
+  if (!table) return [];
+  const dependentKeys = [...table.querySelectorAll("thead th[data-trial-binding='dependent']")]
+    .map(th => th.dataset.columnKey)
+    .filter(Boolean);
+  const issues = [];
+  for (const key of dependentKeys) {
+    if (!isTrialResultKey(key)) {
+      issues.push(`thead dependent "${key}" not in TRIAL_RESULT_KEYS (binding 누락 또는 next 등 asset 열 오표기)`);
+    }
+  }
+  for (const key of TRIAL_RESULT_KEYS) {
+    if (!dependentKeys.includes(key)) {
+      issues.push(`TRIAL_RESULT_KEYS "${key}" missing thead th[data-trial-binding=dependent]`);
+    }
+  }
+  if (issues.length) console.warn("[master-result-columns]", issues);
+  return issues;
 }
 
 function renderTrialCell(assetId, entry, trial, rowRefs) {
@@ -1325,8 +1362,8 @@ function renderMaster() {
     const nextNcts = entry?.nextNcts || [];
     const rowRefs = assetReferenceMap[a.name] || [];
     const cellRefs = key => {
-      // 결과 열 인용은 선택 임상 블록 refs만 (자산 전체 맵으로 섞지 않음)
-      const keys = TRIAL_RESULT_KEYS.includes(key)
+      // 결과 열 인용은 선택 임상 블록 refs만
+      const keys = isTrialResultKey(key)
         ? (trial?.refs?.[key] || [])
         : (key === "rights" ? (entry?.rightsRefs || rowRefs) : (trial?.refs?.[key] || rowRefs));
       return `<span class="cell-refs">${cite(keys)}</span>`;
@@ -1335,24 +1372,27 @@ function renderMaster() {
     const statusClass = a.tier === "historical" ? "historical" : a.tier === "watch" ? "watch" : "";
     const trialCell = entry
       ? renderTrialCell(a.id, entry, trial, rowRefs)
-      : `${a.phase}<br><span>현재 활성 개발 없음</span>`;
+      : `<div class="trial-block"><div class="trial-name trial-name-control">${escapeHtml(a.phase || "단계 미상")}</div><div class="trial-meta-line">현재 활성 개발 없음</div></div>`;
+    // 결과 열: TRIAL_RESULT_KEYS 순회 → 새 결과 필드 추가 시 스탬프·값 자동 포함
+    const resultCellsHtml = TRIAL_RESULT_KEYS.map(key => {
+      const extra = key === "liver" ? " liver-cell" : "";
+      return `<td class="result-cell${extra}" data-column-result="${key}" data-trial-binding="dependent">${renderResultCell(trial, key, results[key], cellRefs(key))}</td>`;
+    }).join("");
     return `<tr data-asset-id="${a.id}" data-active-trial="${trial?.id || ""}">
-      <td><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
-      <td>${mechanism.text}<span class="cell-refs">${cite(mechanism.refs)}</span></td>
-      <td class="stage-cell"><span class="status ${statusClass}">${a.phase}</span></td>
-      <td>${indication}</td>
-      <td class="trial-cell">${trialCell}</td>
-      <td class="result-cell" data-column-result="weight">${renderResultCell(trial, "weight", results.weight, cellRefs("weight"), entry)}</td>
-      <td class="result-cell liver-cell" data-column-result="liver">${renderResultCell(trial, "liver", results.liver, cellRefs("liver"), entry)}</td>
-      <td class="result-cell" data-column-result="gi">${renderResultCell(trial, "gi", results.gi, cellRefs("gi"), entry)}</td>
-      <td class="result-cell" data-column-result="discontinuation">${renderResultCell(trial, "discontinuation", results.discontinuation, cellRefs("discontinuation"), entry)}</td>
-      <td>${rights}${cellRefs("rights")}</td>
-      <td class="watch-cell"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${(nextNcts || []).map(registryCitation).join(" ")}<div class="muted-cell">${nextHtml}</div></td>
+      <td data-trial-binding="asset"><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
+      <td data-trial-binding="asset">${mechanism.text}<span class="cell-refs">${cite(mechanism.refs)}</span></td>
+      <td class="stage-cell" data-trial-binding="asset"><span class="status ${statusClass}">${a.phase}</span></td>
+      <td data-trial-binding="asset">${indication}</td>
+      <td class="trial-cell" data-trial-binding="selection">${trialCell}</td>
+      ${resultCellsHtml}
+      <td data-trial-binding="asset">${rights}${cellRefs("rights")}</td>
+      <td class="watch-cell" data-trial-binding="asset"><ul class="watch-list">${a.watch.map(w => `<li>${w}</li>`).join("")}</ul>${(nextNcts || []).map(registryCitation).join(" ")}<div class="muted-cell">${nextHtml}</div></td>
     </tr>`;
   }).join("");
   document.querySelector("#masterEmpty").hidden = rows.length > 0;
   if (liveSnapshot) applyLiveRows(liveSnapshot);
   applyColumnVisibility();
+  auditMasterResultColumns();
 }
 
 function initTrialSelectHandlers() {

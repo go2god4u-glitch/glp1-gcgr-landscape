@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GLP-1R/GCGR dual agonist 경쟁물질 데이터 원장">
   <title>GLP-1R/GCGR dual agonist 경쟁 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260725-07">
+  <link rel="stylesheet" href="styles.css?v=20260725-08">
 </head>
 <body>
   <header class="app-header">
@@ -99,7 +99,8 @@
               <th data-column-key="gi" data-trial-binding="dependent">GI 안전성</th>
               <th data-column-key="discontinuation" data-trial-binding="dependent">GI/치료 중단</th>
               <th data-column-key="rights" data-trial-binding="asset">기원 / 권리 이력</th>
-              <th data-column-key="next" data-trial-binding="dependent">다음 확인사항</th>
+              <!-- next는 자산 단위(+등록 감시). 선택 임상 결과 스탬프 대상 아님 -->
+              <th data-column-key="next" data-trial-binding="asset">다음 확인사항</th>
             </tr>
           </thead>
           <tbody id="masterRows"></tbody>
@@ -201,6 +202,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260725-07"></script>
+  <script src="app.js?v=20260725-08"></script>
 </body>
 </html>
