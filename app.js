@@ -143,7 +143,7 @@ const assets = [
     id: "retatrutide", name: "Retatrutide", aliases: "LY3437943 · 레타트루타이드", company: "Eli Lilly",
     phase: "Phase 3", stage: 3.5, tier: "core", tone: "live",
     mechanism: "GLP-1R/GIP/GCGR triple",
-    signal: "TRIUMPH-1 80주 12 mg −28.3%. 오심 최대 42.4%, AE 중단 12 mg 11.3% (위약 4.9%).",
+    signal: "TRIUMPH-1(n=2339) efficacy 12 mg −28.3% / treatment-regimen −25.0%. 오심 12 mg 42.4%, AE 중단 11.3%.",
     origin: "Lilly 내부 개발 단일분자 triple agonist (GLP-1R·GIP·GCGR).",
     strategy: "비만 후기 개발 최전선. dual 대비 체중 상한이 더 높은 벤치마크.",
     watch: ["TRIUMPH 프로그램 추가 결과", "규제 제출 일정", "T2D·OA·OSA 서브시험"],
@@ -153,7 +153,7 @@ const assets = [
     id: "cagrisema", name: "CagriSema", aliases: "cagrilintide + semaglutide · 카그리세마", company: "Novo Nordisk",
     phase: "Phase 3", stage: 3.3, tier: "core", tone: "live",
     mechanism: "GLP-1R + amylin fixed-combo",
-    signal: "REDEFINE 1 68주 trial-product −22.7% vs 위약 −2.3%. AE 중단 약 6%.",
+    signal: "REDEFINE 1(n=3417) trial-product −22.7% vs 위약 −2.3%. GI AE 79.6%, AE 중단 6%.",
     origin: "Novo의 amylin 유사체 cagrilintide와 semaglutide 2.4 mg 고정용량 복합.",
     strategy: "GLP-1 단독 대비 병용 시너지. tirzepatide 직접 비교(REDEFINE 4)도 공개.",
     watch: ["규제 경로", "REDEFINE 4 vs tirzepatide 해석", "최고 용량 도달률"],
@@ -163,7 +163,7 @@ const assets = [
     id: "zenagamtide", name: "Zenagamtide", aliases: "amycretin · 제나감타이드 · NN9487", company: "Novo Nordisk",
     phase: "Phase 2 → Phase 3 준비", stage: 2.35, tier: "core", tone: "live",
     mechanism: "GLP-1R + amylin unimolecular",
-    signal: "비만 SC 최대 60 mg 36주 −24.3% vs 위약 −1.1%. 경구·SC 병행 개발.",
+    signal: "SC P1b/2a 60 mg 36주 −24.3% (Lancet). T2D P2 체중 최대 −14.6% (회사 ADA 2026).",
     origin: "Novo 단일분자 GLP-1R/amylin dual. 과거 amycretin으로 알려짐.",
     strategy: "CagriSema 뒤를 잇는 unimolecular amylin 축. 경구 옵션이 차별 포인트.",
     watch: ["비만 Phase 3 개시", "경구 용량 확정", "T2D Phase 2 후속"],
@@ -173,7 +173,7 @@ const assets = [
     id: "eloralintide", name: "Eloralintide", aliases: "LY3841136 · 엘로라니타이드", company: "Eli Lilly",
     phase: "Phase 2 완료 · Phase 3 준비", stage: 2.2, tier: "core", tone: "live",
     mechanism: "amylin selective",
-    signal: "Phase 2 48주 9 mg efficacy estimand 최대 −20% vs 위약 −0.4%.",
+    signal: "P2(n=263) 9 mg −20.1% vs 위약 −0.4%. 오심 6 mg 64%, AE 중단 풀링 10%.",
     origin: "Lilly 선택적 amylin 수용체 작용제. 주 1회 피하.",
     strategy: "GLP-1 비함유 amylin 단독 축. 병용·순차 전략 확장 여지.",
     watch: ["Phase 3 ENLIGHTEN 등 등록", "병용 전략 공개", "GI·피로 AE 프로파일"],
@@ -298,21 +298,20 @@ const references = {
   "DA-RATIO": ["MetaVia, DA-1726 OXM analogue and 3:1 GLP-1R:GCGR ratio", "Sponsor primary source", "https://ir.metaviatx.com/news-releases/news-release-details/metavia-reports-additional-positive-top-line-results-mad-part-2/"],
   "G3215-P1": ["Hope et al. (2024), adaptive infusion of G3215 Phase 1 trial", "Diabetes Obesity and Metabolism", "https://dom-pubs.onlinelibrary.wiley.com/doi/10.1111/dom.15448"],
   "RATIO-REVIEW": ["Tschöp et al. review, GLP-1/glucagon co-agonist molecular design and potency balance", "Frontiers in Endocrinology / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/"],
-  "RT-TRIUMPH1": ["Eli Lilly (2026), retatrutide TRIUMPH-1 Phase 3 obesity results (weight, GI AE, AE discontinuation)", "Sponsor primary source", "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss"],
-  "RT-AJMC": ["AJMC (2026), TRIUMPH-1 retatrutide GI rates and AE discontinuation by dose", "Secondary report of sponsor topline", "https://www.ajmc.com/view/retatrutide-achieves-up-to-30-3-average-weight-loss-in-phase-3-triumph-1-trial"],
-  "RT-NCT": ["Retatrutide TRIUMPH-1 master protocol", "ClinicalTrials.gov NCT05929066", "https://clinicaltrials.gov/study/NCT05929066"],
-  "RT-LIVER-P2": ["Sanyal / STAT (2023–24), retatrutide Phase 2 liver-fat (MRI-PDFF) substudy", "ADA / media report of Phase 2 analysis", "https://www.statnews.com/2023/06/26/eli-lilly-fatty-liver-disease-retatrutide-obesity-drug/"],
-  "CS-REDEFINE1": ["Davies et al. / Novo (2025), CagriSema REDEFINE 1 in overweight or obesity", "NEJM / sponsor", "https://www.nejm.org/doi/abs/10.1056/NEJMoa2502082"],
-  "CS-SAFETY": ["Novo Nordisk (2025), CagriSema REDEFINE 1 safety and discontinuation", "Sponsor primary source", "https://www.prnewswire.com/news-releases/cagrisema-2-4-mg--2-4-mg-demonstrated-22-7-mean-weight-reduction-in-adults-with-overweight-or-obesity-in-redefine-1--published-in-nejm-302487770.html"],
-  "CS-NCT": ["CagriSema REDEFINE 1", "ClinicalTrials.gov NCT05567796", "https://clinicaltrials.gov/study/NCT05567796"],
-  "ZN-LANCET": ["Dahl et al. (2025), subcutaneous amycretin (zenagamtide) Phase 1b/2a obesity", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/40550231/"],
-  "ZN-NCT": ["Amycretin / zenagamtide subcutaneous obesity study", "ClinicalTrials.gov NCT06064006", "https://clinicaltrials.gov/study/NCT06064006"],
-  "ZN-ADA": ["Novo Nordisk (2026), zenagamtide Phase 2 in type 2 diabetes ADA", "Sponsor primary source", "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html"],
-  "ZN-GI-SUM": ["News-Medical / Springer (2025), amycretin SC GI rates and withdrawal (citing Lancet)", "Secondary summary of Lancet P1b/2a", "https://www.news-medical.net/news/20250623/Amycretin-delivers-unprecedented-weight-loss-in-early-trial-for-obesity-treatment.aspx"],
-  "EL-LANCET": ["Billings et al. (2025), eloralintide Phase 2 obesity trial", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/41207310/"],
-  "EL-LILLY": ["Eli Lilly (2025), eloralintide Phase 2 weight-loss results", "Sponsor primary source", "https://www.prnewswire.com/news-releases/lillys-selective-amylin-agonist-eloralintide-demonstrated-meaningful-weight-loss-and-favorable-tolerability-in-a-phase-2-study-of-adults-with-obesity-or-overweight-302607061.html"],
-  "EL-NCT": ["Eloralintide Phase 2 obesity", "ClinicalTrials.gov NCT06230523", "https://clinicaltrials.gov/study/NCT06230523"],
-  "EL-DISC": ["Medscape / ObesityWeek (2025), eloralintide AE discontinuation ~10% vs placebo 8%", "Congress coverage of Lancet Phase 2", "https://www.medscape.com/viewarticle/amylin-analog-eloralintide-reduces-weight-phase-2-trial-2025a1000uqf"]
+  "RT-TRIUMPH1": ["Eli Lilly (2026-05-21), TRIUMPH-1 topline: weight (efficacy & treatment-regimen), GI AE, AE discontinuation", "Sponsor PR / IR", "https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html"],
+  "RT-NCT": ["TRIUMPH-1 retatrutide master protocol NCT05929066", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT05929066"],
+  "RT-LIVER-NM": ["Sanyal et al. (2024), retatrutide Phase 2a MASLD: MRI-PDFF liver fat up to 86% relative reduction at 12 mg, 48 weeks", "Nature Medicine", "https://www.nature.com/articles/s41591-024-03018-2"],
+  "CS-REDEFINE1": ["Garvey et al. (2025), coadministered cagrilintide–semaglutide (CagriSema) REDEFINE 1", "NEJM", "https://www.nejm.org/doi/full/10.1056/NEJMoa2502081"],
+  "CS-SAFETY": ["Novo Nordisk (2025-06-22), REDEFINE 1 published in NEJM: weight estimands, GI AE, AE discontinuation", "Sponsor primary source", "https://www.prnewswire.com/news-releases/cagrisema-2-4-mg--2-4-mg-demonstrated-22-7-mean-weight-reduction-in-adults-with-overweight-or-obesity-in-redefine-1--published-in-nejm-302487770.html"],
+  "CS-NCT": ["REDEFINE 1 CagriSema NCT05567796", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT05567796"],
+  "ZN-LANCET": ["Dahl et al. (2025), SC amycretin (zenagamtide) Phase 1b/2a: weight −24.3% at 60 mg week 36 vs placebo −1.1%", "Lancet / PubMed abstract", "https://pubmed.ncbi.nlm.nih.gov/40550231/"],
+  "ZN-NCT": ["Amycretin SC obesity NCT06064006", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06064006"],
+  "ZN-ADA": ["Novo Nordisk (2026), zenagamtide SC Phase 2 T2D ADA: A1C primary; weight up to −14.6%", "Sponsor primary source", "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html"],
+  "ZN-GI-SUM": ["News-Medical (2025), summary of Lancet SC amycretin: nausea 82%, vomiting 53%, diarrhea 41% of treated", "Secondary full-text summary (not abstract-only)", "https://www.news-medical.net/news/20250623/Amycretin-delivers-unprecedented-weight-loss-in-early-trial-for-obesity-treatment.aspx"],
+  "EL-LANCET": ["Billings et al. (2025), eloralintide Phase 2: weight and nausea/fatigue by dose", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/41207310/"],
+  "EL-LILLY": ["Eli Lilly (2025-11-06), eloralintide Phase 2: −9.5% to −20.1% efficacy estimand; GI and fatigue", "Sponsor primary source", "https://www.prnewswire.com/news-releases/lillys-selective-amylin-agonist-eloralintide-demonstrated-meaningful-weight-loss-and-favorable-tolerability-in-a-phase-2-study-of-adults-with-obesity-or-overweight-302607061.html"],
+  "EL-NCT": ["Eloralintide Phase 2 NCT06230523", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06230523"],
+  "EL-DISC": ["Medscape ObesityWeek (2025), eloralintide AE discontinuation 10% pooled vs 8% placebo; 21% at 6 mg", "Congress coverage of Lancet Phase 2", "https://www.medscape.com/viewarticle/amylin-analog-eloralintide-reduces-weight-phase-2-trial-2025a1000uqf"]
 };
 
 const assetReferenceMap = {
@@ -331,7 +330,7 @@ const assetReferenceMap = {
   SAR425899: ["SAR-P1", "CLASS-REVIEW"],
   Pegapamodutide: ["OPK-TRIAL", "CLASS-REVIEW"],
   G3215: ["CLASS-REVIEW"],
-  Retatrutide: ["RT-TRIUMPH1", "RT-AJMC", "RT-NCT", "RT-LIVER-P2"],
+  Retatrutide: ["RT-TRIUMPH1", "RT-NCT", "RT-LIVER-NM"],
   CagriSema: ["CS-REDEFINE1", "CS-SAFETY", "CS-NCT"],
   Zenagamtide: ["ZN-LANCET", "ZN-NCT", "ZN-ADA", "ZN-GI-SUM"],
   Eloralintide: ["EL-LANCET", "EL-LILLY", "EL-NCT", "EL-DISC"]
@@ -631,64 +630,99 @@ const comparison = {
     rightsRefs: ["PB-ABSTRACT"]
   },
   retatrutide: {
-    indication: "비만·과체중<br>T2D·OA·OSA·MASLD 확장",
-    rights: "Eli Lilly 내부 개발<br>단일분자 triple agonist",
-    next: "TRIUMPH 추가 결과<br>규제 제출 일정",
+    indication: "비만·과체중<br>T2D·OA·OSA·MASLD 프로그램",
+    rights: "Eli Lilly 내부 개발<br>GIP/GLP-1/glucagon triple (LY3437943)",
+    next: "TRIUMPH-2/3 등 추가 결과<br>규제 제출 일정",
     nextNcts: ["NCT05929066"],
     defaultTrialId: "triumph1",
     trials: [
       {
         id: "triumph1",
         label: "TRIUMPH-1",
-        meta: "NCT05929066 · P3 · 80주 · 비만·과체중(비당뇨)",
+        meta: "NCT05929066 · P3 · 80주 · 비만·과체중(비당뇨) · n=2339",
         nct: "NCT05929066",
         hasLiver: false,
-        weight: "<b>Retatrutide 12 mg −28.3%</b><br>9 mg −25.9% · 4 mg −19.0%<br>위약 −2.2%<br><small>80주 · Lilly IR primary endpoint · n≈2339</small><br>BMI≥35 연장 104주 12 mg −30.3%",
+        // Lilly PR 2026-05-21 efficacy estimand (primary). treatment-regimen은 별도 줄.
+        weight: "<b>Retatrutide 12 mg −28.3%</b><br>9 mg −25.9% · 4 mg −19.0%<br>위약 −2.2%<br><small>80주 · efficacy estimand · Lilly PR</small><br>treatment-regimen: 12 mg −25.0% · 9 mg −23.7% · 4 mg −17.6% · 위약 −3.9%<br>≥30% 감량: 12 mg 45.3%<br>BMI≥35 연장 104주(12 mg 경로) −30.3%",
         liver: null,
-        gi: "오심 4/9/12 mg<br><b>28.6% · 38.4% · 42.4%</b> vs 위약 14.8%<br>설사 25.2% · 34.1% · 32.0% vs 13.5%<br>변비 23.8% · 25.9% · 26.1% vs 10.9%<br>구토 10.6% · 22.8% · 25.3% vs 4.8%<br><small>Lilly IR TRIUMPH-1 · 용량순</small>",
-        discontinuation: "<b>AE 중단</b> 4/9/12 mg<br><b>4.1% · 6.9% · 11.3%</b><br>위약 4.9%<br><small>Lilly IR · 전체 AE 중단(GI 단독 분모 미공개)</small>",
-        refs: { trial: ["RT-TRIUMPH1", "RT-NCT"], weight: ["RT-TRIUMPH1"], gi: ["RT-TRIUMPH1", "RT-AJMC"], discontinuation: ["RT-TRIUMPH1", "RT-AJMC"] }
+        gi: "오심 4/9/12 mg<br><b>28.6% · 38.4% · 42.4%</b> vs 위약 14.8%<br>설사 25.2% · 34.1% · 32.0% vs 13.5%<br>변비 23.8% · 25.9% · 26.1% vs 10.9%<br>구토 10.6% · 22.8% · 25.3% vs 4.8%<br><small>Lilly PR TRIUMPH-1 용량순</small><br>비-GI: dysesthesia 5.1% · 12.3% · 12.5% vs 0.9%",
+        discontinuation: "<b>AE 중단</b> 4/9/12 mg<br><b>4.1% · 6.9% · 11.3%</b><br>위약 4.9%<br><small>Lilly PR · 전체 AE 중단(GI 단독 분모 미공개)</small>",
+        refs: {
+          trial: ["RT-TRIUMPH1", "RT-NCT"],
+          weight: ["RT-TRIUMPH1"],
+          gi: ["RT-TRIUMPH1"],
+          discontinuation: ["RT-TRIUMPH1"]
+        }
       },
       {
-        id: "p2_liver",
-        label: "Phase 2 간지방 하위",
-        meta: "P2 · 48주 · 비만 시험 내 NAFLD/간지방 분석",
+        // TRIUMPH-1과 다른 시험. 간 수치만 이 블록.
+        id: "p2a_masld",
+        label: "Phase 2a MASLD 간지방",
+        meta: "P2a · 48주 · MASLD · MRI-PDFF · Nature Medicine 2024",
         nct: null,
         hasLiver: true,
         weight: null,
-        liver: "<b>간지방(MRI-PDFF) 최대 약 −82~−86%</b><br>고용량 · 48주<br>대부분 조기 감소<br><small>Phase 2 하위분석 · TRIUMPH-1과 별도 임상</small>",
+        liver: "<b>상대 간지방 감소 12 mg 48주 86%</b><br>(MRI-PDFF · Sanyal et al. Nat Med 2024)<br>24주 고용량 상대 감소 보고 있음<br><small>TRIUMPH-1과 별도 · 조직학 피보탈 아님</small>",
         gi: null,
         discontinuation: null,
-        refs: { trial: ["RT-LIVER-P2"], weight: ["RT-LIVER-P2"], liver: ["RT-LIVER-P2"], gi: ["RT-LIVER-P2"], discontinuation: ["RT-LIVER-P2"] }
+        refs: {
+          trial: ["RT-LIVER-NM"],
+          weight: ["RT-LIVER-NM"],
+          liver: ["RT-LIVER-NM"],
+          gi: ["RT-LIVER-NM"],
+          discontinuation: ["RT-LIVER-NM"]
+        }
       }
     ],
     rightsRefs: ["RT-TRIUMPH1"]
   },
   cagrisema: {
-    indication: "비만·과체중<br>T2D 병용 프로그램",
-    rights: "Novo Nordisk<br>cagrilintide + semaglutide 고정용량 복합",
-    next: "규제 경로<br>REDEFINE 후속·비교 시험",
+    indication: "비만·과체중<br>T2D(REDEFINE 2 등)",
+    rights: "Novo Nordisk<br>cagrilintide 2.4 mg + semaglutide 2.4 mg 고정용량 복합",
+    next: "규제 경로<br>REDEFINE 3/4/11 등",
     nextNcts: ["NCT05567796"],
     defaultTrialId: "redefine1",
     trials: [
       {
         id: "redefine1",
         label: "REDEFINE 1",
-        meta: "NCT05567796 · P3 · 68주 · 비만·과체중(비당뇨)",
+        meta: "NCT05567796 · P3 · 68주 · 비만·과체중(비당뇨) · n=3417",
         nct: "NCT05567796",
         hasLiver: false,
-        weight: "<b>CagriSema 2.4/2.4 mg −22.7%</b><br>semaglutide 2.4 mg −16.1%<br>cagrilintide 2.4 mg −11.8%<br>위약 −2.3%<br><small>68주 · trial-product estimand</small><br>treatment-policy: CagriSema −20.4%",
+        weight: "<b>CagriSema 2.4/2.4 −22.7%</b><br>위약 −2.3%<br><small>68주 · trial-product estimand · Novo PR/NEJM Garvey</small><br>treatment-policy: CagriSema −20.4% · 위약 −3.0%<br>semaglutide 2.4 −16.1% · cagrilintide 2.4 −11.8%<br><small>성분 암 trial-product (공개 요약)</small>",
         liver: null,
-        gi: "전체 GI AE <b>79.6%</b> vs 위약 39.9%<br>오심 55% vs 12.6%<br>변비 30.7% vs 11.6%<br>구토 26.1% vs 4.1%<br><small>대부분 경증~중등도·일시적</small>",
-        discontinuation: "<b>AE 중단 약 6%</b><br>위약 3.7%<br><small>회사 공개 · GI 단독 중단률 미분리 시 전체 AE 중단</small>",
-        refs: { trial: ["CS-REDEFINE1", "CS-NCT"], weight: ["CS-REDEFINE1"], gi: ["CS-SAFETY"], discontinuation: ["CS-SAFETY"] }
+        gi: "전체 GI AE <b>79.6%</b> vs 위약 39.9%<br>오심 55% vs 12.6%<br>변비 30.7% vs 11.6%<br>구토 26.1% vs 4.1%<br><small>Novo PR REDEFINE 1 · 대부분 경증~중등도·일시적</small>",
+        discontinuation: "<b>AE 중단 6%</b> vs 위약 3.7%<br><small>Novo PR · 전체 AE 중단(GI 단독 분모 미공개)</small>",
+        refs: {
+          trial: ["CS-REDEFINE1", "CS-NCT", "CS-SAFETY"],
+          weight: ["CS-REDEFINE1", "CS-SAFETY"],
+          gi: ["CS-SAFETY"],
+          discontinuation: ["CS-SAFETY"]
+        }
+      },
+      {
+        id: "redefine2",
+        label: "REDEFINE 2",
+        meta: "P3 · 68주 · 비만·과체중 + T2D · n=1206",
+        nct: null,
+        hasLiver: false,
+        weight: "<b>CagriSema −15.7%</b> vs 위약 −3.1%<br><small>68주 · trial-product · Novo PR/NEJM Davies</small><br>treatment-policy: −13.7% vs 위약 −3.4%",
+        liver: null,
+        gi: "REDEFINE 1과 유사한 GI 프로파일<br><small>Novo PR: REDEFINE 2 safety similar to REDEFINE 1</small>",
+        discontinuation: "<b>AE 중단 8.4%</b> vs 위약 3%<br><small>Novo PR REDEFINE 2</small>",
+        refs: {
+          trial: ["CS-SAFETY"],
+          weight: ["CS-SAFETY"],
+          gi: ["CS-SAFETY"],
+          discontinuation: ["CS-SAFETY"]
+        }
       }
     ],
-    rightsRefs: ["CS-REDEFINE1"]
+    rightsRefs: ["CS-REDEFINE1", "CS-SAFETY"]
   },
   zenagamtide: {
     indication: "비만·과체중<br>T2D",
-    rights: "Novo Nordisk 내부 개발<br>구칭 amycretin · 경구·SC",
+    rights: "Novo Nordisk · 구칭 amycretin<br>단일분자 GLP-1R+amylin · 경구·SC",
     next: "비만 Phase 3<br>경구 용량·제형",
     nextNcts: ["NCT06064006", "NCT06542874"],
     defaultTrialId: "amy_sc",
@@ -699,33 +733,47 @@ const comparison = {
         meta: "NCT06064006 · P1b/2a · 최대 36주 · 비만·과체중",
         nct: "NCT06064006",
         hasLiver: false,
-        weight: "<b>Zenagamtide (amycretin) SC 60 mg −24.3%</b><br>위약 −1.1%<br><small>36주 · Part B · Lancet</small><br>20 mg −22.0% vs 위약 +1.9% (36주)<br>5 mg −16.2% (28주)",
+        // PubMed abstract (Dahl 2025) — primary for weight
+        weight: "<b>Zenagamtide SC 60 mg −24.3%</b><br>위약 −1.1%<br><small>36주 · Part B · Lancet/PubMed</small><br>20 mg −22.0% vs 위약 +1.9% (36주)<br>5 mg −16.2% vs 위약 +2.3% (28주)<br>1.25 mg −9.7% vs 위약 +2.0% (20주)",
         liver: null,
-        gi: "치료군 주요 GI (보고 요약)<br>오심 <b>약 82%</b> · 구토 <b>약 53%</b> · 설사 <b>약 41%</b><br>용량 의존 · 대부분 경증~중등도<br>적정 중 정점 후 감소<br>amycretin TEAE ≥1회: <b>85%</b> (86/101)<br><small>Lancet P1b/2a · GI 비율은 논문·학회 요약</small>",
-        discontinuation: "전체 중도탈락 <b>약 33%</b><br>그중 TEAE 무관 사유 <b>약 59%</b><br><small>TEAE 관련 탈락 분율은 일부 · 용량별 AE 중단% 원문 표 추가 확인 권장</small>",
-        refs: { trial: ["ZN-LANCET", "ZN-NCT"], weight: ["ZN-LANCET"], gi: ["ZN-LANCET", "ZN-GI-SUM"], discontinuation: ["ZN-LANCET", "ZN-GI-SUM"] }
+        // Abstract: GI most common, mild–moderate. Exact % from full-text secondary summaries only.
+        gi: "가장 흔한 TEAE: 위장관(오심·구토·설사 등)<br>대부분 경증~중등도 · 용량 의존 · 연구 종료 시 해소 경향<br><small>Lancet abstract</small><br>치료군 요약(본문 2차 정리): 오심 82% · 구토 53% · 설사 41%<br><small>News-Medical 등 full-text 요약 · abstract 단독 수치 아님</small>",
+        // Abstract: large withdrawals; high share unrelated to TEAE — no invented exact AE-disc %
+        discontinuation: "중도 탈락 다수 보고<br>상당 비율이 TEAE 무관 사유<br><small>Lancet abstract · 용량별 AE 중단%는 abstract 미기재 → 공개값 없음으로 두지 않고 서술만</small>",
+        refs: {
+          trial: ["ZN-LANCET", "ZN-NCT"],
+          weight: ["ZN-LANCET"],
+          gi: ["ZN-LANCET", "ZN-GI-SUM"],
+          discontinuation: ["ZN-LANCET"]
+        }
       }
     ],
     rightsRefs: ["ZN-LANCET", "ZN-ADA"]
   },
   eloralintide: {
     indication: "비만·과체중",
-    rights: "Eli Lilly 내부 개발<br>선택적 amylin 수용체 작용제",
-    next: "Phase 3 등록·개시<br>병용 전략",
+    rights: "Eli Lilly · LY3841136<br>선택적 amylin 수용체 작용제 · 주 1회 SC",
+    next: "Phase 3 (예: ENLIGHTEN 계열)<br>병용 전략",
     nextNcts: ["NCT06230523", "NCT07282600"],
     defaultTrialId: "elo_p2",
     trials: [
       {
         id: "elo_p2",
         label: "Phase 2 비만",
-        meta: "NCT06230523 · P2 · 48주 · 비만·과체중(비당뇨)",
+        meta: "NCT06230523 · P2 · 48주 · 비만·과체중(비당뇨) · n=263",
         nct: "NCT06230523",
         hasLiver: false,
-        weight: "<b>Eloralintide 9 mg −20%</b><br>6 mg −18% · 3 mg −12% · 1 mg −9%<br>위약 −0.4%<br><small>48주 · efficacy estimand · Lancet</small><br>회사 공개: 최대 약 −20.1%",
+        // PubMed abstract efficacy estimand (rounded) + Lilly PR decimals
+        weight: "<b>Eloralintide 9 mg −20%</b> (Lilly: −20.1%)<br>6 mg −18% · 3 mg −12% · 1 mg −9%<br>6–9 mg −20% · 3–9 mg −16%<br>위약 −0.4%<br><small>48주 · efficacy estimand · Lancet abstract / Lilly PR</small>",
         liver: null,
-        gi: "오심 (용량군)<br>1 mg 11% · 3 mg 13% · 6 mg <b>64%</b> · 9 mg 33%<br>6–9 mg 54% · 3–9 mg 25% · 위약 14%<br><small>Lancet · 느린 적정이 발생 감소</small><br>비-GI: 피로 9 mg 43% · 6–9 mg 46% vs 위약 12%",
-        discontinuation: "<b>AE 중단</b> (풀링) <b>약 10%</b> vs 위약 8%<br>6 mg 군 <b>약 21%</b>로 최고<br>9 mg 약 7% · 느린 적정(3–9) 약 12%<br><small>Lancet/ObesityWeek · GI 단독 중단 분모 미분리 시 전체 AE 중단</small>",
-        refs: { trial: ["EL-LANCET", "EL-NCT"], weight: ["EL-LANCET", "EL-LILLY"], gi: ["EL-LANCET", "EL-LILLY"], discontinuation: ["EL-LANCET", "EL-DISC"] }
+        gi: "오심<br>1 mg 11% · 3 mg 13% · 6 mg <b>64%</b> · 9 mg 33%<br>6–9 mg 54% · 3–9 mg 25% · 위약 14%<br><small>Lancet abstract</small><br>비-GI 피로: 1 mg 0% · 3 mg 13% · 6 mg 29% · 9 mg 43%<br>6–9 mg 46% · 3–9 mg 21% · 위약 12%",
+        discontinuation: "<b>AE 중단</b> 풀링 <b>10%</b> vs 위약 8%<br>6 mg <b>21%</b> (최고)<br><small>Medscape/ObesityWeek 보고(Lancet P2) · GI 단독 중단% 미분리</small><br>SAE: elo 5% · 위약 6% (동 보도)",
+        refs: {
+          trial: ["EL-LANCET", "EL-NCT", "EL-LILLY"],
+          weight: ["EL-LANCET", "EL-LILLY"],
+          gi: ["EL-LANCET", "EL-LILLY"],
+          discontinuation: ["EL-DISC", "EL-LANCET"]
+        }
       }
     ],
     rightsRefs: ["EL-LILLY"]
