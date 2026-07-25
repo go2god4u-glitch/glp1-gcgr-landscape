@@ -1863,90 +1863,45 @@ function getFilteredMasterAssets() {
     .sort(compareAssetsForMaster);
 }
 
-function htmlToPlainText(html) {
-  if (html == null || html === "") return "";
-  const div = document.createElement("div");
-  div.innerHTML = String(html);
-  // br / li → 줄바꿈
-  div.querySelectorAll("br").forEach(br => br.replaceWith("\n"));
-  div.querySelectorAll("li").forEach(li => {
+/**
+ * 화면 비교표 DOM → 엑셀 행.
+ * 표시 항목으로 숨긴 열(column-hidden) 제외, 보이는 셀 텍스트만.
+ */
+function cellDomToExportText(cell) {
+  if (!cell) return "";
+  const clone = cell.cloneNode(true);
+  clone.querySelectorAll("select").forEach(sel => {
+    const opt = sel.options[sel.selectedIndex];
+    sel.replaceWith(document.createTextNode(opt ? opt.textContent : ""));
+  });
+  clone.querySelectorAll("br").forEach(br => br.replaceWith("\n"));
+  clone.querySelectorAll("li").forEach(li => {
     li.insertAdjacentText("beforebegin", "\n• ");
   });
-  let text = div.textContent || div.innerText || "";
+  let text = clone.innerText || clone.textContent || "";
   text = text.replace(/\u00a0/g, " ");
   text = text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
   return text;
 }
 
-function buildMasterExportRows(assetList) {
-  const tier = document.querySelector("#masterTier")?.value || "all";
-  const targets = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en")).join(" + ") || "전체";
-  const query = (document.querySelector("#masterSearch")?.value || "").trim();
-  const exportedAt = new Date().toISOString().slice(0, 19).replace("T", " ");
+/** 지금 화면에 보이는 비교표 그대로 (열·행·셀 내용) */
+function buildVisibleMasterTableAoa() {
+  const table = document.querySelector(".master-table");
+  if (!table) return { headers: [], rows: [], colCount: 0 };
 
-  const headers = [
-    "물질",
-    "별칭",
-    "회사",
-    "기전(라벨)",
-    "표적",
-    "분자 설계",
-    "현재 단계",
-    "자산군",
-    "주요 적응증",
-    "핵심 임상",
-    "임상 meta",
-    "NCT",
-    "체중효능",
-    "간 약효",
-    "GI 안전성",
-    "중단",
-    "기원/권리",
-    "다음 확인사항",
-    "감시 NCT",
-    "필터_자산군",
-    "필터_표적AND",
-    "필터_검색",
-    "내보낸시각"
-  ];
+  const ths = [...table.querySelectorAll("thead th")];
+  const visible = ths
+    .map((th, index) => ({ th, index }))
+    .filter(({ th }) => !th.classList.contains("column-hidden"));
 
-  const rows = assetList.map(a => {
-    const entry = getComparisonEntry(a.id);
-    const trial = entry ? getActiveTrial(a.id, entry) : null;
-    const results = resolveTrialResults(trial);
-    const profile = mechanismProfiles[a.id] || {};
-    const indication = entry?.indication || "개발 중단·비활성 자산";
-    const rights = entry?.rights || a.origin;
-    const nextHtml = entry?.next || a.watch.join("<br>");
-    const nextNcts = (entry?.nextNcts || []).join(", ");
-    return [
-      a.name || "",
-      a.aliases || "",
-      a.company || "",
-      a.mechanism || "",
-      assetTargets(a.id).join(", "),
-      htmlToPlainText(profile.text || ""),
-      a.phase || "",
-      a.tier || "",
-      htmlToPlainText(indication),
-      trial?.label || "",
-      trial?.meta || "",
-      trial?.nct || "",
-      htmlToPlainText(results.weight) || "체중효능 공개값 없음",
-      htmlToPlainText(results.liver) || "간 약효 공개값 없음",
-      htmlToPlainText(results.gi) || "GI 안전성 공개값 없음",
-      htmlToPlainText(results.discontinuation) || "중단 공개값 없음",
-      htmlToPlainText(rights),
-      htmlToPlainText(nextHtml),
-      nextNcts,
-      tier,
-      targets,
-      query,
-      exportedAt
-    ];
+  const headers = visible.map(({ th }) => (th.textContent || "").replace(/\s+/g, " ").trim());
+  const bodyRows = [...table.querySelectorAll("tbody tr")];
+  const rows = bodyRows.map(tr => {
+    const cells = [...tr.children];
+    return visible.map(({ index }) => cellDomToExportText(cells[index]));
   });
 
-  return { headers, rows, meta: { tier, targets, query, exportedAt, count: assetList.length } };
+  return { headers, rows, colCount: headers.length, rowCount: rows.length };
 }
 
 function downloadBlob(blob, filename) {
@@ -1989,12 +1944,13 @@ async function loadSheetJs() {
 
 async function exportMasterExcel() {
   const btn = document.querySelector("#exportExcel");
-  const list = getFilteredMasterAssets();
-  if (!list.length) {
-    window.alert("내보낼 행이 없습니다. 필터를 확인하세요.");
+  // 화면과 동일하게: 먼저 현재 필터로 다시 그린 뒤, 보이는 표 DOM만 읽음
+  renderMaster();
+  const { headers, rows, rowCount } = buildVisibleMasterTableAoa();
+  if (!rowCount || !headers.length) {
+    window.alert("내보낼 표가 없습니다. 필터·표시 항목을 확인하세요.");
     return;
   }
-  const { headers, rows, meta } = buildMasterExportRows(list);
   const stamp = new Date().toISOString().slice(0, 10);
   const base = `competitor-master-${stamp}`;
   if (btn) {
@@ -2005,27 +1961,14 @@ async function exportMasterExcel() {
     const XLSX = await loadSheetJs();
     const aoa = [headers, ...rows];
     const ws = XLSX.utils.aoa_to_sheet(aoa);
-    // 열 너비 대략
     ws["!cols"] = headers.map((h, i) => {
-      if (i >= 12 && i <= 15) return { wch: 36 };
-      if (i === 5 || i === 8 || i === 16 || i === 17) return { wch: 28 };
-      return { wch: Math.min(22, Math.max(10, String(h).length + 2)) };
+      // 결과·기전·다음 확인 등 긴 칸 넓게
+      const sample = rows[0]?.[i] || h || "";
+      const w = Math.max(String(h).length, Math.min(48, String(sample).length + 2));
+      return { wch: Math.max(12, Math.min(40, w)) };
     });
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "비교표");
-    // 필터 요약 시트
-    const metaAoa = [
-      ["항목", "값"],
-      ["내보낸 시각", meta.exportedAt],
-      ["행 수", meta.count],
-      ["자산군 필터", meta.tier],
-      ["표적 AND 필터", meta.targets],
-      ["검색어", meta.query || "(없음)"],
-      ["출처 규칙", "docs/SOURCE_ALGORITHM.md · 화면 표시와 동일 필터"]
-    ];
-    const wsMeta = XLSX.utils.aoa_to_sheet(metaAoa);
-    wsMeta["!cols"] = [{ wch: 16 }, { wch: 48 }];
-    XLSX.utils.book_append_sheet(wb, wsMeta, "내보내기정보");
     XLSX.writeFile(wb, `${base}.xlsx`);
   } catch (err) {
     console.warn("[exportExcel] xlsx failed, CSV fallback", err);
