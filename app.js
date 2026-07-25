@@ -770,10 +770,10 @@ const comparison = {
     rights: "Eli Lilly · LY3841136<br>선택적 amylin 수용체 작용제 · 주 1회 SC",
     next: "Phase 3 (예: ENLIGHTEN 계열)<br>병용 전략",
     nextNcts: ["NCT06230523", "NCT07282600"],
-    defaultTrialId: "elo_p2",
+    defaultTrialId: "eloralintide_p2",
     trials: [
       {
-        id: "elo_p2",
+        id: "eloralintide_p2",
         label: "Phase 2 비만",
         meta: "NCT06230523 · P2 · 48주 · 비만·과체중(비당뇨) · n=263",
         nct: "NCT06230523",
@@ -797,7 +797,10 @@ const comparison = {
 
 function loadSelectedTrials() {
   try {
-    return JSON.parse(localStorage.getItem(TRIAL_SELECT_STORAGE_KEY) || "{}") || {};
+    const map = JSON.parse(localStorage.getItem(TRIAL_SELECT_STORAGE_KEY) || "{}") || {};
+    // 구 trial id 약어(elo_p2) → 정식 id (localStorage 호환)
+    if (map.eloralintide === "elo_p2") map.eloralintide = "eloralintide_p2";
+    return map;
   } catch {
     return {};
   }
