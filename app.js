@@ -178,6 +178,36 @@ const assets = [
     strategy: "GLP-1 비함유 amylin 단독 축. 병용·순차 전략 확장 여지.",
     watch: ["Phase 3 ENLIGHTEN 등 등록", "병용 전략 공개", "GI·피로 AE 프로파일"],
     source: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02155-5/abstract"
+  },
+  {
+    id: "petrelintide", name: "Petrelintide", aliases: "ZP8396 · 페트렐린타이드", company: "Zealand Pharma / Roche",
+    phase: "Phase 2 완료 · Phase 3 예정", stage: 2.45, tier: "core", tone: "live",
+    mechanism: "amylin long-acting (DACRA)",
+    signal: "ZUPREME-1(n=493) 42주 efficacy 최대 −10.7% vs 위약 −1.7% (Roche PR). AE 중단 4.8% vs 4.9%.",
+    origin: "Zealand 장기 amylin 유사체. 2025 Roche 공동개발·상업화.",
+    strategy: "amylin 단독 축에서 내약(구토·GI 중단) 차별. 병용(CT-388 등)도 탐색.",
+    watch: ["P3 개시(2026 하반기 계획)", "ZUPREME-2 T2D 결과", "CT.gov Results 게시"],
+    source: "https://www.roche.com/media/releases/med-cor-2026-03-05"
+  },
+  {
+    id: "azd6234", name: "AZD6234", aliases: "—", company: "AstraZeneca",
+    phase: "Phase 2", stage: 2.15, tier: "core", tone: "live",
+    mechanism: "amylin selective (SARA)",
+    signal: "P2 APRICUS·병용 프로그램 진행. 공개 토플라인 % 체중은 감사 시점 미확보. AZD9550 병용(ASCEND) 연계.",
+    origin: "AstraZeneca 주 1회 선택적 amylin 수용체 작용제(SARA).",
+    strategy: "단독 amylin + dual(AZD9550) 병용으로 포트폴리오 확장. incretin 불내성 대체 축.",
+    watch: ["APRICUS P2 결과 공개", "ASCEND 병용 결과", "용량·제형 확정"],
+    source: "https://clinicaltrials.gov/study/NCT06595238"
+  },
+  {
+    id: "cagrilintide", name: "Cagrilintide", aliases: "AM833 · NNC0174-0833 · 카그릴린타이드", company: "Novo Nordisk",
+    phase: "Phase 3 (단독 프로그램)", stage: 3.1, tier: "core", tone: "live",
+    mechanism: "amylin long-acting",
+    signal: "P2 26주 4.5 mg −10.8% vs 위약 −3.0% (CT.gov). REDEFINE 1 단독 암 trial-product −11.8% (68주).",
+    origin: "Novo 장기 amylin 유사체. CagriSema 구성 성분 · 단독 개발 병행.",
+    strategy: "복합(CagriSema)과 분리된 단독 amylin 벤치마크. P3 단독 시험 진행.",
+    watch: ["단독 P3 결과", "CagriSema 규제와 단독 포지셔닝", "GI 프로파일 비교"],
+    source: "https://pubmed.ncbi.nlm.nih.gov/34798060/"
   }
 ];
 
@@ -215,6 +245,11 @@ const events = [
   {year: 2025, asset: "CagriSema", sub: "REDEFINE 1", type: "data", title: "Phase 3 비만 −22.7%", text: "비당뇨 비만·과체중에서 68주 trial-product estimand CagriSema −22.7%, semaglutide −16.1%, cagrilintide −11.8%, 위약 −2.3%."},
   {year: 2025, asset: "Zenagamtide", sub: "amycretin SC", type: "data", title: "비만 SC 36주 −24.3%", text: "Phase 1b/2a에서 주 1회 SC 최대 60 mg, 36주 평균 체중 −24.3% vs 위약 −1.1% (Lancet)."},
   {year: 2025, asset: "Eloralintide", sub: "Phase 2", type: "data", title: "amylin 단독 48주 최대 −20%", text: "비만·과체중 Phase 2에서 9 mg efficacy estimand 약 −20% vs 위약 −0.4%. Lancet·ObesityWeek 2025."},
+  {year: 2021, asset: "Cagrilintide", sub: "Phase 2", type: "data", title: "단독 26주 최대 −10.8%", text: "비당뇨 과체중·비만 Phase 2에서 4.5 mg −10.8% vs 위약 −3.0% (trial product·CT.gov)."},
+  {year: 2025, asset: "Petrelintide", sub: "Roche 계약", type: "deal", title: "Zealand–Roche 공동개발", text: "과체중·비만 petrelintide 공동개발·상업화 독점 계약. Roche가 후기 개발 파트너로 합류."},
+  {year: 2026, asset: "Petrelintide", sub: "ZUPREME-1", type: "data", title: "P2 42주 최대 −10.7%", text: "Roche 토플라인: efficacy estimand 최대 −10.7% vs 위약 −1.7%. AE 중단 4.8% vs 4.9%. P3 2026 하반기 계획."},
+  {year: 2025, asset: "AZD6234", sub: "APRICUS", type: "clinical", title: "단독 Phase 2 진행", text: "비만·과체중+동반질환 P2(NCT06595238). AZD9550 병용 ASCEND와 포트폴리오 연계."},
+  {year: 2025, asset: "Cagrilintide", sub: "REDEFINE 1 단독 암", type: "data", title: "P3 프로그램 내 단독 −11.8%", text: "REDEFINE 1에서 cagrilintide 2.4 mg 단독 trial-product 68주 −11.8% vs 위약 −2.3% (CagriSema 구성 암)."},
   {year: 2025, asset: "Retatrutide", sub: "TRIUMPH-4", type: "data", title: "OA 동반 비만 Phase 3 체중 신호", text: "68주 12 mg 평균 약 −28.7% 체중 감소 등 회사 공개 topline (OA 통증 개선 포함)."},
   {year: 2026, asset: "Retatrutide", sub: "TRIUMPH-1", type: "data", title: "비만 Phase 3 80주 −28.3%", text: "비당뇨 비만·과체중 TRIUMPH-1에서 12 mg 80주 평균 −28.3%, BMI≥35 연장 104주 −30.3%."},
   {year: 2026, asset: "Zenagamtide", sub: "ADA 2026 T2D", type: "data", title: "T2D Phase 2 A1C·체중", text: "T2D 대상 SC Phase 2에서 A1C 유의 감소와 체중 최대 약 −14.6% (회사 ADA 2026 공개)."}
@@ -316,7 +351,17 @@ const references = {
   "ZN-ADA": ["Novo Nordisk (2026), zenagamtide T2D Phase 2 ADA company PR", "Company PR", "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html"],
   "EL-LANCET": ["Billings et al. (2025), eloralintide Phase 2: AE leading to discontinuation table (e.g. 6 mg 21%, pooled 10%)", "Lancet", "https://pubmed.ncbi.nlm.nih.gov/41207310/"],
   "EL-LILLY": ["Eli Lilly (2025-11-06), eloralintide Phase 2 company PR", "Company PR", "https://www.prnewswire.com/news-releases/lillys-selective-amylin-agonist-eloralintide-demonstrated-meaningful-weight-loss-and-favorable-tolerability-in-a-phase-2-study-of-adults-with-obesity-or-overweight-302607061.html"],
-  "EL-CTG": ["Eloralintide Phase 2 NCT06230523 posted results (weight primary, AE tables, AE discontinuation flow)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT06230523"]
+  "EL-CTG": ["Eloralintide Phase 2 NCT06230523 posted results (weight primary, AE tables, AE discontinuation flow)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT06230523"],
+  "PT-ROCHE": ["Roche (2026-03-05), ZUPREME-1 petrelintide Phase 2 topline: weight up to −10.7% vs placebo −1.7% at week 42; AE disc 4.8% vs 4.9%", "Company PR", "https://www.roche.com/media/releases/med-cor-2026-03-05"],
+  "PT-NCT": ["Petrelintide ZUPREME-1 NCT06662539 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06662539"],
+  "PT-ZUP2": ["Petrelintide ZUPREME-2 NCT06926842 T2D obesity Phase 2", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06926842"],
+  "AZ-6234-APRICUS": ["AZD6234 Phase 2 APRICUS NCT06595238 obesity/overweight (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06595238"],
+  "AZ-6234-P1": ["AZD6234 Phase 1 SAD NCT05511025 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT05511025"],
+  "AZ-6234-COMBO": ["AZD9550 ± AZD6234 ASCEND/related combo program (registry)", "Sponsor / ClinicalTrials.gov", "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/"],
+  "CG-P2-CTG": ["Cagrilintide Phase 2 dose-finding NCT03856047 posted results (weight %, AE)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03856047"],
+  "CG-P2-LANCET": ["Lau et al. (2021), once-weekly cagrilintide Phase 2 weight management", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/34798060/"],
+  "CG-REDEFINE-MONO": ["REDEFINE 1 cagrilintide 2.4 mg monotherapy arm (trial-product −11.8% vs placebo −2.3% at 68w; component of CagriSema program)", "Company PR / NEJM program", "https://www.prnewswire.com/news-releases/cagrisema-2-4-mg--2-4-mg-demonstrated-22-7-mean-weight-reduction-in-adults-with-overweight-or-obesity-in-redefine-1--published-in-nejm-302487770.html"],
+  "CG-P3": ["Cagrilintide monotherapy Phase 3 NCT07220642 / NCT07220759", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07220642"]
 };
 
 const assetReferenceMap = {
@@ -338,7 +383,10 @@ const assetReferenceMap = {
   Retatrutide: ["RT-TRIUMPH1", "RT-NCT", "RT-P2-CTG", "RT-LIVER-NM", "RT-LIVER-PM"],
   CagriSema: ["CS-REDEFINE1", "CS-SAFETY", "CS-NCT"],
   Zenagamtide: ["ZN-LANCET", "ZN-NCT", "ZN-ADA"],
-  Eloralintide: ["EL-CTG", "EL-LANCET", "EL-LILLY"]
+  Eloralintide: ["EL-CTG", "EL-LANCET", "EL-LILLY"],
+  Petrelintide: ["PT-ROCHE", "PT-NCT", "PT-ZUP2"],
+  AZD6234: ["AZ-6234-APRICUS", "AZ-6234-P1", "AZ-6234-COMBO"],
+  Cagrilintide: ["CG-P2-CTG", "CG-P2-LANCET", "CG-REDEFINE-MONO", "CG-P3"]
 };
 
 function registryCitation(nct) {
@@ -970,6 +1018,122 @@ const comparison = {
       }
     ],
     rightsRefs: ["EL-CTG", "EL-LILLY"]
+  },
+  petrelintide: {
+    indication: "비만·과체중 (±동반질환)",
+    rights: "Zealand Pharma 발명 · Roche 공동개발·상업화 (2025)",
+    next: "Phase 3 개시 (2026 하반기 계획)<br>ZUPREME-2 T2D 결과",
+    nextNcts: ["NCT06662539", "NCT06926842"],
+    defaultTrialId: "zupreme1",
+    trials: [
+      {
+        id: "zupreme1",
+        label: "ZUPREME-1",
+        meta: "NCT06662539 · P2 · 42주 · 비만·과체중 · n=493",
+        nct: "NCT06662539",
+        hasLiver: false,
+        // CT.gov Results 미게시 → 회사 PR(T3)
+        weight: "<b>Petrelintide 최대 −10.7%</b> vs 위약 −1.7%<br><small>42주 · efficacy estimand · 최대 유효 용량 암</small><br>28주 primary에서도 전 용량 위약 대비 유의<br><small>Roche PR (2026-03-05) · CT.gov Results 미게시</small>",
+        liver: null,
+        gi: "가장 흔한 AE: 위장관 (대부분 경증)<br>구토: 전 용량 합이 위약보다 낮음 · 최대 유효 용량 암 <b>구토 0</b><br>설사·변비: 위약과 유사 (한 자리 %대)<br>오심: P1b(2주 증량)보다 감소 · 유지 용량 도달 후 거의 없음<br><span class=\"result-empty\">[회사 미공개]</span> 용량별 오심 % 표<br><small>Roche PR · CT.gov Results 미게시</small>",
+        discontinuation: "<b>AE 중단</b> 최대 유효 용량 암 <b>4.8%</b> vs 위약 4.9%<br>GI AE로 인한 중단: 최대 유효 용량 암 0 (회사 명시)<br>임의 사유 철회 8.4% (약물 암 합) vs 위약 13.6%<br><small>Roche PR · GI 단독 중단은 0건으로 명시된 용량 암 기준</small>",
+        refs: {
+          trial: ["PT-ROCHE", "PT-NCT"],
+          weight: ["PT-ROCHE"],
+          gi: ["PT-ROCHE"],
+          discontinuation: ["PT-ROCHE"]
+        }
+      }
+    ],
+    rightsRefs: ["PT-ROCHE"]
+  },
+  azd6234: {
+    indication: "비만·과체중<br>T2D 병용·AZD9550 병용 탐색",
+    rights: "AstraZeneca 내부 개발<br>선택적 amylin (SARA) · 주 1회 SC",
+    next: "APRICUS P2 결과 공개<br>ASCEND 등 AZD9550 병용 결과",
+    nextNcts: ["NCT06595238", "NCT06851858", "NCT05511025"],
+    defaultTrialId: "apricus",
+    trials: [
+      {
+        id: "apricus",
+        label: "APRICUS Phase 2",
+        meta: "NCT06595238 · P2 · 비만·과체중+동반질환 · n=262",
+        nct: "NCT06595238",
+        hasLiver: false,
+        weight: "<span class=\"result-empty\">[회사·CT.gov 미공개]</span> 용량별 % 체중<br><small>P2 완료(등록상). Results·토플라인 % 미게시(감사 시점)</small>",
+        liver: null,
+        gi: "<span class=\"result-empty\">[1차 미확보]</span> 용량별 GI % 표<br><small>P1 공개 요약: 오심·구토·식욕감소가 위약 대비 더 흔함(세부 % 미확보)</small>",
+        discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>CT.gov Results 미게시 · AE 중단 % 1차 표 없음</small>",
+        refs: {
+          trial: ["AZ-6234-APRICUS"],
+          weight: ["AZ-6234-APRICUS"],
+          gi: ["AZ-6234-P1"],
+          discontinuation: ["AZ-6234-APRICUS"]
+        }
+      },
+      {
+        id: "p1_sad",
+        label: "Phase 1 SAD",
+        meta: "NCT05511025 · P1 · 과체중·비만 건강 지원자 · n=54",
+        nct: "NCT05511025",
+        hasLiver: false,
+        weight: "체중 감소: 위약 대비 <b>통계적 유의</b> (회사·학회 요약)<br><span class=\"result-empty\">[회사 미공개]</span> 용량별 %·kg<br><small>CT.gov Results 미게시</small>",
+        liver: null,
+        gi: "오심·구토·식욕감소가 주된 AE 경향<br>중대한 사망·SAE 없음 (P1 요약)<br><span class=\"result-empty\">[1차 미확보]</span> 개별 % 표",
+        discontinuation: "<span class=\"result-empty\">[1차 미확보]</span>",
+        refs: {
+          trial: ["AZ-6234-P1"],
+          weight: ["AZ-6234-P1"],
+          gi: ["AZ-6234-P1"],
+          discontinuation: ["AZ-6234-P1"]
+        }
+      }
+    ],
+    rightsRefs: ["AZ-6234-APRICUS", "AZ-6234-COMBO"]
+  },
+  cagrilintide: {
+    indication: "비만·과체중<br>T2D 단독 프로그램 병행",
+    rights: "Novo Nordisk · AM833 / NNC0174-0833<br>CagriSema 구성 성분 · 단독 개발 병행",
+    next: "단독 Phase 3 결과<br>CagriSema 규제와 포지셔닝",
+    nextNcts: ["NCT03856047", "NCT07220642", "NCT07220759", "NCT05567796"],
+    defaultTrialId: "p2_26w",
+    trials: [
+      {
+        id: "p2_26w",
+        label: "Phase 2 용량탐색 26주",
+        meta: "NCT03856047 · P2 · 26주 · 비만·과체중(비당뇨) · n=706",
+        nct: "NCT03856047",
+        hasLiver: false,
+        weight: "<b>Cagrilintide 4.5 mg −10.8%</b><br>2.4 mg −9.5% · 1.2 mg −8.5%<br>0.6 mg −6.9% · 0.3 mg −6.1%<br>위약 −3.0% · 리라글루타이드 3.0 mg −8.5%<br><small>CT.gov Results · mean % · 26주</small><br>≥5% 감량 4.5 mg 88.7% · 위약 30.9%",
+        liver: null,
+        gi: "오심<br>4.5 mg <b>46.5%</b> (47/101) · 2.4 mg 31.4% (32/102)<br>1.2 mg 36.3% · 0.6 mg 27.0% · 위약 17.8% (18/101)<br>구토 4.5 mg 7.9% · 2.4 mg 8.8% · 위약 3.0%<br>설사 2.4 mg 17.6% · 4.5 mg 6.9% · 위약 8.9%<br>변비 4.5 mg 20.8% · 2.4 mg 16.7% · 위약 6.9%<br><small>CT.gov Results · other AE</small>",
+        discontinuation: "전체 중도 철회 약 4% (논문 보고 n=29)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 AE drop reason 미게시 · Lau et al. Lancet</small>",
+        refs: {
+          trial: ["CG-P2-CTG", "CG-P2-LANCET"],
+          weight: ["CG-P2-CTG"],
+          gi: ["CG-P2-CTG"],
+          discontinuation: ["CG-P2-LANCET", "CG-P2-CTG"]
+        }
+      },
+      {
+        id: "redefine1_mono",
+        label: "REDEFINE 1 단독 암",
+        meta: "NCT05567796 · P3 프로그램 내 cagrilintide 2.4 mg 단독 · 68주",
+        nct: "NCT05567796",
+        hasLiver: false,
+        weight: "<b>Cagrilintide 2.4 mg −11.8%</b> vs 위약 −2.3%<br><small>68주 · trial-product · REDEFINE 1 구성 암</small><br>treatment-policy 계열: −11.5% vs 위약 −3.0% (공개 요약)<br><small>Company PR / NEJM CagriSema 프로그램 · 단독 암</small>",
+        liver: null,
+        gi: "CagriSema 행의 복합 GI와 분리된 단독 암 세부 표는 별도<br><span class=\"result-empty\">[1차 미확보]</span> 단독 암 오심·구토 % 표<br><small>복합제 전체 GI 79.6%는 CagriSema 블록 참고</small>",
+        discontinuation: "<span class=\"result-empty\">[1차 미확보]</span> 단독 암 AE 중단 % 표<br><small>복합 프로그램 PR·논문은 CagriSema 중심</small>",
+        refs: {
+          trial: ["CG-REDEFINE-MONO", "CS-NCT"],
+          weight: ["CG-REDEFINE-MONO"],
+          gi: ["CG-REDEFINE-MONO"],
+          discontinuation: ["CG-REDEFINE-MONO"]
+        }
+      }
+    ],
+    rightsRefs: ["CG-P2-LANCET", "CG-REDEFINE-MONO"]
   }
 };
 
@@ -1333,6 +1497,27 @@ const mechanismProfiles = {
     ratio: null,
     text: "<b>선택적 amylin 수용체 작용제</b><br>주 1회 SC · GLP-1 비함유<br>코드명 LY3841136",
     refs: ["EL-LILLY", "EL-LANCET"]
+  },
+  petrelintide: {
+    targets: ["amylin"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>장기 amylin 유사체 (DACRA 계열)</b><br>주 1회 SC · ZP8396<br>중성 pH 안정 · 병용 제형 가능 설계",
+    refs: ["PT-ROCHE"]
+  },
+  azd6234: {
+    targets: ["amylin"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>선택적 amylin 수용체 작용제 (SARA)</b><br>주 1회 SC · AZ 파이프라인<br>lean mass 보존 목표 공개",
+    refs: ["AZ-6234-APRICUS"]
+  },
+  cagrilintide: {
+    targets: ["amylin"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>장기 amylin 유사체</b><br>AMY subtype + calcitonin 수용체 친화<br>주 1회 SC · CagriSema 구성 성분",
+    refs: ["CG-P2-LANCET"]
   }
 };
 
