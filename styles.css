@@ -187,7 +187,20 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 .panel h2 { margin: 0; font-size: 26px; letter-spacing: -.025em; }
 .heading-note { max-width: 570px; margin: 0; color: var(--muted); font-size: 13px; }
 
-.master-title-row { display: flex; align-items: center; gap: 12px; }
+.master-title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.master-title-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.export-excel-btn {
+  padding: 7px 12px;
+  color: #365887;
+  background: #f5f7fa;
+  border: 1px solid var(--line-dark);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.export-excel-btn:hover { color: var(--blue); border-color: #9db0d6; background: var(--blue-soft); }
+.export-excel-btn:disabled { opacity: .55; cursor: wait; }
 .column-selector { position: relative; }
 .column-selector > button {
   padding: 7px 10px;

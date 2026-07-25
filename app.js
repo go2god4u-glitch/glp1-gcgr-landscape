@@ -1848,10 +1848,11 @@ function initColumnSelector() {
   applyColumnVisibility();
 }
 
-function renderMaster() {
-  const tier = document.querySelector("#masterTier").value;
-  const query = document.querySelector("#masterSearch").value.trim().toLowerCase();
-  const rows = assets
+/** 비교표에 보이는 자산 목록 (필터·정렬 동일) — 렌더·엑셀 내보내기 공용 */
+function getFilteredMasterAssets() {
+  const tier = document.querySelector("#masterTier")?.value || "all";
+  const query = (document.querySelector("#masterSearch")?.value || "").trim().toLowerCase();
+  return assets
     .filter(a => {
       const tierMatch = tier === "all" || a.tier === tier;
       const mechMatch = assetMatchesTargetFilter(a);
@@ -1860,6 +1861,198 @@ function renderMaster() {
       return tierMatch && mechMatch && textMatch;
     })
     .sort(compareAssetsForMaster);
+}
+
+function htmlToPlainText(html) {
+  if (html == null || html === "") return "";
+  const div = document.createElement("div");
+  div.innerHTML = String(html);
+  // br / li → 줄바꿈
+  div.querySelectorAll("br").forEach(br => br.replaceWith("\n"));
+  div.querySelectorAll("li").forEach(li => {
+    li.insertAdjacentText("beforebegin", "\n• ");
+  });
+  let text = div.textContent || div.innerText || "";
+  text = text.replace(/\u00a0/g, " ");
+  text = text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+  return text;
+}
+
+function buildMasterExportRows(assetList) {
+  const tier = document.querySelector("#masterTier")?.value || "all";
+  const targets = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en")).join(" + ") || "전체";
+  const query = (document.querySelector("#masterSearch")?.value || "").trim();
+  const exportedAt = new Date().toISOString().slice(0, 19).replace("T", " ");
+
+  const headers = [
+    "물질",
+    "별칭",
+    "회사",
+    "기전(라벨)",
+    "표적",
+    "분자 설계",
+    "현재 단계",
+    "자산군",
+    "주요 적응증",
+    "핵심 임상",
+    "임상 meta",
+    "NCT",
+    "체중효능",
+    "간 약효",
+    "GI 안전성",
+    "중단",
+    "기원/권리",
+    "다음 확인사항",
+    "감시 NCT",
+    "필터_자산군",
+    "필터_표적AND",
+    "필터_검색",
+    "내보낸시각"
+  ];
+
+  const rows = assetList.map(a => {
+    const entry = getComparisonEntry(a.id);
+    const trial = entry ? getActiveTrial(a.id, entry) : null;
+    const results = resolveTrialResults(trial);
+    const profile = mechanismProfiles[a.id] || {};
+    const indication = entry?.indication || "개발 중단·비활성 자산";
+    const rights = entry?.rights || a.origin;
+    const nextHtml = entry?.next || a.watch.join("<br>");
+    const nextNcts = (entry?.nextNcts || []).join(", ");
+    return [
+      a.name || "",
+      a.aliases || "",
+      a.company || "",
+      a.mechanism || "",
+      assetTargets(a.id).join(", "),
+      htmlToPlainText(profile.text || ""),
+      a.phase || "",
+      a.tier || "",
+      htmlToPlainText(indication),
+      trial?.label || "",
+      trial?.meta || "",
+      trial?.nct || "",
+      htmlToPlainText(results.weight) || "체중효능 공개값 없음",
+      htmlToPlainText(results.liver) || "간 약효 공개값 없음",
+      htmlToPlainText(results.gi) || "GI 안전성 공개값 없음",
+      htmlToPlainText(results.discontinuation) || "중단 공개값 없음",
+      htmlToPlainText(rights),
+      htmlToPlainText(nextHtml),
+      nextNcts,
+      tier,
+      targets,
+      query,
+      exportedAt
+    ];
+  });
+
+  return { headers, rows, meta: { tier, targets, query, exportedAt, count: assetList.length } };
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+function exportMasterAsCsv(headers, dataRows, filename) {
+  const esc = cell => {
+    const s = String(cell ?? "");
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+    return s;
+  };
+  const lines = [headers.map(esc).join(",")].concat(dataRows.map(r => r.map(esc).join(",")));
+  // Excel 한글: UTF-8 BOM
+  const bom = "\uFEFF";
+  const blob = new Blob([bom + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+  downloadBlob(blob, filename.replace(/\.xlsx$/i, ".csv"));
+}
+
+async function loadSheetJs() {
+  if (window.XLSX) return window.XLSX;
+  await new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = "https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js";
+    s.async = true;
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error("SheetJS CDN load failed"));
+    document.head.appendChild(s);
+  });
+  if (!window.XLSX) throw new Error("XLSX global missing");
+  return window.XLSX;
+}
+
+async function exportMasterExcel() {
+  const btn = document.querySelector("#exportExcel");
+  const list = getFilteredMasterAssets();
+  if (!list.length) {
+    window.alert("내보낼 행이 없습니다. 필터를 확인하세요.");
+    return;
+  }
+  const { headers, rows, meta } = buildMasterExportRows(list);
+  const stamp = new Date().toISOString().slice(0, 10);
+  const base = `competitor-master-${stamp}`;
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "내보내는 중…";
+  }
+  try {
+    const XLSX = await loadSheetJs();
+    const aoa = [headers, ...rows];
+    const ws = XLSX.utils.aoa_to_sheet(aoa);
+    // 열 너비 대략
+    ws["!cols"] = headers.map((h, i) => {
+      if (i >= 12 && i <= 15) return { wch: 36 };
+      if (i === 5 || i === 8 || i === 16 || i === 17) return { wch: 28 };
+      return { wch: Math.min(22, Math.max(10, String(h).length + 2)) };
+    });
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "비교표");
+    // 필터 요약 시트
+    const metaAoa = [
+      ["항목", "값"],
+      ["내보낸 시각", meta.exportedAt],
+      ["행 수", meta.count],
+      ["자산군 필터", meta.tier],
+      ["표적 AND 필터", meta.targets],
+      ["검색어", meta.query || "(없음)"],
+      ["출처 규칙", "docs/SOURCE_ALGORITHM.md · 화면 표시와 동일 필터"]
+    ];
+    const wsMeta = XLSX.utils.aoa_to_sheet(metaAoa);
+    wsMeta["!cols"] = [{ wch: 16 }, { wch: 48 }];
+    XLSX.utils.book_append_sheet(wb, wsMeta, "내보내기정보");
+    XLSX.writeFile(wb, `${base}.xlsx`);
+  } catch (err) {
+    console.warn("[exportExcel] xlsx failed, CSV fallback", err);
+    exportMasterAsCsv(headers, rows, `${base}.csv`);
+    window.alert("엑셀 라이브러리를 불러오지 못해 CSV로 저장했습니다. Excel에서 바로 열 수 있습니다.");
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "엑셀 내보내기";
+    }
+  }
+}
+
+function initExcelExport() {
+  const btn = document.querySelector("#exportExcel");
+  if (!btn || btn.dataset.bound === "1") return;
+  btn.dataset.bound = "1";
+  btn.addEventListener("click", () => {
+    exportMasterExcel().catch(err => {
+      console.error(err);
+      window.alert("내보내기에 실패했습니다.");
+    });
+  });
+}
+
+function renderMaster() {
+  const rows = getFilteredMasterAssets();
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
     const entry = getComparisonEntry(a.id);
     const trial = entry ? getActiveTrial(a.id, entry) : null;
@@ -2225,6 +2418,7 @@ initColumnSelector();
 initTrialSelectHandlers();
 initTrialDraftHandlers();
 initTargetFilter();
+initExcelExport();
 renderMaster();
 renderTimeline();
 renderDossiers();
