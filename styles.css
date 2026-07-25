@@ -233,24 +233,22 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 .master-table .column-hidden { display: none; }
 
 /* 기전 표적 필터: 표시 항목과 동일 호버 메뉴, 복수 선택 = AND */
+/* 기전 표적: 자산군/검색과 동일 라벨+컨트롤 세로 그리드, 메뉴는 2열 */
 .target-filter {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   position: relative;
-}
-.target-filter-label {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
 }
 .target-filter > button.has-filter {
   color: var(--blue);
   border-color: #9db0d6;
   background: var(--blue-soft);
 }
-.target-menu { min-width: 260px; width: max-content; max-width: min(360px, 90vw); }
+.target-menu {
+  left: 0;
+  right: auto;
+  width: 320px;
+  max-width: min(320px, calc(100vw - 32px));
+  box-sizing: border-box;
+}
 .target-menu-note {
   margin: 0 0 8px;
   padding: 6px 8px;
@@ -259,6 +257,17 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
   color: var(--muted);
 }
 .target-menu-note b { color: #2a4ea8; font-weight: 700; }
+.target-menu-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 6px;
+  align-items: stretch;
+}
+.target-menu-list .target-option {
+  min-height: 36px;
+  margin: 0;
+  padding: 6px 8px;
+}
 .target-clear {
   display: block;
   width: 100%;
@@ -448,9 +457,29 @@ button.mech-target.is-active {
 .dossier-live-note { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
 .dossier-live a { color: var(--blue); }
 
-.master-controls { display: flex; gap: 12px; }
-.master-controls label { display: grid; gap: 4px; }
-.master-controls label span { color: var(--muted); font-size: 12px; font-weight: 700; }
+.master-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+/* 자산군 / 기전 표적 / 검색: 라벨 위 + 컨트롤 아래 동일 그리드 */
+.master-controls > label,
+.master-controls > .control-field {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  align-content: end;
+  min-width: 0;
+}
+.master-controls > label > span,
+.master-controls > .control-field > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
 input, select {
   height: 35px;
   min-width: 180px;
@@ -458,6 +487,30 @@ input, select {
   border: 1px solid var(--line-dark);
   background: white;
   outline: none;
+  box-sizing: border-box;
+}
+/* 표적 버튼 = select와 같은 높이·테두리 박스 */
+.master-controls .target-filter > button#targetToggle {
+  height: 35px;
+  min-width: 180px;
+  width: 100%;
+  max-width: 220px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--line-dark);
+  border-radius: 0;
+  background: white;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.master-controls .target-filter > button#targetToggle:hover,
+.master-controls .target-filter > button#targetToggle[aria-expanded="true"] {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-soft);
 }
 input:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(36,87,214,.1); }
 /* 비교표: 상단에도 가로 스크롤바를 두고(하단과 동기화), 세로 스크롤 시 헤더는 스티키 고정. */
@@ -758,8 +811,12 @@ dialog li { margin-bottom: 10px; font-size: 11px; }
   .summary-strip div { border-bottom: 1px solid var(--line); }
   .panel-heading { align-items: flex-start; flex-direction: column; }
   .master-controls { width: 100%; }
-  .master-controls label { flex: 1; }
-  .master-controls input, .master-controls select { width: 100%; }
+  .master-controls label,
+  .master-controls .control-field { flex: 1 1 160px; }
+  .master-controls input,
+  .master-controls select,
+  .master-controls .target-filter > button#targetToggle { width: 100%; max-width: none; min-width: 0; }
+  .target-menu { width: min(320px, calc(100vw - 48px)); }
   .dossier-summary { grid-template-columns: 1fr 1fr 30px; }
   .dossier-summary .signal { grid-column: 1 / -1; }
   .dossier-detail { padding-left: 14px; }
@@ -798,6 +855,7 @@ body { font-size: 16px; }
 .header-meta b,
 .header-meta button,
 .master-controls label span,
+.master-controls .control-field > span,
 .section-nav a,
 .heading-note,
 .matrix-legend,
@@ -806,6 +864,10 @@ select,
 .chip { font-size: 15px; }
 input,
 select { height: 42px; }
+.master-controls .target-filter > button#targetToggle {
+  height: 42px;
+  font-size: 15px;
+}
 .master-table th { padding: 10px 12px; font-size: 14px; }
 .master-table td { padding: 10px 12px; font-size: 15px; line-height: 1.4; }
 .asset-name { margin-bottom: 2px; font-size: 17px; line-height: 1.3; }

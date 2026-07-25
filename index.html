@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="대사·비만 경쟁물질 데이터 원장 (기전 확장 가능)">
   <title>대사·비만 경쟁물질 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260725-16">
+  <link rel="stylesheet" href="styles.css?v=20260725-17">
 </head>
 <body>
   <header class="app-header">
@@ -77,12 +77,12 @@
               <option value="historical">중단군</option>
             </select>
           </label>
-          <div class="target-filter column-selector" id="targetFilter">
-            <span class="target-filter-label">기전 표적</span>
-            <button id="targetToggle" type="button" aria-expanded="false" aria-haspopup="true">표적 선택</button>
+          <div class="control-field target-filter column-selector" id="targetFilter">
+            <span>기전 표적</span>
+            <button id="targetToggle" type="button" aria-expanded="false" aria-haspopup="true">표적 전체</button>
             <div id="targetMenu" class="column-menu target-menu" hidden>
               <p class="target-menu-note">클릭으로 표적 선택. 여러 개면 <b>모두 포함(AND)</b>하는 물질만 표시합니다.</p>
-              <div id="targetMenuList"></div>
+              <div id="targetMenuList" class="target-menu-list"></div>
               <button type="button" class="target-clear" id="targetClear">선택 해제 (전체)</button>
             </div>
           </div>
@@ -214,6 +214,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260725-16"></script>
+  <script src="app.js?v=20260725-17"></script>
 </body>
 </html>
