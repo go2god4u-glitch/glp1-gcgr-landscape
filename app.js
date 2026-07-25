@@ -173,7 +173,7 @@ const assets = [
     id: "eloralintide", name: "Eloralintide", aliases: "LY3841136 · 엘로라니타이드", company: "Eli Lilly",
     phase: "Phase 2 완료 · Phase 3 준비", stage: 2.2, tier: "core", tone: "live",
     mechanism: "amylin selective",
-    signal: "P2 NCT06230523 CT.gov: 9 mg −20.1%, 오심 6 mg 64.3%, AE 탈락 용량별 0–7.1%.",
+    signal: "P2 NCT06230523: 9 mg −20.1% (CT.gov). 오심 6 mg 64.3%. AE 중단 6 mg 21% · 풀링 10% (Lancet).",
     origin: "Lilly 선택적 amylin 수용체 작용제. 주 1회 피하.",
     strategy: "GLP-1 비함유 amylin 단독 축. 병용·순차 전략 확장 여지.",
     watch: ["Phase 3 ENLIGHTEN 등 등록", "병용 전략 공개", "GI·피로 AE 프로파일"],
@@ -309,7 +309,7 @@ const references = {
   "ZN-LANCET": ["Dahl et al. (2025), SC amycretin Phase 1b/2a weight endpoints", "Lancet / PubMed abstract", "https://pubmed.ncbi.nlm.nih.gov/40550231/"],
   "ZN-NCT": ["Amycretin SC NCT06064006 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06064006"],
   "ZN-ADA": ["Novo Nordisk (2026), zenagamtide T2D Phase 2 ADA company PR", "Company PR", "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html"],
-  "EL-LANCET": ["Billings et al. (2025), eloralintide Phase 2 Lancet", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/41207310/"],
+  "EL-LANCET": ["Billings et al. (2025), eloralintide Phase 2: AE leading to discontinuation table (e.g. 6 mg 21%, pooled 10%)", "Lancet", "https://pubmed.ncbi.nlm.nih.gov/41207310/"],
   "EL-LILLY": ["Eli Lilly (2025-11-06), eloralintide Phase 2 company PR", "Company PR", "https://www.prnewswire.com/news-releases/lillys-selective-amylin-agonist-eloralintide-demonstrated-meaningful-weight-loss-and-favorable-tolerability-in-a-phase-2-study-of-adults-with-obesity-or-overweight-302607061.html"],
   "EL-CTG": ["Eloralintide Phase 2 NCT06230523 posted results (weight primary, AE tables, AE discontinuation flow)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT06230523"]
 };
@@ -753,8 +753,8 @@ const comparison = {
         hasLiver: false,
         weight: "<b>Zenagamtide SC 60 mg −24.3%</b><br>위약 −1.1%<br><small>36주 · Part B · Lancet/PubMed abstract</small><br>20 mg −22.0% vs 위약 +1.9% (36주)<br>5 mg −16.2% vs 위약 +2.3% (28주)<br>1.25 mg −9.7% vs 위약 +2.0% (20주)<br><small>CT.gov Results 미게시(감사 시점)</small>",
         liver: "<span class=\"result-empty\">[회사·Lancet abstract 미공개]</span><br><small>abstract·Novo 보도·CT.gov Results(미게시)에 간 수치 없음</small>",
-        gi: "가장 흔한 TEAE: 위장관(오심·구토·설사 등)<br>대부분 경증~중등도 · 용량 의존 · 종료 시 해소 경향<br><small>Lancet abstract · 정성만 신뢰</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토·설사 개별 %<br><small>CT.gov Results 미게시 · abstract에 개별% 표 없음. 2차 뉴스 수치 사용 안 함.</small>",
-        discontinuation: "중도 탈락 다수 · 상당수가 TEAE 무관 사유<br><small>Lancet abstract · 정성</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 AE 중단%<br><small>CT.gov Results 미게시 · abstract에 AE 중단% 표 없음. 2차 뉴스 수치 사용 안 함.</small>",
+        gi: "가장 흔한 TEAE: 위장관(오심·구토·설사 등)<br>대부분 경증~중등도 · 용량 의존 · 종료 시 해소 경향<br><small>Lancet abstract</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토·설사 개별 %",
+        discontinuation: "중도 탈락 다수 · 상당수가 TEAE 무관 사유<br><small>Lancet abstract</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 AE 중단%",
         refs: {
           trial: ["ZN-LANCET", "ZN-NCT"],
           weight: ["ZN-LANCET"],
@@ -775,19 +775,19 @@ const comparison = {
       {
         id: "elo_p2",
         label: "Phase 2 비만",
-        meta: "NCT06230523 · P2 · 48주 · 비만·과체중(비당뇨) · n=263 · CT.gov Results",
+        meta: "NCT06230523 · P2 · 48주 · 비만·과체중(비당뇨) · n=263",
         nct: "NCT06230523",
         hasLiver: false,
-        // CT.gov primary outcome % change body weight week 48
+        // 체중·GI: CT.gov Results. AE 중단: Lancet 본문 safety 표 (AE leading to discontinuation).
         weight: "<b>Eloralintide 9 mg −20.1%</b><br>6 mg −17.6% · 3 mg −12.4% · 1 mg −9.4%<br>6/9 mg −19.9% · 3/6/9 mg −16.5%<br>위약 −0.4%<br><small>CT.gov Results · primary · week 48</small>",
-        liver: "<span class=\"result-empty\">[CT.gov·Lancet 미공개]</span><br><small>Results·abstract에 간 약효 수치 없음</small>",
-        gi: "오심 (CT.gov other AE ≥5%)<br>1 mg 10.7% (3/28) · 3 mg 12.5% (3/24)<br>6 mg <b>64.3%</b> (18/28) · 9 mg 33.3% (18/54)<br>6/9 mg 54.2% (13/24) · 3/6/9 mg 25.0% (13/52)<br>위약 13.2% (7/53)<br>구토 6 mg 25.0% · 9 mg 11.1% · 위약 0%<br>설사 6 mg 35.7% · 9 mg 11.1% · 위약 9.4%<br>변비 9 mg 24.1% · 위약 5.7%<br>피로 9 mg 42.6% (23/54) · 6/9 mg 45.8% · 위약 11.3%<br><small>ClinicalTrials.gov Results</small>",
-        discontinuation: "<b>AE로 탈락</b> (CT.gov participant flow)<br>위약 2/53 (3.8%) · 1 mg 2/28 (7.1%) · 3 mg 0/24<br>6 mg 1/28 (3.6%) · 9 mg 1/54 (1.9%)<br>6/9 mg 0/24 · 3/6/9 mg 2/52 (3.8%)<br><small>ClinicalTrials.gov · drop reason Adverse Event</small><br><span class=\"result-empty\">[CT.gov 미분리]</span> GI 단독 중단%<br><small>학회 2차 보도(10%/21% 등)는 CT.gov와 불일치 → 채택 안 함</small>",
+        liver: "<span class=\"result-empty\">[1차 미공개]</span><br><small>CT.gov Results·Lancet에 간 약효 수치 없음</small>",
+        gi: "오심<br>1 mg 10.7% (3/28) · 3 mg 12.5% (3/24)<br>6 mg <b>64.3%</b> (18/28) · 9 mg 33.3% (18/54)<br>6/9 mg 54.2% (13/24) · 3/6/9 mg 25.0% (13/52)<br>위약 13.2% (7/53)<br>구토 6 mg 25.0% · 9 mg 11.1% · 위약 0%<br>설사 6 mg 35.7% · 9 mg 11.1% · 위약 9.4%<br>변비 9 mg 24.1% · 위약 5.7%<br>피로 9 mg 42.6% · 6/9 mg 45.8% · 위약 11.3%<br><small>CT.gov Results · AE ≥5%</small>",
+        discontinuation: "<b>AE leading to discontinuation</b><br>위약 8% · 1 mg 11% · 3 mg 0% · <b>6 mg 21%</b><br>9 mg 7% · 6–9 mg 8% · 3–9 mg 12%<br>elo 풀링 10% (21/208)<br><small>Billings et al. Lancet · NCT06230523</small><br><span class=\"result-empty\">[1차 미분리]</span> GI 단독 중단%",
         refs: {
           trial: ["EL-CTG", "EL-LANCET"],
           weight: ["EL-CTG"],
           gi: ["EL-CTG"],
-          discontinuation: ["EL-CTG"]
+          discontinuation: ["EL-LANCET"]
         }
       }
     ],
