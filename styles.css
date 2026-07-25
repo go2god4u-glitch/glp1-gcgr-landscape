@@ -258,8 +258,8 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 .target-menu {
   left: 0;
   right: auto;
-  width: 320px;
-  max-width: min(320px, calc(100vw - 32px));
+  width: 360px;
+  max-width: min(360px, calc(100vw - 32px));
   box-sizing: border-box;
 }
 .target-menu-note {
@@ -272,7 +272,7 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
 .target-menu-note b { color: #2a4ea8; font-weight: 700; }
 .target-menu-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2px 6px;
   align-items: stretch;
 }
@@ -280,6 +280,14 @@ main { width: min(1700px, calc(100% - 40px)); margin: 14px auto 70px; }
   min-height: 36px;
   margin: 0;
   padding: 6px 8px;
+  min-width: 0;
+}
+.target-menu-list .target-option span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 .target-clear {
   display: block;
@@ -644,7 +652,7 @@ table { width: 100%; border-collapse: collapse; }
   gap: 8px;
   align-items: end;
 }
-.timeline-inputs input, .timeline-inputs select { width: 100%; }
+.timeline-inputs input:not([type="checkbox"]), .timeline-inputs select { width: 100%; }
 .timeline-inputs .target-filter { min-width: 0; }
 .timeline-inputs .target-filter > button {
   width: 100%;
