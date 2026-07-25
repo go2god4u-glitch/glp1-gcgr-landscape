@@ -284,11 +284,15 @@ const references = {
   "CMS-ANNUAL": ["China Medical System (2026), 2025 annual results", "HKEX regulatory filing", "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031602212.pdf"],
   "PB-ABSTRACT": ["PegBio, PB-718 Phase 1b/2a fixed-dose-combination abstract", "Diabetes / ADA", "https://diabetesjournals.org/diabetes/article/73/Supplement_1/768-P/156358/768-P-A-Phase-1b-2a-Trial-to-Assess-the-Safety"],
   "PB-ANNUAL": ["PegBio (2026), 2025 annual report and PB-718 strategy", "HKEX regulatory filing", "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042804363.pdf"],
-  "COT-P2": ["Ambery et al. (2018), MEDI0382 Phase 2a study", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/29945727/"],
-  "COT-54W": ["Nahra et al. (2021), Cotadutide 54-week Phase 2b", "Diabetes Care / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8247525/"],
-  "NN-P1": ["Friedrichsen et al. (2023), three NN1177 Phase 1 trials", "Clinical Obesity / PubMed", "https://pubmed.ncbi.nlm.nih.gov/37690519/"],
-  "SAR-P1": ["Tillner et al. (2019), SAR425899 first-in-human and first-in-patient trials", "Diabetes Obesity and Metabolism / PubMed", "https://pubmed.ncbi.nlm.nih.gov/30091218/"],
-  "OPK-TRIAL": ["OPK-88003 Phase 2 clinical study", "ClinicalTrials.gov NCT03406377", "https://clinicaltrials.gov/study/NCT03406377"],
+  "COT-P2": ["Ambery et al. (2018), MEDI0382 Phase 2a: weight −3.84 kg vs placebo −1.70 kg, GI AE 72% vs 40%", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/29945727/"],
+  "COT-54W": ["Nahra et al. (2021), Cotadutide 54-week Phase 2b (n=834): weight, GI, hepatic biomarkers", "Diabetes Care / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8247525/"],
+  "COT-CTG": ["Cotadutide Phase 2b NCT03235050 posted results (weight %, AE, participant flow)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03235050"],
+  "COT-P2A-CTG": ["MEDI0382 MAD/Phase 2a NCT02548585 posted results", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT02548585"],
+  "NN-P1": ["Friedrichsen et al. (2023), NN1177 three Phase 1 trials: weight up to −12.6% at 12w; GI/safety signals; development stopped", "Molecular Metabolism / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC10568562/"],
+  "NN-MAD-CTG": ["NN1177 MAD NCT03308721 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT03308721"],
+  "SAR-P1": ["Tillner et al. (2019), SAR425899 FIH/FIP: max weight −5.32 kg (HV) / −5.46 kg (T2D)", "Diabetes Obesity and Metabolism / PubMed", "https://pubmed.ncbi.nlm.nih.gov/30091218/"],
+  "SAR-CTG": ["SAR425899 Phase 2 NCT02973321 posted results (weight kg, AE, AE discontinuation flow)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT02973321"],
+  "OPK-TRIAL": ["OPK-88003 Phase 2 NCT03406377 posted results (weight %, AE tables)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03406377"],
   "CLASS-REVIEW": ["Melson et al. (2025), anti-obesity medication pipeline review", "Frontiers in Endocrinology", "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full"],
   "MZ-DESIGN": ["Ji et al. (2022), Mazdutide Phase 1b and molecular background", "eClinicalMedicine / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/"],
   "SV-DESIGN": ["Zimmermann et al. (2022), BI 456906 discovery and preclinical pharmacology", "Molecular Metabolism / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/"],
@@ -296,7 +300,8 @@ const references = {
   "EF-DESIGN": ["Efinopegdutide/HM12525A molecular composition and comparable receptor potency", "Patent WO2019171352A2", "https://patents.google.com/patent/WO2019171352A2/en"],
   "DD-RATIO": ["D&D Pharmatech, DD01 GLP-1:glucagon potency ratio 11:1", "Sponsor Phase 2 announcement", "https://www.businesswire.com/news/home/20250616477730/en/DD-Pharmatech-Announces-Positive-Phase-2-Results-for-DD01-in-MASH-with-Robust-Reductions-in-Liver-Fat-Accompanied-by-Improvements-in-Liver-and-Metabolic-Health"],
   "DA-RATIO": ["MetaVia, DA-1726 OXM analogue and 3:1 GLP-1R:GCGR ratio", "Sponsor primary source", "https://ir.metaviatx.com/news-releases/news-release-details/metavia-reports-additional-positive-top-line-results-mad-part-2/"],
-  "G3215-P1": ["Hope et al. (2024), adaptive infusion of G3215 Phase 1 trial", "Diabetes Obesity and Metabolism", "https://dom-pubs.onlinelibrary.wiley.com/doi/10.1111/dom.15448"],
+  "G3215-P1": ["Hope et al. (2024), G3215 adaptive infusion Phase 1: LS weight −2.39 kg vs placebo −0.84 kg (14 days)", "Diabetes Obesity and Metabolism / PubMed", "https://pubmed.ncbi.nlm.nih.gov/38229453/"],
+  "G3215-CTG": ["G3215 Phase 1 NCT02692040 posted results (safety primary; weight exploratory)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT02692040"],
   "RATIO-REVIEW": ["Tschöp et al. review, GLP-1/glucagon co-agonist molecular design and potency balance", "Frontiers in Endocrinology / PMC", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/"],
   "RT-TRIUMPH1": ["Eli Lilly (2026-05-21), TRIUMPH-1 topline: weight (efficacy & treatment-regimen), GI AE, AE discontinuation", "Sponsor PR / IR", "https://www.prnewswire.com/news-releases/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss-in-pivotal-phase-3-obesity-trial-302778859.html"],
   "RT-NCT": ["TRIUMPH-1 retatrutide master protocol NCT05929066", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT05929066"],
@@ -325,11 +330,11 @@ const assetReferenceMap = {
   "CMS-D005": ["CMS-IND", "CMS-ANNUAL"],
   "DA-1726": ["DA-DATA", "DA-STATUS", "DA-LICENSE"],
   "PB-718": ["PB-ABSTRACT", "PB-ANNUAL"],
-  Cotadutide: ["COT-P2", "COT-54W", "CLASS-REVIEW"],
-  NN1177: ["NN-P1", "CLASS-REVIEW"],
-  SAR425899: ["SAR-P1", "CLASS-REVIEW"],
+  Cotadutide: ["COT-CTG", "COT-54W", "COT-P2", "COT-P2A-CTG", "CLASS-REVIEW"],
+  NN1177: ["NN-P1", "NN-MAD-CTG", "CLASS-REVIEW"],
+  SAR425899: ["SAR-CTG", "SAR-P1", "CLASS-REVIEW"],
   Pegapamodutide: ["OPK-TRIAL", "CLASS-REVIEW"],
-  G3215: ["CLASS-REVIEW"],
+  G3215: ["G3215-P1", "G3215-CTG", "CLASS-REVIEW"],
   Retatrutide: ["RT-TRIUMPH1", "RT-NCT", "RT-P2-CTG", "RT-LIVER-NM", "RT-LIVER-PM"],
   CagriSema: ["CS-REDEFINE1", "CS-SAFETY", "CS-NCT"],
   Zenagamtide: ["ZN-LANCET", "ZN-NCT", "ZN-ADA"],
@@ -628,6 +633,179 @@ const comparison = {
       }
     ],
     rightsRefs: ["PB-ABSTRACT"]
+  },
+  // —— 역사·중단 자산 (class reference). 효능 수치는 T0/T1만. ——
+  cotadutide: {
+    indication: "T2D·과체중/비만<br>NASH 프로그램(개발 중단)",
+    rights: "MedImmune/AstraZeneca · MEDI0382<br>전략적 포트폴리오 결정으로 개발 중단",
+    next: "개발 중단 (AZ 공개)<br>class reference로 논문·CT.gov Results 유지",
+    nextNcts: ["NCT03235050", "NCT02548585"],
+    defaultTrialId: "p2b_54w",
+    trials: [
+      {
+        id: "p2b_54w",
+        label: "Phase 2b 54주 T2D",
+        meta: "NCT03235050 · P2b · 54주 · T2D·과체중/비만 · n=834",
+        nct: "NCT03235050",
+        hasLiver: false,
+        // 체중·GI·AE 탈락: CT.gov Results. 간 조직학 아님(바이오마커는 논문 ad hoc).
+        weight: "<b>Cotadutide 300 μg −4.16%</b><br>200 μg −3.08% · 100 μg −3.27%<br>위약 −0.84% · 리라글루타이드 1.8 mg −3.20%<br><small>CT.gov Results · % 체중 · 54주 LS mean</small><br>14주(공동 primary): 300 μg −4.33% · 위약 −0.70%",
+        liver: "<span class=\"result-empty\">[1차 미확보]</span> 간 조직학<br><small>본 시험은 조직학 primary 아님. ALT/AST·FIB-4 등 바이오마커는 Diabetes Care ad hoc</small>",
+        gi: "오심<br>300 μg <b>41.0%</b> (105/256) · 200 μg 33.2% (85/256)<br>100 μg 23.0% (23/100) · 위약 10.7% (12/112)<br>구토 300 μg 16.8% (43/256) · 200 μg 19.9% (51/256)<br>설사 300 μg 10.9% (28/256) · 200 μg 19.1% (49/256)<br><small>CT.gov Results · other AE</small><br>논문 요약(용량 통합): 오심 35% · 구토 17%",
+        discontinuation: "<b>AE로 탈락</b> (participant flow)<br>300 μg 1/256 · 200 μg 4/256 · 100 μg 1/100<br>위약 0/112 · 리라글루타이드 0/110<br><small>CT.gov drop reason = Adverse Event · GI 단독 미분리</small>",
+        refs: {
+          trial: ["COT-CTG", "COT-54W"],
+          weight: ["COT-CTG"],
+          liver: ["COT-54W"],
+          gi: ["COT-CTG", "COT-54W"],
+          discontinuation: ["COT-CTG"]
+        }
+      },
+      {
+        id: "p2a_ambery",
+        label: "Phase 2a (Ambery)",
+        meta: "NCT02548585 · P1/2a · ≤41일 · T2D·과체중/비만",
+        nct: "NCT02548585",
+        hasLiver: false,
+        weight: "<b>MEDI0382 −3.84 kg</b> vs 위약 −1.70 kg<br>군간 차 −2.14 kg<br><small>Lancet phase 2a · ITT · day 41 · Ambery et al.</small><br>CT.gov Cohort 4: −3.83 kg vs −1.71 kg",
+        liver: null,
+        gi: "GI 장애 72% (18/25) vs 위약 40% (13/26)<br>식욕감소 20% vs 0%<br><small>Lancet · TEAE</small>",
+        discontinuation: "AE로 중단<br>MEDI0382 3/25 · 위약 1/26<br><small>Lancet phase 2a</small>",
+        refs: {
+          trial: ["COT-P2", "COT-P2A-CTG"],
+          weight: ["COT-P2", "COT-P2A-CTG"],
+          gi: ["COT-P2"],
+          discontinuation: ["COT-P2"]
+        }
+      }
+    ],
+    rightsRefs: ["COT-54W", "COT-P2"]
+  },
+  nn1177: {
+    indication: "과체중·비만",
+    rights: "Novo Nordisk · NNC9204-1177<br>Phase 1 후 안전 신호로 개발 중단",
+    next: "개발 중단 (안전·내약 신호)<br>class reference",
+    nextNcts: ["NCT03308721", "NCT02941042"],
+    defaultTrialId: "mad_12w",
+    trials: [
+      {
+        id: "mad_12w",
+        label: "Phase 1 MAD 12주",
+        meta: "NCT03308721 · P1 · 12주 · 과체중·비만 · n=99",
+        nct: "NCT03308721",
+        hasLiver: false,
+        // CT.gov Results 미게시 → 피어 리뷰 full text (Mol Metab / PMC)
+        weight: "<b>NN1177 최대 −12.6%</b> (4200 μg 경로)<br>200 μg −0.4% ~ 용량 의존<br><small>12주 · MAD · Friedrichsen et al. Mol Metab</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span>",
+        liver: "<span class=\"result-empty\">[1차 미확보]</span> 간지방 약효<br><small>AST/ALT 상승은 안전 신호로 보고(약효 간 endpoint 아님)</small>",
+        gi: "GI 관련 TEAE <b>67.1%</b> vs 위약 30.4%<br>오심·구토가 주된 증상<br>예: 4200 μg 오심 65% (13/20) · 구토 50% (10/20)<br><small>Mol Metab MAD 표 · CT.gov Results 미게시</small>",
+        discontinuation: "<b>조기 탈락 유발 이벤트</b><br>4200 μg 6/20 (30%) · 6000 μg 3/9 (33%)<br>저용량 군 0–11%<br><small>MAD · TEAE leading to withdrawal · Mol Metab</small><br><span class=\"result-empty\">[CT.gov 미분리]</span> GI 단독 중단%",
+        refs: {
+          trial: ["NN-P1", "NN-MAD-CTG"],
+          weight: ["NN-P1"],
+          gi: ["NN-P1"],
+          discontinuation: ["NN-P1"]
+        }
+      }
+    ],
+    rightsRefs: ["NN-P1"]
+  },
+  sar425899: {
+    indication: "T2D·과체중/비만",
+    rights: "Sanofi 내부 개발<br>후기 개발 미지속",
+    next: "활성 개발 신호 없음<br>class reference",
+    nextNcts: ["NCT02973321", "NCT02411825"],
+    defaultTrialId: "p2_26w",
+    trials: [
+      {
+        id: "p2_26w",
+        label: "Phase 2 26주 T2D",
+        meta: "NCT02973321 · P2 · 26주 · T2D · CT.gov Results",
+        nct: "NCT02973321",
+        hasLiver: false,
+        weight: "<b>SAR425899 0.16 mg −5.33 kg</b><br>0.12 mg −4.28 kg · 0.20 mg −4.41 kg<br>위약 −1.76 kg · 리라글루타이드 −4.59 kg<br><small>CT.gov Results · LS mean · 26주</small><br>≥5% 감량 0.16 mg 45.5% · 위약 3.0%",
+        liver: null,
+        gi: "오심<br>0.12 mg 45.8% (33/72) · 0.16 mg <b>55.9%</b> (33/59)<br>0.20 mg 55.3% (26/47) · 위약 15.2% (5/33)<br>구토 0.12 29.2% · 0.16 23.7% · 0.20 36.2% · 위약 6.1%<br>설사 0.12 20.8% · 0.16 18.6% · 0.20 19.1% · 위약 6.1%<br><small>CT.gov Results · other AE ≥5%</small>",
+        discontinuation: "<b>AE로 탈락</b> (participant flow)<br>0.12 mg 10/66 (15.2%) · 0.16 mg 11/66 (16.7%)<br>0.20 mg 13/64 (20.3%) · 위약 1/33 (3.0%)<br>리라글루타이드 3/67 (4.5%)<br><small>CT.gov · GI 단독 미분리</small>",
+        refs: {
+          trial: ["SAR-CTG", "SAR-P1"],
+          weight: ["SAR-CTG"],
+          gi: ["SAR-CTG"],
+          discontinuation: ["SAR-CTG"]
+        }
+      },
+      {
+        id: "p1_mad",
+        label: "Phase 1 MAD (Tillner)",
+        meta: "NCT02411825 · P1 · 21–28일 · 건강·T2D",
+        nct: "NCT02411825",
+        hasLiver: false,
+        weight: "<b>최대 체중 감소</b><br>건강 지원자 −5.32 kg · T2D −5.46 kg<br><small>투여 종료 시점 · Tillner et al. DOM · vs 위약 P&lt;0.001</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span>",
+        liver: null,
+        gi: "가장 흔한 AE: 위장관<br>T2D 환자에서 HV보다 GI 부작용 덜함<br><small>Tillner et al. abstract · 개별 % 표는 abstract 미기재</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토 개별 %",
+        discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>abstract에 AE 중단 % 표 없음 · CT.gov Results 미게시</small>",
+        refs: {
+          trial: ["SAR-P1"],
+          weight: ["SAR-P1"],
+          gi: ["SAR-P1"],
+          discontinuation: ["SAR-P1"]
+        }
+      }
+    ],
+    rightsRefs: ["SAR-P1", "SAR-CTG"]
+  },
+  opk88003: {
+    indication: "T2D",
+    rights: "OPKO Health · pegapamodutide (OPK-88003 / MOD-6031)<br>후속 활성 개발 근거 제한",
+    next: "파이프라인 복귀 여부 확인<br>등록 Results는 유지",
+    nextNcts: ["NCT03406377"],
+    defaultTrialId: "p2_30w",
+    trials: [
+      {
+        id: "p2_30w",
+        label: "Phase 2 30주 T2D",
+        meta: "NCT03406377 · P2 · 30주 · T2D · n=113",
+        nct: "NCT03406377",
+        hasLiver: false,
+        weight: "<b>OPK-88003 −5.83%</b> vs 위약 −2.10%<br><small>CT.gov Results · % 체중 LS mean · 30주</small><br>≥5% 감량 48.8% vs 위약 16.7%",
+        liver: null,
+        gi: "오심 <b>38.9%</b> (28/72) vs 위약 4.9% (2/41)<br>구토 26.4% (19/72) vs 2.4% (1/41)<br>설사 12.5% (9/72) vs 7.3% (3/41)<br><small>CT.gov Results · other AE</small>",
+        discontinuation: "미완료 21/72 (약물) · 16/41 (위약)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 drop reason 미게시</small>",
+        refs: {
+          trial: ["OPK-TRIAL"],
+          weight: ["OPK-TRIAL"],
+          gi: ["OPK-TRIAL"],
+          discontinuation: ["OPK-TRIAL"]
+        }
+      }
+    ],
+    rightsRefs: ["OPK-TRIAL"]
+  },
+  g3215: {
+    indication: "과체중·비만 (±T2D)",
+    rights: "Gubra / Imperial 계열 공개 임상<br>적응 연속 주입 제형 · 후속 활성 신호 제한",
+    next: "권리·개발 상태 재확인<br>P1 논문·CT.gov Results 유지",
+    nextNcts: ["NCT02692040"],
+    defaultTrialId: "p1_infusion",
+    trials: [
+      {
+        id: "p1_infusion",
+        label: "Phase 1 적응 주입 14일",
+        meta: "NCT02692040 · P1 · 14일 SC 주입 · 과체중·비만 · n=26",
+        nct: "NCT02692040",
+        hasLiver: false,
+        weight: "<b>G3215 −2.39 kg</b> vs 위약 −0.84 kg<br><small>14일 주입 · LS mean · Hope et al. DOM</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span> 통합 % 체중 표(용량 분절)",
+        liver: null,
+        gi: "가장 흔한 AE: 오심·구토<br>대부분 경증 · 주입 속도 실시간 조절로 완화<br><small>Hope et al. DOM</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 오심 % 표(abstract)",
+        discontinuation: "배정 26명 · 14일 주입 완료 23명<br><span class=\"result-empty\">[1차 미확보]</span> AE 중단 % 표<br><small>abstract·CT.gov AE 표는 용량 분절·소표본</small>",
+        refs: {
+          trial: ["G3215-P1", "G3215-CTG"],
+          weight: ["G3215-P1"],
+          gi: ["G3215-P1"],
+          discontinuation: ["G3215-P1"]
+        }
+      }
+    ],
+    rightsRefs: ["G3215-P1"]
   },
   // 수치 출처: CT.gov Results > Lancet/NEJM/NatMed > 회사 PR(Results 미게시 시).
   // [회사 미공개] / [1차 미확보] 구분 유지. 2차 뉴스 수치 금지.
