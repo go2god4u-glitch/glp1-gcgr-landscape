@@ -1213,6 +1213,35 @@ function assetMatchesTargetFilter(asset) {
   return true;
 }
 
+/** 표적 필터 정렬: 선택 표적만 가진 물질(정확 일치) → 추가 표적 적은 순 → stage 높은 순 */
+function targetFilterSortKey(asset) {
+  const have = assetTargets(asset.id);
+  const haveSet = new Set(have);
+  const selected = [...selectedTargets];
+  const exact =
+    selected.length > 0 &&
+    have.length === selected.length &&
+    selected.every(t => haveSet.has(t));
+  const extra = have.filter(t => !selectedTargets.has(t)).length;
+  return {
+    exactRank: exact ? 0 : 1,
+    extra,
+    stage: Number(asset.stage) || 0,
+    name: asset.name || ""
+  };
+}
+
+function compareAssetsForMaster(a, b) {
+  // 표적 미선택: assets[] 등록 순서 유지 (마음에 드는 기본 순서)
+  if (!selectedTargets.size) return 0;
+  const ka = targetFilterSortKey(a);
+  const kb = targetFilterSortKey(b);
+  if (ka.exactRank !== kb.exactRank) return ka.exactRank - kb.exactRank;
+  if (ka.extra !== kb.extra) return ka.extra - kb.extra;
+  if (kb.stage !== ka.stage) return kb.stage - ka.stage;
+  return ka.name.localeCompare(kb.name, "en");
+}
+
 function updateTargetToggleLabel() {
   const btn = document.querySelector("#targetToggle");
   if (!btn) return;
@@ -1822,13 +1851,15 @@ function initColumnSelector() {
 function renderMaster() {
   const tier = document.querySelector("#masterTier").value;
   const query = document.querySelector("#masterSearch").value.trim().toLowerCase();
-  const rows = assets.filter(a => {
-    const tierMatch = tier === "all" || a.tier === tier;
-    const mechMatch = assetMatchesTargetFilter(a);
-    const targetText = assetTargets(a.id).join(" ");
-    const textMatch = !query || `${a.name} ${a.aliases} ${a.company} ${a.mechanism || ""} ${targetText}`.toLowerCase().includes(query);
-    return tierMatch && mechMatch && textMatch;
-  });
+  const rows = assets
+    .filter(a => {
+      const tierMatch = tier === "all" || a.tier === tier;
+      const mechMatch = assetMatchesTargetFilter(a);
+      const targetText = assetTargets(a.id).join(" ");
+      const textMatch = !query || `${a.name} ${a.aliases} ${a.company} ${a.mechanism || ""} ${targetText}`.toLowerCase().includes(query);
+      return tierMatch && mechMatch && textMatch;
+    })
+    .sort(compareAssetsForMaster);
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
     const entry = getComparisonEntry(a.id);
     const trial = entry ? getActiveTrial(a.id, entry) : null;
