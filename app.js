@@ -1890,18 +1890,119 @@ function cellDomToExportText(cell) {
   return text;
 }
 
+/** 화면 대시보드 톤에 맞춘 엑셀 디자인 토큰 */
+const EXCEL_THEME = {
+  ink: "FF172033",
+  muted: "FF687386",
+  white: "FFFFFFFF",
+  line: "FFC8D0DA",
+  lineSoft: "FFE2E8F0",
+  band: "FF0F3B46",
+  bandAccent: "FF2457D6",
+  pageBg: "FFF4F6F8",
+  font: "Malgun Gothic"
+};
+
 const EXCEL_COL_LAYOUT = {
-  asset: { width: 22, role: "asset" },
-  mechanism: { width: 30, role: "asset" },
-  stage: { width: 16, role: "asset" },
-  indication: { width: 22, role: "asset" },
-  trial: { width: 28, role: "trial" },
-  weight: { width: 34, role: "result" },
-  liver: { width: 34, role: "result" },
-  gi: { width: 30, role: "result" },
-  discontinuation: { width: 30, role: "result" },
-  rights: { width: 26, role: "asset" },
-  next: { width: 28, role: "asset" }
+  asset: {
+    width: 24,
+    role: "asset",
+    headerBg: "FF1E3A5F",
+    headerFg: "FFFFFFFF",
+    body: "FFF8FAFC",
+    bodyAlt: "FFEEF2F7",
+    accent: "FF1E3A5F"
+  },
+  mechanism: {
+    width: 30,
+    role: "asset",
+    headerBg: "FF334155",
+    headerFg: "FFFFFFFF",
+    body: "FFFAFBFC",
+    bodyAlt: "FFF1F5F9",
+    accent: "FF64748B"
+  },
+  stage: {
+    width: 16,
+    role: "asset",
+    headerBg: "FF334155",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFFFF",
+    bodyAlt: "FFF8FAFC",
+    accent: "FF475569"
+  },
+  indication: {
+    width: 22,
+    role: "asset",
+    headerBg: "FF334155",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFFFF",
+    bodyAlt: "FFF8FAFC",
+    accent: "FF475569"
+  },
+  trial: {
+    width: 28,
+    role: "trial",
+    headerBg: "FF1D4ED8",
+    headerFg: "FFFFFFFF",
+    body: "FFEFF6FF",
+    bodyAlt: "FFDBEAFE",
+    accent: "FF2563EB"
+  },
+  weight: {
+    width: 34,
+    role: "result",
+    headerBg: "FF2457D6",
+    headerFg: "FFFFFFFF",
+    body: "FFF0F5FF",
+    bodyAlt: "FFE0EAFF",
+    accent: "FF2457D6"
+  },
+  liver: {
+    width: 34,
+    role: "result",
+    headerBg: "FF0F766E",
+    headerFg: "FFFFFFFF",
+    body: "FFF0FDFA",
+    bodyAlt: "FFCCFBF1",
+    accent: "FF0D9488"
+  },
+  gi: {
+    width: 30,
+    role: "result",
+    headerBg: "FFB45309",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFBEB",
+    bodyAlt: "FFFEF3C7",
+    accent: "FFD97706"
+  },
+  discontinuation: {
+    width: 30,
+    role: "result",
+    headerBg: "FFB91C1C",
+    headerFg: "FFFFFFFF",
+    body: "FFFEF2F2",
+    bodyAlt: "FFFEE2E2",
+    accent: "FFDC2626"
+  },
+  rights: {
+    width: 26,
+    role: "asset",
+    headerBg: "FF475569",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFFFF",
+    bodyAlt: "FFF8FAFC",
+    accent: "FF64748B"
+  },
+  next: {
+    width: 28,
+    role: "asset",
+    headerBg: "FF475569",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFFFF",
+    bodyAlt: "FFF8FAFC",
+    accent: "FF64748B"
+  }
 };
 
 function buildVisibleMasterTableMatrix() {
@@ -1927,12 +2028,17 @@ function buildVisibleMasterTableMatrix() {
   return { columns, rows, rowCount: rows.length };
 }
 
-function exportFilterCaption() {
+function exportFilterParts() {
   const tierEl = document.querySelector("#masterTier");
   const tierLabel = tierEl?.selectedOptions?.[0]?.textContent?.trim() || tierEl?.value || "전체";
   const targets = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en"));
   const targetLabel = targets.length ? targets.join(" + ") + " (AND)" : "표적 전체";
   const query = (document.querySelector("#masterSearch")?.value || "").trim() || "—";
+  return { tierLabel, targetLabel, query };
+}
+
+function exportFilterCaption() {
+  const { tierLabel, targetLabel, query } = exportFilterParts();
   return `자산군: ${tierLabel}  |  표적: ${targetLabel}  |  검색: ${query}`;
 }
 
@@ -1990,24 +2096,47 @@ async function loadExcelJs() {
   return ExcelJS;
 }
 
+function excelColLayout(key) {
+  return EXCEL_COL_LAYOUT[key] || {
+    width: 18,
+    role: "asset",
+    headerBg: "FF475569",
+    headerFg: "FFFFFFFF",
+    body: "FFFFFFFF",
+    bodyAlt: "FFF8FAFC",
+    accent: "FF64748B"
+  };
+}
+
 function excelColWidth(key, title) {
-  const layout = EXCEL_COL_LAYOUT[key];
-  if (layout) return layout.width;
+  const layout = excelColLayout(key);
+  if (layout.width) return layout.width;
   return Math.min(28, Math.max(14, String(title || "").length + 2));
 }
 
-function excelColRole(key) {
-  return EXCEL_COL_LAYOUT[key]?.role || "asset";
+function excelSolid(argb) {
+  return { type: "pattern", pattern: "solid", fgColor: { argb } };
+}
+
+function excelBorder(color = EXCEL_THEME.line) {
+  const edge = { style: "thin", color: { argb: color } };
+  return { top: edge, left: edge, bottom: edge, right: edge };
 }
 
 function estimateExcelRowHeight(values) {
   let lines = 1;
   for (const v of values) {
-    const n = String(v || "").split("\n").length;
+    const parts = String(v || "").split("\n");
+    let n = 0;
+    for (const p of parts) n += Math.max(1, Math.ceil(p.length / 28));
     if (n > lines) lines = n;
   }
-  // 행 높이 pt (한글 줄간격 고려)
-  return Math.min(120, Math.max(28, 14 + lines * 13));
+  return Math.min(140, Math.max(32, 16 + lines * 12));
+}
+
+function looksLikeMissingExportText(text) {
+  const t = String(text || "");
+  return /공개값 없음|미공개|미확보|미분리|미게시/.test(t);
 }
 
 async function writeStyledMasterWorkbook(columns, rows) {
@@ -2015,93 +2144,132 @@ async function writeStyledMasterWorkbook(columns, rows) {
   const wb = new ExcelJS.Workbook();
   wb.creator = "competitor-intelligence";
   wb.created = new Date();
+  wb.title = "경쟁물질 비교표";
 
+  const HEADER_ROWS = 4; // 1 타이틀 · 2 액센트 · 3 필터 · 4 컬럼헤더
   const ws = wb.addWorksheet("비교표", {
-    views: [{ state: "frozen", xSplit: 1, ySplit: 3, showGridLines: false }],
-    properties: { defaultRowHeight: 18 }
+    views: [{ state: "frozen", xSplit: 1, ySplit: HEADER_ROWS, showGridLines: false }],
+    properties: { defaultRowHeight: 18, tabColor: { argb: EXCEL_THEME.bandAccent } }
   });
 
-  const colCount = columns.length;
-  const thin = { style: "thin", color: { argb: "FFDFE4EA" } };
-  const border = { top: thin, left: thin, bottom: thin, right: thin };
+  const colCount = Math.max(1, columns.length);
+  const border = excelBorder();
+  const borderSoft = excelBorder(EXCEL_THEME.lineSoft);
+  const { tierLabel, targetLabel, query } = exportFilterParts();
+  const when = new Date().toLocaleString("ko-KR", { hour12: false });
 
-  // 1행 제목
+  // —— 1행 브랜드 타이틀 밴드 ——
   ws.mergeCells(1, 1, 1, colCount);
   const titleCell = ws.getCell(1, 1);
   titleCell.value = "경쟁물질 비교표";
-  titleCell.font = { name: "Malgun Gothic", size: 16, bold: true, color: { argb: "FF172033" } };
-  titleCell.alignment = { vertical: "middle", horizontal: "left" };
-  titleCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFFFFFF" } };
-  ws.getRow(1).height = 28;
+  titleCell.font = {
+    name: EXCEL_THEME.font,
+    size: 18,
+    bold: true,
+    color: { argb: EXCEL_THEME.white }
+  };
+  titleCell.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  titleCell.fill = excelSolid(EXCEL_THEME.band);
+  ws.getRow(1).height = 36;
+  for (let c = 1; c <= colCount; c++) {
+    ws.getCell(1, c).fill = excelSolid(EXCEL_THEME.band);
+    ws.getCell(1, c).border = {
+      top: { style: "thin", color: { argb: EXCEL_THEME.band } },
+      bottom: { style: "none" },
+      left: { style: "none" },
+      right: { style: "none" }
+    };
+  }
 
-  // 2행 필터 요약 (화면 상태)
+  // —— 2행 파란 액센트 바 + 부제 ——
   ws.mergeCells(2, 1, 2, colCount);
-  const cap = ws.getCell(2, 1);
-  cap.value = exportFilterCaption() + "  ·  " + new Date().toLocaleString("ko-KR");
-  cap.font = { name: "Malgun Gothic", size: 10, color: { argb: "FF687386" } };
-  cap.alignment = { vertical: "middle", horizontal: "left", wrapText: true };
-  cap.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFF4F6F8" } };
-  ws.getRow(2).height = 22;
+  const sub = ws.getCell(2, 1);
+  sub.value = `화면에 보이는 표 기준  ·  ${rows.length}개 물질  ·  ${when}`;
+  sub.font = { name: EXCEL_THEME.font, size: 10, color: { argb: "FFE0E7FF" } };
+  sub.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  sub.fill = excelSolid(EXCEL_THEME.bandAccent);
+  ws.getRow(2).height = 20;
+  for (let c = 1; c <= colCount; c++) {
+    ws.getCell(2, c).fill = excelSolid(EXCEL_THEME.bandAccent);
+  }
 
-  // 3행 헤더 (화면 thead)
-  const headerRow = ws.getRow(3);
-  headerRow.height = 32;
-  columns.forEach((col, i) => {
-    const cell = headerRow.getCell(i + 1);
-    cell.value = col.title;
-    cell.font = { name: "Malgun Gothic", size: 11, bold: true, color: { argb: "FF172033" } };
+  // —— 3행 필터 칩 스타일 (3칸 정보 블록, 나머지는 연한 배경) ——
+  const filterRow = ws.getRow(3);
+  filterRow.height = 26;
+  const chips = [
+    { label: `자산군  ${tierLabel}`, bg: "FFDBEAFE", fg: "FF1E40AF" },
+    { label: `표적  ${targetLabel}`, bg: "FFCCFBF1", fg: "FF115E59" },
+    { label: `검색  ${query}`, bg: "FFFEF3C7", fg: "FF92400E" }
+  ];
+  const chipSpan = Math.max(1, Math.floor(colCount / 3));
+  let chipStart = 1;
+  chips.forEach((chip, idx) => {
+    const end = idx === chips.length - 1 ? colCount : Math.min(colCount, chipStart + chipSpan - 1);
+    if (chipStart > colCount) return;
+    if (end > chipStart) ws.mergeCells(3, chipStart, 3, end);
+    const cell = ws.getCell(3, chipStart);
+    cell.value = chip.label;
+    cell.font = { name: EXCEL_THEME.font, size: 10, bold: true, color: { argb: chip.fg } };
     cell.alignment = { vertical: "middle", horizontal: "center", wrapText: true };
-    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFF2F4F7" } };
-    cell.border = border;
-    const role = excelColRole(col.key);
-    if (role === "result") {
-      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFE8EEFC" } };
-      cell.font = { name: "Malgun Gothic", size: 11, bold: true, color: { argb: "FF2457D6" } };
-    } else if (role === "trial") {
-      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFEDF2FF" } };
+    for (let c = chipStart; c <= end; c++) {
+      ws.getCell(3, c).fill = excelSolid(chip.bg);
+      ws.getCell(3, c).border = borderSoft;
     }
+    chipStart = end + 1;
   });
 
-  // 데이터 행
+  // —— 4행 컬럼 헤더 (열마다 고유 색) ——
+  const headerRow = ws.getRow(4);
+  headerRow.height = 38;
+  columns.forEach((col, i) => {
+    const layout = excelColLayout(col.key);
+    const cell = headerRow.getCell(i + 1);
+    cell.value = col.title;
+    cell.font = {
+      name: EXCEL_THEME.font,
+      size: 10,
+      bold: true,
+      color: { argb: layout.headerFg || EXCEL_THEME.white }
+    };
+    cell.alignment = { vertical: "middle", horizontal: "center", wrapText: true };
+    cell.fill = excelSolid(layout.headerBg);
+    cell.border = {
+      top: { style: "medium", color: { argb: layout.accent || layout.headerBg } },
+      left: { style: "thin", color: { argb: "FFFFFFFF" } },
+      bottom: { style: "medium", color: { argb: layout.accent || layout.headerBg } },
+      right: { style: "thin", color: { argb: "FFFFFFFF" } }
+    };
+  });
+
+  // —— 데이터 행 ——
   rows.forEach((vals, r) => {
-    const excelRow = ws.getRow(4 + r);
+    const excelRow = ws.getRow(HEADER_ROWS + 1 + r);
     excelRow.height = estimateExcelRowHeight(vals);
+    const zebra = r % 2 === 1;
     vals.forEach((val, i) => {
       const col = columns[i];
+      const layout = excelColLayout(col.key);
       const cell = excelRow.getCell(i + 1);
-      cell.value = val;
-      cell.font = { name: "Malgun Gothic", size: 10, color: { argb: "FF172033" } };
+      const text = String(val ?? "");
+      cell.value = text;
+      const missing = looksLikeMissingExportText(text);
+      cell.font = {
+        name: EXCEL_THEME.font,
+        size: i === 0 ? 10 : 9.5,
+        bold: i === 0,
+        italic: missing,
+        color: { argb: missing ? EXCEL_THEME.muted : EXCEL_THEME.ink }
+      };
       cell.alignment = { vertical: "top", horizontal: "left", wrapText: true };
       cell.border = border;
-      const role = excelColRole(col.key);
-      const zebra = r % 2 === 1;
-      if (i === 0) {
-        // 물질 열: 스티키 느낌
-        cell.fill = {
-          type: "pattern",
-          pattern: "solid",
-          fgColor: { argb: zebra ? "FFF0F3F7" : "FFF8FAFC" }
-        };
-        cell.font = { name: "Malgun Gothic", size: 10, bold: true, color: { argb: "FF172033" } };
-      } else if (role === "result") {
-        cell.fill = {
-          type: "pattern",
-          pattern: "solid",
-          fgColor: { argb: zebra ? "FFEEF3FF" : "FFF5F8FF" }
-        };
-      } else if (role === "trial") {
-        cell.fill = {
-          type: "pattern",
-          pattern: "solid",
-          fgColor: { argb: zebra ? "FFF4F7FC" : "FFFAFBFE" }
-        };
-      } else if (zebra) {
-        cell.fill = {
-          type: "pattern",
-          pattern: "solid",
-          fgColor: { argb: "FFFAFBFC" }
-        };
-      }
+      cell.fill = excelSolid(zebra ? layout.bodyAlt : layout.body);
+      // 왼쪽 얇은 액센트 (열 구분)
+      cell.border = {
+        top: border.top,
+        bottom: border.bottom,
+        right: border.right,
+        left: { style: "medium", color: { argb: layout.accent || EXCEL_THEME.line } }
+      };
     });
   });
 
@@ -2109,13 +2277,33 @@ async function writeStyledMasterWorkbook(columns, rows) {
     ws.getColumn(i + 1).width = excelColWidth(col.key, col.title);
   });
 
-  // 인쇄·보기
+  // —— 범례 행 (표 아래) ——
+  const legendRowIdx = HEADER_ROWS + 1 + rows.length + 1;
+  ws.mergeCells(legendRowIdx, 1, legendRowIdx, colCount);
+  const legend = ws.getCell(legendRowIdx, 1);
+  legend.value =
+    "색 구분  남색=물질  |  파랑=핵심 임상·체중  |  청록=간 약효  |  호박=GI  |  빨강=중단  |  회색=권리·다음  ·  화면 표시 항목·필터와 동일한 열/행";
+  legend.font = { name: EXCEL_THEME.font, size: 9, color: { argb: EXCEL_THEME.muted } };
+  legend.alignment = { vertical: "middle", horizontal: "left", indent: 1, wrapText: true };
+  legend.fill = excelSolid(EXCEL_THEME.pageBg);
+  ws.getRow(legendRowIdx).height = 24;
+
+  // 자동 필터 (헤더 행)
+  ws.autoFilter = {
+    from: { row: HEADER_ROWS, column: 1 },
+    to: { row: HEADER_ROWS + rows.length, column: colCount }
+  };
+
   ws.pageSetup = {
     orientation: "landscape",
     fitToPage: true,
     fitToWidth: 1,
     fitToHeight: 0,
-    paperSize: 9
+    paperSize: 9,
+    margins: { left: 0.3, right: 0.3, top: 0.4, bottom: 0.4, header: 0.2, footer: 0.2 }
+  };
+  ws.headerFooter = {
+    oddFooter: "&L경쟁물질 비교표&C&P / &N&R화면 내보내기"
   };
 
   const buffer = await wb.xlsx.writeBuffer();
