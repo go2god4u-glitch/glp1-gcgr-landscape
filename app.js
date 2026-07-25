@@ -1875,7 +1875,10 @@ function cellDomToExportText(cell) {
     const label = opt ? opt.textContent.trim() : "";
     sel.replaceWith(document.createTextNode(label));
   });
-  // 인용 배지는 [KEY] 형태로 유지하되 과밀하면 줄바꿈 뒤에 모음
+  // 엑셀: 레퍼런스·인용 배지 제거 (화면 본문만, 더 깔끔)
+  clone.querySelectorAll(
+    ".cell-refs, .citation, a.citation, a.registry, .event-refs, [class*='citation']"
+  ).forEach(el => el.remove());
   clone.querySelectorAll("br").forEach(br => br.replaceWith("\n"));
   clone.querySelectorAll("li").forEach(li => {
     li.insertAdjacentText("beforebegin", "\n• ");
@@ -1886,7 +1889,10 @@ function cellDomToExportText(cell) {
   let text = clone.innerText || clone.textContent || "";
   text = text.replace(/\u00a0/g, " ");
   text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-  text = text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+  // 남은 [MZ-GLORY2] [NCT…] 형태 인용 토큰 제거
+  text = text.replace(/\s*\[(?:NCT\d{8}|[A-Z]{1,6}[-A-Z0-9]{1,24})\]\s*/g, " ");
+  text = text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n");
+  text = text.replace(/[ \t]{2,}/g, " ").trim();
   return text;
 }
 
