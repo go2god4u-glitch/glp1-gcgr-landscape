@@ -1864,44 +1864,76 @@ function getFilteredMasterAssets() {
 }
 
 /**
- * 화면 비교표 DOM → 엑셀 행.
- * 표시 항목으로 숨긴 열(column-hidden) 제외, 보이는 셀 텍스트만.
+ * 화면 비교표 DOM → 엑셀용 행렬.
+ * 표시 항목으로 숨긴 열 제외, 보이는 셀 텍스트만 (화면과 동일).
  */
 function cellDomToExportText(cell) {
   if (!cell) return "";
   const clone = cell.cloneNode(true);
   clone.querySelectorAll("select").forEach(sel => {
     const opt = sel.options[sel.selectedIndex];
-    sel.replaceWith(document.createTextNode(opt ? opt.textContent : ""));
+    const label = opt ? opt.textContent.trim() : "";
+    sel.replaceWith(document.createTextNode(label));
   });
+  // 인용 배지는 [KEY] 형태로 유지하되 과밀하면 줄바꿈 뒤에 모음
   clone.querySelectorAll("br").forEach(br => br.replaceWith("\n"));
   clone.querySelectorAll("li").forEach(li => {
     li.insertAdjacentText("beforebegin", "\n• ");
   });
+  clone.querySelectorAll(".result-bound").forEach(el => {
+    el.insertAdjacentText("afterend", "\n");
+  });
   let text = clone.innerText || clone.textContent || "";
   text = text.replace(/\u00a0/g, " ");
+  text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   text = text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
   return text;
 }
 
-/** 지금 화면에 보이는 비교표 그대로 (열·행·셀 내용) */
-function buildVisibleMasterTableAoa() {
+const EXCEL_COL_LAYOUT = {
+  asset: { width: 22, role: "asset" },
+  mechanism: { width: 30, role: "asset" },
+  stage: { width: 16, role: "asset" },
+  indication: { width: 22, role: "asset" },
+  trial: { width: 28, role: "trial" },
+  weight: { width: 34, role: "result" },
+  liver: { width: 34, role: "result" },
+  gi: { width: 30, role: "result" },
+  discontinuation: { width: 30, role: "result" },
+  rights: { width: 26, role: "asset" },
+  next: { width: 28, role: "asset" }
+};
+
+function buildVisibleMasterTableMatrix() {
   const table = document.querySelector(".master-table");
-  if (!table) return { headers: [], rows: [], colCount: 0 };
+  if (!table) return { columns: [], rows: [], rowCount: 0 };
 
   const ths = [...table.querySelectorAll("thead th")];
-  const visible = ths
-    .map((th, index) => ({ th, index }))
-    .filter(({ th }) => !th.classList.contains("column-hidden"));
+  const columns = ths
+    .map((th, index) => ({
+      th,
+      index,
+      key: th.dataset.columnKey || `col${index}`,
+      title: (th.textContent || "").replace(/\s+/g, " ").trim()
+    }))
+    .filter(c => !c.th.classList.contains("column-hidden"));
 
-  const headers = visible.map(({ th }) => (th.textContent || "").replace(/\s+/g, " ").trim());
   const bodyRows = [...table.querySelectorAll("tbody tr")];
   const rows = bodyRows.map(tr => {
     const cells = [...tr.children];
-    return visible.map(({ index }) => cellDomToExportText(cells[index]));
+    return columns.map(col => cellDomToExportText(cells[col.index]));
   });
 
-  return { headers, rows, colCount: headers.length, rowCount: rows.length };
+  return { columns, rows, rowCount: rows.length };
+}
+
+function exportFilterCaption() {
+  const tierEl = document.querySelector("#masterTier");
+  const tierLabel = tierEl?.selectedOptions?.[0]?.textContent?.trim() || tierEl?.value || "전체";
+  const targets = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en"));
+  const targetLabel = targets.length ? targets.join(" + ") + " (AND)" : "표적 전체";
+  const query = (document.querySelector("#masterSearch")?.value || "").trim() || "—";
+  return `자산군: ${tierLabel}  |  표적: ${targetLabel}  |  검색: ${query}`;
 }
 
 function downloadBlob(blob, filename) {
@@ -1922,58 +1954,198 @@ function exportMasterAsCsv(headers, dataRows, filename) {
     return s;
   };
   const lines = [headers.map(esc).join(",")].concat(dataRows.map(r => r.map(esc).join(",")));
-  // Excel 한글: UTF-8 BOM
   const bom = "\uFEFF";
   const blob = new Blob([bom + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
   downloadBlob(blob, filename.replace(/\.xlsx$/i, ".csv"));
 }
 
-async function loadSheetJs() {
-  if (window.XLSX) return window.XLSX;
-  await new Promise((resolve, reject) => {
+function loadScriptOnce(src, globalName) {
+  if (globalName && window[globalName]) return Promise.resolve(window[globalName]);
+  const existing = document.querySelector(`script[data-export-lib="${src}"]`);
+  if (existing) {
+    return new Promise((resolve, reject) => {
+      if (globalName && window[globalName]) return resolve(window[globalName]);
+      existing.addEventListener("load", () => resolve(globalName ? window[globalName] : true));
+      existing.addEventListener("error", () => reject(new Error(`load failed ${src}`)));
+    });
+  }
+  return new Promise((resolve, reject) => {
     const s = document.createElement("script");
-    s.src = "https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js";
+    s.src = src;
     s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => reject(new Error("SheetJS CDN load failed"));
+    s.dataset.exportLib = src;
+    s.onload = () => resolve(globalName ? window[globalName] : true);
+    s.onerror = () => reject(new Error(`load failed ${src}`));
     document.head.appendChild(s);
   });
-  if (!window.XLSX) throw new Error("XLSX global missing");
-  return window.XLSX;
+}
+
+async function loadExcelJs() {
+  // ExcelJS: 헤더 색·테두리·틀 고정·줄바꿈 지원 (화면 표 느낌)
+  const ExcelJS = await loadScriptOnce(
+    "https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js",
+    "ExcelJS"
+  );
+  if (!ExcelJS) throw new Error("ExcelJS missing");
+  return ExcelJS;
+}
+
+function excelColWidth(key, title) {
+  const layout = EXCEL_COL_LAYOUT[key];
+  if (layout) return layout.width;
+  return Math.min(28, Math.max(14, String(title || "").length + 2));
+}
+
+function excelColRole(key) {
+  return EXCEL_COL_LAYOUT[key]?.role || "asset";
+}
+
+function estimateExcelRowHeight(values) {
+  let lines = 1;
+  for (const v of values) {
+    const n = String(v || "").split("\n").length;
+    if (n > lines) lines = n;
+  }
+  // 행 높이 pt (한글 줄간격 고려)
+  return Math.min(120, Math.max(28, 14 + lines * 13));
+}
+
+async function writeStyledMasterWorkbook(columns, rows) {
+  const ExcelJS = await loadExcelJs();
+  const wb = new ExcelJS.Workbook();
+  wb.creator = "competitor-intelligence";
+  wb.created = new Date();
+
+  const ws = wb.addWorksheet("비교표", {
+    views: [{ state: "frozen", xSplit: 1, ySplit: 3, showGridLines: false }],
+    properties: { defaultRowHeight: 18 }
+  });
+
+  const colCount = columns.length;
+  const thin = { style: "thin", color: { argb: "FFDFE4EA" } };
+  const border = { top: thin, left: thin, bottom: thin, right: thin };
+
+  // 1행 제목
+  ws.mergeCells(1, 1, 1, colCount);
+  const titleCell = ws.getCell(1, 1);
+  titleCell.value = "경쟁물질 비교표";
+  titleCell.font = { name: "Malgun Gothic", size: 16, bold: true, color: { argb: "FF172033" } };
+  titleCell.alignment = { vertical: "middle", horizontal: "left" };
+  titleCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFFFFFF" } };
+  ws.getRow(1).height = 28;
+
+  // 2행 필터 요약 (화면 상태)
+  ws.mergeCells(2, 1, 2, colCount);
+  const cap = ws.getCell(2, 1);
+  cap.value = exportFilterCaption() + "  ·  " + new Date().toLocaleString("ko-KR");
+  cap.font = { name: "Malgun Gothic", size: 10, color: { argb: "FF687386" } };
+  cap.alignment = { vertical: "middle", horizontal: "left", wrapText: true };
+  cap.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFF4F6F8" } };
+  ws.getRow(2).height = 22;
+
+  // 3행 헤더 (화면 thead)
+  const headerRow = ws.getRow(3);
+  headerRow.height = 32;
+  columns.forEach((col, i) => {
+    const cell = headerRow.getCell(i + 1);
+    cell.value = col.title;
+    cell.font = { name: "Malgun Gothic", size: 11, bold: true, color: { argb: "FF172033" } };
+    cell.alignment = { vertical: "middle", horizontal: "center", wrapText: true };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFF2F4F7" } };
+    cell.border = border;
+    const role = excelColRole(col.key);
+    if (role === "result") {
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFE8EEFC" } };
+      cell.font = { name: "Malgun Gothic", size: 11, bold: true, color: { argb: "FF2457D6" } };
+    } else if (role === "trial") {
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFEDF2FF" } };
+    }
+  });
+
+  // 데이터 행
+  rows.forEach((vals, r) => {
+    const excelRow = ws.getRow(4 + r);
+    excelRow.height = estimateExcelRowHeight(vals);
+    vals.forEach((val, i) => {
+      const col = columns[i];
+      const cell = excelRow.getCell(i + 1);
+      cell.value = val;
+      cell.font = { name: "Malgun Gothic", size: 10, color: { argb: "FF172033" } };
+      cell.alignment = { vertical: "top", horizontal: "left", wrapText: true };
+      cell.border = border;
+      const role = excelColRole(col.key);
+      const zebra = r % 2 === 1;
+      if (i === 0) {
+        // 물질 열: 스티키 느낌
+        cell.fill = {
+          type: "pattern",
+          pattern: "solid",
+          fgColor: { argb: zebra ? "FFF0F3F7" : "FFF8FAFC" }
+        };
+        cell.font = { name: "Malgun Gothic", size: 10, bold: true, color: { argb: "FF172033" } };
+      } else if (role === "result") {
+        cell.fill = {
+          type: "pattern",
+          pattern: "solid",
+          fgColor: { argb: zebra ? "FFEEF3FF" : "FFF5F8FF" }
+        };
+      } else if (role === "trial") {
+        cell.fill = {
+          type: "pattern",
+          pattern: "solid",
+          fgColor: { argb: zebra ? "FFF4F7FC" : "FFFAFBFE" }
+        };
+      } else if (zebra) {
+        cell.fill = {
+          type: "pattern",
+          pattern: "solid",
+          fgColor: { argb: "FFFAFBFC" }
+        };
+      }
+    });
+  });
+
+  columns.forEach((col, i) => {
+    ws.getColumn(i + 1).width = excelColWidth(col.key, col.title);
+  });
+
+  // 인쇄·보기
+  ws.pageSetup = {
+    orientation: "landscape",
+    fitToPage: true,
+    fitToWidth: 1,
+    fitToHeight: 0,
+    paperSize: 9
+  };
+
+  const buffer = await wb.xlsx.writeBuffer();
+  return new Blob([buffer], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  });
 }
 
 async function exportMasterExcel() {
   const btn = document.querySelector("#exportExcel");
-  // 화면과 동일하게: 먼저 현재 필터로 다시 그린 뒤, 보이는 표 DOM만 읽음
   renderMaster();
-  const { headers, rows, rowCount } = buildVisibleMasterTableAoa();
-  if (!rowCount || !headers.length) {
+  const { columns, rows, rowCount } = buildVisibleMasterTableMatrix();
+  if (!rowCount || !columns.length) {
     window.alert("내보낼 표가 없습니다. 필터·표시 항목을 확인하세요.");
     return;
   }
   const stamp = new Date().toISOString().slice(0, 10);
   const base = `competitor-master-${stamp}`;
+  const headers = columns.map(c => c.title);
   if (btn) {
     btn.disabled = true;
     btn.textContent = "내보내는 중…";
   }
   try {
-    const XLSX = await loadSheetJs();
-    const aoa = [headers, ...rows];
-    const ws = XLSX.utils.aoa_to_sheet(aoa);
-    ws["!cols"] = headers.map((h, i) => {
-      // 결과·기전·다음 확인 등 긴 칸 넓게
-      const sample = rows[0]?.[i] || h || "";
-      const w = Math.max(String(h).length, Math.min(48, String(sample).length + 2));
-      return { wch: Math.max(12, Math.min(40, w)) };
-    });
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "비교표");
-    XLSX.writeFile(wb, `${base}.xlsx`);
+    const blob = await writeStyledMasterWorkbook(columns, rows);
+    downloadBlob(blob, `${base}.xlsx`);
   } catch (err) {
-    console.warn("[exportExcel] xlsx failed, CSV fallback", err);
+    console.warn("[exportExcel] styled xlsx failed, CSV fallback", err);
     exportMasterAsCsv(headers, rows, `${base}.csv`);
-    window.alert("엑셀 라이브러리를 불러오지 못해 CSV로 저장했습니다. Excel에서 바로 열 수 있습니다.");
+    window.alert("서식 있는 엑셀 생성에 실패해 CSV로 저장했습니다. Excel에서 열 수 있습니다.");
   } finally {
     if (btn) {
       btn.disabled = false;
