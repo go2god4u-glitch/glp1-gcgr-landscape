@@ -782,7 +782,7 @@ const comparison = {
         weight: "<b>Eloralintide 9 mg −20.1%</b><br>6 mg −17.6% · 3 mg −12.4% · 1 mg −9.4%<br>6/9 mg −19.9% · 3/6/9 mg −16.5%<br>위약 −0.4%<br><small>CT.gov Results · primary · week 48</small>",
         liver: "<span class=\"result-empty\">[1차 미공개]</span><br><small>CT.gov Results·Lancet에 간 약효 수치 없음</small>",
         gi: "오심<br>1 mg 10.7% (3/28) · 3 mg 12.5% (3/24)<br>6 mg <b>64.3%</b> (18/28) · 9 mg 33.3% (18/54)<br>6/9 mg 54.2% (13/24) · 3/6/9 mg 25.0% (13/52)<br>위약 13.2% (7/53)<br>구토 6 mg 25.0% · 9 mg 11.1% · 위약 0%<br>설사 6 mg 35.7% · 9 mg 11.1% · 위약 9.4%<br>변비 9 mg 24.1% · 위약 5.7%<br>피로 9 mg 42.6% · 6/9 mg 45.8% · 위약 11.3%<br><small>CT.gov Results · AE ≥5%</small>",
-        discontinuation: "<b>AE leading to discontinuation</b><br>위약 8% · 1 mg 11% · 3 mg 0% · <b>6 mg 21%</b><br>9 mg 7% · 6–9 mg 8% · 3–9 mg 12%<br>elo 풀링 10% (21/208)<br><small>Billings et al. Lancet · NCT06230523</small><br><span class=\"result-empty\">[1차 미분리]</span> GI 단독 중단%",
+        discontinuation: "<b>AE leading to discontinuation</b><br>위약 8% · 1 mg 11% · 3 mg 0% · <b>6 mg 21%</b><br>9 mg 7% · 6–9 mg 8% · 3–9 mg 12%<br>eloralintide 전 용량 합계 10% (21/208)<br><small>Billings et al. Lancet · NCT06230523</small><br><span class=\"result-empty\">[1차 미분리]</span> GI 단독 중단%",
         refs: {
           trial: ["EL-CTG", "EL-LANCET"],
           weight: ["EL-CTG"],
