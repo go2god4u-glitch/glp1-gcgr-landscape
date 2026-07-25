@@ -157,7 +157,7 @@ const assets = [
     origin: "Novo의 amylin 유사체 cagrilintide와 semaglutide 2.4 mg 고정용량 복합.",
     strategy: "GLP-1 단독 대비 병용 시너지. tirzepatide 직접 비교(REDEFINE 4)도 공개.",
     watch: ["규제 경로", "REDEFINE 4 vs tirzepatide 해석", "최고 용량 도달률"],
-    source: "https://www.nejm.org/doi/abs/10.1056/NEJMoa2502082"
+    source: "https://www.nejm.org/doi/full/10.1056/NEJMoa2502081"
   },
   {
     id: "zenagamtide", name: "Zenagamtide", aliases: "amycretin · 제나감타이드 · NN9487", company: "Novo Nordisk",
