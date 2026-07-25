@@ -2750,12 +2750,17 @@ function renderTimeline() {
     const targetLabel = targetBits.length
       ? `<span class="timeline-targets">${targetBits.map(t => escapeHtml(t)).join(" · ")}</span>`
       : "";
+    const metaRow = (mechLabel || targetLabel)
+      ? `<div class="asset-group-meta">${mechLabel}${targetLabel}</div>`
+      : "";
     return `<section class="asset-group ${isOpen ? "" : "collapsed"}" data-timeline-asset="${encodeURIComponent(assetName)}">
       <div class="asset-group-head">
         <div class="asset-group-title">
-          <div>
-            <b>${assetName}</b><span>${asset ? asset.company : ""}</span>
-            ${mechLabel}${targetLabel}
+          <div class="asset-group-identity">
+            <div class="asset-group-name">
+              <b>${assetName}</b>${asset?.company ? `<span class="asset-group-company">${escapeHtml(asset.company)}</span>` : ""}
+            </div>
+            ${metaRow}
             <div class="group-refs">${cite(assetReferenceMap[assetName] || [])}</div>
           </div>
           <button class="asset-toggle" type="button" aria-expanded="${isOpen}" aria-label="${assetName} 일정 ${isOpen ? "닫기" : "열기"}">
