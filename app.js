@@ -2741,7 +2741,8 @@ function renderTimeline() {
   const groups = groupedAssets.map(assetName => {
     const asset = assets.find(a => a.name === assetName);
     const assetEvents = filtered.filter(e => canonicalTimelineAssetName(e.asset) === assetName).sort((a,b) => a.year - b.year || (a.qStart || a.quarter || 0) - (b.qStart || b.quarter || 0));
-    const isOpen = openTimelineAssets.has(assetName) || Boolean(query) || selectedTargets.size > 0;
+    // 기본 닫힘. 사용자가 연 물질만 펼침. 검색어 있을 때만 결과 확인용으로 펼침.
+    const isOpen = openTimelineAssets.has(assetName) || Boolean(query);
     const mechLabel = asset?.mechanism
       ? `<span class="timeline-mech">${escapeHtml(asset.mechanism)}</span>`
       : "";
