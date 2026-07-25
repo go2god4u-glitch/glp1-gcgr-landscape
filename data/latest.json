@@ -1,15 +1,61 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-25T03:44:27.709Z",
-  "registryCheckedAt": "2026-07-25T03:44:27.106Z",
+  "generatedAt": "2026-07-25T03:50:01.182Z",
+  "registryCheckedAt": "2026-07-25T03:50:00.579Z",
   "sourcesCheckedAt": "2026-07-25T03:36:48.463Z",
   "discoveryCheckedAt": "2026-07-25T03:36:40.976Z",
   "literatureCheckedAt": "2026-07-25T03:36:44.370Z",
   "programs": {
+    "cms": {
+      "id": "cms",
+      "label": "CMS-D005",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [],
+      "nextMilestone": null,
+      "note": "no-ctgov-nct"
+    },
+    "opk88003": {
+      "id": "opk88003",
+      "label": "Pegapamodutide",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT03406377",
+          "title": "Effects and Safety of OPK-88003 Dose Escalation in Type 2 Diabetes Subjects",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 113,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2018-04-02",
+          "primaryCompletion": "2019-03-08",
+          "completion": "2019-06-27",
+          "lastUpdate": "2021-06-15",
+          "leadSponsor": "OPKO Health, Inc.",
+          "conditions": [
+            "Type 2 Diabetes Mellitus"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "OPK-88003",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
     "da1726": {
       "id": "da1726",
       "label": "DA-1726",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06252220",
@@ -50,48 +96,10 @@
         "status": "RECRUITING"
       }
     },
-    "opk88003": {
-      "id": "opk88003",
-      "label": "Pegapamodutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT03406377",
-          "title": "Effects and Safety of OPK-88003 Dose Escalation in Type 2 Diabetes Subjects",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 113,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2018-04-02",
-          "primaryCompletion": "2019-03-08",
-          "completion": "2019-06-27",
-          "lastUpdate": "2021-06-15",
-          "leadSponsor": "OPKO Health, Inc.",
-          "conditions": [
-            "Type 2 Diabetes Mellitus"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "OPK-88003",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "dd01": {
       "id": "dd01",
       "label": "Zabopegdutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06410924",
@@ -127,33 +135,64 @@
       ],
       "nextMilestone": null
     },
-    "pb718": {
-      "id": "pb718",
-      "label": "PB-718",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+    "nn1177": {
+      "id": "nn1177",
+      "label": "NN1177",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
-          "nctId": "NCT06147544",
-          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
+          "nctId": "NCT03308721",
+          "title": "Research Study Investigating Study Medicine (NNC9204-1177) for Weight Management in People With Overweight or Obesity",
           "status": "COMPLETED",
           "phase": [
-            "PHASE1",
-            "PHASE2"
+            "PHASE1"
           ],
-          "enrollment": 36,
+          "enrollment": 99,
           "enrollmentType": "ACTUAL",
-          "startDate": "2023-07-06",
-          "primaryCompletion": "2024-04-16",
-          "completion": "2024-04-16",
-          "lastUpdate": "2024-04-19",
-          "leadSponsor": "PegBio Co., Ltd.",
+          "startDate": "2017-10-16",
+          "primaryCompletion": "2020-01-03",
+          "completion": "2020-01-03",
+          "lastUpdate": "2021-12-23",
+          "leadSponsor": "Novo Nordisk A/S",
           "conditions": [
+            "Metabolism and Nutrition Disorder",
             "Obesity"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "PB-718",
+              "name": "NNC9204-1177 A 1.0 mg/mL",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "PLACEBO",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT02941042",
+          "title": "A First Human Dose Trial Investigating Safety, Tolerability and Pharmacokinetics for Single Doses of NNC9204-1177 in Subjects Being Overweight or With Obesity.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 49,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2016-10-10",
+          "primaryCompletion": "2017-09-30",
+          "completion": "2017-09-30",
+          "lastUpdate": "2018-09-05",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Metabolism and Nutrition Disorder",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "NNC9204-1177",
               "otherNames": []
             },
             {
@@ -169,7 +208,7 @@
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -300,64 +339,138 @@
         "status": "RECRUITING"
       }
     },
-    "nn1177": {
-      "id": "nn1177",
-      "label": "NN1177",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+    "azd6234": {
+      "id": "azd6234",
+      "label": "AZD6234",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
-          "nctId": "NCT03308721",
-          "title": "Research Study Investigating Study Medicine (NNC9204-1177) for Weight Management in People With Overweight or Obesity",
+          "nctId": "NCT06595238",
+          "title": "A Study in Participants With Obesity or Overweight With at Least One Weight-related Comorbidity",
           "status": "COMPLETED",
           "phase": [
-            "PHASE1"
+            "PHASE2"
           ],
-          "enrollment": 99,
+          "enrollment": 262,
           "enrollmentType": "ACTUAL",
-          "startDate": "2017-10-16",
-          "primaryCompletion": "2020-01-03",
-          "completion": "2020-01-03",
-          "lastUpdate": "2021-12-23",
-          "leadSponsor": "Novo Nordisk A/S",
+          "startDate": "2024-10-01",
+          "primaryCompletion": "2025-12-03",
+          "completion": "2025-12-03",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "AstraZeneca",
           "conditions": [
-            "Metabolism and Nutrition Disorder",
-            "Obesity"
+            "Obesity or Overweight"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "NNC9204-1177 A 1.0 mg/mL",
+              "name": "AZD6234",
               "otherNames": []
             },
             {
               "type": "DRUG",
-              "name": "PLACEBO",
+              "name": "Placebo comparator",
               "otherNames": []
             }
           ]
         },
         {
-          "nctId": "NCT02941042",
-          "title": "A First Human Dose Trial Investigating Safety, Tolerability and Pharmacokinetics for Single Doses of NNC9204-1177 in Subjects Being Overweight or With Obesity.",
-          "status": "COMPLETED",
+          "nctId": "NCT06851858",
+          "title": "Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Overweight or Obesity With Type 2 Diabetes Who Are on a Stable Dose of GLP-1 Receptor Agonist",
+          "status": "ACTIVE_NOT_RECRUITING",
           "phase": [
-            "PHASE1"
+            "PHASE2"
           ],
-          "enrollment": 49,
+          "enrollment": 69,
           "enrollmentType": "ACTUAL",
-          "startDate": "2016-10-10",
-          "primaryCompletion": "2017-09-30",
-          "completion": "2017-09-30",
-          "lastUpdate": "2018-09-05",
-          "leadSponsor": "Novo Nordisk A/S",
+          "startDate": "2025-03-12",
+          "primaryCompletion": "2026-05-27",
+          "completion": "2026-05-27",
+          "lastUpdate": "2026-03-03",
+          "leadSponsor": "AstraZeneca",
           "conditions": [
-            "Metabolism and Nutrition Disorder",
+            "Endocrinology",
+            "Diabetes, Type II",
             "Obesity"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "NNC9204-1177",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo to match",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05511025",
+          "title": "Assess the Safety, Tolerability, and Pharmacokinetics of AZD6234 Following Single Ascending Dose Administration to Healthy Subjects Who Are Overweight or Obese",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 54,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2022-09-20",
+          "primaryCompletion": "2023-12-19",
+          "completion": "2023-12-19",
+          "lastUpdate": "2023-12-26",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Healthy Participants"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Acetaminophen",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "pb718": {
+      "id": "pb718",
+      "label": "PB-718",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT06147544",
+          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 36,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-07-06",
+          "primaryCompletion": "2024-04-16",
+          "completion": "2024-04-16",
+          "lastUpdate": "2024-04-19",
+          "leadSponsor": "PegBio Co., Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "PB-718",
               "otherNames": []
             },
             {
@@ -370,10 +483,90 @@
       ],
       "nextMilestone": null
     },
+    "petrelintide": {
+      "id": "petrelintide",
+      "label": "Petrelintide",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT06662539",
+          "title": "Once-weekly Petrelintide Versus Placebo for Obesity or Overweight With Co-morbidities",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 493,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-12-09",
+          "primaryCompletion": "2025-09-30",
+          "completion": "2026-03-07",
+          "lastUpdate": "2026-03-23",
+          "leadSponsor": "Zealand Pharma",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Petrelintide",
+              "otherNames": [
+                "ZP8396"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06926842",
+          "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 221,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-04-22",
+          "primaryCompletion": "2026-08-13",
+          "completion": "2026-08-13",
+          "lastUpdate": "2026-01-15",
+          "leadSponsor": "Zealand Pharma",
+          "conditions": [
+            "Overweight",
+            "Type 2 Diabetes",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Petrelintide",
+              "otherNames": [
+                "ZP8396"
+              ]
+            },
+            {
+              "type": "OTHER",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06926842",
+        "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
+        "kind": "primary completion",
+        "date": "2026-08-13",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
     "zenagamtide": {
       "id": "zenagamtide",
       "label": "Zenagamtide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06064006",
@@ -452,7 +645,7 @@
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06862791",
@@ -654,280 +847,10 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
-    "petrelintide": {
-      "id": "petrelintide",
-      "label": "Petrelintide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT06662539",
-          "title": "Once-weekly Petrelintide Versus Placebo for Obesity or Overweight With Co-morbidities",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 493,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2024-12-09",
-          "primaryCompletion": "2025-09-30",
-          "completion": "2026-03-07",
-          "lastUpdate": "2026-03-23",
-          "leadSponsor": "Zealand Pharma",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Petrelintide",
-              "otherNames": [
-                "ZP8396"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06926842",
-          "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 221,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-04-22",
-          "primaryCompletion": "2026-08-13",
-          "completion": "2026-08-13",
-          "lastUpdate": "2026-01-15",
-          "leadSponsor": "Zealand Pharma",
-          "conditions": [
-            "Overweight",
-            "Type 2 Diabetes",
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Petrelintide",
-              "otherNames": [
-                "ZP8396"
-              ]
-            },
-            {
-              "type": "OTHER",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT06926842",
-        "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
-        "kind": "primary completion",
-        "date": "2026-08-13",
-        "status": "ACTIVE_NOT_RECRUITING"
-      }
-    },
-    "azd6234": {
-      "id": "azd6234",
-      "label": "AZD6234",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT06595238",
-          "title": "A Study in Participants With Obesity or Overweight With at Least One Weight-related Comorbidity",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 262,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2024-10-01",
-          "primaryCompletion": "2025-12-03",
-          "completion": "2025-12-03",
-          "lastUpdate": "2026-07-20",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Obesity or Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo comparator",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06851858",
-          "title": "Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Overweight or Obesity With Type 2 Diabetes Who Are on a Stable Dose of GLP-1 Receptor Agonist",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 69,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-03-12",
-          "primaryCompletion": "2026-05-27",
-          "completion": "2026-05-27",
-          "lastUpdate": "2026-03-03",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Endocrinology",
-            "Diabetes, Type II",
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo to match",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT05511025",
-          "title": "Assess the Safety, Tolerability, and Pharmacokinetics of AZD6234 Following Single Ascending Dose Administration to Healthy Subjects Who Are Overweight or Obese",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 54,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2022-09-20",
-          "primaryCompletion": "2023-12-19",
-          "completion": "2023-12-19",
-          "lastUpdate": "2023-12-26",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Healthy Participants"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Acetaminophen",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
-    "sar425899": {
-      "id": "sar425899",
-      "label": "SAR425899",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT02973321",
-          "title": "A Study to Assess the Safety and Efficacy of SAR425899 in Patients With Type 2 Diabetes Mellitus",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 296,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2016-12-02",
-          "primaryCompletion": "2017-12-27",
-          "completion": "2017-12-27",
-          "lastUpdate": "2022-03-24",
-          "leadSponsor": "Sanofi",
-          "conditions": [
-            "Type 2 Diabetes Mellitus"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "SAR425899",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Liraglutide",
-              "otherNames": [
-                "Victoza"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Metformin",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT02411825",
-          "title": "Multiple Ascending Dose Study in Healthy Male Subjects and Overweight to Obese Male and Female Type 2 Diabetes Mellitus (T2DM) Patients",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 76,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2015-03",
-          "primaryCompletion": "2016-01",
-          "completion": "2016-01",
-          "lastUpdate": "2018-06-15",
-          "leadSponsor": "Sanofi",
-          "conditions": [
-            "Type 2 Diabetes Mellitus"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "SAR425899",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "metformin",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "efino": {
       "id": "efino",
       "label": "Efinopegdutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT04944992",
@@ -1056,10 +979,264 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
+    "cagrisema": {
+      "id": "cagrisema",
+      "label": "CagriSema",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT05567796",
+          "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 3400,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2022-11-01",
+          "primaryCompletion": "2024-10-30",
+          "completion": "2026-10-19",
+          "lastUpdate": "2026-07-17",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Cagrilintide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo cagrilintide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo semaglutide",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT05567796",
+        "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
+        "kind": "study completion",
+        "date": "2026-10-19",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
+    "sar425899": {
+      "id": "sar425899",
+      "label": "SAR425899",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT02973321",
+          "title": "A Study to Assess the Safety and Efficacy of SAR425899 in Patients With Type 2 Diabetes Mellitus",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 296,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2016-12-02",
+          "primaryCompletion": "2017-12-27",
+          "completion": "2017-12-27",
+          "lastUpdate": "2022-03-24",
+          "leadSponsor": "Sanofi",
+          "conditions": [
+            "Type 2 Diabetes Mellitus"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "SAR425899",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Liraglutide",
+              "otherNames": [
+                "Victoza"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Metformin",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT02411825",
+          "title": "Multiple Ascending Dose Study in Healthy Male Subjects and Overweight to Obese Male and Female Type 2 Diabetes Mellitus (T2DM) Patients",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 76,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2015-03",
+          "primaryCompletion": "2016-01",
+          "completion": "2016-01",
+          "lastUpdate": "2018-06-15",
+          "leadSponsor": "Sanofi",
+          "conditions": [
+            "Type 2 Diabetes Mellitus"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "SAR425899",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "metformin",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "g3215": {
+      "id": "g3215",
+      "label": "G3215",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT02692040",
+          "title": "Study of the Gut Hormone Analogue G3215 in Adult Subjects",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 90,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2015-01",
+          "primaryCompletion": "2019-01",
+          "completion": "2019-01",
+          "lastUpdate": "2020-12-23",
+          "leadSponsor": "Imperial College London",
+          "conditions": [
+            "Diabetes Mellitus",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "G3215",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": [
+                "Saline"
+              ]
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "retatrutide": {
+      "id": "retatrutide",
+      "label": "Retatrutide",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
+      "studies": [
+        {
+          "nctId": "NCT05929066",
+          "title": "A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Overweight",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 2335,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-07-10",
+          "primaryCompletion": "2026-04-06",
+          "completion": "2026-04-30",
+          "lastUpdate": "2026-06-03",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Obesity",
+            "Overweight",
+            "Osteoarthritis, Knee",
+            "Obstructive Sleep Apnea"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Retatrutide",
+              "otherNames": [
+                "LY3437943"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT04881760",
+          "title": "A Study of LY3437943 in Participants Who Have Obesity or Are Overweight",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 338,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-05-20",
+          "primaryCompletion": "2022-05-16",
+          "completion": "2022-11-22",
+          "lastUpdate": "2023-09-13",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "LY3437943",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
     "eloralintide": {
       "id": "eloralintide",
       "label": "Eloralintide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06230523",
@@ -1136,109 +1313,78 @@
         "status": "RECRUITING"
       }
     },
-    "g3215": {
-      "id": "g3215",
-      "label": "G3215",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+    "cotadutide": {
+      "id": "cotadutide",
+      "label": "Cotadutide",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
-          "nctId": "NCT02692040",
-          "title": "Study of the Gut Hormone Analogue G3215 in Adult Subjects",
+          "nctId": "NCT03235050",
+          "title": "A Study to Evaluate the Efficacy and Safety of MEDI0382 in the Treatment of Overweight and Obese Subjects With Type 2 Diabetes",
           "status": "COMPLETED",
           "phase": [
-            "PHASE1"
+            "PHASE2"
           ],
-          "enrollment": 90,
+          "enrollment": 834,
           "enrollmentType": "ACTUAL",
-          "startDate": "2015-01",
-          "primaryCompletion": "2019-01",
-          "completion": "2019-01",
-          "lastUpdate": "2020-12-23",
-          "leadSponsor": "Imperial College London",
+          "startDate": "2017-08-02",
+          "primaryCompletion": "2018-05-03",
+          "completion": "2019-06-14",
+          "lastUpdate": "2020-08-17",
+          "leadSponsor": "AstraZeneca",
           "conditions": [
-            "Diabetes Mellitus",
-            "Obesity"
+            "Diabetes Mellitus, Type 2"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "G3215",
+              "name": "MEDI0382 low dose",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "MEDI0382 mid dose",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "MEDI0382 high dose",
               "otherNames": []
             },
             {
               "type": "DRUG",
               "name": "Placebo",
-              "otherNames": [
-                "Saline"
-              ]
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
-    "retatrutide": {
-      "id": "retatrutide",
-      "label": "Retatrutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT05929066",
-          "title": "A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Overweight",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 2335,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-07-10",
-          "primaryCompletion": "2026-04-06",
-          "completion": "2026-04-30",
-          "lastUpdate": "2026-06-03",
-          "leadSponsor": "Eli Lilly and Company",
-          "conditions": [
-            "Obesity",
-            "Overweight",
-            "Osteoarthritis, Knee",
-            "Obstructive Sleep Apnea"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Retatrutide",
-              "otherNames": [
-                "LY3437943"
-              ]
+              "otherNames": []
             },
             {
               "type": "DRUG",
-              "name": "Placebo",
+              "name": "Liraglutide",
               "otherNames": []
             }
           ]
         },
         {
-          "nctId": "NCT04881760",
-          "title": "A Study of LY3437943 in Participants Who Have Obesity or Are Overweight",
+          "nctId": "NCT02548585",
+          "title": "A Multiple-ascending-dose Study to Evaluate the Efficacy, Safety, and Pharmacokinetics (PK) of MEDI0382 in Overweight and Obese Participants With Type 2 Diabetes Mellitus",
           "status": "COMPLETED",
           "phase": [
+            "PHASE1",
             "PHASE2"
           ],
-          "enrollment": 338,
+          "enrollment": 113,
           "enrollmentType": "ACTUAL",
-          "startDate": "2021-05-20",
-          "primaryCompletion": "2022-05-16",
-          "completion": "2022-11-22",
-          "lastUpdate": "2023-09-13",
-          "leadSponsor": "Eli Lilly and Company",
+          "startDate": "2015-12-09",
+          "primaryCompletion": "2017-02-24",
+          "completion": "2017-02-24",
+          "lastUpdate": "2019-04-05",
+          "leadSponsor": "MedImmune LLC",
           "conditions": [
-            "Obesity",
-            "Overweight"
+            "Type 2 Diabetes Mellitus"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "LY3437943",
+              "name": "MEDI0382",
               "otherNames": []
             },
             {
@@ -1251,64 +1397,10 @@
       ],
       "nextMilestone": null
     },
-    "cagrisema": {
-      "id": "cagrisema",
-      "label": "CagriSema",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT05567796",
-          "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 3400,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2022-11-01",
-          "primaryCompletion": "2024-10-30",
-          "completion": "2026-10-19",
-          "lastUpdate": "2026-07-17",
-          "leadSponsor": "Novo Nordisk A/S",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Cagrilintide",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo cagrilintide",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo semaglutide",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": {
-        "nctId": "NCT05567796",
-        "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
-        "kind": "study completion",
-        "date": "2026-10-19",
-        "status": "ACTIVE_NOT_RECRUITING"
-      }
-    },
     "cagrilintide": {
       "id": "cagrilintide",
       "label": "Cagrilintide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT03856047",
@@ -1463,94 +1555,10 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
-    "cotadutide": {
-      "id": "cotadutide",
-      "label": "Cotadutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
-      "studies": [
-        {
-          "nctId": "NCT03235050",
-          "title": "A Study to Evaluate the Efficacy and Safety of MEDI0382 in the Treatment of Overweight and Obese Subjects With Type 2 Diabetes",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 834,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2017-08-02",
-          "primaryCompletion": "2018-05-03",
-          "completion": "2019-06-14",
-          "lastUpdate": "2020-08-17",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Diabetes Mellitus, Type 2"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "MEDI0382 low dose",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "MEDI0382 mid dose",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "MEDI0382 high dose",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Liraglutide",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT02548585",
-          "title": "A Multiple-ascending-dose Study to Evaluate the Efficacy, Safety, and Pharmacokinetics (PK) of MEDI0382 in Overweight and Obese Participants With Type 2 Diabetes Mellitus",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 113,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2015-12-09",
-          "primaryCompletion": "2017-02-24",
-          "completion": "2017-02-24",
-          "lastUpdate": "2019-04-05",
-          "leadSponsor": "MedImmune LLC",
-          "conditions": [
-            "Type 2 Diabetes Mellitus"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "MEDI0382",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -1791,7 +1799,7 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-25T03:44:27.106Z",
+      "checkedAt": "2026-07-25T03:50:00.579Z",
       "studies": [
         {
           "nctId": "NCT06164873",
@@ -20235,6 +20243,7 @@
     }
   ],
   "refreshSummary": {
+    "programCount": 21,
     "knownStudies": 57,
     "discoveryResults": 380,
     "relevantCandidates": 20,
@@ -20252,7 +20261,7 @@
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-25T03:44:27.709Z",
+    "checkedAt": "2026-07-25T03:50:01.181Z",
     "checks": {
       "registry": {
         "expected": 57,
