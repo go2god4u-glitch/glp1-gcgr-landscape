@@ -1609,18 +1609,20 @@ function compareAssetsForMaster(a, b) {
 }
 
 function updateTargetToggleLabel() {
-  const btn = document.querySelector("#targetToggle");
-  if (!btn) return;
   const n = selectedTargets.size;
-  if (!n) {
-    btn.textContent = "표적 전체";
-    btn.classList.remove("has-filter");
-  } else {
-    const labels = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en"));
-    btn.textContent = n <= 2 ? labels.join(" · ") : `표적 ${n}개 AND`;
-    btn.title = `AND 필터: ${labels.join(" + ")}`;
-    btn.classList.add("has-filter");
-  }
+  const labels = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en"));
+  const text = !n ? "표적 전체" : n <= 2 ? labels.join(" · ") : `표적 ${n}개 AND`;
+  const title = !n ? "기전 표적 필터 (전체)" : `AND 필터: ${labels.join(" + ")}`;
+  document.querySelectorAll("#targetToggle, #timelineTargetToggle").forEach(btn => {
+    btn.textContent = text;
+    btn.title = title;
+    btn.classList.toggle("has-filter", n > 0);
+  });
+}
+
+function refreshViewsAfterTargetFilter() {
+  renderMaster();
+  renderTimeline();
 }
 
 function toggleTarget(target, on) {
@@ -1633,22 +1635,22 @@ function toggleTarget(target, on) {
   saveSelectedTargets();
   syncTargetMenuCheckboxes();
   updateTargetToggleLabel();
-  renderMaster();
+  refreshViewsAfterTargetFilter();
 }
 
 function syncTargetMenuCheckboxes() {
-  document.querySelectorAll("#targetMenuList input[type='checkbox'][data-target]").forEach(input => {
+  document.querySelectorAll("#targetMenuList input[type='checkbox'][data-target], #timelineTargetMenuList input[type='checkbox'][data-target]").forEach(input => {
     input.checked = selectedTargets.has(input.dataset.target);
   });
 }
 
-function initTargetFilter() {
-  const list = document.querySelector("#targetMenuList");
-  const menu = document.querySelector("#targetMenu");
-  const selector = document.querySelector("#targetFilter");
-  const toggle = document.querySelector("#targetToggle");
-  const clearBtn = document.querySelector("#targetClear");
-  if (!list || !menu || !selector || !toggle) return;
+function wireTargetFilterRoot({ rootSel, listSel, menuSel, toggleSel, clearSel }) {
+  const list = document.querySelector(listSel);
+  const menu = document.querySelector(menuSel);
+  const selector = document.querySelector(rootSel);
+  const toggle = document.querySelector(toggleSel);
+  const clearBtn = document.querySelector(clearSel);
+  if (!list || !menu || !selector || !toggle) return false;
 
   const targets = uniqueTargets();
   list.innerHTML = targets.map(t => `
@@ -1678,7 +1680,7 @@ function initTargetFilter() {
     saveSelectedTargets();
     syncTargetMenuCheckboxes();
     updateTargetToggleLabel();
-    renderMaster();
+    refreshViewsAfterTargetFilter();
   });
   toggle.addEventListener("click", () => {
     if (menu.hidden) openMenu();
@@ -1688,18 +1690,40 @@ function initTargetFilter() {
   selector.addEventListener("mouseleave", () => {
     closeTimer = setTimeout(closeMenu, 180);
   });
+  menu.addEventListener("mouseenter", () => clearTimeout(closeTimer));
+  menu.addEventListener("mouseleave", () => {
+    closeTimer = setTimeout(closeMenu, 180);
+  });
   document.addEventListener("click", event => {
-    if (event.target.closest("#targetFilter")) return;
+    if (event.target.closest(rootSel)) return;
     closeMenu();
   });
-  // 표 안 기전 칩 클릭 → 동일 필터 토글
+  return true;
+}
+
+function initTargetFilter() {
+  // 비교표 + 일정 탭: 같은 selectedTargets 공유 (기전 표적 AND)
+  wireTargetFilterRoot({
+    rootSel: "#targetFilter",
+    listSel: "#targetMenuList",
+    menuSel: "#targetMenu",
+    toggleSel: "#targetToggle",
+    clearSel: "#targetClear"
+  });
+  wireTargetFilterRoot({
+    rootSel: "#timelineTargetFilter",
+    listSel: "#timelineTargetMenuList",
+    menuSel: "#timelineTargetMenu",
+    toggleSel: "#timelineTargetToggle",
+    clearSel: "#timelineTargetClear"
+  });
+  // 표 안 기전 칩 클릭 → 동일 필터 토글 (한 번만)
   document.querySelector("#masterRows")?.addEventListener("click", event => {
     const chip = event.target.closest("button.mech-target[data-target]");
     if (!chip) return;
     event.preventDefault();
     toggleTarget(chip.dataset.target);
   });
-
   updateTargetToggleLabel();
 }
 
@@ -2661,6 +2685,17 @@ function syncTimelineBodyFromAxis() {
   }
 }
 
+function canonicalTimelineAssetName(name) {
+  if (name === "DD01") return "Zabopegdutide";
+  return name;
+}
+
+/** 일정 이벤트 자산명 → assets[] 행 (표적 필터용) */
+function assetFromTimelineName(name) {
+  const n = canonicalTimelineAssetName(name);
+  return assets.find(a => a.name === n) || null;
+}
+
 function renderTimeline() {
   const query = document.querySelector("#searchInput").value.trim().toLowerCase();
   const range = document.querySelector("#rangeFilter").value;
@@ -2675,13 +2710,19 @@ function renderTimeline() {
   const filtered = timelineSource.filter(e => {
     const typeMatch = activeFilter === "all" || e.type === activeFilter;
     const textMatch = !query || `${e.asset} ${e.sub} ${e.title} ${e.text}`.toLowerCase().includes(query);
-    return typeMatch && textMatch && e.year >= startYear && e.year <= endYear;
+    // 기전 표적 필터 (비교표 selectedTargets와 동일 AND)
+    const asset = assetFromTimelineName(e.asset);
+    const mechMatch = !selectedTargets.size
+      ? true
+      : asset
+        ? assetMatchesTargetFilter(asset)
+        : false;
+    return typeMatch && textMatch && mechMatch && e.year >= startYear && e.year <= endYear;
   });
   const years = Array.from({length: endYear - startYear + 1}, (_, i) => startYear + i);
   const cols = years.length * 4;
-  const canonicalAsset = name => name === "DD01" ? "Zabopegdutide" : name;
   const assetOrder = assets.map(a => a.name);
-  const groupedAssets = [...new Set(filtered.map(e => canonicalAsset(e.asset)))]
+  const groupedAssets = [...new Set(filtered.map(e => canonicalTimelineAssetName(e.asset)))]
     .sort((a, b) => {
       const ai = assetOrder.indexOf(a), bi = assetOrder.indexOf(b);
       return (ai < 0 ? 999 : ai) - (bi < 0 ? 999 : bi);
@@ -2699,13 +2740,21 @@ function renderTimeline() {
     </div>`;
   const groups = groupedAssets.map(assetName => {
     const asset = assets.find(a => a.name === assetName);
-    const assetEvents = filtered.filter(e => canonicalAsset(e.asset) === assetName).sort((a,b) => a.year - b.year || (a.qStart || a.quarter || 0) - (b.qStart || b.quarter || 0));
-    const isOpen = openTimelineAssets.has(assetName) || Boolean(query);
+    const assetEvents = filtered.filter(e => canonicalTimelineAssetName(e.asset) === assetName).sort((a,b) => a.year - b.year || (a.qStart || a.quarter || 0) - (b.qStart || b.quarter || 0));
+    const isOpen = openTimelineAssets.has(assetName) || Boolean(query) || selectedTargets.size > 0;
+    const mechLabel = asset?.mechanism
+      ? `<span class="timeline-mech">${escapeHtml(asset.mechanism)}</span>`
+      : "";
+    const targetBits = asset ? assetTargets(asset.id) : [];
+    const targetLabel = targetBits.length
+      ? `<span class="timeline-targets">${targetBits.map(t => escapeHtml(t)).join(" · ")}</span>`
+      : "";
     return `<section class="asset-group ${isOpen ? "" : "collapsed"}" data-timeline-asset="${encodeURIComponent(assetName)}">
       <div class="asset-group-head">
         <div class="asset-group-title">
           <div>
             <b>${assetName}</b><span>${asset ? asset.company : ""}</span>
+            ${mechLabel}${targetLabel}
             <div class="group-refs">${cite(assetReferenceMap[assetName] || [])}</div>
           </div>
           <button class="asset-toggle" type="button" aria-expanded="${isOpen}" aria-label="${assetName} 일정 ${isOpen ? "닫기" : "열기"}">

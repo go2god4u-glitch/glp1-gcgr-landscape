@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="대사·비만 경쟁물질 데이터 원장 (기전 확장 가능)">
   <title>대사·비만 경쟁물질 현황 및 개발 일정</title>
-  <link rel="stylesheet" href="styles.css?v=20260725-29">
+  <link rel="stylesheet" href="styles.css?v=20260725-30">
 </head>
 <body>
   <header class="app-header">
@@ -139,6 +139,15 @@
               <option value="future">향후 2026–2031</option>
               <option value="all">전체 2011–2031</option>
             </select>
+            <div class="control-field target-filter column-selector" id="timelineTargetFilter">
+              <label for="timelineTargetToggle">표적 (기전)</label>
+              <button id="timelineTargetToggle" type="button" aria-expanded="false" aria-haspopup="true">표적 전체</button>
+              <div id="timelineTargetMenu" class="column-menu target-menu" hidden>
+                <p class="target-menu-note">비교표와 동일한 표적 필터. 여러 개면 <b>모두 포함(AND)</b>하는 물질의 일정만 표시합니다.</p>
+                <div id="timelineTargetMenuList" class="target-menu-list"></div>
+                <button type="button" class="target-clear" id="timelineTargetClear">선택 해제 (전체)</button>
+              </div>
+            </div>
           </div>
           <div class="filter-group" aria-label="이벤트 유형">
             <button class="chip active" data-filter="all" data-tooltip="계약·제휴, 임상 진행, 결과 발표, 허가·규제, 향후 일정, 중단 이벤트를 모두 표시합니다.">전체</button>
@@ -217,6 +226,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260725-29"></script>
+  <script src="app.js?v=20260725-30"></script>
 </body>
 </html>
