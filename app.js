@@ -1155,34 +1155,157 @@ const mechanismProfiles = {
   }
 };
 
-/** 기전 칸: 배지(자산.mechanism) + targets 칩 + 상세 text */
+/** 기전 칸: 배지(자산.mechanism) + targets 칩(클릭=필터 토글) + 상세 text */
 function renderMechanismCell(asset, rowRefs) {
   const profile = mechanismProfiles[asset.id] || {};
   const group = asset.mechanism || "기전 미지정";
   const targets = Array.isArray(profile.targets) ? profile.targets : [];
   const targetsHtml = targets.length
-    ? `<div class="mech-targets">${targets.map(t => `<span class="mech-target">${escapeHtml(t)}</span>`).join("")}</div>`
+    ? `<div class="mech-targets">${targets.map(t => {
+      const on = selectedTargets.has(t) ? " is-active" : "";
+      return `<button type="button" class="mech-target${on}" data-target="${escapeHtml(t)}" title="표적 필터 토글: ${escapeHtml(t)}">${escapeHtml(t)}</button>`;
+    }).join("")}</div>`
     : "";
   const text = profile.text || "공개 분자설계 정보 없음";
   const refs = profile.refs || rowRefs || [];
   return `<div class="mech-group">${escapeHtml(group)}</div>${targetsHtml}<div class="mech-detail">${text}</div><span class="cell-refs">${cite(refs)}</span>`;
 }
 
-/** 데이터에 등장하는 기전 목록 (필터 옵션 자동 생성) */
-function uniqueMechanisms() {
-  return [...new Set(assets.map(a => a.mechanism).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+/**
+ * 기전 표적 필터 (표시 항목과 같은 호버 메뉴).
+ * - 표적 0개 선택: 전체
+ * - 1개: 그 표적을 가진 물질 전부
+ * - 2개 이상: 선택한 표적을 모두 가진 물질만 (AND)
+ * 데이터: mechanismProfiles[id].targets[]
+ */
+const TARGET_FILTER_STORAGE_KEY = "competitor-selected-targets-v1";
+let selectedTargets = new Set();
+try {
+  const raw = localStorage.getItem(TARGET_FILTER_STORAGE_KEY);
+  selectedTargets = new Set(raw ? JSON.parse(raw) : []);
+} catch {
+  selectedTargets = new Set();
 }
 
-function fillMechanismFilter() {
-  const sel = document.querySelector("#masterMechanism");
-  if (!sel) return;
-  const current = sel.value || "all";
-  const opts = uniqueMechanisms();
-  sel.innerHTML = `<option value="all">전체 기전</option>${opts.map(m =>
-    `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`
-  ).join("")}`;
-  if ([...sel.options].some(o => o.value === current)) sel.value = current;
-  else sel.value = "all";
+function assetTargets(assetId) {
+  const t = mechanismProfiles[assetId]?.targets;
+  return Array.isArray(t) ? t : [];
+}
+
+function uniqueTargets() {
+  const set = new Set();
+  for (const a of assets) {
+    for (const t of assetTargets(a.id)) if (t) set.add(t);
+  }
+  return [...set].sort((a, b) => a.localeCompare(b, "en"));
+}
+
+function saveSelectedTargets() {
+  localStorage.setItem(TARGET_FILTER_STORAGE_KEY, JSON.stringify([...selectedTargets]));
+}
+
+function assetMatchesTargetFilter(asset) {
+  if (!selectedTargets.size) return true;
+  const have = new Set(assetTargets(asset.id));
+  for (const t of selectedTargets) {
+    if (!have.has(t)) return false;
+  }
+  return true;
+}
+
+function updateTargetToggleLabel() {
+  const btn = document.querySelector("#targetToggle");
+  if (!btn) return;
+  const n = selectedTargets.size;
+  if (!n) {
+    btn.textContent = "표적 전체";
+    btn.classList.remove("has-filter");
+  } else {
+    const labels = [...selectedTargets].sort((a, b) => a.localeCompare(b, "en"));
+    btn.textContent = n <= 2 ? labels.join(" · ") : `표적 ${n}개 AND`;
+    btn.title = `AND 필터: ${labels.join(" + ")}`;
+    btn.classList.add("has-filter");
+  }
+}
+
+function toggleTarget(target, on) {
+  if (!target) return;
+  if (on == null) {
+    if (selectedTargets.has(target)) selectedTargets.delete(target);
+    else selectedTargets.add(target);
+  } else if (on) selectedTargets.add(target);
+  else selectedTargets.delete(target);
+  saveSelectedTargets();
+  syncTargetMenuCheckboxes();
+  updateTargetToggleLabel();
+  renderMaster();
+}
+
+function syncTargetMenuCheckboxes() {
+  document.querySelectorAll("#targetMenuList input[type='checkbox'][data-target]").forEach(input => {
+    input.checked = selectedTargets.has(input.dataset.target);
+  });
+}
+
+function initTargetFilter() {
+  const list = document.querySelector("#targetMenuList");
+  const menu = document.querySelector("#targetMenu");
+  const selector = document.querySelector("#targetFilter");
+  const toggle = document.querySelector("#targetToggle");
+  const clearBtn = document.querySelector("#targetClear");
+  if (!list || !menu || !selector || !toggle) return;
+
+  const targets = uniqueTargets();
+  list.innerHTML = targets.map(t => `
+    <label class="column-option target-option">
+      <input type="checkbox" data-target="${escapeHtml(t)}" ${selectedTargets.has(t) ? "checked" : ""}>
+      <span>${escapeHtml(t)}</span>
+    </label>`).join("") || `<p class="target-menu-note">등록된 표적 없음 (mechanismProfiles.targets)</p>`;
+
+  let closeTimer;
+  const openMenu = () => {
+    clearTimeout(closeTimer);
+    menu.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+  };
+  const closeMenu = () => {
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  list.addEventListener("change", event => {
+    const input = event.target.closest("input[data-target]");
+    if (!input) return;
+    toggleTarget(input.dataset.target, input.checked);
+  });
+  clearBtn?.addEventListener("click", () => {
+    selectedTargets.clear();
+    saveSelectedTargets();
+    syncTargetMenuCheckboxes();
+    updateTargetToggleLabel();
+    renderMaster();
+  });
+  toggle.addEventListener("click", () => {
+    if (menu.hidden) openMenu();
+    else closeMenu();
+  });
+  selector.addEventListener("mouseenter", openMenu);
+  selector.addEventListener("mouseleave", () => {
+    closeTimer = setTimeout(closeMenu, 180);
+  });
+  document.addEventListener("click", event => {
+    if (event.target.closest("#targetFilter")) return;
+    closeMenu();
+  });
+  // 표 안 기전 칩 클릭 → 동일 필터 토글
+  document.querySelector("#masterRows")?.addEventListener("click", event => {
+    const chip = event.target.closest("button.mech-target[data-target]");
+    if (!chip) return;
+    event.preventDefault();
+    toggleTarget(chip.dataset.target);
+  });
+
+  updateTargetToggleLabel();
 }
 
 const now = new Date();
@@ -1698,12 +1821,12 @@ function initColumnSelector() {
 
 function renderMaster() {
   const tier = document.querySelector("#masterTier").value;
-  const mechanismFilter = document.querySelector("#masterMechanism")?.value || "all";
   const query = document.querySelector("#masterSearch").value.trim().toLowerCase();
   const rows = assets.filter(a => {
     const tierMatch = tier === "all" || a.tier === tier;
-    const mechMatch = mechanismFilter === "all" || a.mechanism === mechanismFilter;
-    const textMatch = !query || `${a.name} ${a.aliases} ${a.company} ${a.mechanism || ""}`.toLowerCase().includes(query);
+    const mechMatch = assetMatchesTargetFilter(a);
+    const targetText = assetTargets(a.id).join(" ");
+    const textMatch = !query || `${a.name} ${a.aliases} ${a.company} ${a.mechanism || ""} ${targetText}`.toLowerCase().includes(query);
     return tierMatch && mechMatch && textMatch;
   });
   document.querySelector("#masterRows").innerHTML = rows.map(a => {
@@ -1731,7 +1854,7 @@ function renderMaster() {
       const extra = key === "liver" ? " liver-cell" : "";
       return `<td class="result-cell${extra}" data-column-result="${key}" data-trial-binding="dependent">${renderResultCell(trial, key, results[key], cellRefs(key))}</td>`;
     }).join("");
-    return `<tr data-asset-id="${a.id}" data-mechanism="${escapeHtml(a.mechanism || "")}" data-active-trial="${trial?.id || ""}">
+    return `<tr data-asset-id="${a.id}" data-mechanism="${escapeHtml(a.mechanism || "")}" data-targets="${escapeHtml(assetTargets(a.id).join(","))}" data-active-trial="${trial?.id || ""}">
       <td data-trial-binding="asset"><b class="asset-name">${a.name}${a.id === "da1726" ? '<span class="internal-mark">INTERNAL</span>' : ""}</b><span class="muted-cell">${a.aliases}<br>${a.company}</span>${cellRefs("rights")}</td>
       <td data-trial-binding="asset" data-column-result="mechanism">${renderMechanismCell(a, rowRefs)}</td>
       <td class="stage-cell" data-trial-binding="asset"><span class="status ${statusClass}">${a.phase}</span></td>
@@ -2070,7 +2193,7 @@ initReportTabs();
 initColumnSelector();
 initTrialSelectHandlers();
 initTrialDraftHandlers();
-fillMechanismFilter();
+initTargetFilter();
 renderMaster();
 renderTimeline();
 renderDossiers();
@@ -2078,7 +2201,6 @@ renderSources();
 setupMasterScrollSync();
 
 document.querySelector("#masterTier").addEventListener("change", renderMaster);
-document.querySelector("#masterMechanism")?.addEventListener("change", renderMaster);
 document.querySelector("#masterSearch").addEventListener("input", renderMaster);
 document.querySelector("#searchInput").addEventListener("input", renderTimeline);
 document.querySelector("#rangeFilter").addEventListener("change", renderTimeline);
