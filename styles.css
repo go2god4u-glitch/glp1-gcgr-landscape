@@ -903,14 +903,23 @@ table { width: 100%; border-collapse: collapse; }
 .dossier { border-bottom: 1px solid var(--line); cursor: pointer; }
 .dossier:last-child { border-bottom: 0; }
 .dossier:hover { background: #fafbfc; }
+/* 열 수 = 요약행 자식 수(물질명 · 회사 · 기전배지 · signal · 열기표시).
+   기전 배지가 추가되면서 4열에 5개가 들어가 signal이 30px로 찌그러졌던 이력이 있다.
+   자식을 늘리면 여기 열 정의와 아래 두 breakpoint를 반드시 같이 고친다. */
 .dossier-summary {
   min-height: 56px;
   padding: 12px 14px;
   display: grid;
-  grid-template-columns: 180px 190px 1fr 30px;
+  grid-template-columns: 180px 190px auto minmax(0, 1fr) 30px;
   gap: 15px;
   align-items: center;
 }
+/* 열기표시는 항상 마지막 열 첫 줄에 고정 (자식 수가 바뀌어도 안 밀림) */
+.dossier-summary .expand { grid-column: -2 / -1; grid-row: 1; }
+/* 긴 문장이 유연 열을 밀어내지 않게 */
+.dossier-summary .signal { min-width: 0; }
+/* 좁은 폭에서 배지가 행 전체로 늘어나지 않게 (grid가 inline-block을 blockify) */
+.dossier-summary .mech-group { justify-self: start; }
 .dossier-summary h3 { margin: 0; font-size: 15px; }
 .dossier-summary .aliases { color: var(--muted); font: 400 11px Consolas, monospace; }
 .dossier-summary .company { font-size: 13px; }
@@ -954,7 +963,9 @@ dialog li { margin-bottom: 10px; font-size: 11px; }
   .master-controls .target-filter > button#targetToggle { width: 100%; max-width: none; min-width: 0; }
   .target-menu { width: min(320px, calc(100vw - 48px)); }
   .dossier-summary { grid-template-columns: 1fr 1fr 30px; }
+  .dossier-summary .mech-group,
   .dossier-summary .signal { grid-column: 1 / -1; }
+  .dossier-summary .expand { grid-column: 3; grid-row: 1; }
   .dossier-detail { padding-left: 14px; }
   .source-grid { grid-template-columns: repeat(2, 1fr); }
   .source-card { border-bottom: 1px solid var(--line); }
@@ -975,7 +986,10 @@ dialog li { margin-bottom: 10px; font-size: 11px; }
   .timeline-inputs .target-filter > button { width: 100%; }
   .matrix { --label-width: 280px; --quarter-width: 60px; }
   .dossier-summary { grid-template-columns: 1fr 30px; }
-  .dossier-summary .company, .dossier-summary .signal { grid-column: 1 / -1; }
+  .dossier-summary .company,
+  .dossier-summary .mech-group,
+  .dossier-summary .signal { grid-column: 1 / -1; }
+  .dossier-summary .expand { grid-column: 2; grid-row: 1; }
   .dossier-detail { grid-template-columns: 1fr; }
   .source-grid { grid-template-columns: 1fr; }
   .source-card { border-right: 0; }
