@@ -228,8 +228,8 @@ const events = [
   {year: 2023, asset: "Survodutide", sub: "SYNCHRONIZE", type: "clinical", title: "글로벌 Phase 3 프로그램 진입", text: "비만 후기개발과 MASH 개발을 병렬화하며 class의 글로벌 선두로 이동했다."},
   {year: 2023, asset: "Mazdutide", sub: "GLORY / DREAMS", type: "clinical", title: "중국 Phase 3 다적응증 확대", text: "비만과 T2D를 중심으로 semaglutide·dulaglutide 비교 및 대사 동반질환 시험군을 구축했다."},
   {year: 2024, asset: "DA-1726", sub: "NCT06252220", type: "clinical", title: "First-in-human Phase 1 개시", text: "비만 성인에서 SAD/MAD를 통해 안전성·PK·체중변화를 평가하는 임상 단계에 진입했다."},
-  {year: 2024, asset: "DD01", sub: "FDA Fast Track", type: "regulatory", title: "MASH Fast Track 지정", text: "초기 간지방 감소 신호를 바탕으로 미국 FDA의 신속개발 지원 대상으로 지정됐다."},
-  {year: 2024, asset: "DD01", sub: "China rights", type: "deal", title: "중국 비만 개발권 Salubris로 확장", text: "중국 파트너가 비만 대상 Phase 1 IND 승인을 확보해 미국 MASH와 중국 비만의 이중 경로가 만들어졌다."},
+  {year: 2024, asset: "Zabopegdutide", sub: "FDA Fast Track", type: "regulatory", title: "MASH Fast Track 지정", text: "초기 간지방 감소 신호를 바탕으로 미국 FDA의 신속개발 지원 대상으로 지정됐다."},
+  {year: 2024, asset: "Zabopegdutide", sub: "China rights", type: "deal", title: "중국 비만 개발권 Salubris로 확장", text: "중국 파트너가 비만 대상 Phase 1 IND 승인을 확보해 미국 MASH와 중국 비만의 이중 경로가 만들어졌다."},
   {year: 2024, asset: "PB-718", sub: "NCT06147544", type: "data", title: "고정용량 조합의 초기 임상 완료", text: "PB-119 GLP-1RA와 PB-722 GCGR agonist의 조합으로 동일 수용체쌍을 구현. 단일분자와 다른 개발 아키텍처다."},
   {year: 2024, asset: "CMS-D005", sub: "China IND", type: "regulatory", title: "중국 임상시험 승인", text: "CMS 자체 개발 이중작용제가 중국 Phase 1에 진입. 글로벌 레지스트리만 검색할 때 누락될 수 있는 자산이다."},
   {year: 2024, asset: "Pemvidutide", sub: "MOMENTUM", type: "data", title: "48주 −15.6% 체중감량", text: "2.4 mg에서 위약 −2.2% 대비 평균 −15.6%. 모든 AE 중단 19.6%로 효능과 유지율을 함께 읽어야 한다."},
@@ -238,7 +238,7 @@ const events = [
   {year: 2025, asset: "AZD9550", sub: "ASCEND", type: "clinical", title: "대규모 Phase 2 검증", text: "377명 규모에서 체중·대사 효능을 검증. 별도 CONTEMPO에서 단독 고용량과 AZD6234 amylin 병용을 시험했다."},
   {year: 2026, asset: "DA-1726", sub: "48 mg MAD", type: "data", title: "비적정 소수 코호트에서 −9.1%", text: "n=6, Day 54 기준 초기 체중 신호. GI disorders 5/6, 구토 5/6이나 치료관련 중단은 없었다. 작은 분모를 후기 임상과 직접 비교할 수 없다."},
   {year: 2026, asset: "Survodutide", sub: "SYNCHRONIZE-1", type: "data", title: "Phase 3 최대 −16.6%, GI 유지율이 쟁점", text: "76주 efficacy estimand 최대 −16.6%. 전체 GI AE 80.9–89.7%, GI AE 중단 약 19%가 후기 benchmark를 형성했다."},
-  {year: 2026, asset: "DD01", sub: "NCT06410924", type: "data", title: "48주 조직학 POC", text: "소규모 per-protocol 분석에서 섬유화 개선 50.0% vs 15.8%, MASH 해소 62.5% vs 5.3%. 다음 등록시험은 아직 확인되지 않았다."},
+  {year: 2026, asset: "Zabopegdutide", sub: "NCT06410924", type: "data", title: "48주 조직학 POC", text: "소규모 per-protocol 분석에서 섬유화 개선 50.0% vs 15.8%, MASH 해소 62.5% vs 5.3%. 다음 등록시험은 아직 확인되지 않았다."},
   {year: 2026, asset: "AZD9550", sub: "ASCEND", type: "clinical", title: "Phase 2 완료, 결과 대기", text: "2026년 5월 시험은 완료됐으나 공개 결과가 없어 클래스의 가장 큰 단기 정보 공백 중 하나다."},
   {year: 2026, asset: "DA-1726", sub: "Part 3", type: "clinical", title: "적정 48/64 mg 목표용량 검증", text: "활성 환자들이 목표용량에 도달. 효능보다 목표용량 도달률, GI 발생·중단, 표본 확대 시 재현성이 다음 관문이다."},
   {year: 2026, asset: "Pemvidutide", sub: "PERFORMA", type: "clinical", title: "MASH Phase 3 전환 계획", text: "Altimmune은 2026년 하반기 PERFORMA 개시를 계획. AUD·ALD 임상과 함께 간질환 프랜차이즈를 구축한다."},
@@ -371,7 +371,6 @@ const assetReferenceMap = {
   Efinopegdutide: ["EF-P2", "EF-DEAL", "EF-PIPELINE"],
   AZD9550: ["AZ-ASCEND", "AZ-CONTEMPO"],
   Zabopegdutide: ["DD-P2", "DD-CHINA"],
-  DD01: ["DD-P2", "DD-CHINA"],
   "CMS-D005": ["CMS-IND", "CMS-ANNUAL"],
   "DA-1726": ["DA-DATA", "DA-STATUS", "DA-LICENSE"],
   "PB-718": ["PB-ABSTRACT", "PB-ANNUAL"],
@@ -1257,6 +1256,47 @@ function auditKeyTrialBinding(snapshot) {
   return issues;
 }
 
+/**
+ * 자산 데이터 정합 감사 (새 약물·새 기전 추가 시 조용한 누락 방지).
+ *
+ * 이 프로젝트는 키 공간이 두 개다. 섞어 쓰면 화면에서 조용히 사라진다:
+ *   - id  기준: comparison[id], mechanismProfiles[id], refresh-config programs[].id
+ *   - name 기준: assetReferenceMap[name], events[].asset, timelineExcludedAssets
+ * 실제 사고: events[].asset="DD01"인데 assets[].name="Zabopegdutide"라서
+ * 근거 있는 이벤트 3건이 타임라인에 렌더되지 않았다(2026-07-26 수정).
+ *
+ * 자동 보정하지 않는다. 추정으로 값을 채우면 사실이 아닌 정보가 표에 들어간다.
+ * 누락을 찾아 보고만 하고, 채우는 것은 사람이 1차 출처로 한다.
+ */
+function auditAssetDataIntegrity() {
+  const issues = [];
+  const names = new Set(assets.map(a => a.name));
+  for (const a of assets) {
+    if (!comparison[a.id]) issues.push(`${a.id}: comparison[${a.id}] 없음 → 적응증·핵심임상·결과 전부 빈칸`);
+    if (!(mechanismProfiles[a.id]?.targets || []).length) {
+      issues.push(`${a.id}: mechanismProfiles[${a.id}].targets 없음 → 기전 표적 필터에서 누락(해당 표적으로 거르면 사라짐)`);
+    }
+    if (!(assetReferenceMap[a.name] || []).length) {
+      issues.push(`${a.id}: assetReferenceMap["${a.name}"] 없음 → 근거 배지 없음 (map은 id가 아니라 name 키)`);
+    }
+    if (!a.mechanism) issues.push(`${a.id}: mechanism 없음 → 기전 축 분류 불가`);
+  }
+  // events[].asset 은 name 기준. 오타·별칭을 쓰면 이벤트가 조용히 사라진다.
+  for (const e of events) {
+    if (!names.has(e.asset)) {
+      issues.push(`events: asset="${e.asset}" (${e.year} ${e.title}) 이 assets[].name과 불일치 → 일정 탭에 렌더되지 않음`);
+    }
+  }
+  // 일정 제외 목록도 name 기준
+  for (const n of timelineExcludedAssets) {
+    if (!names.has(n)) issues.push(`timelineExcludedAssets: "${n}" 이 assets[].name과 불일치 → 제외가 동작하지 않음`);
+  }
+  if (issues.length && typeof console !== "undefined") {
+    console.warn("[asset-data-integrity]", issues);
+  }
+  return issues;
+}
+
 function missingForTrial(label) {
   // 해당 임상에 결과 없으면 설명 없이 없음만 표기 (결과 기준 스탬프가 임상을 이미 표시)
   // result-empty: 본문과 동일 글씨체·크기, 색만 muted로 구분 (muted-cell의 Consolas 사용 금지)
@@ -2106,6 +2146,7 @@ async function refreshAllViews(snapshot) {
   liveSnapshot = snapshot;
   normalizeComparisonEntries();
   auditKeyTrialBinding(snapshot);
+  auditAssetDataIntegrity();
   rebuildRegistryTimeline(snapshot);
 
   const programCount = Object.keys(snapshot?.programs || {}).length;
@@ -2604,7 +2645,10 @@ function renderMaster() {
     const entry = getComparisonEntry(a.id);
     const trial = entry ? getActiveTrial(a.id, entry) : null;
     const results = resolveTrialResults(trial);
-    const indication = entry?.indication || "개발 중단·비활성 자산";
+    // comparison 미등록을 '중단'으로 단정하지 않는다. 중단은 tier=historical(입력된 사실)일 때만.
+    // 그 밖에는 §6 빈칸 어휘로 데이터 없음만 표기한다 (새 자산 추가 시 거짓 표기 방지).
+    const indication = entry?.indication
+      || (a.tier === "historical" ? "개발 중단·비활성 자산" : "[1차 미확보]");
     const rights = entry?.rights || a.origin;
     const nextHtml = entry?.next || a.watch.join("<br>");
     const nextNcts = entry?.nextNcts || [];
@@ -2619,7 +2663,8 @@ function renderMaster() {
     const statusClass = a.tier === "historical" ? "historical" : a.tier === "watch" ? "watch" : "";
     const trialCell = entry
       ? renderTrialCell(a.id, entry, trial, rowRefs)
-      : `<div class="trial-block"><div class="trial-name trial-name-control">${escapeHtml(a.phase || "단계 미상")}</div><div class="trial-meta-line">현재 활성 개발 없음</div></div>`;
+      // 핵심 임상 미등록 ≠ 개발 중단. 기존 '기준 임상 없음' 어휘를 그대로 쓴다.
+      : `<div class="trial-block"><div class="trial-name trial-name-control">${escapeHtml(a.phase || "단계 미상")}</div><div class="trial-meta-line">${a.tier === "historical" ? "현재 활성 개발 없음" : "기준 임상 없음"}</div></div>`;
     // 결과 열: TRIAL_RESULT_KEYS 순회 → 새 결과 필드 추가 시 스탬프·값 자동 포함
     const resultCellsHtml = TRIAL_RESULT_KEYS.map(key => {
       const extra = key === "liver" ? " liver-cell" : "";
@@ -2991,6 +3036,8 @@ function setupMasterScrollSync() {
   sync();
 }
 
+// 새 약물·새 기전을 넣었을 때 조용히 누락되는 항목을 부팅 시 바로 콘솔에 보고
+auditAssetDataIntegrity();
 initReportTabs();
 initColumnSelector();
 initTrialSelectHandlers();
