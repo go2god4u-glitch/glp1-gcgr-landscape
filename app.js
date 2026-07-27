@@ -2695,6 +2695,8 @@ const EXCEL_COL_LAYOUT = {
   liver: { width: 34 },
   gi: { width: 30 },
   discontinuation: { width: 30 },
+  lean: { width: 30 },
+  heartRate: { width: 26 },
   rights: { width: 26 },
   next: { width: 28 }
 };

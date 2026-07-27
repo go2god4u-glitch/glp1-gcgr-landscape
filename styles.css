@@ -549,7 +549,9 @@ input:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgb
 .master-table thead th:first-child { z-index: 4; background: #f2f4f7; } /* 좌상단 코너: 세로·가로 고정 교차점이라 최상위 */
 .master-table tbody tr:hover td:first-child { background: #f8faff; }
 table { width: 100%; border-collapse: collapse; }
-.master-table { min-width: 2100px; table-layout: fixed; }
+/* 열 2개(제지방·심박수)가 늘었는데 min-width 가 그대로면 기존 열들이 그만큼 좁아진다.
+   열당 픽셀 폭을 추가 전 수준으로 유지하려고 2100 → 2450 으로 올렸다. */
+.master-table { min-width: 2450px; table-layout: fixed; }
 .master-table th {
   padding: 12px 14px;
   color: #59667a;
@@ -560,16 +562,22 @@ table { width: 100%; border-collapse: collapse; }
   font-size: 12px;
   letter-spacing: .03em;
 }
-.master-table th:nth-child(1) { width: 10%; }
-.master-table th:nth-child(2) { width: 10%; }
-.master-table th:nth-child(3) { width: 7%; }
-.master-table th:nth-child(4) { width: 9%; }
-.master-table th:nth-child(5) { width: 10%; }
-.master-table th:nth-child(6) { width: 11%; }
-.master-table th:nth-child(7) { width: 11%; }
-.master-table th:nth-child(8) { width: 10%; }
-.master-table th:nth-child(9) { width: 13%; }
-.master-table th:nth-child(10) { width: 9%; }
+/* 열 너비는 위치(nth-child)가 아니라 data-column-key 로 건다.
+   열을 중간에 끼워 넣으면 위치 규칙이 한 칸씩 밀려 엉뚱한 열에 붙는다
+   (제지방·심박수 추가 때 실제로 밀렸다). 키로 걸면 순서가 바뀌어도 따라온다.
+   next 는 원래대로 폭 미지정 — 나머지 12개 합이 100%. */
+.master-table th[data-column-key="asset"] { width: 9%; }
+.master-table th[data-column-key="mechanism"] { width: 8%; }
+.master-table th[data-column-key="stage"] { width: 6%; }
+.master-table th[data-column-key="indication"] { width: 7%; }
+.master-table th[data-column-key="trial"] { width: 8%; }
+.master-table th[data-column-key="weight"] { width: 9%; }
+.master-table th[data-column-key="liver"] { width: 9%; }
+.master-table th[data-column-key="gi"] { width: 9%; }
+.master-table th[data-column-key="discontinuation"] { width: 11%; }
+.master-table th[data-column-key="lean"] { width: 9%; }
+.master-table th[data-column-key="heartRate"] { width: 7%; }
+.master-table th[data-column-key="rights"] { width: 8%; }
 .master-table td { padding: 15px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13px; line-height: 1.55; }
 .master-table tr:last-child td { border-bottom: 0; }
 .master-table td:last-child, .master-table th:last-child { border-right: 0; }
