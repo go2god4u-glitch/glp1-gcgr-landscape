@@ -348,7 +348,7 @@ const references = {
   "TZ-SURMOUNT2": ["Eli Lilly, SURMOUNT-2 (NCT04657003) CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04657003?tab=results"],
   "EN-P2PR": ["Roche (2026-01-27), CT-388(enicepatide) Phase II 비만 결과 발표", "Sponsor primary source (T3)", "https://www.roche.com/media/releases/med-cor-2026-01-27"],
   "EN-P3": ["Roche, Enith1 Phase III (NCT07351045) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07351045"],
-  "VK-VENTURE": ["Bays et al. (2026), Weekly Subcutaneous VK2735: Phase 2 VENTURE Study", "Obesity (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/41508550/"],
+  "VK-VENTURE": ["Bays et al. (2026), Weekly Subcutaneous VK2735: Phase 2 VENTURE Study — 전문 오픈액세스(Table 3 GI·중단)", "Obesity (peer-reviewed, T1)", "https://europepmc.org/articles/PMC12933218"],
   "VK-P3": ["Viking Therapeutics, VANQUISH-1 Phase 3 (NCT07104500) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07104500"],
   "RB-ORAL": ["Hengrui / Kailera (2026-06-05), 경구 ribupatide Phase 2 (NCT06841445) 결과 발표", "Sponsor primary source (T3)", "https://www.hengrui.com/en/media/detail-968.html"],
   "RB-P3": ["Kailera, KaiNETIC-1 Phase 3 (NCT07284875) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07284875"],
@@ -651,9 +651,9 @@ const comparison = {
         hasLiver: false,
         weight: "<b>VK2735 −14.7%</b> (−14.6 kg)<br>위약 −1.7% (−1.8 kg)<br><small>15 mg · 13주 · n=176 · 피어리뷰</small>",
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
-        gi: "[1차 미확보]<br><small>초록은 \'주로 GI, 적정 후 빈도 감소\' 로만 기술. 전문 미접근</small>",
-        discontinuation: "[1차 미확보]<br><small>초록에 중단률 없음. CT.gov Results 미게시</small>",
-        refs: { trial: ["VK-VENTURE"], weight: ["VK-VENTURE"] }
+        gi: "오심 63%<br>구토 29%<br>설사 11% · 변비 29%<br><small>15 mg군(n=35) · 위약 오심 20% · 전체 GI 83% vs 위약 37% · 피어리뷰 전문 Table 3</small>",
+        discontinuation: "<b>AE로 인한 치료중단 20%</b><br>위약 0%<br><small>15 mg군(n=35) · 피어리뷰 전문 Table 3</small>",
+        refs: { trial: ["VK-VENTURE"], weight: ["VK-VENTURE"], gi: ["VK-VENTURE"], discontinuation: ["VK-VENTURE"] }
       },
       {
         id: "ventureoral",
@@ -719,8 +719,8 @@ const comparison = {
         hasLiver: false,
         weight: "<b>MariTide −12.3 ~ −16.2%</b><br>위약 −2.5%<br><small>월 1회 · 52주 · 전체 등록 592명 중 비만 코호트 465명 · treatment policy estimand · 피어리뷰</small>",
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
-        gi: "[1차 미확보]<br><small>초록은 \'GI 흔함, 용량적정으로 감소\' 로만 기술. 발생률 수치 미확보</small>",
-        discontinuation: "[1차 미확보]<br><small>초록에 중단률 없음. CT.gov Results 미게시</small>",
+        gi: "[1차 미확보]<br><small>NEJM 전문 비공개 · PMC 미등재(2026-07-27 확인). 초록은 'GI 흔함' 으로만 기술</small>",
+        discontinuation: "[1차 미확보]<br><small>NEJM 전문 비공개 · PMC 미등재(2026-07-27 확인). CT.gov Results 미게시</small>",
         refs: { trial: ["MT-NEJM"], weight: ["MT-NEJM"] }
       },
       {
