@@ -294,7 +294,7 @@ const events = [
   {year: 2026, asset: "Pemvidutide", sub: "PERFORMA", type: "clinical", title: "MASH Phase 3 전환 계획", text: "Altimmune은 2026년 하반기 PERFORMA 개시를 계획. AUD·ALD 임상과 함께 간질환 프랜차이즈를 구축한다."},
   {year: 2025, asset: "CagriSema", sub: "REDEFINE 1", type: "data", title: "Phase 3 비만 −22.7%", text: "비당뇨 비만·과체중에서 68주 trial-product estimand CagriSema −22.7%, semaglutide −16.1%, cagrilintide −11.8%, 위약 −2.3%."},
   {year: 2025, asset: "Zenagamtide", sub: "amycretin SC", type: "data", title: "비만 SC 36주 −24.3%", text: "Phase 1b/2a에서 주 1회 SC 최대 60 mg, 36주 평균 체중 −24.3% vs 위약 −1.1% (Lancet)."},
-  {year: 2025, asset: "Eloralintide", sub: "Phase 2", type: "data", title: "amylin 단독 48주 최대 −20%", text: "비만·과체중 Phase 2에서 9 mg efficacy estimand 약 −20% vs 위약 −0.4%. Lancet·ObesityWeek 2025."},
+  {year: 2025, asset: "Eloralintide", sub: "Phase 2", type: "data", title: "amylin 단독 48주 최대 −20.1%", text: "비만·과체중 Phase 2에서 9 mg efficacy estimand −20.1% vs 위약 −0.4%. Lancet·ObesityWeek 2025."},
   {year: 2021, asset: "Cagrilintide", sub: "Phase 2", type: "data", title: "단독 26주 최대 −10.8%", text: "비당뇨 과체중·비만 Phase 2에서 4.5 mg −10.8% vs 위약 −3.0% (trial product·CT.gov)."},
   {year: 2025, asset: "Petrelintide", sub: "Roche 계약", type: "deal", title: "Zealand–Roche 공동개발", text: "과체중·비만 petrelintide 공동개발·상업화 독점 계약. Roche가 후기 개발 파트너로 합류."},
   {year: 2026, asset: "Petrelintide", sub: "ZUPREME-1", type: "data", title: "P2 42주 최대 −10.7%", text: "Roche 토플라인: efficacy estimand 최대 −10.7% vs 위약 −1.7%. AE 중단 4.8% vs 4.9%. P3 2026 하반기 계획."},
@@ -1198,7 +1198,7 @@ const comparison = {
       {
         id: "amy_sc",
         label: "SC Phase 1b/2a 비만",
-        meta: "NCT06064006 · P1b/2a · 최대 36주 · 비만·과체중",
+        meta: "NCT06064006 · P2(등록) · 논문 P1b/2a · 최대 36주 · 비만·과체중",
         nct: "NCT06064006",
         hasLiver: false,
         weight: "<b>Zenagamtide SC 60 mg −24.3%</b><br>위약 −1.1%<br><small>36주 · Part B · Lancet/PubMed abstract</small><br>20 mg −22.0% vs 위약 +1.9% (36주)<br>5 mg −16.2% vs 위약 +2.3% (28주)<br>1.25 mg −9.7% vs 위약 +2.0% (20주)<br><small>CT.gov Results 미게시(감사 시점)</small>",
