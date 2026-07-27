@@ -367,7 +367,7 @@ const references = {
   "PM-IMPACT": ["Altimmune (2025), IMPACT Phase 2b pemvidutide MASH topline", "Sponsor primary source", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-positive-topline-results-impact-phase-2b"],
   "PM-ACQ": ["Altimmune (2019), acquisition of Spitfire Pharma and ALT-801", "Sponsor transaction announcement", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-closing-acquisition-spitfire-pharma-inc"],
   "PM-UPDATE": ["Altimmune (2026), pemvidutide program and PERFORMA plan", "Sponsor corporate update", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-first-quarter-2026-financial-results-and"],
-  "EF-P2": ["Merck, NCT04944992 posted Phase 2a results", "ClinicalTrials.gov API", "https://clinicaltrials.gov/study/NCT04944992"],
+  "EF-P2": ["Merck, NCT04944992 Phase 2a — CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04944992?tab=results"],
   "EF-DEAL": ["Merck and Hanmi (2020), exclusive efinopegdutide license", "Sponsor transaction announcement", "https://www.merck.com/news/merck-and-hanmi-pharmaceutical-enter-into-licensing-agreement-to-develop-efinopegdutide-an-investigational-once-weekly-therapy-for-nonalcoholic-steatohepatitis-nash/"],
   "EF-PIPELINE": ["Merck, efinopegdutide development pipeline", "Sponsor pipeline", "https://www.merck.com/research/product-pipeline/"],
   "AZ-ASCEND": ["AstraZeneca, ASCEND AZD9550 Phase 2 study record", "Sponsor trial registry", "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/"],
@@ -810,10 +810,10 @@ const comparison = {
         meta: "NCT06862791 · P2 · 완료 · 비만·과체중",
         nct: "NCT06862791",
         hasLiver: false,
-        weight: "<b>결과 미공개</b><br>377명 시험 완료",
+        weight: "[CT.gov 미게시]<br><small>ASCEND Phase 2 완료(377명)했으나 등록 결과표 미게시 · 회사 발표도 확인 안 됨</small>",
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
-        gi: "결과 미공개",
-        discontinuation: "미공개",
+        gi: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · GI 발생률 없음</small>",
+        discontinuation: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · 치료중단률 없음</small>",
         refs: { trial: ["AZ-ASCEND"], weight: ["AZ-ASCEND"], gi: ["AZ-ASCEND"], discontinuation: ["AZ-ASCEND"] }
       }
     ],
@@ -842,7 +842,7 @@ const comparison = {
     rightsRefs: ["DD-CHINA"]
   },
   cms: {
-    indication: "비만·대사질환<br>세부 적응증 미공개",
+    indication: "비만·대사질환<br>[1차 미확보] 세부 적응증",
     rights: "China Medical System<br>자체 개발",
     next: "P1 결과<br>등록번호·용량 공개",
     nextNcts: [],
@@ -853,10 +853,10 @@ const comparison = {
         label: "China Phase 1",
         meta: "NCT 식별 안 됨 · 비만·대사질환",
         hasLiver: false,
-        weight: "<b>사람 효능 미공개</b>",
+        weight: "[1차 미확보]<br><small>NCT 식별 안 됨 · 사람 효능 수치 1차 출처 미확보(중국 단독 등록 가능성)</small>",
         liver: "[1차 미확보]<br><small>간 지표 공개 여부 미확인</small>",
-        gi: "사람 안전성 미공개",
-        discontinuation: "미공개",
+        gi: "[1차 미확보]<br><small>NCT 식별 안 됨 · 안전성 수치 1차 출처 미확보</small>",
+        discontinuation: "[1차 미확보]<br><small>NCT 식별 안 됨 · 중단률 1차 출처 미확보</small>",
         refs: { trial: ["CMS-ANNUAL"], weight: ["CMS-ANNUAL"], gi: ["CMS-ANNUAL"], discontinuation: ["CMS-ANNUAL"] }
       }
     ],
@@ -900,7 +900,7 @@ const comparison = {
         weight: "<b>비교 가능한 공개값 제한</b>",
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "공개 세부값 제한",
-        discontinuation: "미공개",
+        discontinuation: "[1차 미확보]<br><small>중단률 공개 확인 안 됨</small>",
         refs: { trial: ["PB-ABSTRACT"], weight: ["PB-ABSTRACT"], gi: ["PB-ABSTRACT"], discontinuation: ["PB-ABSTRACT"] }
       }
     ],
@@ -922,7 +922,7 @@ const comparison = {
         hasLiver: false,
         // 체중·GI·AE 탈락: CT.gov Results. 간 조직학 아님(바이오마커는 논문 ad hoc).
         weight: "<b>Cotadutide 300 μg −4.16%</b><br>200 μg −3.08% · 100 μg −3.27%<br>위약 −0.84% · 리라글루타이드 1.8 mg −3.20%<br><small>CT.gov Results · % 체중 · 54주 LS mean</small><br>14주(공동 primary): 300 μg −4.33% · 위약 −0.70%",
-        liver: "<span class=\"result-empty\">[1차 미확보]</span> 간 조직학<br><small>본 시험은 조직학 primary 아님. ALT/AST·FIB-4 등 바이오마커는 Diabetes Care ad hoc</small>",
+        liver: "[회사 미공개]<br><small>T2D 본시험이라 간 결과지표 없음 · CT.gov 결과지표 13개 전부 HbA1c·체중·PK</small>",
         gi: "오심<br>300 μg <b>41.0%</b> (105/256) · 200 μg 33.2% (85/256)<br>100 μg 23.0% (23/100) · 위약 10.7% (12/112)<br>구토 300 μg 16.8% (43/256) · 200 μg 19.9% (51/256)<br>설사 300 μg 10.9% (28/256) · 200 μg 19.1% (49/256)<br><small>CT.gov Results · other AE</small><br>논문 요약(용량 통합): 오심 35% · 구토 17%",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>300 μg 1/256 · 200 μg 4/256 · 100 μg 1/100<br>위약 0/112 · 리라글루타이드 0/110<br><small>CT.gov drop reason = Adverse Event · GI 단독 미분리</small>",
         refs: {
@@ -1067,8 +1067,8 @@ const comparison = {
         hasLiver: false,
         weight: "<b>G3215 −2.39 kg</b> vs 위약 −0.84 kg<br><small>14일 주입 · LS mean · Hope et al. DOM</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span> 통합 % 체중 표(용량 분절)",
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
-        gi: "가장 흔한 AE: 오심·구토<br>대부분 경증 · 주입 속도 실시간 조절로 완화<br><small>Hope et al. DOM</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 오심 % 표(abstract)",
-        discontinuation: "배정 26명 · 14일 주입 완료 23명<br><span class=\"result-empty\">[1차 미확보]</span> AE 중단 % 표<br><small>abstract·CT.gov AE 표는 용량 분절·소표본</small>",
+        gi: "오심 83%<br>구토 58%<br>위약 0%<br><small>주입 코호트(C) 합산 n=12 · 위약 n=4 · CT.gov Results AE 표 · 용량군마다 n=2~3 소표본</small>",
+        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표는 전체기간 1개 구간만 제시 · 치료중단·GI 단독 중단 열 없음</small>",
         refs: {
           trial: ["G3215-P1", "G3215-CTG"],
           weight: ["G3215-P1"],
@@ -1131,8 +1131,8 @@ const comparison = {
         hasLiver: true,
         weight: "<b>모체 P2 체중</b> CT.gov 블록 참고<br><small>하위 n=98 · 간 endpoint 논문</small>",
         liver: "<b>상대 간지방(MRI-PDFF) 24주</b><br>1 mg −42.9% · 4 mg −57.0%<br>8 mg −81.4% · <b>12 mg −82.4%</b><br>위약 +0.3%<br>정상 간지방(&lt;5%) 도달 24주 12 mg <b>86%</b><br><small>PubMed/Nat Med · 86%=정상 도달 비율(상대감소 아님)</small>",
-        gi: "<span class=\"result-empty\">[1차 미확보]</span><br><small>하위 abstract에 GI 표 없음. 본시험 GI는 Phase 2 비만 블록(CT.gov).</small>",
-        discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>하위 abstract에 AE 중단 표 없음.</small>",
+        gi: "[CT.gov 미분리]<br><small>NCT04881760 Results 는 본시험 전체(n=338) 기준 · MASLD 하위군(n=98) 별도 표 없음 · 본시험 GI 는 Phase 2 비만 블록 참조</small>",
+        discontinuation: "[CT.gov 미분리]<br><small>NCT04881760 Results 는 본시험 전체 기준 · MASLD 하위군 중단률 별도 표 없음</small>",
         refs: {
           trial: ["RT-LIVER-PM", "RT-LIVER-NM", "RT-P2-CTG"],
           weight: ["RT-P2-CTG"],
