@@ -363,6 +363,9 @@ const references = {
   "SV-MASH": ["Sanyal et al. (2024), Phase 2 survodutide in MASH and fibrosis", "New England Journal of Medicine / PubMed", "https://pubmed.ncbi.nlm.nih.gov/38847460/"],
   "SV-SAFETY": ["Zealand Pharma (2026), SYNCHRONIZE-1 safety and body-composition update", "Sponsor primary source", "https://www.globenewswire.com/news-release/2026/06/07/3307740/0/en/zealand-pharma-announces-boehringer-ingelheim-s-survodutide-phase-iii-trial-in-people-living-with-obesity-showed-targeted-34-visceral-and-63-liver-fat-reduction-while-minimizing-le.html"],
   "SV-DEAL": ["Zealand Pharma, Boehringer Ingelheim partnership and survodutide rights", "Sponsor partnering page", "https://www.zealandpharma.com/about-us/partnering/"],
+  "PM-BODYCOMP": ["Altimmune (2024-06-23), MOMENTUM Phase 2 MRI 기반 체성분 전체 분석 (ADA 84th) — 제지방 손실 21.9% · 지방 78.1% · n=50", "Sponsor primary source (T3)", "https://www.globenewswire.com/news-release/2024/06/23/2902705/0/en/Altimmune-Presents-Data-from-Phase-2-MOMENTUM-Trial-of-Pemvidutide-in-Obesity-during-Oral-Presentation-at-the-American-Diabetes-Association-s-84th-Scientific-Sessions.html"],
+  "RT-BODYCOMP": ["Retatrutide 체성분 하위연구 (T2D 시험 NCT04867785, 36주 DXA) — 총지방 −26.1%(8 mg)", "Lancet Diabetes & Endocrinology (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/40609566/"],
+  "NMA-BODYCOMP": ["Comparative effects of drugs for adults with overweight or obesity: 네트워크 메타분석 — tirzepatide 지방 −25.7% · 제지방 −8.3%", "BMJ (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/42419792/"],
   "PM-MOMENTUM": ["Altimmune, MOMENTUM 48-week Phase 2 obesity results", "Sponsor clinical-results deck", "https://ir.altimmune.com/node/15686/pdf"],
   "PM-IMPACT": ["Altimmune (2025), IMPACT Phase 2b pemvidutide MASH topline", "Sponsor primary source", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-positive-topline-results-impact-phase-2b"],
   "PM-ACQ": ["Altimmune (2019), acquisition of Spitfire Pharma and ALT-801", "Sponsor transaction announcement", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-closing-acquisition-spitfire-pharma-inc"],
@@ -577,7 +580,7 @@ const comparison = {
         liver: "<b>간지방 감소 63%</b><br><small>회사 공개 SYNCHRONIZE-1 사전명세 체성분 분석</small>",
         gi: "전체 GI AE<br><b>80.9~89.7%</b>",
         discontinuation: "<b>GI 중단 약 19%</b><br><small>회사 공개 · CT.gov Results 미게시</small>",
-        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        lean: "[CT.gov 미게시]<br><small>SYNCHRONIZE-1 은 lean body volume 을 등록 결과지표로 두고 MRI 체성분 하위연구를 진행 중 · Results 게시되면 채울 수 있다</small>",
         heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["SV-P3"], weight: ["SV-P3"], liver: ["SV-SAFETY"], gi: ["SV-P3"], discontinuation: ["SV-SAFETY"] }
       },
@@ -616,9 +619,9 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
         gi: "오심 31.9%<br>구토 12.9%<br>설사 23.7% · 변비 12.7%<br><small>15 mg군 · CT.gov Results</small>",
         discontinuation: "<b>AE로 인한 치료중단 6.2%</b><br>위약 2.6%<br><small>15 mg군 · 72주 · 피어리뷰(NEJM) 초록 · GI 단독 중단률은 [CT.gov 미분리] — 등록 결과표·초록 모두 GI 사유를 분리하지 않음</small>",
-        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        lean: "[회사 미공개]<br><small>SURMOUNT-1 등록 결과표에 체성분 없음 · 네트워크 메타분석(BMJ)은 지방 −25.7%·제지방 −8.3% 로 추정하나 개별 시험 값이 아니라 통합 추정치라 옮기지 않는다</small>",
         heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
-        refs: { trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-NEJM"] }
+        refs: { lean: ["NMA-BODYCOMP"], trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-NEJM"] }
       },
       {
         id: "surmount2",
@@ -792,9 +795,9 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%<br><small>회사 공개 · CT.gov Results 미게시</small>",
         discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리 · 회사 공개 · CT.gov Results 미게시</small>",
-        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        lean: "<b>제지방 손실 21.9%</b><br>지방 78.1%<br><small>MRI 기반 체성분 분석 · n=50 · 48주 · 전 용량군(1.2·1.8·2.4 mg) 평균 · 회사 공개 · CT.gov Results 미게시</small>",
         heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
-        refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"] }
+        refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"], lean: ["PM-BODYCOMP"] }
       },
       {
         id: "impact",
@@ -1163,7 +1166,7 @@ const comparison = {
         liver: "<span class=\"result-empty\">[회사 미공개]</span><br><small>Lilly TRIUMPH-1 PR에 간 수치 없음. CT.gov Results 미게시. 간은 P2 MASLD 블록.</small>",
         gi: "오심 4/9/12 mg<br><b>28.6% · 38.4% · 42.4%</b> vs 위약 14.8%<br>설사 25.2% · 34.1% · 32.0% vs 13.5%<br>변비 23.8% · 25.9% · 26.1% vs 10.9%<br>구토 10.6% · 22.8% · 25.3% vs 4.8%<br><small>Company PR · CT.gov Results 미게시</small><br>비-GI: dysesthesia 5.1% · 12.3% · 12.5% vs 0.9%",
         discontinuation: "<b>AE 중단</b> 4/9/12 mg<br><b>4.1% · 6.9% · 11.3%</b><br>위약 4.9%<br><small>Company PR · 전체 AE 중단</small><br><span class=\"result-empty\">[회사 미공개]</span> GI 단독 중단%<br><small>동일 PR에 GI-only % 없음 · CT.gov Results 미게시</small>",
-        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        lean: "[회사 미공개]<br><small>TRIUMPH-1 발표 범위에 체성분 없음 · 체성분은 별도 T2D 시험(NCT04867785) 36주 DXA 하위연구로 발표됨 — 다른 시험이라 값을 옮기지 않는다</small>",
         heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["RT-TRIUMPH1", "RT-NCT"],
@@ -1183,13 +1186,14 @@ const comparison = {
         liver: "<span class=\"result-empty\">[CT.gov 본시험 미게시]</span><br><small>본 Results에 MRI-PDFF 표 없음. MASLD 하위는 옆 블록·Nat Med.</small>",
         gi: "오심(≥5% AE 표, CT.gov)<br>12 mg 경로 <b>45.2%</b> (28/62)<br>8 mg(4→8) 60.0% (21/35)<br>4 mg 36.4% (12/33) · 위약 11.4% (8/70)<br>구토 12 mg 19.4% · 8 mg(4→8) 25.7% · 위약 1.4%<br>설사 12 mg 14.5% · 변비 12 mg 16.1%<br><small>ClinicalTrials.gov other AE · freq threshold 5%</small>",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>12 mg 경로 2/62 (3.2%) · 8 mg 암 각 1<br>1 mg 1/69 · 위약 0/70<br><small>CT.gov drop reason = Adverse Event</small><br><span class=\"result-empty\">[CT.gov 미분리]</span> GI 단독 중단%",
-        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        lean: "[CT.gov 미분리]<br><small>등록 결과표에 체성분 열 없음 · 체성분은 별도 T2D 시험(NCT04867785) 하위연구로 발표(총지방 −26.1%, 8 mg 통합) — 다른 시험</small>",
         heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["RT-P2-CTG"],
           weight: ["RT-P2-CTG"],
           gi: ["RT-P2-CTG"],
-          discontinuation: ["RT-P2-CTG"]
+          discontinuation: ["RT-P2-CTG"],
+          lean: ["RT-BODYCOMP"]
         }
       },
       {
