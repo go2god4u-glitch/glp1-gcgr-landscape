@@ -344,6 +344,8 @@ events.push(
 );
 
 const references = {
+  "TZ-NEJM": ["Jastreboff et al. (2022), Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1)", "New England Journal of Medicine (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/35658024/"],
+  "TZ-LANCET": ["Garvey et al. (2023), Tirzepatide once weekly in obesity with type 2 diabetes (SURMOUNT-2)", "Lancet (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/37385275/"],
   "TZ-SURMOUNT1": ["Eli Lilly, SURMOUNT-1 (NCT04184622) CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04184622?tab=results"],
   "TZ-SURMOUNT2": ["Eli Lilly, SURMOUNT-2 (NCT04657003) CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04657003?tab=results"],
   "EN-P2PR": ["Roche (2026-01-27), CT-388(enicepatide) Phase II 비만 결과 발표", "Sponsor primary source (T3)", "https://www.roche.com/media/releases/med-cor-2026-01-27"],
@@ -425,7 +427,7 @@ const references = {
 };
 
 const assetReferenceMap = {
-  Tirzepatide: ["TZ-SURMOUNT1", "TZ-SURMOUNT2"],
+  Tirzepatide: ["TZ-SURMOUNT1", "TZ-SURMOUNT2", "TZ-NEJM", "TZ-LANCET"],
   Enicepatide: ["EN-P2PR", "EN-P3"],
   VK2735: ["VK-VENTURE", "VK-P3"],
   Ribupatide: ["RB-ORAL", "RB-P3"],
@@ -596,8 +598,8 @@ const comparison = {
         weight: "<b>Tirzepatide −22.5%</b><br>위약 −2.4%<br><small>15 mg · 72주 · n=2539 · CT.gov Results</small>",
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
         gi: "오심 31.9%<br>구토 12.9%<br>설사 23.7% · 변비 12.7%<br><small>15 mg군 · CT.gov Results</small>",
-        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표는 연구중단 사유만 제시. 치료중단·GI 단독 중단 열 없음</small>",
-        refs: { trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-SURMOUNT1"] }
+        discontinuation: "<b>AE로 인한 치료중단 6.2%</b><br>위약 2.6%<br><small>15 mg군 · 72주 · 피어리뷰(NEJM) 초록 · GI 단독 중단률은 [CT.gov 미분리] — 등록 결과표·초록 모두 GI 사유를 분리하지 않음</small>",
+        refs: { trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-NEJM"] }
       },
       {
         id: "surmount2",
@@ -608,8 +610,8 @@ const comparison = {
         weight: "<b>Tirzepatide −15.7%</b><br>위약 −3.3%<br><small>15 mg · 72주 · n=938 · CT.gov Results</small>",
         liver: "[회사 미공개]<br><small>본시험에 간 지표 없음</small>",
         gi: "오심 21.9%<br>구토 12.9%<br>설사 21.2% · 변비 9.0%<br><small>15 mg군 · CT.gov Results</small>",
-        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표에 치료중단·GI 단독 중단 열 없음</small>",
-        refs: { trial: ["TZ-SURMOUNT2"], weight: ["TZ-SURMOUNT2"], gi: ["TZ-SURMOUNT2"], discontinuation: ["TZ-SURMOUNT2"] }
+        discontinuation: "<b>AE로 인한 치료중단 &lt;5%</b><br><small>전체 tirzepatide군 · 피어리뷰(Lancet) 초록은 상한값만 제시 · 용량별·GI 단독 중단률은 [CT.gov 미분리]</small>",
+        refs: { trial: ["TZ-SURMOUNT2"], weight: ["TZ-SURMOUNT2"], gi: ["TZ-SURMOUNT2"], discontinuation: ["TZ-LANCET"] }
       }
     ],
     rightsRefs: ["TZ-SURMOUNT1"]
