@@ -495,6 +495,13 @@ const COMPARISON_FIELD_BINDING = {
   liver: { trialDependent: true, role: "result", label: "간 약효", note: "간 약효 = 선택 임상" },
   gi: { trialDependent: true, role: "result", label: "GI 안전성", note: "GI 발생 = 선택 임상" },
   discontinuation: { trialDependent: true, role: "result", label: "중단", note: "치료/GI 중단 = 선택 임상" },
+  // 2026-07-27 추가. 근거: 이 두 지표는 GCGR 계열의 핵심 차별점이자 핵심 리스크다.
+  //  lean      GLP-1 단독 대비 제지방 보존이 GCGR 병용의 주된 주장. Survodutide SYNCHRONIZE-1 은
+  //            lean body volume 을 등록 결과지표로 두고 있다(NCT06066515).
+  //  heartRate 원장의 중단 자산 중 NN1177·SAR425899 가 심박수 증가를 사유로 개발이 멈췄다.
+  //            체중효능만 보면 왜 멈췄는지 표에서 읽히지 않는다.
+  lean: { trialDependent: true, role: "result", label: "제지방·체성분", note: "제지방/체지방 변화 = 선택 임상" },
+  heartRate: { trialDependent: true, role: "result", label: "심박수", note: "심박수 변화 = 선택 임상. GCGR 계열 안전성 축" },
   rights: { trialDependent: false, role: "asset", note: "기원/권리" },
   next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위, 등록 감시 부가)" },
   nextNcts: { trialDependent: false, role: "asset", note: "다음 확인 NCT" },
@@ -542,6 +549,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
         discontinuation: "<b>GI 중단 0.3%</b>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["MZ-GLORY2"], weight: ["MZ-GLORY2"], gi: ["MZ-GLORY2"], discontinuation: ["MZ-GLORY2"] }
       }
     ],
@@ -564,6 +573,8 @@ const comparison = {
         liver: "<b>간지방 감소 63%</b><br><small>회사 공개 SYNCHRONIZE-1 사전명세 체성분 분석</small>",
         gi: "전체 GI AE<br><b>80.9~89.7%</b>",
         discontinuation: "<b>GI 중단 약 19%</b><br><small>회사 공개 · CT.gov Results 미게시</small>",
+        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["SV-P3"], weight: ["SV-P3"], liver: ["SV-SAFETY"], gi: ["SV-P3"], discontinuation: ["SV-SAFETY"] }
       },
       {
@@ -577,6 +588,8 @@ const comparison = {
         liver: "<b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>Sanyal et al. NEJM · PubMed 초록</small>",
         gi: "오심 66% vs 위약 23%<br>설사 49% vs 23%<br>구토 41% vs 4%<br><small>MASH P2 보고</small>",
         discontinuation: "[CT.gov 미분리]<br><small>등록 결과표에 치료중단 열 없음</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: { trial: ["SV-MASH"], weight: ["SV-MASH"], liver: ["SV-MASH"], gi: ["SV-MASH"], discontinuation: ["SV-MASH"] }
       }
     ],
@@ -599,6 +612,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
         gi: "오심 31.9%<br>구토 12.9%<br>설사 23.7% · 변비 12.7%<br><small>15 mg군 · CT.gov Results</small>",
         discontinuation: "<b>AE로 인한 치료중단 6.2%</b><br>위약 2.6%<br><small>15 mg군 · 72주 · 피어리뷰(NEJM) 초록 · GI 단독 중단률은 [CT.gov 미분리] — 등록 결과표·초록 모두 GI 사유를 분리하지 않음</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: { trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-NEJM"] }
       },
       {
@@ -611,6 +626,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>본시험에 간 지표 없음</small>",
         gi: "오심 21.9%<br>구토 12.9%<br>설사 21.2% · 변비 9.0%<br><small>15 mg군 · CT.gov Results</small>",
         discontinuation: "<b>AE로 인한 치료중단 &lt;5%</b><br><small>전체 tirzepatide군 · 피어리뷰(Lancet) 초록은 상한값만 제시 · 용량별·GI 단독 중단률은 [CT.gov 미분리]</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: { trial: ["TZ-SURMOUNT2"], weight: ["TZ-SURMOUNT2"], gi: ["TZ-SURMOUNT2"], discontinuation: ["TZ-LANCET"] }
       }
     ],
@@ -633,6 +650,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>발표 범위에 간 지표 없음</small>",
         gi: "[회사 미공개]<br><small>\'대부분 경증~중등도\' 로만 기술, 발생률 수치 없음</small>",
         discontinuation: "<b>AE로 인한 치료중단 5.9%</b><br>위약 1.3%<br><small>회사 공개 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["EN-P2PR"], weight: ["EN-P2PR"], discontinuation: ["EN-P2PR"] }
       }
     ],
@@ -655,7 +674,9 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
         gi: "오심 63%<br>구토 29%<br>설사 11% · 변비 29%<br><small>15 mg군(n=35) · 위약 오심 20% · 전체 GI 83% vs 위약 37% · 피어리뷰 전문 Table 3</small>",
         discontinuation: "<b>AE로 인한 치료중단 20%</b><br>위약 0%<br><small>15 mg군(n=35) · 피어리뷰 전문 Table 3</small>",
-        refs: { trial: ["VK-VENTURE"], weight: ["VK-VENTURE"], gi: ["VK-VENTURE"], discontinuation: ["VK-VENTURE"] }
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "<b>+6.9 bpm</b> (15 mg)<br>위약 +1.4 bpm<br><small>10 mg +9.3 · 5 mg +6.1 · 2.5 mg +3.3 bpm · 13주 · 피어리뷰 전문 Table 5 (오픈액세스)</small>",
+        refs: { trial: ["VK-VENTURE"], weight: ["VK-VENTURE"], gi: ["VK-VENTURE"], discontinuation: ["VK-VENTURE"], heartRate: ["VK-VENTURE"] }
       },
       {
         id: "ventureoral",
@@ -667,6 +688,8 @@ const comparison = {
         liver: "[회사 미공개]",
         gi: "[1차 미확보]<br><small>경구 코호트 GI 발생률 공개 확인 안 됨</small>",
         discontinuation: "[1차 미확보]<br><small>경구 코호트 중단률 공개 확인 안 됨</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["VK-P3"] }
       }
     ],
@@ -689,6 +712,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>발표 범위에 간 지표 없음</small>",
         gi: "오심 22.7%<br>구토 11.4%<br><small>25 mg군 · 회사 공개 · CT.gov Results 미게시</small>",
         discontinuation: "<b>GI 사유 영구 중단 0건</b><br><small>용량 감량도 보고되지 않음 · 회사 공개 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["RB-ORAL"], weight: ["RB-ORAL"], gi: ["RB-ORAL"], discontinuation: ["RB-ORAL"] }
       },
       {
@@ -701,6 +726,8 @@ const comparison = {
         liver: "[회사 미공개]",
         gi: "[1차 미확보]<br><small>주사 Phase 2 GI 발생률 1차 미확인</small>",
         discontinuation: "[1차 미확보]<br><small>주사 Phase 2 중단률 1차 미확인</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["RB-P3"] }
       }
     ],
@@ -723,6 +750,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
         gi: "[1차 미확보]<br><small>NEJM 전문 비공개 · PMC 미등재(2026-07-27 확인). 초록은 'GI 흔함' 으로만 기술</small>",
         discontinuation: "[1차 미확보]<br><small>NEJM 전문 비공개 · PMC 미등재(2026-07-27 확인). CT.gov Results 미게시</small>",
+        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["MT-NEJM"], weight: ["MT-NEJM"] }
       },
       {
@@ -735,6 +764,8 @@ const comparison = {
         liver: "[회사 미공개]",
         gi: "[1차 미확보]<br><small>초록에 코호트별 GI 발생률 없음</small>",
         discontinuation: "[1차 미확보]<br><small>초록에 코호트별 중단률 없음</small>",
+        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["MT-NEJM"], weight: ["MT-NEJM"] }
       }
     ],
@@ -757,6 +788,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%<br><small>회사 공개 · CT.gov Results 미게시</small>",
         discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리 · 회사 공개 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"] }
       },
       {
@@ -770,6 +803,8 @@ const comparison = {
         // GI AE 발생률(오심·구토 등) topline 요약 없음 → null. 중단율은 discontinuation만.
         gi: "[1차 미확보]<br><small>해당 임상 GI 발생률 공개 확인 안 됨</small>",
         discontinuation: "<b>AE 관련 중단</b><br>1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%<br><small>IMPACT 회사 topline</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[CT.gov 미게시]<br><small>심박수 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
         refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
       }
     ],
@@ -792,6 +827,8 @@ const comparison = {
         liver: "<b>Efinopegdutide 상대 간지방 감소 72.7%</b><br>Semaglutide 42.3%<br>절대 감소: Efinopegdutide 14.9%p · Semaglutide 8.8%p<br><small>MRI-PDFF primary · CT.gov 결과 · 조직학 endpoint 아님</small>",
         gi: "오심 27.8%<br>구토·설사·변비 각 16.7%",
         discontinuation: "<b>전체 치료중단 5.6%</b><br><small>GI 미분리</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: { trial: ["EF-P2"], weight: ["EF-P2"], liver: ["EF-P2"], gi: ["EF-P2"], discontinuation: ["EF-P2"] }
       }
     ],
@@ -814,6 +851,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · GI 발생률 없음</small>",
         discontinuation: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · 치료중단률 없음</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["AZ-ASCEND"], weight: ["AZ-ASCEND"], gi: ["AZ-ASCEND"], discontinuation: ["AZ-ASCEND"] }
       }
     ],
@@ -836,6 +875,8 @@ const comparison = {
         liver: "<b>섬유화 ≥1단계 개선(MASH 비악화) 50.0%</b><br>위약 15.8%<br><b>MASH 해소(섬유화 비악화) 62.5%</b><br>위약 5.3%<br>둘 다 달성 37.5% · 위약 5.3%<br><small>Week 48 · paired biopsy n=35 (40 mg 16 / 위약 19) · 회사 공개</small>",
         gi: "전체 GI disorder<br><b>79% vs 44%</b><br><small>회사 공개 · CT.gov Results 미게시</small>",
         discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set · 회사 공개 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["DD-P2"], weight: ["DD-P2"], liver: ["DD-P2"], gi: ["DD-P2"], discontinuation: ["DD-P2"] }
       }
     ],
@@ -857,6 +898,8 @@ const comparison = {
         liver: "[1차 미확보]<br><small>간 지표 공개 여부 미확인</small>",
         gi: "[1차 미확보]<br><small>NCT 식별 안 됨 · 안전성 수치 1차 출처 미확보</small>",
         discontinuation: "[1차 미확보]<br><small>NCT 식별 안 됨 · 중단률 1차 출처 미확보</small>",
+        lean: "[1차 미확보]<br><small>등록 NCT 미식별 · 제지방·체성분 공개 여부 확인 안 됨</small>",
+        heartRate: "[1차 미확보]<br><small>등록 NCT 미식별 · 심박수 공개 여부 확인 안 됨</small>",
         refs: { trial: ["CMS-ANNUAL"], weight: ["CMS-ANNUAL"], gi: ["CMS-ANNUAL"], discontinuation: ["CMS-ANNUAL"] }
       }
     ],
@@ -879,6 +922,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "GI disorder 5/6<br>구토 5/6 · 오심 3/6<br><small>소표본 해석 주의</small>",
         discontinuation: "<b>GI 중단 0/6</b>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["DA-STATUS"], weight: ["DA-DATA"], gi: ["DA-DATA"], discontinuation: ["DA-DATA"] }
       }
     ],
@@ -901,6 +946,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "공개 세부값 제한",
         discontinuation: "[1차 미확보]<br><small>중단률 공개 확인 안 됨</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: { trial: ["PB-ABSTRACT"], weight: ["PB-ABSTRACT"], gi: ["PB-ABSTRACT"], discontinuation: ["PB-ABSTRACT"] }
       }
     ],
@@ -925,6 +972,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>T2D 본시험이라 간 결과지표 없음 · CT.gov 결과지표 13개 전부 HbA1c·체중·PK</small>",
         gi: "오심<br>300 μg <b>41.0%</b> (105/256) · 200 μg 33.2% (85/256)<br>100 μg 23.0% (23/100) · 위약 10.7% (12/112)<br>구토 300 μg 16.8% (43/256) · 200 μg 19.9% (51/256)<br>설사 300 μg 10.9% (28/256) · 200 μg 19.1% (49/256)<br><small>CT.gov Results · other AE</small><br>논문 요약(용량 통합): 오심 35% · 구토 17%",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>300 μg 1/256 · 200 μg 4/256 · 100 μg 1/100<br>위약 0/112 · 리라글루타이드 0/110<br><small>CT.gov drop reason = Adverse Event · GI 단독 미분리</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["COT-CTG", "COT-54W"],
           weight: ["COT-CTG"],
@@ -943,6 +992,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "GI 장애 72% (18/25) vs 위약 40% (13/26)<br>식욕감소 20% vs 0%<br><small>Lancet · TEAE</small>",
         discontinuation: "AE로 중단<br>MEDI0382 3/25 · 위약 1/26<br><small>Lancet phase 2a</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["COT-P2", "COT-P2A-CTG"],
           weight: ["COT-P2", "COT-P2A-CTG"],
@@ -971,6 +1022,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[1차 미확보]</span> 간지방 약효<br><small>AST/ALT 상승은 안전 신호로 보고(약효 간 endpoint 아님)</small>",
         gi: "GI 관련 TEAE <b>67.1%</b> vs 위약 30.4%<br>오심·구토가 주된 증상<br>예: 4200 μg 오심 65% (13/20) · 구토 50% (10/20)<br><small>Mol Metab MAD 표 · CT.gov Results 미게시</small>",
         discontinuation: "<b>조기 탈락 유발 이벤트</b><br>4200 μg 6/20 (30%) · 6000 μg 3/9 (33%)<br>저용량 군 0–11%<br><small>MAD · TEAE leading to withdrawal · Mol Metab</small><br><span class=\"result-empty\">[CT.gov 미분리]</span> GI 단독 중단%",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["NN-P1", "NN-MAD-CTG"],
           weight: ["NN-P1"],
@@ -998,6 +1051,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심<br>0.12 mg 45.8% (33/72) · 0.16 mg <b>55.9%</b> (33/59)<br>0.20 mg 55.3% (26/47) · 위약 15.2% (5/33)<br>구토 0.12 29.2% · 0.16 23.7% · 0.20 36.2% · 위약 6.1%<br>설사 0.12 20.8% · 0.16 18.6% · 0.20 19.1% · 위약 6.1%<br><small>CT.gov Results · other AE ≥5%</small>",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>0.12 mg 10/66 (15.2%) · 0.16 mg 11/66 (16.7%)<br>0.20 mg 13/64 (20.3%) · 위약 1/33 (3.0%)<br>리라글루타이드 3/67 (4.5%)<br><small>CT.gov · GI 단독 미분리</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["SAR-CTG", "SAR-P1"],
           weight: ["SAR-CTG"],
@@ -1015,6 +1070,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "가장 흔한 AE: 위장관<br>T2D 환자에서 HV보다 GI 부작용 덜함<br><small>Tillner et al. abstract · 개별 % 표는 abstract 미기재</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토 개별 %",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>abstract에 AE 중단 % 표 없음 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["SAR-P1"],
           weight: ["SAR-P1"],
@@ -1042,6 +1099,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 <b>38.9%</b> (28/72) vs 위약 4.9% (2/41)<br>구토 26.4% (19/72) vs 2.4% (1/41)<br>설사 12.5% (9/72) vs 7.3% (3/41)<br><small>CT.gov Results · other AE</small>",
         discontinuation: "미완료 21/72 (약물) · 16/41 (위약)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 drop reason 미게시</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["OPK-TRIAL"],
           weight: ["OPK-TRIAL"],
@@ -1069,6 +1128,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 10/12<br>구토 7/12<br>위약 0/4<br><small>주입 코호트(C) 합산(83% · 58%) · CT.gov Results AE 표 · 용량군마다 n=2~3 소표본이라 합산 표기</small>",
         discontinuation: "[CT.gov 미분리]<br><small>등록 결과표는 전체기간 1개 구간만 제시 · 치료중단·GI 단독 중단 열 없음</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["G3215-P1", "G3215-CTG"],
           weight: ["G3215-P1"],
@@ -1098,6 +1159,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[회사 미공개]</span><br><small>Lilly TRIUMPH-1 PR에 간 수치 없음. CT.gov Results 미게시. 간은 P2 MASLD 블록.</small>",
         gi: "오심 4/9/12 mg<br><b>28.6% · 38.4% · 42.4%</b> vs 위약 14.8%<br>설사 25.2% · 34.1% · 32.0% vs 13.5%<br>변비 23.8% · 25.9% · 26.1% vs 10.9%<br>구토 10.6% · 22.8% · 25.3% vs 4.8%<br><small>Company PR · CT.gov Results 미게시</small><br>비-GI: dysesthesia 5.1% · 12.3% · 12.5% vs 0.9%",
         discontinuation: "<b>AE 중단</b> 4/9/12 mg<br><b>4.1% · 6.9% · 11.3%</b><br>위약 4.9%<br><small>Company PR · 전체 AE 중단</small><br><span class=\"result-empty\">[회사 미공개]</span> GI 단독 중단%<br><small>동일 PR에 GI-only % 없음 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["RT-TRIUMPH1", "RT-NCT"],
           weight: ["RT-TRIUMPH1"],
@@ -1116,6 +1179,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[CT.gov 본시험 미게시]</span><br><small>본 Results에 MRI-PDFF 표 없음. MASLD 하위는 옆 블록·Nat Med.</small>",
         gi: "오심(≥5% AE 표, CT.gov)<br>12 mg 경로 <b>45.2%</b> (28/62)<br>8 mg(4→8) 60.0% (21/35)<br>4 mg 36.4% (12/33) · 위약 11.4% (8/70)<br>구토 12 mg 19.4% · 8 mg(4→8) 25.7% · 위약 1.4%<br>설사 12 mg 14.5% · 변비 12 mg 16.1%<br><small>ClinicalTrials.gov other AE · freq threshold 5%</small>",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>12 mg 경로 2/62 (3.2%) · 8 mg 암 각 1<br>1 mg 1/69 · 위약 0/70<br><small>CT.gov drop reason = Adverse Event</small><br><span class=\"result-empty\">[CT.gov 미분리]</span> GI 단독 중단%",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["RT-P2-CTG"],
           weight: ["RT-P2-CTG"],
@@ -1133,6 +1198,8 @@ const comparison = {
         liver: "<b>상대 간지방(MRI-PDFF) 24주</b><br>1 mg −42.9% · 4 mg −57.0%<br>8 mg −81.4% · <b>12 mg −82.4%</b><br>위약 +0.3%<br>정상 간지방(&lt;5%) 도달 24주 12 mg <b>86%</b><br><small>PubMed/Nat Med · 86%=정상 도달 비율(상대감소 아님)</small>",
         gi: "[CT.gov 미분리]<br><small>NCT04881760 Results 는 본시험 전체(n=338) 기준 · MASLD 하위군(n=98) 별도 표 없음 · 본시험 GI 는 Phase 2 비만 블록 참조</small>",
         discontinuation: "[CT.gov 미분리]<br><small>NCT04881760 Results 는 본시험 전체 기준 · MASLD 하위군 중단률 별도 표 없음</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["RT-LIVER-PM", "RT-LIVER-NM", "RT-P2-CTG"],
           weight: ["RT-P2-CTG"],
@@ -1161,6 +1228,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[회사 미공개]</span><br><small>Novo REDEFINE 1 PR·CT.gov Results(미게시)에 간 핵심 수치 없음</small>",
         gi: "전체 GI AE <b>79.6%</b> vs 위약 39.9%<br>오심 55% vs 12.6%<br>변비 30.7% vs 11.6%<br>구토 26.1% vs 4.1%<br><small>Company PR (NEJM 동시) · CT.gov Results 미게시</small>",
         discontinuation: "<b>AE 중단 6%</b> vs 위약 3.7%<br><small>Company PR · 전체 AE 중단</small><br><span class=\"result-empty\">[회사 미공개]</span> GI 단독 중단%",
+        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["CS-REDEFINE1", "CS-NCT", "CS-SAFETY"],
           weight: ["CS-REDEFINE1", "CS-SAFETY"],
@@ -1178,6 +1247,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[회사 미공개]</span><br><small>REDEFINE 2 PR에 간 약효 수치 없음</small>",
         gi: "REDEFINE 1과 유사하다고 PR에 명시<br><span class=\"result-empty\">[회사 미공개]</span> R2 단독 GI % 표<br><small>CT.gov Results 미게시 · PR에 R2 세부 GI 표 없음</small>",
         discontinuation: "<b>AE 중단 8.4%</b> vs 위약 3%<br><small>Company PR</small><br><span class=\"result-empty\">[회사 미공개]</span> GI 단독 중단%",
+        lean: "[1차 미확보]<br><small>등록 NCT 미식별 · 제지방·체성분 공개 여부 확인 안 됨</small>",
+        heartRate: "[1차 미확보]<br><small>등록 NCT 미식별 · 심박수 공개 여부 확인 안 됨</small>",
         refs: {
           trial: ["CS-SAFETY"],
           weight: ["CS-SAFETY"],
@@ -1205,6 +1276,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[회사·Lancet abstract 미공개]</span><br><small>abstract·Novo 보도·CT.gov Results(미게시)에 간 수치 없음</small>",
         gi: "가장 흔한 TEAE: 위장관(오심·구토·설사 등)<br>대부분 경증~중등도 · 용량 의존 · 종료 시 해소 경향<br><small>Lancet abstract</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토·설사 개별 %",
         discontinuation: "중도 탈락 다수 · 상당수가 TEAE 무관 사유<br><small>Lancet abstract</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 AE 중단%",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["ZN-LANCET", "ZN-NCT"],
           weight: ["ZN-LANCET"],
@@ -1233,6 +1306,8 @@ const comparison = {
         liver: "<span class=\"result-empty\">[1차 미공개]</span><br><small>CT.gov Results·Lancet에 간 약효 수치 없음</small>",
         gi: "오심<br>1 mg 10.7% (3/28) · 3 mg 12.5% (3/24)<br>6 mg <b>64.3%</b> (18/28) · 9 mg 33.3% (18/54)<br>6/9 mg 54.2% (13/24) · 3/6/9 mg 25.0% (13/52)<br>위약 13.2% (7/53)<br>구토 6 mg 25.0% · 9 mg 11.1% · 위약 0%<br>설사 6 mg 35.7% · 9 mg 11.1% · 위약 9.4%<br>변비 9 mg 24.1% · 위약 5.7%<br>피로 9 mg 42.6% · 6/9 mg 45.8% · 위약 11.3%<br><small>CT.gov Results · AE ≥5%</small>",
         discontinuation: "<b>AE leading to discontinuation</b><br>위약 8% · 1 mg 11% · 3 mg 0% · <b>6 mg 21%</b><br>9 mg 7% · 6–9 mg 8% · 3–9 mg 12%<br>eloralintide 전 용량 합계 10% (21/208)<br><small>Billings et al. Lancet · NCT06230523</small><br><span class=\"result-empty\">[1차 미분리]</span> GI 단독 중단%",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["EL-CTG", "EL-LANCET"],
           weight: ["EL-CTG"],
@@ -1261,6 +1336,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "가장 흔한 AE: 위장관 (대부분 경증)<br>구토: 전 용량 합이 위약보다 낮음 · 최대 유효 용량 암 <b>구토 0</b><br>설사·변비: 위약과 유사 (한 자리 %대)<br>오심: P1b(2주 증량)보다 감소 · 유지 용량 도달 후 거의 없음<br><span class=\"result-empty\">[회사 미공개]</span> 용량별 오심 % 표<br><small>Roche PR · CT.gov Results 미게시</small>",
         discontinuation: "<b>AE 중단</b> 최대 유효 용량 암 <b>4.8%</b> vs 위약 4.9%<br>GI AE로 인한 중단: 최대 유효 용량 암 0 (회사 명시)<br>임의 사유 철회 8.4% (약물 암 합) vs 위약 13.6%<br><small>Roche PR · GI 단독 중단은 0건으로 명시된 용량 암 기준</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["PT-ROCHE", "PT-NCT"],
           weight: ["PT-ROCHE"],
@@ -1288,6 +1365,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "<span class=\"result-empty\">[1차 미확보]</span> 용량별 GI % 표<br><small>P1 공개 요약: 오심·구토·식욕감소가 위약 대비 더 흔함(세부 % 미확보)</small>",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>CT.gov Results 미게시 · AE 중단 % 1차 표 없음</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["AZ-6234-APRICUS"],
           weight: ["AZ-6234-APRICUS"],
@@ -1305,6 +1384,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심·구토·식욕감소가 주된 AE 경향<br>중대한 사망·SAE 없음 (P1 요약)<br><span class=\"result-empty\">[1차 미확보]</span> 개별 % 표",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["AZ-6234-P1"],
           weight: ["AZ-6234-P1"],
@@ -1332,6 +1413,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심<br>4.5 mg <b>46.5%</b> (47/101) · 2.4 mg 31.4% (32/102)<br>1.2 mg 36.3% · 0.6 mg 27.0% · 위약 17.8% (18/101)<br>구토 4.5 mg 7.9% · 2.4 mg 8.8% · 위약 3.0%<br>설사 2.4 mg 17.6% · 4.5 mg 6.9% · 위약 8.9%<br>변비 4.5 mg 20.8% · 2.4 mg 16.7% · 위약 6.9%<br><small>CT.gov Results · other AE</small>",
         discontinuation: "전체 중도 철회 약 4% (논문 보고 n=29)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 AE drop reason 미게시 · Lau et al. Lancet</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["CG-P2-CTG", "CG-P2-LANCET"],
           weight: ["CG-P2-CTG"],
@@ -1349,6 +1432,8 @@ const comparison = {
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "CagriSema 행의 복합 GI와 분리된 단독 암 세부 표는 별도<br><span class=\"result-empty\">[1차 미확보]</span> 단독 암 오심·구토 % 표<br><small>복합제 전체 GI 79.6%는 CagriSema 블록 참고</small>",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span> 단독 암 AE 중단 % 표<br><small>복합 프로그램 PR·논문은 CagriSema 중심</small>",
+        lean: "[CT.gov 미게시]<br><small>제지방·체성분 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
         refs: {
           trial: ["CG-REDEFINE-MONO", "CS-NCT"],
           weight: ["CG-REDEFINE-MONO"],
