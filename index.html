@@ -106,11 +106,12 @@
               <th data-column-key="stage" data-trial-binding="asset">현재 단계</th>
               <th data-column-key="indication" data-trial-binding="asset">주요 적응증</th>
               <th data-column-key="trial" data-trial-binding="selection">핵심 임상</th>
+              <!-- 결과 열 순서 = 약효 → 안전성. app.js COMPARISON_FIELD_BINDING 과 같은 순서로 유지한다. -->
               <th data-column-key="weight" data-trial-binding="dependent">체중효능: 시험약 / 대조군</th>
+              <th data-column-key="lean" data-trial-binding="dependent">제지방 / 체성분</th>
               <th data-column-key="liver" data-trial-binding="dependent">간 약효: 간지방 / 조직학</th>
               <th data-column-key="gi" data-trial-binding="dependent">GI 안전성</th>
               <th data-column-key="discontinuation" data-trial-binding="dependent">GI/치료 중단</th>
-              <th data-column-key="lean" data-trial-binding="dependent">제지방 / 체성분</th>
               <th data-column-key="heartRate" data-trial-binding="dependent">심박수</th>
               <th data-column-key="rights" data-trial-binding="asset">기원 / 권리 이력</th>
               <!-- next는 자산 단위(+등록 감시). 선택 임상 결과 스탬프 대상 아님 -->

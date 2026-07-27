@@ -491,16 +491,20 @@ const COMPARISON_FIELD_BINDING = {
   stage: { trialDependent: false, role: "asset", note: "현재 단계" },
   indication: { trialDependent: false, role: "asset", note: "포트폴리오 적응증 요약" },
   trial: { trialDependent: false, role: "selection", note: "핵심 임상 선택(결과의 유일한 키)" },
+  // ★ 결과 열 순서 = 약효 → 안전성 (2026-07-28 사용자 지시).
+  //   TRIAL_RESULT_KEYS 가 이 객체의 키 순서를 그대로 따르므로,
+  //   여기 순서가 표·엑셀·미리보기의 열 순서를 결정한다. index.html thead 와 반드시 같게 유지한다.
+  //   [약효] 체중 · 제지방 · 간   |   [안전성] GI · 중단 · 심박수
   weight: { trialDependent: true, role: "result", label: "체중효능", note: "체중효능 = 선택 임상" },
+  // lean: 체중과 함께 읽어야 의미가 있다(같은 감량폭이라도 제지방 보존은 다르다).
+  //   GLP-1 단독 대비 제지방 보존이 GCGR 병용의 주된 주장.
+  //   Survodutide SYNCHRONIZE-1 이 lean body volume 을 등록 결과지표로 둔다(NCT06066515).
+  lean: { trialDependent: true, role: "result", label: "제지방·체성분", note: "제지방/체지방 변화 = 선택 임상. 체중과 함께 읽는다" },
   liver: { trialDependent: true, role: "result", label: "간 약효", note: "간 약효 = 선택 임상" },
   gi: { trialDependent: true, role: "result", label: "GI 안전성", note: "GI 발생 = 선택 임상" },
   discontinuation: { trialDependent: true, role: "result", label: "중단", note: "치료/GI 중단 = 선택 임상" },
-  // 2026-07-27 추가. 근거: 이 두 지표는 GCGR 계열의 핵심 차별점이자 핵심 리스크다.
-  //  lean      GLP-1 단독 대비 제지방 보존이 GCGR 병용의 주된 주장. Survodutide SYNCHRONIZE-1 은
-  //            lean body volume 을 등록 결과지표로 두고 있다(NCT06066515).
-  //  heartRate 원장의 중단 자산 중 NN1177·SAR425899 가 심박수 증가를 사유로 개발이 멈췄다.
-  //            체중효능만 보면 왜 멈췄는지 표에서 읽히지 않는다.
-  lean: { trialDependent: true, role: "result", label: "제지방·체성분", note: "제지방/체지방 변화 = 선택 임상" },
+  // heartRate: 원장의 중단 자산 NN1177·SAR425899 가 심박수 증가를 사유로 개발이 멈췄다.
+  //   체중효능만 보면 왜 멈췄는지 표에서 읽히지 않는다.
   heartRate: { trialDependent: true, role: "result", label: "심박수", note: "심박수 변화 = 선택 임상. GCGR 계열 안전성 축" },
   rights: { trialDependent: false, role: "asset", note: "기원/권리" },
   next: { trialDependent: false, role: "asset", note: "다음 확인사항(자산 단위, 등록 감시 부가)" },
@@ -2692,10 +2696,10 @@ const EXCEL_COL_LAYOUT = {
   indication: { width: 22 },
   trial: { width: 28 },
   weight: { width: 34 },
+  lean: { width: 30 },
   liver: { width: 34 },
   gi: { width: 30 },
   discontinuation: { width: 30 },
-  lean: { width: 30 },
   heartRate: { width: 26 },
   rights: { width: 26 },
   next: { width: 28 }
