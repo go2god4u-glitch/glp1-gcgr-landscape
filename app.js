@@ -539,7 +539,7 @@ const comparison = {
         nct: "NCT06164873",
         hasLiver: false,
         weight: "<b>Mazdutide −18.55%</b><br>위약 −3.02%<br><small>전체 efficacy estimand · 비당뇨 하위군 −20.08%</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "구토 53.1%<br>오심 46.9%<br>설사 39.4%",
         discontinuation: "<b>GI 중단 0.3%</b>",
         refs: { trial: ["MZ-GLORY2"], weight: ["MZ-GLORY2"], gi: ["MZ-GLORY2"], discontinuation: ["MZ-GLORY2"] }
@@ -573,10 +573,10 @@ const comparison = {
         nct: "NCT04771273",
         hasLiver: true,
         // 이 임상에 체중·GI중단 공개 요약이 없으면 null → 선택 임상 기준 공개값 없음
-        weight: null,
+        weight: "[회사 미공개]<br><small>간 조직학 본시험이라 체중 결과지표 없음 · CT.gov 결과지표 12개 전부 간 항목</small>",
         liver: "<b>MASH 개선(섬유화 비악화)</b><br>Survodutide 2.4 mg 47% · 4.8 mg 62% · 6.0 mg 43%<br>위약 14%<br>MRI-PDFF ≥30% 감소<br>2.4 mg 63% · 4.8 mg 67% · 6.0 mg 57% · 위약 14%<br>섬유화 ≥1단계 개선<br>2.4 mg 34% · 4.8 mg 36% · 6.0 mg 34% · 위약 22%<br><small>Sanyal et al. NEJM · PubMed 초록</small>",
         gi: "오심 66% vs 위약 23%<br>설사 49% vs 23%<br>구토 41% vs 4%<br><small>MASH P2 보고</small>",
-        discontinuation: null,
+        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표에 치료중단 열 없음</small>",
         refs: { trial: ["SV-MASH"], weight: ["SV-MASH"], liver: ["SV-MASH"], gi: ["SV-MASH"], discontinuation: ["SV-MASH"] }
       }
     ],
@@ -754,7 +754,7 @@ const comparison = {
         nct: "NCT05295875",
         hasLiver: false,
         weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주 · 회사 공개 · CT.gov Results 미게시</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%<br><small>회사 공개 · CT.gov Results 미게시</small>",
         discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리 · 회사 공개 · CT.gov Results 미게시</small>",
         refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"] }
@@ -768,7 +768,7 @@ const comparison = {
         weight: "<b>Pemvidutide 1.2 mg −5.0%</b><br>1.8 mg −6.2%<br>위약 −1.0%<br><small>IMPACT 24주 · 회사 topline</small>",
         liver: "<b>MASH 해소(섬유화 비악화, ITT)</b><br>Pemvidutide 1.2 mg 59.1%<br>Pemvidutide 1.8 mg 52.1%<br>위약 19.1%<br>MRI-PDFF 간지방 감소<br>1.2 mg 58.0% · 1.8 mg 62.8% · 위약 16.2%<br>섬유화 개선(MASH 비악화, ITT)<br>1.2 mg 31.8% · 1.8 mg 34.5% · 위약 25.9%<br><small>섬유화 조직학 군간 차이는 통계적 유의성 없음(회사 ITT)</small>",
         // GI AE 발생률(오심·구토 등) topline 요약 없음 → null. 중단율은 discontinuation만.
-        gi: null,
+        gi: "[1차 미확보]<br><small>해당 임상 GI 발생률 공개 확인 안 됨</small>",
         discontinuation: "<b>AE 관련 중단</b><br>1.2 mg 0.0% · 1.8 mg 1.2% · 위약 2.4%<br><small>IMPACT 회사 topline</small>",
         refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
       }
@@ -811,7 +811,7 @@ const comparison = {
         nct: "NCT06862791",
         hasLiver: false,
         weight: "<b>결과 미공개</b><br>377명 시험 완료",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "결과 미공개",
         discontinuation: "미공개",
         refs: { trial: ["AZ-ASCEND"], weight: ["AZ-ASCEND"], gi: ["AZ-ASCEND"], discontinuation: ["AZ-ASCEND"] }
@@ -854,7 +854,7 @@ const comparison = {
         meta: "NCT 식별 안 됨 · 비만·대사질환",
         hasLiver: false,
         weight: "<b>사람 효능 미공개</b>",
-        liver: null,
+        liver: "[1차 미확보]<br><small>간 지표 공개 여부 미확인</small>",
         gi: "사람 안전성 미공개",
         discontinuation: "미공개",
         refs: { trial: ["CMS-ANNUAL"], weight: ["CMS-ANNUAL"], gi: ["CMS-ANNUAL"], discontinuation: ["CMS-ANNUAL"] }
@@ -876,7 +876,7 @@ const comparison = {
         nct: "NCT06252220",
         hasLiver: false,
         weight: "<b>DA-1726 기준선 대비 −9.1%</b><br>48 mg 비적정 · Day 54 · n=6<br><small>위약 체중값 미공개</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "GI disorder 5/6<br>구토 5/6 · 오심 3/6<br><small>소표본 해석 주의</small>",
         discontinuation: "<b>GI 중단 0/6</b>",
         refs: { trial: ["DA-STATUS"], weight: ["DA-DATA"], gi: ["DA-DATA"], discontinuation: ["DA-DATA"] }
@@ -898,7 +898,7 @@ const comparison = {
         nct: "NCT06147544",
         hasLiver: false,
         weight: "<b>비교 가능한 공개값 제한</b>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "공개 세부값 제한",
         discontinuation: "미공개",
         refs: { trial: ["PB-ABSTRACT"], weight: ["PB-ABSTRACT"], gi: ["PB-ABSTRACT"], discontinuation: ["PB-ABSTRACT"] }
@@ -940,7 +940,7 @@ const comparison = {
         nct: "NCT02548585",
         hasLiver: false,
         weight: "<b>MEDI0382 −3.84 kg</b> vs 위약 −1.70 kg<br>군간 차 −2.14 kg<br><small>Lancet phase 2a · ITT · day 41 · Ambery et al.</small><br>CT.gov Cohort 4: −3.83 kg vs −1.71 kg",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "GI 장애 72% (18/25) vs 위약 40% (13/26)<br>식욕감소 20% vs 0%<br><small>Lancet · TEAE</small>",
         discontinuation: "AE로 중단<br>MEDI0382 3/25 · 위약 1/26<br><small>Lancet phase 2a</small>",
         refs: {
@@ -995,7 +995,7 @@ const comparison = {
         nct: "NCT02973321",
         hasLiver: false,
         weight: "<b>SAR425899 0.16 mg −5.33 kg</b><br>0.12 mg −4.28 kg · 0.20 mg −4.41 kg<br>위약 −1.76 kg · 리라글루타이드 −4.59 kg<br><small>CT.gov Results · LS mean · 26주</small><br>≥5% 감량 0.16 mg 45.5% · 위약 3.0%",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심<br>0.12 mg 45.8% (33/72) · 0.16 mg <b>55.9%</b> (33/59)<br>0.20 mg 55.3% (26/47) · 위약 15.2% (5/33)<br>구토 0.12 29.2% · 0.16 23.7% · 0.20 36.2% · 위약 6.1%<br>설사 0.12 20.8% · 0.16 18.6% · 0.20 19.1% · 위약 6.1%<br><small>CT.gov Results · other AE ≥5%</small>",
         discontinuation: "<b>AE로 탈락</b> (participant flow)<br>0.12 mg 10/66 (15.2%) · 0.16 mg 11/66 (16.7%)<br>0.20 mg 13/64 (20.3%) · 위약 1/33 (3.0%)<br>리라글루타이드 3/67 (4.5%)<br><small>CT.gov · GI 단독 미분리</small>",
         refs: {
@@ -1012,7 +1012,7 @@ const comparison = {
         nct: "NCT02411825",
         hasLiver: false,
         weight: "<b>최대 체중 감소</b><br>건강 지원자 −5.32 kg · T2D −5.46 kg<br><small>투여 종료 시점 · Tillner et al. DOM · vs 위약 P&lt;0.001</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "가장 흔한 AE: 위장관<br>T2D 환자에서 HV보다 GI 부작용 덜함<br><small>Tillner et al. abstract · 개별 % 표는 abstract 미기재</small><br><span class=\"result-empty\">[1차 미확보]</span> 오심·구토 개별 %",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>abstract에 AE 중단 % 표 없음 · CT.gov Results 미게시</small>",
         refs: {
@@ -1039,7 +1039,7 @@ const comparison = {
         nct: "NCT03406377",
         hasLiver: false,
         weight: "<b>OPK-88003 −5.83%</b> vs 위약 −2.10%<br><small>CT.gov Results · % 체중 LS mean · 30주</small><br>≥5% 감량 48.8% vs 위약 16.7%",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심 <b>38.9%</b> (28/72) vs 위약 4.9% (2/41)<br>구토 26.4% (19/72) vs 2.4% (1/41)<br>설사 12.5% (9/72) vs 7.3% (3/41)<br><small>CT.gov Results · other AE</small>",
         discontinuation: "미완료 21/72 (약물) · 16/41 (위약)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 drop reason 미게시</small>",
         refs: {
@@ -1066,7 +1066,7 @@ const comparison = {
         nct: "NCT02692040",
         hasLiver: false,
         weight: "<b>G3215 −2.39 kg</b> vs 위약 −0.84 kg<br><small>14일 주입 · LS mean · Hope et al. DOM</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span> 통합 % 체중 표(용량 분절)",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "가장 흔한 AE: 오심·구토<br>대부분 경증 · 주입 속도 실시간 조절로 완화<br><small>Hope et al. DOM</small><br><span class=\"result-empty\">[1차 미확보]</span> 용량별 오심 % 표(abstract)",
         discontinuation: "배정 26명 · 14일 주입 완료 23명<br><span class=\"result-empty\">[1차 미확보]</span> AE 중단 % 표<br><small>abstract·CT.gov AE 표는 용량 분절·소표본</small>",
         refs: {
@@ -1258,7 +1258,7 @@ const comparison = {
         hasLiver: false,
         // CT.gov Results 미게시 → 회사 PR(T3)
         weight: "<b>Petrelintide 최대 −10.7%</b> vs 위약 −1.7%<br><small>42주 · efficacy estimand · 최대 유효 용량 암</small><br>28주 primary에서도 전 용량 위약 대비 유의<br><small>Roche PR (2026-03-05) · CT.gov Results 미게시</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "가장 흔한 AE: 위장관 (대부분 경증)<br>구토: 전 용량 합이 위약보다 낮음 · 최대 유효 용량 암 <b>구토 0</b><br>설사·변비: 위약과 유사 (한 자리 %대)<br>오심: P1b(2주 증량)보다 감소 · 유지 용량 도달 후 거의 없음<br><span class=\"result-empty\">[회사 미공개]</span> 용량별 오심 % 표<br><small>Roche PR · CT.gov Results 미게시</small>",
         discontinuation: "<b>AE 중단</b> 최대 유효 용량 암 <b>4.8%</b> vs 위약 4.9%<br>GI AE로 인한 중단: 최대 유효 용량 암 0 (회사 명시)<br>임의 사유 철회 8.4% (약물 암 합) vs 위약 13.6%<br><small>Roche PR · GI 단독 중단은 0건으로 명시된 용량 암 기준</small>",
         refs: {
@@ -1285,7 +1285,7 @@ const comparison = {
         nct: "NCT06595238",
         hasLiver: false,
         weight: "<span class=\"result-empty\">[회사·CT.gov 미공개]</span> 용량별 % 체중<br><small>P2 완료(등록상). Results·토플라인 % 미게시(감사 시점)</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "<span class=\"result-empty\">[1차 미확보]</span> 용량별 GI % 표<br><small>P1 공개 요약: 오심·구토·식욕감소가 위약 대비 더 흔함(세부 % 미확보)</small>",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span><br><small>CT.gov Results 미게시 · AE 중단 % 1차 표 없음</small>",
         refs: {
@@ -1302,7 +1302,7 @@ const comparison = {
         nct: "NCT05511025",
         hasLiver: false,
         weight: "체중 감소: 위약 대비 <b>통계적 유의</b> (회사·학회 요약)<br><span class=\"result-empty\">[회사 미공개]</span> 용량별 %·kg<br><small>CT.gov Results 미게시</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심·구토·식욕감소가 주된 AE 경향<br>중대한 사망·SAE 없음 (P1 요약)<br><span class=\"result-empty\">[1차 미확보]</span> 개별 % 표",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span>",
         refs: {
@@ -1329,7 +1329,7 @@ const comparison = {
         nct: "NCT03856047",
         hasLiver: false,
         weight: "<b>Cagrilintide 4.5 mg −10.8%</b><br>2.4 mg −9.5% · 1.2 mg −8.5%<br>0.6 mg −6.9% · 0.3 mg −6.1%<br>위약 −3.0% · 리라글루타이드 3.0 mg −8.5%<br><small>CT.gov Results · mean % · 26주</small><br>≥5% 감량 4.5 mg 88.7% · 위약 30.9%",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "오심<br>4.5 mg <b>46.5%</b> (47/101) · 2.4 mg 31.4% (32/102)<br>1.2 mg 36.3% · 0.6 mg 27.0% · 위약 17.8% (18/101)<br>구토 4.5 mg 7.9% · 2.4 mg 8.8% · 위약 3.0%<br>설사 2.4 mg 17.6% · 4.5 mg 6.9% · 위약 8.9%<br>변비 4.5 mg 20.8% · 2.4 mg 16.7% · 위약 6.9%<br><small>CT.gov Results · other AE</small>",
         discontinuation: "전체 중도 철회 약 4% (논문 보고 n=29)<br><span class=\"result-empty\">[CT.gov 미분리]</span> AE 사유별 탈락 표 없음<br><small>participant flow에 AE drop reason 미게시 · Lau et al. Lancet</small>",
         refs: {
@@ -1346,7 +1346,7 @@ const comparison = {
         nct: "NCT05567796",
         hasLiver: false,
         weight: "<b>Cagrilintide 2.4 mg −11.8%</b> vs 위약 −2.3%<br><small>68주 · trial-product · REDEFINE 1 구성 암</small><br>treatment-policy 계열: −11.5% vs 위약 −3.0% (공개 요약)<br><small>Company PR / NEJM CagriSema 프로그램 · 단독 암</small>",
-        liver: null,
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
         gi: "CagriSema 행의 복합 GI와 분리된 단독 암 세부 표는 별도<br><span class=\"result-empty\">[1차 미확보]</span> 단독 암 오심·구토 % 표<br><small>복합제 전체 GI 79.6%는 CagriSema 블록 참고</small>",
         discontinuation: "<span class=\"result-empty\">[1차 미확보]</span> 단독 암 AE 중단 % 표<br><small>복합 프로그램 PR·논문은 CagriSema 중심</small>",
         refs: {
