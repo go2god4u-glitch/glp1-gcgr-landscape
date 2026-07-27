@@ -356,7 +356,7 @@ const references = {
   "RB-P3": ["Kailera, KaiNETIC-1 Phase 3 (NCT07284875) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07284875"],
   "MT-NEJM": ["Once-Monthly Maridebart Cafraglutide for the Treatment of Obesity - A Phase 2 Trial (2025)", "New England Journal of Medicine (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/40549887/"],
   "MT-MECH": ["Véniant et al. (2024), A GIPR antagonist conjugated to GLP-1 analogues", "Nature Metabolism (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/38316982/"],
-  "MZ-GLORY2": ["Gao et al. (2026), GLORY-2 randomized clinical trial", "JAMA", "https://jamanetwork.com/journals/jama/fullarticle/2850143"],
+    "MZ-GLORY2": ["Gao et al. (2026), GLORY-2: 9-mg Mazdutide 무작위 임상시험", "JAMA (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/42251595/"],
   "MZ-APPROVAL": ["Innovent (2025), Mazdutide chronic weight-management approval in China", "Sponsor / NMPA announcement", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=546"],
   "MZ-RESULTS": ["Innovent, Mazdutide 9 mg GLORY-2 results and development program", "Sponsor primary source", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=562"],
   "SV-P3": ["le Roux et al. (2026), Survodutide once weekly for adults with obesity", "New England Journal of Medicine / PubMed", "https://pubmed.ncbi.nlm.nih.gov/42253238/"],
@@ -422,7 +422,7 @@ const references = {
   "AZ-6234-COMBO": ["AZD9550 ± AZD6234 ASCEND/related combo program (registry)", "Sponsor / ClinicalTrials.gov", "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/"],
   "CG-P2-CTG": ["Cagrilintide Phase 2 dose-finding NCT03856047 posted results (weight %, AE)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03856047"],
   "CG-P2-LANCET": ["Lau et al. (2021), once-weekly cagrilintide Phase 2 weight management", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/34798060/"],
-  "CG-REDEFINE-MONO": ["REDEFINE 1 cagrilintide 2.4 mg monotherapy arm (trial-product −11.8% vs placebo −2.3% at 68w; component of CagriSema program)", "Company PR / NEJM program", "https://www.prnewswire.com/news-releases/cagrisema-2-4-mg--2-4-mg-demonstrated-22-7-mean-weight-reduction-in-adults-with-overweight-or-obesity-in-redefine-1--published-in-nejm-302487770.html"],
+  "CG-REDEFINE-MONO": ["REDEFINE 1 cagrilintide 2.4 mg 단독 암 (trial-product −11.8% vs 위약 −2.3%, 68주) — 초록은 treatment-policy 만 제시하고 단독 암 값은 본문 표에 있다", "New England Journal of Medicine (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/40544433/"],
   "CG-P3": ["Cagrilintide monotherapy Phase 3 NCT07220642 / NCT07220759", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07220642"]
 };
 
@@ -1067,13 +1067,13 @@ const comparison = {
         hasLiver: false,
         weight: "<b>G3215 −2.39 kg</b> vs 위약 −0.84 kg<br><small>14일 주입 · LS mean · Hope et al. DOM</small><br><span class=\"result-empty\">[CT.gov Results 미게시]</span> 통합 % 체중 표(용량 분절)",
         liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
-        gi: "오심 83%<br>구토 58%<br>위약 0%<br><small>주입 코호트(C) 합산 n=12 · 위약 n=4 · CT.gov Results AE 표 · 용량군마다 n=2~3 소표본</small>",
+        gi: "오심 10/12<br>구토 7/12<br>위약 0/4<br><small>주입 코호트(C) 합산(83% · 58%) · CT.gov Results AE 표 · 용량군마다 n=2~3 소표본이라 합산 표기</small>",
         discontinuation: "[CT.gov 미분리]<br><small>등록 결과표는 전체기간 1개 구간만 제시 · 치료중단·GI 단독 중단 열 없음</small>",
         refs: {
           trial: ["G3215-P1", "G3215-CTG"],
           weight: ["G3215-P1"],
-          gi: ["G3215-P1"],
-          discontinuation: ["G3215-P1"]
+          gi: ["G3215-CTG"],
+          discontinuation: ["G3215-CTG"]
         }
       }
     ],

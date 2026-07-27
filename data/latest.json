@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-27T07:13:39.673Z",
-  "registryCheckedAt": "2026-07-27T07:13:35.150Z",
+  "generatedAt": "2026-07-27T13:14:10.759Z",
+  "registryCheckedAt": "2026-07-27T13:14:04.646Z",
   "sourcesCheckedAt": "2026-07-27T06:46:34.874Z",
   "discoveryCheckedAt": "2026-07-27T06:46:21.506Z",
   "literatureCheckedAt": "2026-07-27T06:46:29.374Z",
@@ -9,7 +9,7 @@
     "cms": {
       "id": "cms",
       "label": "CMS-D005",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [],
       "nextMilestone": null,
       "note": "no-ctgov-nct"
@@ -17,7 +17,7 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06937749",
@@ -50,36 +50,6 @@
           ]
         },
         {
-          "nctId": "NCT06164873",
-          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 462,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-12-27",
-          "primaryCompletion": "2025-06-27",
-          "completion": "2025-09-19",
-          "lastUpdate": "2024-08-27",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT06931028",
           "title": "A Study of IBI362 in Chinese Subjects With Obstructive Sleep Apnea and BMI≥28 kg/m2",
           "status": "RECRUITING",
@@ -102,42 +72,6 @@
             {
               "type": "OTHER",
               "name": "placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07000955",
-          "title": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg in Patients With Moderate to Severe Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 98,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-06-17",
-          "primaryCompletion": "2026-09-30",
-          "completion": "2027-05-14",
-          "lastUpdate": "2025-12-15",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Tirzepatide",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
               "otherNames": []
             },
             {
@@ -211,6 +145,102 @@
           ]
         },
         {
+          "nctId": "NCT07000955",
+          "title": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg in Patients With Moderate to Severe Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 98,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-06-17",
+          "primaryCompletion": "2026-09-30",
+          "completion": "2027-05-14",
+          "lastUpdate": "2025-12-15",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06164873",
+          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 462,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-12-27",
+          "primaryCompletion": "2025-06-27",
+          "completion": "2025-09-19",
+          "lastUpdate": "2024-08-27",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07255209",
+          "title": "A Study of IBI362 in Chinese Adolescents With Obesity or Overweight",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 180,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-12-29",
+          "primaryCompletion": "2027-10-31",
+          "completion": "2028-10-31",
+          "lastUpdate": "2026-01-08",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Adolescents With Obesity or Overweight With Weight-Related Comorbidities"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            }
+          ]
+        },
+        {
           "nctId": "NCT07469800",
           "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
           "status": "RECRUITING",
@@ -269,36 +299,6 @@
             {
               "type": "DRUG",
               "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07255209",
-          "title": "A Study of IBI362 in Chinese Adolescents With Obesity or Overweight",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 180,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2025-12-29",
-          "primaryCompletion": "2027-10-31",
-          "completion": "2028-10-31",
-          "lastUpdate": "2026-01-08",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Adolescents With Obesity or Overweight With Weight-Related Comorbidities"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "IBI362",
               "otherNames": []
             }
           ]
@@ -383,7 +383,7 @@
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -484,6 +484,39 @@
           ]
         },
         {
+          "nctId": "NCT06632444",
+          "title": "LIVERAGE™: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Moderate or Advanced Liver Fibrosis",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 1800,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-09-17",
+          "primaryCompletion": "2031-12-27",
+          "completion": "2031-12-27",
+          "lastUpdate": "2026-07-09",
+          "leadSponsor": "Boehringer Ingelheim",
+          "conditions": [
+            "Metabolic Dysfunction Associated Steatohepatitis (MASH)",
+            "Liver Fibrosis"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Survodutide",
+              "otherNames": [
+                "BI 456906"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
           "nctId": "NCT07407348",
           "title": "A Study in People With Overweight or Obesity to Compare How 2 Different Formulations of Survodutide Are Taken up by the Body",
           "status": "RECRUITING",
@@ -511,38 +544,6 @@
             {
               "type": "COMBINATION_PRODUCT",
               "name": "Formulation B6",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT04771273",
-          "title": "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 295,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2021-04-27",
-          "primaryCompletion": "2023-11-09",
-          "completion": "2023-12-21",
-          "lastUpdate": "2024-12-03",
-          "leadSponsor": "Boehringer Ingelheim",
-          "conditions": [
-            "Non-alcoholic Steatohepatitis (NASH)"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Survodutide",
-              "otherNames": [
-                "BI 456906"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
               "otherNames": []
             }
           ]
@@ -580,33 +581,32 @@
           ]
         },
         {
-          "nctId": "NCT06632444",
-          "title": "LIVERAGE™: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Moderate or Advanced Liver Fibrosis",
-          "status": "RECRUITING",
+          "nctId": "NCT04771273",
+          "title": "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)",
+          "status": "COMPLETED",
           "phase": [
-            "PHASE3"
+            "PHASE2"
           ],
-          "enrollment": 1800,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-09-17",
-          "primaryCompletion": "2031-12-27",
-          "completion": "2031-12-27",
-          "lastUpdate": "2026-07-09",
+          "enrollment": 295,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-04-27",
+          "primaryCompletion": "2023-11-09",
+          "completion": "2023-12-21",
+          "lastUpdate": "2024-12-03",
           "leadSponsor": "Boehringer Ingelheim",
           "conditions": [
-            "Metabolic Dysfunction Associated Steatohepatitis (MASH)",
-            "Liver Fibrosis"
+            "Non-alcoholic Steatohepatitis (NASH)"
           ],
           "interventions": [
             {
-              "type": "COMBINATION_PRODUCT",
+              "type": "DRUG",
               "name": "Survodutide",
               "otherNames": [
                 "BI 456906"
               ]
             },
             {
-              "type": "COMBINATION_PRODUCT",
+              "type": "DRUG",
               "name": "Placebo",
               "otherNames": []
             }
@@ -624,7 +624,7 @@
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -687,36 +687,6 @@
           ]
         },
         {
-          "nctId": "NCT06987513",
-          "title": "RECLAIM STUDY: A Phase 2 Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol Use Disorder (AUD) in Subjects With Obesity or Overweight",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 100,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-05-15",
-          "primaryCompletion": "2026-05",
-          "completion": "2026-06",
-          "lastUpdate": "2025-11-19",
-          "leadSponsor": "Altimmune, Inc.",
-          "conditions": [
-            "Alcohol Use Disorder (AUD)"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Pemvidutide",
-              "otherNames": []
-            },
-            {
-              "type": "OTHER",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT07009860",
           "title": "RESTORE TRIAL: A Phase 2 Study Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol-Associated Liver Disease (ALD)",
           "status": "RECRUITING",
@@ -745,6 +715,36 @@
               "otherNames": []
             }
           ]
+        },
+        {
+          "nctId": "NCT06987513",
+          "title": "RECLAIM STUDY: A Phase 2 Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol Use Disorder (AUD) in Subjects With Obesity or Overweight",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 100,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-05-15",
+          "primaryCompletion": "2026-05",
+          "completion": "2026-06",
+          "lastUpdate": "2025-11-19",
+          "leadSponsor": "Altimmune, Inc.",
+          "conditions": [
+            "Alcohol Use Disorder (AUD)"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Pemvidutide",
+              "otherNames": []
+            },
+            {
+              "type": "OTHER",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
         }
       ],
       "nextMilestone": {
@@ -758,45 +758,8 @@
     "efino": {
       "id": "efino",
       "label": "Efinopegdutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
-        {
-          "nctId": "NCT04944992",
-          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 145,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2021-08-04",
-          "primaryCompletion": "2022-10-19",
-          "completion": "2022-10-19",
-          "lastUpdate": "2023-11-15",
-          "leadSponsor": "Merck Sharp & Dohme LLC",
-          "conditions": [
-            "Nonalcoholic Fatty Liver Disease",
-            "Nonalcoholic Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Efinopegdutide 20 mg/mL",
-              "otherNames": [
-                "MK-6024",
-                "HM12525A",
-                "JNJ-64565111"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide 1.34 mg/mL",
-              "otherNames": [
-                "Ozempic®"
-              ]
-            }
-          ]
-        },
         {
           "nctId": "NCT05877547",
           "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
@@ -839,6 +802,43 @@
               "type": "DRUG",
               "name": "Placebo",
               "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT04944992",
+          "title": "A Study of Efinopegdutide (MK-6024) in Participants With Nonalcoholic Fatty Liver Disease (NAFLD) (MK-6024-001)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 145,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-08-04",
+          "primaryCompletion": "2022-10-19",
+          "completion": "2022-10-19",
+          "lastUpdate": "2023-11-15",
+          "leadSponsor": "Merck Sharp & Dohme LLC",
+          "conditions": [
+            "Nonalcoholic Fatty Liver Disease",
+            "Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Efinopegdutide 20 mg/mL",
+              "otherNames": [
+                "MK-6024",
+                "HM12525A",
+                "JNJ-64565111"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide 1.34 mg/mL",
+              "otherNames": [
+                "Ozempic®"
+              ]
             }
           ]
         },
@@ -890,8 +890,48 @@
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
+        {
+          "nctId": "NCT07013643",
+          "title": "A Study to Investigate the Effect of AZD6234, AZD9550, and a Combination of AZD9550 and AZD6234 on Pharmacokinetics of Combined Oral Contraceptive Ethinyl Estradiol/Levonorgestrel in Healthy Female Participants Living With Overweight or Obesity",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 50,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-06-04",
+          "primaryCompletion": "2027-07-09",
+          "completion": "2027-07-09",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Healthy Participants"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Ethinyl estradiol/Levonorgestrel (EE/LEVO)",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Acetaminophen (APAP)",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            }
+          ]
+        },
         {
           "nctId": "NCT06862791",
           "title": "A Weight Loss Study Evaluating Subcutaneous Treatment With AZD9550 and AZD6234 in Combination Against Placebo or Each of the Drugs Alone",
@@ -964,36 +1004,26 @@
           ]
         },
         {
-          "nctId": "NCT07013643",
-          "title": "A Study to Investigate the Effect of AZD6234, AZD9550, and a Combination of AZD9550 and AZD6234 on Pharmacokinetics of Combined Oral Contraceptive Ethinyl Estradiol/Levonorgestrel in Healthy Female Participants Living With Overweight or Obesity",
+          "nctId": "NCT07546760",
+          "title": "A Phase I Study to Investigate the Effect of Hepatic Impairment of AZD9550 and AZD6234",
           "status": "RECRUITING",
           "phase": [
             "PHASE1"
           ],
-          "enrollment": 50,
+          "enrollment": 28,
           "enrollmentType": "ESTIMATED",
-          "startDate": "2025-06-04",
-          "primaryCompletion": "2027-07-09",
-          "completion": "2027-07-09",
-          "lastUpdate": "2026-07-20",
+          "startDate": "2026-03-20",
+          "primaryCompletion": "2027-02-04",
+          "completion": "2027-02-04",
+          "lastUpdate": "2026-07-07",
           "leadSponsor": "AstraZeneca",
           "conditions": [
-            "Healthy Participants"
+            "Hepatic Impairment"
           ],
           "interventions": [
             {
               "type": "DRUG",
               "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Ethinyl estradiol/Levonorgestrel (EE/LEVO)",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Acetaminophen (APAP)",
               "otherNames": []
             },
             {
@@ -1052,36 +1082,6 @@
               "otherNames": []
             }
           ]
-        },
-        {
-          "nctId": "NCT07546760",
-          "title": "A Phase I Study to Investigate the Effect of Hepatic Impairment of AZD9550 and AZD6234",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 28,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-03-20",
-          "primaryCompletion": "2027-02-04",
-          "completion": "2027-02-04",
-          "lastUpdate": "2026-07-07",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Hepatic Impairment"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            }
-          ]
         }
       ],
       "nextMilestone": {
@@ -1095,7 +1095,7 @@
     "dd01": {
       "id": "dd01",
       "label": "Zabopegdutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06410924",
@@ -1131,10 +1131,49 @@
       ],
       "nextMilestone": null
     },
+    "pb718": {
+      "id": "pb718",
+      "label": "PB-718",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT06147544",
+          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 36,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-07-06",
+          "primaryCompletion": "2024-04-16",
+          "completion": "2024-04-16",
+          "lastUpdate": "2024-04-19",
+          "leadSponsor": "PegBio Co., Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "PB-718",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
     "da1726": {
       "id": "da1726",
       "label": "DA-1726",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06252220",
@@ -1175,49 +1214,10 @@
         "status": "RECRUITING"
       }
     },
-    "pb718": {
-      "id": "pb718",
-      "label": "PB-718",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
-      "studies": [
-        {
-          "nctId": "NCT06147544",
-          "title": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of PB-718 Injection in Chinese Obese Subjects.",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 36,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-07-06",
-          "primaryCompletion": "2024-04-16",
-          "completion": "2024-04-16",
-          "lastUpdate": "2024-04-19",
-          "leadSponsor": "PegBio Co., Ltd.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "PB-718",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "retatrutide": {
       "id": "retatrutide",
       "label": "Retatrutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT05929066",
@@ -1291,7 +1291,7 @@
     "cagrisema": {
       "id": "cagrisema",
       "label": "CagriSema",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT05567796",
@@ -1345,8 +1345,39 @@
     "zenagamtide": {
       "id": "zenagamtide",
       "label": "Zenagamtide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
+        {
+          "nctId": "NCT06064006",
+          "title": "A Research Study to See How a New Medicine (NNC0487-0111) Works in People With Overweight or Obesity When Injected Under the Skin",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 125,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-09-15",
+          "primaryCompletion": "2024-11-27",
+          "completion": "2024-11-27",
+          "lastUpdate": "2025-11-19",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "NNC0487-0111",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo (NNC0487-0111)",
+              "otherNames": []
+            }
+          ]
+        },
         {
           "nctId": "NCT06542874",
           "title": "A Research Study Comparing How Well Different Doses of the Medicine NNC0487-0111 Lower Blood Sugar in People With Type 2 Diabetes",
@@ -1386,37 +1417,6 @@
               "otherNames": []
             }
           ]
-        },
-        {
-          "nctId": "NCT06064006",
-          "title": "A Research Study to See How a New Medicine (NNC0487-0111) Works in People With Overweight or Obesity When Injected Under the Skin",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 125,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-09-15",
-          "primaryCompletion": "2024-11-27",
-          "completion": "2024-11-27",
-          "lastUpdate": "2025-11-19",
-          "leadSponsor": "Novo Nordisk A/S",
-          "conditions": [
-            "Obesity",
-            "Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "NNC0487-0111",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo (NNC0487-0111)",
-              "otherNames": []
-            }
-          ]
         }
       ],
       "nextMilestone": null
@@ -1424,7 +1424,7 @@
     "eloralintide": {
       "id": "eloralintide",
       "label": "Eloralintide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06230523",
@@ -1504,7 +1504,7 @@
     "cotadutide": {
       "id": "cotadutide",
       "label": "Cotadutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT03235050",
@@ -1588,7 +1588,7 @@
     "nn1177": {
       "id": "nn1177",
       "label": "NN1177",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT03308721",
@@ -1658,7 +1658,7 @@
     "sar425899": {
       "id": "sar425899",
       "label": "SAR425899",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT02973321",
@@ -1743,7 +1743,7 @@
     "opk88003": {
       "id": "opk88003",
       "label": "Pegapamodutide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT03406377",
@@ -1781,7 +1781,7 @@
     "g3215": {
       "id": "g3215",
       "label": "G3215",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT02692040",
@@ -1822,7 +1822,7 @@
     "petrelintide": {
       "id": "petrelintide",
       "label": "Petrelintide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06662539",
@@ -1902,7 +1902,7 @@
     "azd6234": {
       "id": "azd6234",
       "label": "AZD6234",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT06595238",
@@ -2007,7 +2007,7 @@
     "cagrilintide": {
       "id": "cagrilintide",
       "label": "Cagrilintide",
-      "checkedAt": "2026-07-27T07:13:35.150Z",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
       "studies": [
         {
           "nctId": "NCT03856047",
@@ -2159,6 +2159,899 @@
         "title": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
         "kind": "study completion",
         "date": "2026-10-19",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
+    "tirzepatide": {
+      "id": "tirzepatide",
+      "label": "Tirzepatide",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT04657003",
+          "title": "A Study of Tirzepatide (LY3298176) in Participants With Type 2 Diabetes Who Have Obesity or Are Overweight",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 938,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-03-29",
+          "primaryCompletion": "2023-03-16",
+          "completion": "2023-04-10",
+          "lastUpdate": "2024-04-08",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Type 2 Diabetes",
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": [
+                "LY3298176"
+              ]
+            },
+            {
+              "type": "OTHER",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT04184622",
+          "title": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 2539,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2019-12-04",
+          "primaryCompletion": "2022-04-01",
+          "completion": "2024-07-06",
+          "lastUpdate": "2025-07-24",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": [
+                "LY3298176"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06439277",
+          "title": "A Study of Tirzepatide in Adolescents With Obesity and Weight-Related Comorbidities (SURMOUNT-ADOLESCENTS-2)",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 300,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-06-03",
+          "primaryCompletion": "2027-10",
+          "completion": "2030-12",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Obesity",
+            "Weight Gain"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": [
+                "LY3298176"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05412004",
+          "title": "Obstructive Sleep Apnea Master Protocol GPIF: A Study of Tirzepatide (LY3298176) in Participants With Obstructive Sleep Apnea",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 469,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2022-06-21",
+          "primaryCompletion": "2024-03-12",
+          "completion": "2024-03-29",
+          "lastUpdate": "2025-04-30",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Obstructive Sleep Apnea",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": [
+                "LY3298176"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05556512",
+          "title": "A Study of Tirzepatide (LY3298176) on the Reduction on Morbidity and Mortality in Adults With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 15374,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2022-10-11",
+          "primaryCompletion": "2027-10",
+          "completion": "2027-10",
+          "lastUpdate": "2026-01-12",
+          "leadSponsor": "Eli Lilly and Company",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": [
+                "LY3298176"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06439277",
+        "title": "A Study of Tirzepatide in Adolescents With Obesity and Weight-Related Comorbidities (SURMOUNT-ADOLESCENTS-2)",
+        "kind": "primary completion",
+        "date": "2027-10",
+        "status": "RECRUITING"
+      }
+    },
+    "enicepatide": {
+      "id": "enicepatide",
+      "label": "Enicepatide",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT06525935",
+          "title": "A Study of Enicepatide (CT-388) in Participants With Obesity or Overweight With at Least One Weight-Related Comorbidity",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 469,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-08-16",
+          "primaryCompletion": "2025-12-08",
+          "completion": "2025-12-08",
+          "lastUpdate": "2026-04-17",
+          "leadSponsor": "Carmot Therapeutics, Inc.",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Enicepatide",
+              "otherNames": [
+                "CT-388",
+                "RO7795068",
+                "RG6640"
+              ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07351045",
+          "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight Without Type 2 Diabetes",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 2000,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-03-16",
+          "primaryCompletion": "2028-07-24",
+          "completion": "2028-08-28",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "Hoffmann-La Roche",
+          "conditions": [
+            "Obesity or Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Enicepatide",
+              "otherNames": [
+                "RO7795068",
+                "CT-388",
+                "RG6640"
+              ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07351058",
+          "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 1600,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-03-23",
+          "primaryCompletion": "2028-08-07",
+          "completion": "2028-08-07",
+          "lastUpdate": "2026-07-20",
+          "leadSponsor": "Hoffmann-La Roche",
+          "conditions": [
+            "Obesity or Overweight",
+            "Type 2 Diabetes Mellitus"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Enicepatide",
+              "otherNames": [
+                "RO7795068",
+                "CT-388",
+                "RG6640"
+              ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07670416",
+          "title": "A Study to Evaluate the Effects of Enicepatide in Participants With Obesity or Overweight, With or Without Type 2 Diabetes",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 300,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-07-03",
+          "primaryCompletion": "2028-02-24",
+          "completion": "2028-03-15",
+          "lastUpdate": "2026-07-14",
+          "leadSponsor": "Hoffmann-La Roche",
+          "conditions": [
+            "Obesity",
+            "Overweight",
+            "Type 2 Diabetes Mellitus (T2DM)"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Enicepatide",
+              "otherNames": [
+                "RO7795068",
+                "CT-388",
+                "RG6640"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07589686",
+          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight",
+          "status": "NOT_YET_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 486,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-09-30",
+          "primaryCompletion": "2027-11-12",
+          "completion": "2028-01-31",
+          "lastUpdate": "2026-07-07",
+          "leadSponsor": "Hoffmann-La Roche",
+          "conditions": [
+            "Obesity or Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Petrelintide",
+              "otherNames": [
+                "RO7895515",
+                "ZP8396"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Enicepatide",
+              "otherNames": [
+                "RO7795068",
+                "CT-388",
+                "RG6640"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Petrelintide-matching Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Enicepatide-matching Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT07589686",
+        "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight",
+        "kind": "primary completion",
+        "date": "2027-11-12",
+        "status": "NOT_YET_RECRUITING"
+      }
+    },
+    "vk2735": {
+      "id": "vk2735",
+      "label": "VK2735",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT06068946",
+          "title": "VK2735 for Weight Management Phase 2",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 176,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-08-31",
+          "primaryCompletion": "2024-02-27",
+          "completion": "2024-04-02",
+          "lastUpdate": "2025-02-12",
+          "leadSponsor": "Viking Therapeutics, Inc.",
+          "conditions": [
+            "Weight Loss"
+          ],
+          "interventions": [
+            {
+              "type": "BIOLOGICAL",
+              "name": "VK2735",
+              "otherNames": []
+            },
+            {
+              "type": "BIOLOGICAL",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06828055",
+          "title": "VK2735 for Weight Management Phase 2 (Venture Oral Dosing)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 280,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-12-18",
+          "primaryCompletion": "2025-06-24",
+          "completion": "2025-08-15",
+          "lastUpdate": "2025-10-06",
+          "leadSponsor": "Viking Therapeutics, Inc.",
+          "conditions": [
+            "Weight Loss"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "VK2735",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07104500",
+          "title": "VK2735 for Weight Management Phase 3",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 4500,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-06-23",
+          "primaryCompletion": "2027-07-01",
+          "completion": "2027-08-01",
+          "lastUpdate": "2025-11-24",
+          "leadSponsor": "Viking Therapeutics, Inc.",
+          "conditions": [
+            "Weight Loss"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "VK2735",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07104383",
+          "title": "VK2735 for Weight Management Type 2 Diabetes Phase 3 (VANQUISH 2)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 1100,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-06-23",
+          "primaryCompletion": "2027-07-01",
+          "completion": "2027-08-01",
+          "lastUpdate": "2026-04-07",
+          "leadSponsor": "Viking Therapeutics, Inc.",
+          "conditions": [
+            "Weight Loss"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "VK2735",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT07104500",
+        "title": "VK2735 for Weight Management Phase 3",
+        "kind": "primary completion",
+        "date": "2027-07-01",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
+    "ribupatide": {
+      "id": "ribupatide",
+      "label": "Ribupatide",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT06841445",
+          "title": "Efficacy and Safety of HRS9531 Tablet in Obese Subjects",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 166,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-04-07",
+          "primaryCompletion": "2026-01-08",
+          "completion": "2026-01-08",
+          "lastUpdate": "2026-04-03",
+          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
+          "conditions": [
+            "Chronic Management of Body Weight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05881837",
+          "title": "Efficacy and Safety of HRS9531 Injection in Obese Subjects Without Diabetes",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 249,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-06-13",
+          "primaryCompletion": "2024-10-13",
+          "completion": "2024-10-13",
+          "lastUpdate": "2025-04-30",
+          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
+          "conditions": [
+            "Overweight or Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07284875",
+          "title": "Efficacy and Safety of Ribupatide in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 2340,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-12-18",
+          "primaryCompletion": "2028-02",
+          "completion": "2028-03",
+          "lastUpdate": "2026-07-22",
+          "leadSponsor": "Kailera",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Ribupatide",
+              "otherNames": [
+                "KAI-9531"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07285902",
+          "title": "A Study Comparing the Efficacy and Safety of HRS9531 Injection With Semaglutide Injection in Subjects With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 572,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-12-25",
+          "primaryCompletion": "2027-03",
+          "completion": "2027-03",
+          "lastUpdate": "2026-02-27",
+          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HRS9531 injection",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Semaglutide Injection",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06994650",
+          "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Injection in Subjects With Obstructive Sleep Apnea (OSA) and Obesity Who Are on Positive Airway Pressure Ventilation (PAP) Therapy",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 140,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-08-13",
+          "primaryCompletion": "2026-12",
+          "completion": "2027-01",
+          "lastUpdate": "2026-01-26",
+          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
+          "conditions": [
+            "Subjects With Moderate-to-severe OSA and Obesity Who Are on PAP Therapy"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HRS9531",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06994650",
+        "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Injection in Subjects With Obstructive Sleep Apnea (OSA) and Obesity Who Are on Positive Airway Pressure Ventilation (PAP) Therapy",
+        "kind": "primary completion",
+        "date": "2026-12",
+        "status": "RECRUITING"
+      }
+    },
+    "maritide": {
+      "id": "maritide",
+      "label": "MariTide",
+      "checkedAt": "2026-07-27T13:14:04.646Z",
+      "studies": [
+        {
+          "nctId": "NCT05669599",
+          "title": "Dose-ranging Study to Evaluate the Efficacy, Safety, and Tolerability of AMG 133 in Adult Subjects With Overweight or Obesity, With or Without Type 2 Diabetes Mellitus",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 592,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-01-18",
+          "primaryCompletion": "2024-10-08",
+          "completion": "2025-12-16",
+          "lastUpdate": "2026-01-20",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Obesity",
+            "Overweight",
+            "Type 2 Diabetes Mellitus"
+          ],
+          "interventions": [
+            {
+              "type": "BIOLOGICAL",
+              "name": "Maridebart Cafraglutide",
+              "otherNames": [
+                "AMG 133"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07225686",
+          "title": "Maridebart Cafraglutide Versus Placebo in Adult Participants With Obstructive Sleep Apnea on Positive Airway Pressure Therapy",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 250,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-12-19",
+          "primaryCompletion": "2027-09-29",
+          "completion": "2028-09-13",
+          "lastUpdate": "2026-06-12",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Obesity",
+            "Obstructive Sleep Apnea"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Maridebart cafraglutide",
+              "otherNames": [
+                "AMG 133"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06987695",
+          "title": "Efficacy and Safety of Maridebart Cafraglutide in Adult Participants in Japan Who Have Obesity Disease",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 279,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-06-13",
+          "primaryCompletion": "2027-04-27",
+          "completion": "2027-07-21",
+          "lastUpdate": "2025-12-17",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Obesity Disease"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Maridebart cafraglutide",
+              "otherNames": [
+                "AMG 133",
+                "MariTide"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06660173",
+          "title": "A Study of Maridebart Cafraglutide in Adult Participants With Type 2 Diabetes Mellitus (T2DM)",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 409,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-11-07",
+          "primaryCompletion": "2025-10-06",
+          "completion": "2026-11-10",
+          "lastUpdate": "2025-11-25",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Type 2 Diabetes Mellitus (T2DM)"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Maridebart Cafraglutide",
+              "otherNames": [
+                "AMG 133"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07037433",
+          "title": "Evaluating the Impact of Maridebart Cafraglutide on Cardiovascular Outcomes in Participants With Atherosclerotic Cardiovascular Disease and Overweight or Obesity",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 12800,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-07-25",
+          "primaryCompletion": "2028-06-30",
+          "completion": "2030-09-29",
+          "lastUpdate": "2026-07-24",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Atherosclerotic Cardiovascular Disease",
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Maridebart Cafraglutide",
+              "otherNames": [
+                "AMG 133",
+                "MariTide"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT06660173",
+        "title": "A Study of Maridebart Cafraglutide in Adult Participants With Type 2 Diabetes Mellitus (T2DM)",
+        "kind": "study completion",
+        "date": "2026-11-10",
         "status": "ACTIVE_NOT_RECRUITING"
       }
     }
@@ -44277,9 +45170,9 @@
     }
   ],
   "refreshSummary": {
-    "programCount": 21,
-    "appAssetCount": 21,
-    "knownStudies": 57,
+    "programCount": 26,
+    "appAssetCount": 1,
+    "knownStudies": 81,
     "registryPasses": 3,
     "autoAddedPrograms": [],
     "autoAddedNcts": 0,
@@ -44292,71 +45185,30 @@
     "changes": 0,
     "errors": 0,
     "verification": "pass",
-    "verifiedRegistry": 57,
-    "expectedRegistry": 57,
+    "verifiedRegistry": 81,
+    "expectedRegistry": 81,
     "verifiedSources": 17,
     "expectedSources": 17
   },
   "coverage": {
-    "appAssetCount": 21,
-    "programCount": 21,
-    "nctCount": 57,
+    "appAssetCount": 1,
+    "programCount": 26,
+    "nctCount": 81,
     "addedPrograms": [],
     "addedNcts": [],
-    "addedDiscoveryNames": [
-      "PB-718",
-      "PB-119",
-      "PB-722",
-      "NN1177",
-      "NNC9204-1177",
-      "SAR425899",
-      "Pegapamodutide",
-      "OPK-88003",
-      "MOD-6031",
-      "G3215"
-    ],
+    "addedDiscoveryNames": [],
     "addedLiteratureNames": [
-      "CMS-D005",
-      "PB-718",
-      "PB-119",
-      "PB-722",
-      "Cotadutide",
-      "MEDI0382",
-      "NN1177",
-      "NNC9204-1177",
-      "SAR425899",
-      "Pegapamodutide",
-      "OPK-88003",
-      "MOD-6031",
-      "G3215"
+      "Tirzepatide",
+      "LY3298176",
+      "Mounjaro",
+      "Zepbound"
     ],
     "notes": [
-      "app assets 21 · programs after merge 21",
-      "탐색 자동 커버리지 10종: PB-718, PB-119, PB-722, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215",
-      "문헌 자동 커버리지 13종: CMS-D005, PB-718, PB-119, PB-722, Cotadutide, MEDI0382, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215"
+      "app assets 1 · programs after merge 26",
+      "문헌 자동 커버리지 4종: Tirzepatide, LY3298176, Mounjaro, Zepbound"
     ],
     "assetIds": [
-      "mazdutide",
-      "survodutide",
-      "pemvidutide",
-      "efino",
-      "azd9550",
-      "dd01",
-      "cms",
-      "da1726",
-      "pb718",
-      "cotadutide",
-      "nn1177",
-      "sar425899",
-      "opk88003",
-      "g3215",
-      "retatrutide",
-      "cagrisema",
-      "zenagamtide",
-      "eloralintide",
-      "petrelintide",
-      "azd6234",
-      "cagrilintide"
+      "tirzepatide"
     ],
     "programIds": [
       "mazdutide",
@@ -44379,7 +45231,12 @@
       "g3215",
       "petrelintide",
       "azd6234",
-      "cagrilintide"
+      "cagrilintide",
+      "tirzepatide",
+      "enicepatide",
+      "vk2735",
+      "ribupatide",
+      "maritide"
     ],
     "audit": {
       "ok": true,
@@ -44387,38 +45244,22 @@
       "warnings": [
         {
           "type": "no-monitored-source",
-          "assetId": "cotadutide"
-        },
-        {
-          "type": "no-monitored-source",
-          "assetId": "nn1177"
-        },
-        {
-          "type": "no-monitored-source",
-          "assetId": "sar425899"
-        },
-        {
-          "type": "no-monitored-source",
-          "assetId": "opk88003"
-        },
-        {
-          "type": "no-monitored-source",
-          "assetId": "g3215"
+          "assetId": "tirzepatide"
         }
       ],
-      "checkedAssets": 21,
-      "snapshotPrograms": 21
+      "checkedAssets": 1,
+      "snapshotPrograms": 26
     }
   },
   "verification": {
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-27T07:13:39.257Z",
+    "checkedAt": "2026-07-27T13:14:10.372Z",
     "checks": {
       "registry": {
-        "expected": 57,
-        "verified": 57,
+        "expected": 81,
+        "verified": 81,
         "complete": true
       },
       "discoveryQueries": {
@@ -44437,8 +45278,8 @@
         "complete": true
       },
       "appCoverage": {
-        "expected": 21,
-        "verified": 21,
+        "expected": 1,
+        "verified": 1,
         "complete": true
       }
     },
@@ -44749,7 +45590,7 @@
       "exitCode": 0,
       "mode": "offline",
       "policyVersion": "fact-gate-v1",
-      "checkedAt": "2026-07-27T07:13:39.641Z",
+      "checkedAt": "2026-07-27T13:14:10.725Z",
       "blocking": 0,
       "machineChecked": {
         "label": "기계 대조 위반",
@@ -44757,19 +45598,19 @@
         "registryMismatch": 0,
         "sourceDiscipline": 0,
         "verifiedClaimEdited": 0,
-        "narrativeUnsourced": 5,
-        "warnings": 12,
+        "narrativeUnsourced": 0,
+        "warnings": 0,
         "registryChecked": 0,
-        "registryTargets": 43
+        "registryTargets": 63
       },
       "humanEvidence": {
         "label": "사람 1차출처 확인 기록 (수치 주장 기준)",
-        "total": 67,
-        "verified": 9,
+        "total": 83,
+        "verified": 34,
         "stale": 0,
         "drifted": 0,
-        "knownUnverified": 7,
-        "unverified": 51
+        "knownUnverified": 5,
+        "unverified": 44
       },
       "blockingFindings": []
     }
