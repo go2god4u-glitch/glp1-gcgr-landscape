@@ -496,7 +496,7 @@ const comparison = {
         weight: "<b>Survodutide 최대 −16.6%</b><br><small>회사 공개 efficacy estimand</small><br>treatment-regimen: −12.2~−13.0%<br>위약 −5.4%",
         liver: "<b>간지방 감소 63%</b><br><small>회사 공개 SYNCHRONIZE-1 사전명세 체성분 분석</small>",
         gi: "전체 GI AE<br><b>80.9~89.7%</b>",
-        discontinuation: "<b>GI 중단 약 19%</b>",
+        discontinuation: "<b>GI 중단 약 19%</b><br><small>회사 공개 · CT.gov Results 미게시</small>",
         refs: { trial: ["SV-P3"], weight: ["SV-P3"], liver: ["SV-SAFETY"], gi: ["SV-P3"], discontinuation: ["SV-SAFETY"] }
       },
       {
@@ -528,10 +528,10 @@ const comparison = {
         meta: "NCT05295875 · P2 · 48주 · 비만",
         nct: "NCT05295875",
         hasLiver: false,
-        weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주</small>",
+        weight: "<b>Pemvidutide −15.6%</b><br>위약 −2.2%<br><small>2.4 mg · 48주 · 회사 공개 · CT.gov Results 미게시</small>",
         liver: null,
-        gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%",
-        discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리</small>",
+        gi: "오심 51.5%<br>구토 27.8%<br>설사 18.6% · 변비 22.7%<br><small>회사 공개 · CT.gov Results 미게시</small>",
+        discontinuation: "<b>전체 치료중단 19.6%</b><br><small>GI 미분리 · 회사 공개 · CT.gov Results 미게시</small>",
         refs: { trial: ["PM-MOMENTUM"], weight: ["PM-MOMENTUM"], gi: ["PM-MOMENTUM"], discontinuation: ["PM-MOMENTUM"] }
       },
       {
@@ -609,8 +609,8 @@ const comparison = {
         hasLiver: true,
         weight: "평균 체중변화 미공개<br><b>DD01: &gt;5% 감소 달성 51.5%</b><br>위약 8.8%<br><small>24주 responder 분석</small>",
         liver: "<b>섬유화 ≥1단계 개선(MASH 비악화) 50.0%</b><br>위약 15.8%<br><b>MASH 해소(섬유화 비악화) 62.5%</b><br>위약 5.3%<br>둘 다 달성 37.5% · 위약 5.3%<br><small>Week 48 · paired biopsy n=35 (40 mg 16 / 위약 19) · 회사 공개</small>",
-        gi: "전체 GI disorder<br><b>79% vs 44%</b>",
-        discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set</small>",
+        gi: "전체 GI disorder<br><b>79% vs 44%</b><br><small>회사 공개 · CT.gov Results 미게시</small>",
+        discontinuation: "<b>GI 중단 8.0%</b><br><small>biopsy-confirmed set · 회사 공개 · CT.gov Results 미게시</small>",
         refs: { trial: ["DD-P2"], weight: ["DD-P2"], liver: ["DD-P2"], gi: ["DD-P2"], discontinuation: ["DD-P2"] }
       }
     ],
@@ -866,7 +866,7 @@ const comparison = {
       {
         id: "triumph1",
         label: "TRIUMPH-1",
-        meta: "NCT05929066 · P3 · 80주 · 비만·과체중(비당뇨) · n=2339",
+        meta: "NCT05929066 · P3 · 80주 · 비만·과체중(비당뇨) · n=2339 무작위배정",
         nct: "NCT05929066",
         hasLiver: false,
         weight: "<b>Retatrutide 12 mg −28.3%</b><br>9 mg −25.9% · 4 mg −19.0%<br>위약 −2.2%<br><small>80주 · efficacy estimand · Company PR</small><br>treatment-regimen: 12 mg −25.0% · 9 mg −23.7% · 4 mg −17.6% · 위약 −3.9%<br>≥30% 감량 12 mg 45.3%<br>BMI≥35 연장 104주(12 mg 경로) −30.3%<br><small>CT.gov Results 미게시(감사 시점) → PR 토플라인</small>",
@@ -2476,10 +2476,13 @@ function estimateExcelRowHeight(values) {
   return Math.min(140, Math.max(32, 16 + lines * 12));
 }
 
-function looksLikeMissingExportText(text) {
-  const t = String(text || "");
-  return /공개값 없음|미공개|미확보|미분리|미게시/.test(t);
-}
+// 2026-07-27 제거: 셀 내용에 '미공개·미확보' 같은 말이 들어 있으면 글자를 흐리게
+// 칠하던 함수가 있었다. 두 가지가 잘못이었다.
+//   1) 엑셀에는 범례가 없어서 흐린 글자가 무슨 뜻인지 알 수 없다.
+//   2) 부분일치라, 실제 수치가 들어 있는 문장이라도 저 단어가 한 번 섞이면
+//      셀 전체가 흐려졌다. 색이 내용과 무관하게 바뀌었다.
+// 의미는 이미 셀 텍스트(`[회사 미공개]` / `[1차 미확보]`)가 그대로 담고 있으므로
+// 색을 따로 쓰지 않는다. 본문 글자색은 한 가지다.
 
 async function writeStyledMasterWorkbook(columns, rows) {
   const ExcelJS = await loadExcelJs();
@@ -2554,12 +2557,12 @@ async function writeStyledMasterWorkbook(columns, rows) {
       const cell = excelRow.getCell(i + 1);
       const text = String(val ?? "");
       cell.value = text;
-      const missing = looksLikeMissingExportText(text);
+      // 본문 글자색은 항상 ink 하나. 내용에 따라 바꾸지 않는다.
       cell.font = {
         name: EXCEL_THEME.font,
         size: i === 0 ? 10 : 9.5,
         bold: i === 0,
-        color: { argb: missing ? EXCEL_THEME.muted : EXCEL_THEME.ink }
+        color: { argb: EXCEL_THEME.ink }
       };
       cell.alignment = { vertical: "top", horizontal: "left", wrapText: true };
       cell.border = border;

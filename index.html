@@ -118,7 +118,9 @@
           <tbody id="masterRows"></tbody>
         </table>
       </div>
-      <p class="table-note">기전 필터로 dual·복합제 등 범위를 조절합니다. 활성비가 공개된 dual 자산은 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계·혈장·endpoint가 다르면 직접 비교하지 않습니다. 새 결과 열·기전 추가는 docs/PLATFORM_SCHEMA.md 규칙을 따릅니다.
+      <!-- 화면 설명문에는 읽는 사람이 표를 해석하는 데 필요한 것만 쓴다.
+           개발·유지보수 규칙(docs/*.md 참조 등)은 여기 넣지 않는다. -->
+      <p class="table-note">기전 필터로 dual·복합제 등 범위를 조절합니다. 활성비가 공개된 dual 자산은 표기 방향을 GLP-1R:GCGR로 통일했습니다. 세포계·혈장·endpoint가 다르면 직접 비교하지 않습니다.
         <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9679702/" target="_blank" rel="noopener">[SV-DESIGN]</a>
         <a class="citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8457634/" target="_blank" rel="noopener">[RATIO-REVIEW]</a>
       </p>
@@ -221,7 +223,7 @@
       <li><b>현재 경쟁군(core):</b> 사람 임상 진입 후 현재·최근 적극 개발 근거가 있는 자산. 초기 큐레이션 중심은 GLP-1R/GCGR dual. <a class="citation" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1630199/full" target="_blank" rel="noopener">[CLASS-REVIEW]</a></li>
       <li><b>관찰군(watch):</b> 고정용량 복합제, 공개 데이터 제한, 후속 전략 불명확 자산. <a class="citation" href="https://diabetesjournals.org/diabetes/article/73/Supplement_1/768-P/156358/768-P-A-Phase-1b-2a-Trial-to-Assess-the-Safety" target="_blank" rel="noopener">[PB-ABSTRACT]</a></li>
       <li><b>중단군(historical):</b> 사람 임상 후 중단·휴면·비활성 자산(학습용 유지).</li>
-      <li><b>현재 미큐레이션(추가 가능):</b> triple·mono·amylin 등은 스키마상 추가 가능. 넣기 전에는 표에 없고, 넣을 때는 docs/PLATFORM_SCHEMA.md 체크리스트를 따른다.</li>
+      <li><b>현재 미큐레이션(추가 가능):</b> triple·mono·amylin 등은 아직 표에 넣지 않았다. 필요하면 추가할 수 있다.</li>
       <li><b>결과 공통 슬롯:</b> 체중·간·GI 발생·중단. 기전과 무관. 값 없으면 공개값 없음. GI에 중단 수치 금지.</li>
     </ul>
   </dialog>
