@@ -1,5 +1,55 @@
 const assets = [
   {
+    id: "tirzepatide", name: "Tirzepatide", aliases: "LY3298176 · Mounjaro · Zepbound", company: "Eli Lilly",
+    phase: "승인 + 적응증 확장", stage: 4, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP 계열",
+    signal: "SURMOUNT-1 72주 −22.5%(15 mg). GIP 축 최초 상업화이자 비만 효능 기준선.",
+    origin: "Eli Lilly가 개발한 GIP/GLP-1 이중 작용 펩타이드. 비만·T2D에서 먼저 승인됐다.",
+    strategy: "GIP 축 벤치마크. 신규 물질의 효능·내약성은 사실상 이 값과 비교된다.",
+    watch: ["SURMOUNT-MMO(NCT05556512) 심혈관 결과", "소아·청소년 확장 시험", "경구 대안과의 경쟁"],
+    source: "https://clinicaltrials.gov/study/NCT04184622"
+  },
+  {
+    id: "enicepatide", name: "Enicepatide", aliases: "CT-388", company: "Roche (Carmot)",
+    phase: "Phase 2 완료 → Phase 3 Enith", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP 계열",
+    signal: "Phase 2 48주 위약보정 −22.5%(24 mg). 2026 Q1 Phase 3 Enith 개시.",
+    origin: "Carmot Therapeutics의 CT-388. Roche가 2024년 Carmot을 인수하며 확보했다. INN은 enicepatide.",
+    strategy: "빅파마 중 GIP 축 후발 주자. petrelintide 병용(NCT07589686)으로 amylin 축과도 연결된다.",
+    watch: ["Enith1(NCT07351045)·Enith2 Phase 3 진행", "petrelintide 병용 Phase 2 결과", "CT.gov Results 게시 여부"],
+    source: "https://www.roche.com/media/releases/med-cor-2026-01-27"
+  },
+  {
+    id: "vk2735", name: "VK2735", aliases: "—", company: "Viking Therapeutics",
+    phase: "Phase 3 VANQUISH (SC) · Phase 2 완료 (경구)", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP 계열",
+    signal: "VENTURE 13주 −14.7%(15 mg). 피하·경구 두 제형을 병행한다.",
+    origin: "Viking Therapeutics가 자체 개발한 GLP-1/GIP 이중작용제.",
+    strategy: "GIP 축에서 단계가 가장 앞선 비(非)빅파마. 경구 제형이 차별점이다.",
+    watch: ["VANQUISH-1(NCT07104500) 78주 결과 2027 예상", "VANQUISH-2(NCT07104383) T2D", "경구 Phase 3 진입 여부"],
+    source: "https://pubmed.ncbi.nlm.nih.gov/41508550/"
+  },
+  {
+    id: "ribupatide", name: "Ribupatide", aliases: "HRS9531 · KAI-9531", company: "Hengrui / Kailera",
+    phase: "Phase 3 (주사·중국) · Phase 2 완료 (경구)", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP 계열",
+    signal: "경구 26주 −12.1%(25 mg). 주사·경구 모두 Phase 3 단계로 이동 중.",
+    origin: "Hengrui(Fujian Shengdi)가 개발. Kailera가 중국 외 글로벌 권리를 확보했다.",
+    strategy: "중국발 GIP 축 물질. 경구 제형에서 GI로 인한 영구 중단이 보고되지 않았다.",
+    watch: ["KaiNETIC-1(NCT07284875) 글로벌 Phase 3", "주사 Phase 3(NCT07285902)", "경구 Phase 3 중국 진입"],
+    source: "https://www.hengrui.com/en/media/detail-968.html"
+  },
+  {
+    id: "maritide", name: "MariTide", aliases: "maridebart cafraglutide · AMG 133", company: "Amgen",
+    phase: "Phase 3 MARITIME", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP 계열",
+    signal: "Phase 2 52주 −12.3~−16.2%. 월 1회 투여. ★GIP를 길항한다(작용 방향이 반대).",
+    origin: "Amgen이 항GIPR 단일클론항체에 GLP-1 유사체 2개를 접합한 이중특이 분자(AMG 133).",
+    strategy: "GIP 작용제와 정반대 방향인데도 체중이 감소한다. 축은 같지만 기전 해석은 분리해서 봐야 한다.",
+    watch: ["MARITIME-CV(NCT07037433) n=12800 심혈관", "OSA Phase 3(NCT07225686)", "월 1회 투여의 실제 순응도"],
+    source: "https://pubmed.ncbi.nlm.nih.gov/40549887/"
+  },
+  {
     id: "mazdutide", name: "Mazdutide", aliases: "IBI362 · LY3305677 · OXM3", company: "Innovent / Eli Lilly",
     phase: "승인 + Phase 3 확장", stage: 4, tier: "core", tone: "live",
     mechanism: "GLP-1R/GCGR dual",
@@ -294,6 +344,16 @@ events.push(
 );
 
 const references = {
+  "TZ-SURMOUNT1": ["Eli Lilly, SURMOUNT-1 (NCT04184622) CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04184622?tab=results"],
+  "TZ-SURMOUNT2": ["Eli Lilly, SURMOUNT-2 (NCT04657003) CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04657003?tab=results"],
+  "EN-P2PR": ["Roche (2026-01-27), CT-388(enicepatide) Phase II 비만 결과 발표", "Sponsor primary source (T3)", "https://www.roche.com/media/releases/med-cor-2026-01-27"],
+  "EN-P3": ["Roche, Enith1 Phase III (NCT07351045) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07351045"],
+  "VK-VENTURE": ["Bays et al. (2026), Weekly Subcutaneous VK2735: Phase 2 VENTURE Study", "Obesity (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/41508550/"],
+  "VK-P3": ["Viking Therapeutics, VANQUISH-1 Phase 3 (NCT07104500) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07104500"],
+  "RB-ORAL": ["Hengrui / Kailera (2026-06-05), 경구 ribupatide Phase 2 (NCT06841445) 결과 발표", "Sponsor primary source (T3)", "https://www.hengrui.com/en/media/detail-968.html"],
+  "RB-P3": ["Kailera, KaiNETIC-1 Phase 3 (NCT07284875) 등록정보", "ClinicalTrials.gov 등록 (T0r)", "https://clinicaltrials.gov/study/NCT07284875"],
+  "MT-NEJM": ["Once-Monthly Maridebart Cafraglutide for the Treatment of Obesity - A Phase 2 Trial (2025)", "New England Journal of Medicine (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/40549887/"],
+  "MT-MECH": ["Véniant et al. (2024), A GIPR antagonist conjugated to GLP-1 analogues", "Nature Metabolism (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/38316982/"],
   "MZ-GLORY2": ["Gao et al. (2026), GLORY-2 randomized clinical trial", "JAMA", "https://jamanetwork.com/journals/jama/fullarticle/2850143"],
   "MZ-APPROVAL": ["Innovent (2025), Mazdutide chronic weight-management approval in China", "Sponsor / NMPA announcement", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=546"],
   "MZ-RESULTS": ["Innovent, Mazdutide 9 mg GLORY-2 results and development program", "Sponsor primary source", "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=562"],
@@ -365,6 +425,11 @@ const references = {
 };
 
 const assetReferenceMap = {
+  Tirzepatide: ["TZ-SURMOUNT1", "TZ-SURMOUNT2"],
+  Enicepatide: ["EN-P2PR", "EN-P3"],
+  VK2735: ["VK-VENTURE", "VK-P3"],
+  Ribupatide: ["RB-ORAL", "RB-P3"],
+  MariTide: ["MT-NEJM", "MT-MECH"],
   Mazdutide: ["MZ-GLORY2", "MZ-APPROVAL", "MZ-RESULTS"],
   Survodutide: ["SV-P3", "SV-MASH", "SV-SAFETY", "SV-DEAL"],
   Pemvidutide: ["PM-MOMENTUM", "PM-IMPACT", "PM-ACQ", "PM-UPDATE"],
@@ -514,6 +579,164 @@ const comparison = {
       }
     ],
     rightsRefs: ["SV-DEAL"]
+  },
+  tirzepatide: {
+    indication: "비만, T2D<br>OSA 등 확장",
+    rights: "Eli Lilly 자체 개발<br>비만·T2D 승인",
+    next: "심혈관 결과<br>소아 확장",
+    nextNcts: ["NCT05556512", "NCT06439277"],
+    defaultTrialId: "surmount1",
+    trials: [
+      {
+        id: "surmount1",
+        label: "SURMOUNT-1",
+        meta: "NCT04184622 · P3 · 72주 · 비당뇨 비만",
+        nct: "NCT04184622",
+        hasLiver: false,
+        weight: "<b>Tirzepatide −22.5%</b><br>위약 −2.4%<br><small>15 mg · 72주 · n=2539 · CT.gov Results</small>",
+        liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
+        gi: "오심 31.9%<br>구토 12.9%<br>설사 23.7% · 변비 12.7%<br><small>15 mg군 · CT.gov Results</small>",
+        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표는 연구중단 사유만 제시. 치료중단·GI 단독 중단 열 없음</small>",
+        refs: { trial: ["TZ-SURMOUNT1"], weight: ["TZ-SURMOUNT1"], gi: ["TZ-SURMOUNT1"], discontinuation: ["TZ-SURMOUNT1"] }
+      },
+      {
+        id: "surmount2",
+        label: "SURMOUNT-2",
+        meta: "NCT04657003 · P3 · 72주 · T2D 동반 비만",
+        nct: "NCT04657003",
+        hasLiver: false,
+        weight: "<b>Tirzepatide −15.7%</b><br>위약 −3.3%<br><small>15 mg · 72주 · n=938 · CT.gov Results</small>",
+        liver: "[회사 미공개]<br><small>본시험에 간 지표 없음</small>",
+        gi: "오심 21.9%<br>구토 12.9%<br>설사 21.2% · 변비 9.0%<br><small>15 mg군 · CT.gov Results</small>",
+        discontinuation: "[CT.gov 미분리]<br><small>등록 결과표에 치료중단·GI 단독 중단 열 없음</small>",
+        refs: { trial: ["TZ-SURMOUNT2"], weight: ["TZ-SURMOUNT2"], gi: ["TZ-SURMOUNT2"], discontinuation: ["TZ-SURMOUNT2"] }
+      }
+    ],
+    rightsRefs: ["TZ-SURMOUNT1"]
+  },
+  enicepatide: {
+    indication: "비만, 과체중<br>T2D",
+    rights: "Carmot CT-388 기원<br>2024 Roche 인수",
+    next: "Enith P3<br>petrelintide 병용",
+    nextNcts: ["NCT07351045", "NCT07351058", "NCT07589686"],
+    defaultTrialId: "ct388p2",
+    trials: [
+      {
+        id: "ct388p2",
+        label: "Phase 2 비만",
+        meta: "NCT06525935 · P2 · 48주 · 비만·과체중",
+        nct: "NCT06525935",
+        hasLiver: false,
+        weight: "<b>위약보정 −22.5%</b> (p&lt;0.001)<br><small>24 mg · 48주 · n=469 · 회사 공개 · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>발표 범위에 간 지표 없음</small>",
+        gi: "[회사 미공개]<br><small>\'대부분 경증~중등도\' 로만 기술, 발생률 수치 없음</small>",
+        discontinuation: "<b>AE로 인한 치료중단 5.9%</b><br>위약 1.3%<br><small>회사 공개 · CT.gov Results 미게시</small>",
+        refs: { trial: ["EN-P2PR"], weight: ["EN-P2PR"], discontinuation: ["EN-P2PR"] }
+      }
+    ],
+    rightsRefs: ["EN-P2PR"]
+  },
+  vk2735: {
+    indication: "비만, 과체중<br>(당뇨 제외)",
+    rights: "Viking 자체 개발<br>피하·경구 병행",
+    next: "VANQUISH P3<br>경구 확장",
+    nextNcts: ["NCT07104500", "NCT07104383"],
+    defaultTrialId: "venture",
+    trials: [
+      {
+        id: "venture",
+        label: "VENTURE (SC)",
+        meta: "NCT06068946 · P2 · 13주 · 비만·과체중",
+        nct: "NCT06068946",
+        hasLiver: false,
+        weight: "<b>VK2735 −14.7%</b> (−14.6 kg)<br>위약 −1.7% (−1.8 kg)<br><small>15 mg · 13주 · n=176 · 피어리뷰</small>",
+        liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
+        gi: "[1차 미확보]<br><small>초록은 \'주로 GI, 적정 후 빈도 감소\' 로만 기술. 전문 미접근</small>",
+        discontinuation: "[1차 미확보]<br><small>초록에 중단률 없음. CT.gov Results 미게시</small>",
+        refs: { trial: ["VK-VENTURE"], weight: ["VK-VENTURE"] }
+      },
+      {
+        id: "ventureoral",
+        label: "VENTURE-Oral",
+        meta: "NCT06828055 · P2 · 경구 · 비만·과체중",
+        nct: "NCT06828055",
+        hasLiver: false,
+        weight: "[1차 미확보]",
+        liver: "[회사 미공개]",
+        gi: "[1차 미확보]<br><small>경구 코호트 GI 발생률 공개 확인 안 됨</small>",
+        discontinuation: "[1차 미확보]<br><small>경구 코호트 중단률 공개 확인 안 됨</small>",
+        refs: { trial: ["VK-P3"] }
+      }
+    ],
+    rightsRefs: ["VK-VENTURE"]
+  },
+  ribupatide: {
+    indication: "비만, 과체중<br>T2D · OSA",
+    rights: "Hengrui 개발<br>Kailera 글로벌 권리",
+    next: "KaiNETIC-1 P3<br>경구 P3",
+    nextNcts: ["NCT07284875", "NCT07285902"],
+    defaultTrialId: "hrs9531oral",
+    trials: [
+      {
+        id: "hrs9531oral",
+        label: "경구 Phase 2",
+        meta: "NCT06841445 · P2 · 26주 · 비만",
+        nct: "NCT06841445",
+        hasLiver: false,
+        weight: "<b>Ribupatide −12.1%</b><br>위약 −2.3%<br><small>25 mg 경구 · 26주 · n=166 · efficacy estimand · 회사 공개 · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>발표 범위에 간 지표 없음</small>",
+        gi: "오심 22.7%<br>구토 11.4%<br><small>25 mg군 · 회사 공개 · CT.gov Results 미게시</small>",
+        discontinuation: "<b>GI 사유 영구 중단 0건</b><br><small>용량 감량도 보고되지 않음 · 회사 공개 · CT.gov Results 미게시</small>",
+        refs: { trial: ["RB-ORAL"], weight: ["RB-ORAL"], gi: ["RB-ORAL"], discontinuation: ["RB-ORAL"] }
+      },
+      {
+        id: "hrs9531inj",
+        label: "주사 Phase 2 (비만)",
+        meta: "NCT05881837 · P2 · 비만·과체중",
+        nct: "NCT05881837",
+        hasLiver: false,
+        weight: "[1차 미확보]",
+        liver: "[회사 미공개]",
+        gi: "[1차 미확보]<br><small>주사 Phase 2 GI 발생률 1차 미확인</small>",
+        discontinuation: "[1차 미확보]<br><small>주사 Phase 2 중단률 1차 미확인</small>",
+        refs: { trial: ["RB-P3"] }
+      }
+    ],
+    rightsRefs: ["RB-ORAL"]
+  },
+  maritide: {
+    indication: "비만, 과체중<br>T2D 동반",
+    rights: "Amgen 자체 개발<br>AMG 133 기원",
+    next: "MARITIME P3<br>심혈관·OSA",
+    nextNcts: ["NCT07037433", "NCT07225686", "NCT06987695"],
+    defaultTrialId: "maritidep2",
+    trials: [
+      {
+        id: "maritidep2",
+        label: "Phase 2 (비만 코호트)",
+        meta: "NCT05669599 · P2 · 52주 · 비만",
+        nct: "NCT05669599",
+        hasLiver: false,
+        weight: "<b>MariTide −12.3 ~ −16.2%</b><br>위약 −2.5%<br><small>월 1회 · 52주 · 전체 등록 592명 중 비만 코호트 465명 · treatment policy estimand · 피어리뷰</small>",
+        liver: "[회사 미공개]<br><small>비만 본시험에 간 지표 없음</small>",
+        gi: "[1차 미확보]<br><small>초록은 \'GI 흔함, 용량적정으로 감소\' 로만 기술. 발생률 수치 미확보</small>",
+        discontinuation: "[1차 미확보]<br><small>초록에 중단률 없음. CT.gov Results 미게시</small>",
+        refs: { trial: ["MT-NEJM"], weight: ["MT-NEJM"] }
+      },
+      {
+        id: "maritidep2dm",
+        label: "Phase 2 (비만+T2D)",
+        meta: "NCT05669599 · P2 · 52주 · T2D 동반 비만",
+        nct: "NCT05669599",
+        hasLiver: false,
+        weight: "<b>MariTide −8.4 ~ −12.3%</b><br>위약 −1.7%<br><small>월 1회 · 52주 · 전체 등록 592명 중 비만+T2D 코호트 127명 · treatment policy estimand · 피어리뷰</small>",
+        liver: "[회사 미공개]",
+        gi: "[1차 미확보]<br><small>초록에 코호트별 GI 발생률 없음</small>",
+        discontinuation: "[1차 미확보]<br><small>초록에 코호트별 중단률 없음</small>",
+        refs: { trial: ["MT-NEJM"], weight: ["MT-NEJM"] }
+      }
+    ],
+    rightsRefs: ["MT-MECH"]
   },
   pemvidutide: {
     indication: "비만, MASH<br>AUD·ALD",
@@ -1425,6 +1648,36 @@ const mechanismProfiles = {
     ratio: "8:1",
     text: "<b>장기지속 단일분자 peptide</b><br>GLP-1R:GCGR ≈ <b>8:1</b><br><small>human plasma functional assay</small>",
     refs: ["SV-DESIGN"]
+  },
+  tirzepatide: {
+    targets: ["GLP-1R", "GIP"],
+    format: "unimolecular",
+    text: "GIP·GLP-1 수용체 <b>이중 작용</b> 펩타이드. GIP 쪽으로 치우친 불균형 작용으로 보고된다.",
+    refs: ["TZ-SURMOUNT1"]
+  },
+  enicepatide: {
+    targets: ["GLP-1R", "GIP"],
+    format: "unimolecular",
+    text: "GLP-1/GIP <b>이중 작용</b>. 신호 편향(signaling-biased) 설계로 기술된다.",
+    refs: ["EN-P2PR"]
+  },
+  vk2735: {
+    targets: ["GLP-1R", "GIP"],
+    format: "unimolecular",
+    text: "GLP-1/GIP <b>이중 작용</b> 펩타이드. 피하·경구 두 제형으로 개발 중이다.",
+    refs: ["VK-VENTURE"]
+  },
+  ribupatide: {
+    targets: ["GLP-1R", "GIP"],
+    format: "unimolecular",
+    text: "GLP-1/GIP <b>이중 작용</b> 펩타이드. 주 1회 주사와 1일 1회 경구정을 함께 개발한다.",
+    refs: ["RB-ORAL"]
+  },
+  maritide: {
+    targets: ["GLP-1R", "GIPR(길항)"],
+    format: "other",
+    text: "★ 같은 GIP 축이지만 <b>작용 방향이 반대</b>다. 항GIPR 단일클론항체에 GLP-1 유사체 2개를 접합한 이중특이 분자로, GLP-1R는 <b>작용</b>·GIPR는 <b>길항</b>한다. 다른 4개(이중 작용제)와 같은 축으로 묶여 있으나 기전 해석은 분리해서 본다.",
+    refs: ["MT-MECH", "MT-NEJM"]
   },
   pemvidutide: {
     targets: ["GLP-1R", "GCGR"],

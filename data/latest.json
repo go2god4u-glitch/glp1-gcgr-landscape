@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-27T06:46:44.448Z",
-  "registryCheckedAt": "2026-07-27T06:46:12.834Z",
+  "generatedAt": "2026-07-27T07:13:39.673Z",
+  "registryCheckedAt": "2026-07-27T07:13:35.150Z",
   "sourcesCheckedAt": "2026-07-27T06:46:34.874Z",
   "discoveryCheckedAt": "2026-07-27T06:46:21.506Z",
   "literatureCheckedAt": "2026-07-27T06:46:29.374Z",
@@ -9,7 +9,7 @@
     "cms": {
       "id": "cms",
       "label": "CMS-D005",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [],
       "nextMilestone": null,
       "note": "no-ctgov-nct"
@@ -17,38 +17,8 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
-        {
-          "nctId": "NCT06164873",
-          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 462,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-12-27",
-          "primaryCompletion": "2025-06-27",
-          "completion": "2025-09-19",
-          "lastUpdate": "2024-08-27",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
         {
           "nctId": "NCT06937749",
           "title": "A Study of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
@@ -80,6 +50,36 @@
           ]
         },
         {
+          "nctId": "NCT06164873",
+          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 462,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-12-27",
+          "primaryCompletion": "2025-06-27",
+          "completion": "2025-09-19",
+          "lastUpdate": "2024-08-27",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
           "nctId": "NCT06931028",
           "title": "A Study of IBI362 in Chinese Subjects With Obstructive Sleep Apnea and BMI≥28 kg/m2",
           "status": "RECRUITING",
@@ -102,6 +102,42 @@
             {
               "type": "OTHER",
               "name": "placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07000955",
+          "title": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg in Patients With Moderate to Severe Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 98,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-06-17",
+          "primaryCompletion": "2026-09-30",
+          "completion": "2027-05-14",
+          "lastUpdate": "2025-12-15",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Tirzepatide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
               "otherNames": []
             },
             {
@@ -175,37 +211,64 @@
           ]
         },
         {
-          "nctId": "NCT07000955",
-          "title": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg in Patients With Moderate to Severe Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
+          "nctId": "NCT07469800",
+          "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
+          "status": "RECRUITING",
           "phase": [
-            "PHASE1",
-            "PHASE2"
+            "PHASE3"
           ],
-          "enrollment": 98,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-06-17",
-          "primaryCompletion": "2026-09-30",
-          "completion": "2027-05-14",
-          "lastUpdate": "2025-12-15",
+          "enrollment": 336,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-04-23",
+          "primaryCompletion": "2026-08-01",
+          "completion": "2027-04-15",
+          "lastUpdate": "2026-05-27",
           "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
           "conditions": [
-            "Obesity"
+            "Overweight",
+            "Obesity",
+            "Hypertensive"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "Tirzepatide",
+              "name": "IBI362",
               "otherNames": []
             },
             {
               "type": "DRUG",
               "name": "Placebo",
               "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07657676",
+          "title": "Effect of Mazdutide on Coronary Plaque in Patients With Coronary Atherosclerosis and Overweight or Obesity",
+          "status": "NOT_YET_RECRUITING",
+          "phase": [
+            "PHASE4"
+          ],
+          "enrollment": 116,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-05-25",
+          "primaryCompletion": "2027-10-31",
+          "completion": "2028-02-28",
+          "lastUpdate": "2026-06-18",
+          "leadSponsor": "China National Center for Cardiovascular Diseases",
+          "conditions": [
+            "Obesity & Overweight",
+            "Coronary Heart Disease"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Mazdutide",
+              "otherNames": []
             },
             {
               "type": "DRUG",
-              "name": "IBI362",
+              "name": "Placebo",
               "otherNames": []
             }
           ]
@@ -241,38 +304,6 @@
           ]
         },
         {
-          "nctId": "NCT07469800",
-          "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 336,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-04-23",
-          "primaryCompletion": "2026-08-01",
-          "completion": "2027-04-15",
-          "lastUpdate": "2026-05-27",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Overweight",
-            "Obesity",
-            "Hypertensive"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT07517042",
           "title": "ASCEND-1: Lifestyle Intervention Plus Mazdutide for Weight Management",
           "status": "RECRUITING",
@@ -299,37 +330,6 @@
             {
               "type": "BEHAVIORAL",
               "name": "Intensive Lifestyle Intervention",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07657676",
-          "title": "Effect of Mazdutide on Coronary Plaque in Patients With Coronary Atherosclerosis and Overweight or Obesity",
-          "status": "NOT_YET_RECRUITING",
-          "phase": [
-            "PHASE4"
-          ],
-          "enrollment": 116,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-05-25",
-          "primaryCompletion": "2027-10-31",
-          "completion": "2028-02-28",
-          "lastUpdate": "2026-06-18",
-          "leadSponsor": "China National Center for Cardiovascular Diseases",
-          "conditions": [
-            "Obesity & Overweight",
-            "Coronary Heart Disease"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Mazdutide",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
               "otherNames": []
             }
           ]
@@ -383,7 +383,7 @@
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -450,38 +450,6 @@
           ]
         },
         {
-          "nctId": "NCT07407348",
-          "title": "A Study in People With Overweight or Obesity to Compare How 2 Different Formulations of Survodutide Are Taken up by the Body",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 80,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-03-11",
-          "primaryCompletion": "2027-01-26",
-          "completion": "2027-03-02",
-          "lastUpdate": "2026-06-16",
-          "leadSponsor": "Boehringer Ingelheim",
-          "conditions": [
-            "Healthy",
-            "Obesity",
-            "Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Formulation A",
-              "otherNames": []
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Formulation B6",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT06745284",
           "title": "A Study to Test Whether Survodutide Improves How the Body Uses Energy and Breaks Down Fat in People With Obesity",
           "status": "ACTIVE_NOT_RECRUITING",
@@ -512,6 +480,38 @@
               "otherNames": [
                 "Wegovy®"
               ]
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07407348",
+          "title": "A Study in People With Overweight or Obesity to Compare How 2 Different Formulations of Survodutide Are Taken up by the Body",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 80,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-03-11",
+          "primaryCompletion": "2027-01-26",
+          "completion": "2027-03-02",
+          "lastUpdate": "2026-06-16",
+          "leadSponsor": "Boehringer Ingelheim",
+          "conditions": [
+            "Healthy",
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Formulation A",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Formulation B6",
+              "otherNames": []
             }
           ]
         },
@@ -548,6 +548,38 @@
           ]
         },
         {
+          "nctId": "NCT06632457",
+          "title": "LIVERAGE™ - Cirrhosis: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Cirrhosis",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 1590,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-11-07",
+          "primaryCompletion": "2029-06-05",
+          "completion": "2029-06-05",
+          "lastUpdate": "2026-07-09",
+          "leadSponsor": "Boehringer Ingelheim",
+          "conditions": [
+            "Metabolic Dysfunction Associated Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Survodutide",
+              "otherNames": [
+                "BI 456906"
+              ]
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Placebo matching survodutide",
+              "otherNames": []
+            }
+          ]
+        },
+        {
           "nctId": "NCT06632444",
           "title": "LIVERAGE™: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Moderate or Advanced Liver Fibrosis",
           "status": "RECRUITING",
@@ -579,38 +611,6 @@
               "otherNames": []
             }
           ]
-        },
-        {
-          "nctId": "NCT06632457",
-          "title": "LIVERAGE™ - Cirrhosis: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Cirrhosis",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 1590,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-11-07",
-          "primaryCompletion": "2029-06-05",
-          "completion": "2029-06-05",
-          "lastUpdate": "2026-07-09",
-          "leadSponsor": "Boehringer Ingelheim",
-          "conditions": [
-            "Metabolic Dysfunction Associated Steatohepatitis"
-          ],
-          "interventions": [
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Survodutide",
-              "otherNames": [
-                "BI 456906"
-              ]
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Placebo matching survodutide",
-              "otherNames": []
-            }
-          ]
         }
       ],
       "nextMilestone": {
@@ -624,7 +624,7 @@
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT05295875",
@@ -687,36 +687,6 @@
           ]
         },
         {
-          "nctId": "NCT07009860",
-          "title": "RESTORE TRIAL: A Phase 2 Study Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol-Associated Liver Disease (ALD)",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 100,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2025-06-16",
-          "primaryCompletion": "2027-03-31",
-          "completion": "2027-08-31",
-          "lastUpdate": "2026-03-20",
-          "leadSponsor": "Altimmune, Inc.",
-          "conditions": [
-            "Alcohol Liver Disease"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Pemvidutide",
-              "otherNames": []
-            },
-            {
-              "type": "OTHER",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT06987513",
           "title": "RECLAIM STUDY: A Phase 2 Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol Use Disorder (AUD) in Subjects With Obesity or Overweight",
           "status": "ACTIVE_NOT_RECRUITING",
@@ -745,6 +715,36 @@
               "otherNames": []
             }
           ]
+        },
+        {
+          "nctId": "NCT07009860",
+          "title": "RESTORE TRIAL: A Phase 2 Study Evaluating the Efficacy and Safety of Pemvidutide in the Treatment of Alcohol-Associated Liver Disease (ALD)",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 100,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-06-16",
+          "primaryCompletion": "2027-03-31",
+          "completion": "2027-08-31",
+          "lastUpdate": "2026-03-20",
+          "leadSponsor": "Altimmune, Inc.",
+          "conditions": [
+            "Alcohol Liver Disease"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Pemvidutide",
+              "otherNames": []
+            },
+            {
+              "type": "OTHER",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
         }
       ],
       "nextMilestone": {
@@ -758,7 +758,7 @@
     "efino": {
       "id": "efino",
       "label": "Efinopegdutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT04944992",
@@ -890,8 +890,79 @@
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
+        {
+          "nctId": "NCT06862791",
+          "title": "A Weight Loss Study Evaluating Subcutaneous Treatment With AZD9550 and AZD6234 in Combination Against Placebo or Each of the Drugs Alone",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 377,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-02-18",
+          "primaryCompletion": "2026-05-11",
+          "completion": "2026-05-11",
+          "lastUpdate": "2026-06-03",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Obesity or Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD6234",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo comparator",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06151964",
+          "title": "A Trial to Learn How Safe AZD9550 Monotherapy and Combined With AZD6234 is in People With or Without Type 2 Diabetes Who Are Living With Obesity and Overweight",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "enrollment": 166,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-09-29",
+          "primaryCompletion": "2027-01-29",
+          "completion": "2027-01-29",
+          "lastUpdate": "2026-06-23",
+          "leadSponsor": "AstraZeneca",
+          "conditions": [
+            "Overweight and Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "AZD9550",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "AZD9550 and AZD6234",
+              "otherNames": []
+            }
+          ]
+        },
         {
           "nctId": "NCT07013643",
           "title": "A Study to Investigate the Effect of AZD6234, AZD9550, and a Combination of AZD9550 and AZD6234 on Pharmacokinetics of Combined Oral Contraceptive Ethinyl Estradiol/Levonorgestrel in Healthy Female Participants Living With Overweight or Obesity",
@@ -928,41 +999,6 @@
             {
               "type": "DRUG",
               "name": "AZD9550",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06862791",
-          "title": "A Weight Loss Study Evaluating Subcutaneous Treatment With AZD9550 and AZD6234 in Combination Against Placebo or Each of the Drugs Alone",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 377,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-02-18",
-          "primaryCompletion": "2026-05-11",
-          "completion": "2026-05-11",
-          "lastUpdate": "2026-06-03",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Obesity or Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD6234",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo comparator",
               "otherNames": []
             }
           ]
@@ -1018,42 +1054,6 @@
           ]
         },
         {
-          "nctId": "NCT06151964",
-          "title": "A Trial to Learn How Safe AZD9550 Monotherapy and Combined With AZD6234 is in People With or Without Type 2 Diabetes Who Are Living With Obesity and Overweight",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE1",
-            "PHASE2"
-          ],
-          "enrollment": 166,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-09-29",
-          "primaryCompletion": "2027-01-29",
-          "completion": "2027-01-29",
-          "lastUpdate": "2026-06-23",
-          "leadSponsor": "AstraZeneca",
-          "conditions": [
-            "Overweight and Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "AZD9550",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "AZD9550 and AZD6234",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT07546760",
           "title": "A Phase I Study to Investigate the Effect of Hepatic Impairment of AZD9550 and AZD6234",
           "status": "RECRUITING",
@@ -1095,7 +1095,7 @@
     "dd01": {
       "id": "dd01",
       "label": "Zabopegdutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06410924",
@@ -1134,7 +1134,7 @@
     "da1726": {
       "id": "da1726",
       "label": "DA-1726",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06252220",
@@ -1178,7 +1178,7 @@
     "pb718": {
       "id": "pb718",
       "label": "PB-718",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06147544",
@@ -1217,7 +1217,7 @@
     "retatrutide": {
       "id": "retatrutide",
       "label": "Retatrutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT05929066",
@@ -1291,7 +1291,7 @@
     "cagrisema": {
       "id": "cagrisema",
       "label": "CagriSema",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT05567796",
@@ -1345,39 +1345,8 @@
     "zenagamtide": {
       "id": "zenagamtide",
       "label": "Zenagamtide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
-        {
-          "nctId": "NCT06064006",
-          "title": "A Research Study to See How a New Medicine (NNC0487-0111) Works in People With Overweight or Obesity When Injected Under the Skin",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 125,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2023-09-15",
-          "primaryCompletion": "2024-11-27",
-          "completion": "2024-11-27",
-          "lastUpdate": "2025-11-19",
-          "leadSponsor": "Novo Nordisk A/S",
-          "conditions": [
-            "Obesity",
-            "Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "NNC0487-0111",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo (NNC0487-0111)",
-              "otherNames": []
-            }
-          ]
-        },
         {
           "nctId": "NCT06542874",
           "title": "A Research Study Comparing How Well Different Doses of the Medicine NNC0487-0111 Lower Blood Sugar in People With Type 2 Diabetes",
@@ -1417,6 +1386,37 @@
               "otherNames": []
             }
           ]
+        },
+        {
+          "nctId": "NCT06064006",
+          "title": "A Research Study to See How a New Medicine (NNC0487-0111) Works in People With Overweight or Obesity When Injected Under the Skin",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 125,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-09-15",
+          "primaryCompletion": "2024-11-27",
+          "completion": "2024-11-27",
+          "lastUpdate": "2025-11-19",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "NNC0487-0111",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo (NNC0487-0111)",
+              "otherNames": []
+            }
+          ]
         }
       ],
       "nextMilestone": null
@@ -1424,7 +1424,7 @@
     "eloralintide": {
       "id": "eloralintide",
       "label": "Eloralintide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06230523",
@@ -1504,7 +1504,7 @@
     "cotadutide": {
       "id": "cotadutide",
       "label": "Cotadutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT03235050",
@@ -1588,7 +1588,7 @@
     "nn1177": {
       "id": "nn1177",
       "label": "NN1177",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT03308721",
@@ -1658,7 +1658,7 @@
     "sar425899": {
       "id": "sar425899",
       "label": "SAR425899",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT02973321",
@@ -1743,7 +1743,7 @@
     "opk88003": {
       "id": "opk88003",
       "label": "Pegapamodutide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT03406377",
@@ -1781,7 +1781,7 @@
     "g3215": {
       "id": "g3215",
       "label": "G3215",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT02692040",
@@ -1822,7 +1822,7 @@
     "petrelintide": {
       "id": "petrelintide",
       "label": "Petrelintide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06662539",
@@ -1902,7 +1902,7 @@
     "azd6234": {
       "id": "azd6234",
       "label": "AZD6234",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT06595238",
@@ -2007,7 +2007,7 @@
     "cagrilintide": {
       "id": "cagrilintide",
       "label": "Cagrilintide",
-      "checkedAt": "2026-07-27T06:46:12.834Z",
+      "checkedAt": "2026-07-27T07:13:35.150Z",
       "studies": [
         {
           "nctId": "NCT03856047",
@@ -44289,7 +44289,7 @@
     "relevantCandidates": 212,
     "literature": 336,
     "monitoredSources": 17,
-    "changes": 34,
+    "changes": 0,
     "errors": 0,
     "verification": "pass",
     "verifiedRegistry": 57,
@@ -44414,7 +44414,7 @@
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-07-27T06:46:34.875Z",
+    "checkedAt": "2026-07-27T07:13:39.257Z",
     "checks": {
       "registry": {
         "expected": 57,
@@ -44434,6 +44434,11 @@
       "officialSources": {
         "expected": 17,
         "verified": 17,
+        "complete": true
+      },
+      "appCoverage": {
+        "expected": 21,
+        "verified": 21,
         "complete": true
       }
     },
@@ -44742,9 +44747,9 @@
     "factGate": {
       "ran": true,
       "exitCode": 0,
-      "mode": "full",
+      "mode": "offline",
       "policyVersion": "fact-gate-v1",
-      "checkedAt": "2026-07-27T06:46:44.148Z",
+      "checkedAt": "2026-07-27T07:13:39.641Z",
       "blocking": 0,
       "machineChecked": {
         "label": "기계 대조 위반",
@@ -44754,7 +44759,7 @@
         "verifiedClaimEdited": 0,
         "narrativeUnsourced": 5,
         "warnings": 12,
-        "registryChecked": 43,
+        "registryChecked": 0,
         "registryTargets": 43
       },
       "humanEvidence": {
@@ -44769,831 +44774,7 @@
       "blockingFindings": []
     }
   },
-  "currentChanges": [
-    {
-      "scope": "discovery",
-      "id": "NCT03350191",
-      "label": "A Clinical Study to Investigate if SAR425899 Binds to the Liver and Pancreas in Overweight to Obese Type 2 Diabetes Mellitus Patients",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
-      "after": {
-        "title": "A Clinical Study to Investigate if SAR425899 Binds to the Liver and Pancreas in Overweight to Obese Type 2 Diabetes Mellitus Patients",
-        "status": "COMPLETED",
-        "phase": [
-          "PHASE1"
-        ],
-        "enrollment": 13,
-        "enrollmentType": "ACTUAL",
-        "startDate": "2017-12-20",
-        "primaryCompletion": "2018-06-07",
-        "completion": "2018-06-07",
-        "lastUpdate": "2022-04-25",
-        "leadSponsor": "Sanofi"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT03350191"
-    },
-    {
-      "scope": "literature",
-      "id": "42503495",
-      "label": "Efficacy of CagriSema for Reaching Anthropometric Treatment Targets and Cardiometabolic Outcomes: A Secondary, Post hoc Analysis of REDEFINE 1.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "42503495",
-        "title": "Efficacy of CagriSema for Reaching Anthropometric Treatment Targets and Cardiometabolic Outcomes: A Secondary, Post hoc Analysis of REDEFINE 1.",
-        "pubDate": "2026 Jul 26",
-        "source": "Diabetes Obes Metab",
-        "authors": [
-          "Busetto L",
-          "Contreras CO",
-          "Christensen MH",
-          "Garvey TW",
-          "Horn DB",
-          "McGowan B",
-          "Miller CP",
-          "Schnecke V",
-          "le Roux CW"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42503495/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42503495/"
-    },
-    {
-      "scope": "literature",
-      "id": "42289975",
-      "label": "Systematic Design of PLGA Nanoparticles for Long-Acting Delivery of a Dual GLP-1/Glucagon Receptor Coagonist Peptide (SAR425899) via Phase Inversion Nanoencapsulation.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "42289975",
-        "title": "Systematic Design of PLGA Nanoparticles for Long-Acting Delivery of a Dual GLP-1/Glucagon Receptor Coagonist Peptide (SAR425899) via Phase Inversion Nanoencapsulation.",
-        "pubDate": "2026 Jun 30",
-        "source": "Langmuir",
-        "authors": [
-          "Baptista C",
-          "Milovanovic K",
-          "Tatad J",
-          "Mathiowitz E"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42289975/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42289975/"
-    },
-    {
-      "scope": "literature",
-      "id": "42258769",
-      "label": "Phytoremediation patterns of riparian macrophytes along a spatial pollution gradient: an integrated risk-performance assessment in the Riva stream, Türkiye.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "42258769",
-        "title": "Phytoremediation patterns of riparian macrophytes along a spatial pollution gradient: an integrated risk-performance assessment in the Riva stream, Türkiye.",
-        "pubDate": "2026 Jun 8",
-        "source": "Int J Phytoremediation",
-        "authors": [
-          "Sağlam R",
-          "Gökbulak F"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42258769/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42258769/"
-    },
-    {
-      "scope": "literature",
-      "id": "41804851",
-      "label": "Relative Efficacy of Next-Generation Incretin Therapies for Cardio-Renal Protection in Type 2 Diabetes: Evidence From a Network Meta-Analysis.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41804851",
-        "title": "Relative Efficacy of Next-Generation Incretin Therapies for Cardio-Renal Protection in Type 2 Diabetes: Evidence From a Network Meta-Analysis.",
-        "pubDate": "2026 Jun",
-        "source": "Diabetes Obes Metab",
-        "authors": [
-          "Pham TP",
-          "Vo TM",
-          "Nguyen TA",
-          "Dao TP",
-          "Ngo NP",
-          "Le TT",
-          "Tran TT",
-          "Pham TH",
-          "Huynh DM",
-          "Ha HA"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41804851/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41804851/"
-    },
-    {
-      "scope": "literature",
-      "id": "42163094",
-      "label": "The coexistence of Lactiplantibacillus and Wickerhamomyces in sugarcane top silage drives potential pathogen suppression and aerobic stability through enhanced lactic acid and acetic acid production.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "42163094",
-        "title": "The coexistence of Lactiplantibacillus and Wickerhamomyces in sugarcane top silage drives potential pathogen suppression and aerobic stability through enhanced lactic acid and acetic acid production.",
-        "pubDate": "2026 May 20",
-        "source": "BMC Microbiol",
-        "authors": [
-          "Gu Q",
-          "Ye Q",
-          "Wang J",
-          "Yan Z",
-          "Huang X",
-          "Qin C",
-          "Wei C",
-          "Yan Q",
-          "Gao X",
-          "Tan Y",
-          "Cai X",
-          "Lin B",
-          "Zou C"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42163094/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42163094/"
-    },
-    {
-      "scope": "literature",
-      "id": "41848820",
-      "label": "Renal Outcomes of GLP-1 Receptor Agonists and Tirzepatide Across CKD Stages and Metabolic Phenotypes (Type 2 Diabetes and/or Overweight/Obesity): A Scoping Review.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41848820",
-        "title": "Renal Outcomes of GLP-1 Receptor Agonists and Tirzepatide Across CKD Stages and Metabolic Phenotypes (Type 2 Diabetes and/or Overweight/Obesity): A Scoping Review.",
-        "pubDate": "2026 Apr",
-        "source": "Diabetes Ther",
-        "authors": [
-          "Rico-Fontalvo J",
-          "Daza-Arnedo R",
-          "Elbert A",
-          "Correa-Rotter R",
-          "Dina-Batlle E",
-          "Lorca-Herrera E",
-          "de Moraes TP",
-          "Sánchez-Polo V",
-          "Builes-Montaño CE"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41848820/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41848820/"
-    },
-    {
-      "scope": "literature",
-      "id": "41732153",
-      "label": "A study to evaluate the impact of PB-119 injection (a pegylated exenatide formulation) on the pharmacokinetic profiles of Digoxin and Warfarin sodium in healthy subjects.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41732153",
-        "title": "A study to evaluate the impact of PB-119 injection (a pegylated exenatide formulation) on the pharmacokinetic profiles of Digoxin and Warfarin sodium in healthy subjects.",
-        "pubDate": "2026",
-        "source": "SAGE Open Med",
-        "authors": [
-          "Yu Y",
-          "Hu W",
-          "Zhang T",
-          "Peng Y",
-          "Ding J",
-          "Wang X",
-          "He H",
-          "Zhou D",
-          "Han D",
-          "Cao J",
-          "Cheng N",
-          "Zhou J",
-          "Zhou H"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41732153/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41732153/"
-    },
-    {
-      "scope": "literature",
-      "id": "41466530",
-      "label": "Comparative Analysis of Glucagon Receptor Agonists vs. Resmetirom in MASLD and MASH: Network Meta-Analysis of Clinical Trials.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41466530",
-        "title": "Comparative Analysis of Glucagon Receptor Agonists vs. Resmetirom in MASLD and MASH: Network Meta-Analysis of Clinical Trials.",
-        "pubDate": "2026 Jan",
-        "source": "Endocrinol Diabetes Metab",
-        "authors": [
-          "Andonie CR",
-          "Abusalameh A",
-          "Ismail I",
-          "Hodrob T",
-          "Ladadweh M",
-          "Ayesh H"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41466530/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41466530/"
-    },
-    {
-      "scope": "literature",
-      "id": "41480597",
-      "label": "Glycemic control, weight-loss effects, and safety of cotadutide in individuals with type 2 diabetes: A systematic review and meta-analysis.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41480597",
-        "title": "Glycemic control, weight-loss effects, and safety of cotadutide in individuals with type 2 diabetes: A systematic review and meta-analysis.",
-        "pubDate": "2025 Dec 15",
-        "source": "World J Diabetes",
-        "authors": [
-          "Kamrul-Hasan ABM",
-          "Dutta D",
-          "Nagendra L",
-          "Basavarajappa SD",
-          "Girijashankar HB",
-          "Joshi A",
-          "Pappachan JM"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41480597/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41480597/"
-    },
-    {
-      "scope": "literature",
-      "id": "41189318",
-      "label": "Weight Loss, Obesity Medication, and Risk of Obesity-Associated Cancer: A Meta-Analysis of Randomized Controlled Trials.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "41189318",
-        "title": "Weight Loss, Obesity Medication, and Risk of Obesity-Associated Cancer: A Meta-Analysis of Randomized Controlled Trials.",
-        "pubDate": "2025 Nov 4",
-        "source": "Obesity (Silver Spring)",
-        "authors": [
-          "Li C",
-          "Lin C",
-          "Cai X",
-          "Lv F",
-          "Yang W",
-          "Ji L"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/41189318/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41189318/"
-    },
-    {
-      "scope": "literature",
-      "id": "40972496",
-      "label": "Application of a mouse model humanized for cytochrome P450-mediated drug metabolism to predict drug-drug interactions between a peptide and small molecule drugs.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40972496",
-        "title": "Application of a mouse model humanized for cytochrome P450-mediated drug metabolism to predict drug-drug interactions between a peptide and small molecule drugs.",
-        "pubDate": "2025 Oct",
-        "source": "Drug Metab Dispos",
-        "authors": [
-          "Kapelyukh Y",
-          "Gabel-Jensen C",
-          "MacLeod AK",
-          "Daniel Coquelin KS",
-          "Stojanovski L",
-          "Frame L",
-          "Tavendale A",
-          "Henderson CJ",
-          "Read KD",
-          "Wolf CR",
-          "Säll C"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40972496/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40972496/"
-    },
-    {
-      "scope": "literature",
-      "id": "40665896",
-      "label": "From In Vitro Efficacy to Long-Term HbA1c Response for GLP-1R/GlucagonR Agonism Using the 4GI-HbA1c Systems Model.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40665896",
-        "title": "From In Vitro Efficacy to Long-Term HbA1c Response for GLP-1R/GlucagonR Agonism Using the 4GI-HbA1c Systems Model.",
-        "pubDate": "2025 Sep",
-        "source": "CPT Pharmacometrics Syst Pharmacol",
-        "authors": [
-          "Bosch R",
-          "Petrone M",
-          "Arends R",
-          "Sijbrands EJG",
-          "Hoefman S",
-          "Snelder N"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40665896/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40665896/"
-    },
-    {
-      "scope": "literature",
-      "id": "40471293",
-      "label": "Beyond GLP-1: efficacy and safety of dual and triple incretin agonists in personalized type 2 diabetes care-a systematic review and network meta-analysis.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40471293",
-        "title": "Beyond GLP-1: efficacy and safety of dual and triple incretin agonists in personalized type 2 diabetes care-a systematic review and network meta-analysis.",
-        "pubDate": "2025 Sep",
-        "source": "Acta Diabetol",
-        "authors": [
-          "Yan K",
-          "Yu H",
-          "Blaise B"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40471293/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40471293/"
-    },
-    {
-      "scope": "literature",
-      "id": "40344607",
-      "label": "Pharmacokinetic-pharmacodynamic (PK/PD) modelling of cotadutide effect in patients with chronic kidney disease and type 2 diabetes mellitus.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40344607",
-        "title": "Pharmacokinetic-pharmacodynamic (PK/PD) modelling of cotadutide effect in patients with chronic kidney disease and type 2 diabetes mellitus.",
-        "pubDate": "2025 Sep",
-        "source": "Br J Clin Pharmacol",
-        "authors": [
-          "Yu H",
-          "Parker V",
-          "Selvarajah V",
-          "Hansen L",
-          "Robertson D",
-          "Hamrén B",
-          "Khan A",
-          "Parkinson J"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40344607/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40344607/"
-    },
-    {
-      "scope": "literature",
-      "id": "40776973",
-      "label": "Efficacy of Dual Glucagon and Glucagon-like Peptide-1 Receptor Agonists Across the Cardiometabolic Continuum: A Review of Current Clinical Evidence.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40776973",
-        "title": "Efficacy of Dual Glucagon and Glucagon-like Peptide-1 Receptor Agonists Across the Cardiometabolic Continuum: A Review of Current Clinical Evidence.",
-        "pubDate": "2025 Jul",
-        "source": "Rev Cardiovasc Med",
-        "authors": [
-          "Stachteas P",
-          "Nasoufidou A",
-          "Karakasis P",
-          "Koiliari M",
-          "Karagiannidis E",
-          "Koufakis T",
-          "Fragakis N",
-          "Patoulias D"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40776973/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40776973/"
-    },
-    {
-      "scope": "literature",
-      "id": "40399267",
-      "label": "GLP-1R/GCGR dual agonism dissipates hepatic steatosis to restore insulin sensitivity and rescue pancreatic β-cell function in obese male mice.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40399267",
-        "title": "GLP-1R/GCGR dual agonism dissipates hepatic steatosis to restore insulin sensitivity and rescue pancreatic β-cell function in obese male mice.",
-        "pubDate": "2025 May 21",
-        "source": "Nat Commun",
-        "authors": [
-          "Laker RC",
-          "Egolf S",
-          "Will S",
-          "Lantier L",
-          "McGuinness OP",
-          "Brown C",
-          "Bhagroo N",
-          "Oldham S",
-          "Kuszpit K",
-          "Alfaro A",
-          "Li X",
-          "Kang T",
-          "Pellegrini G",
-          "Andréasson AC",
-          "Kajani S",
-          "Sitaula S",
-          "Larsen MR",
-          "Rhodes CJ"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40399267/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40399267/"
-    },
-    {
-      "scope": "literature",
-      "id": "39875074",
-      "label": "Cotadutide reversible self-assembly based long-acting injectable depot for sustained delivery of GLP-1 glucagon receptor agonists with controlled burst release.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39875074",
-        "title": "Cotadutide reversible self-assembly based long-acting injectable depot for sustained delivery of GLP-1 glucagon receptor agonists with controlled burst release.",
-        "pubDate": "2025 Apr 10",
-        "source": "J Control Release",
-        "authors": [
-          "Yang B",
-          "Devalla D",
-          "Sonzini S",
-          "Boberg M",
-          "Gopaul S",
-          "Sundqvist M",
-          "Grant I",
-          "Jones C",
-          "Brookes S",
-          "Weidauer C",
-          "Paladino E",
-          "Mahmoudi N",
-          "van Rooyen J",
-          "Dos Santos AG",
-          "Laru J",
-          "Campbell A",
-          "Jermutus L",
-          "Bak A"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39875074/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39875074/"
-    },
-    {
-      "scope": "literature",
-      "id": "40206909",
-      "label": "Comparative Effectiveness of Semaglutide, Liraglutide, Orlistat, and Phentermine for Weight Loss in Obese Individuals: A Systematic Review.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "40206909",
-        "title": "Comparative Effectiveness of Semaglutide, Liraglutide, Orlistat, and Phentermine for Weight Loss in Obese Individuals: A Systematic Review.",
-        "pubDate": "2025 Mar",
-        "source": "Cureus",
-        "authors": [
-          "Patel JP",
-          "Hardaswani D",
-          "Patel J",
-          "Saiyed F",
-          "Goswami RJ",
-          "Saiyed TI",
-          "Patel H",
-          "Amin TH"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/40206909/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40206909/"
-    },
-    {
-      "scope": "literature",
-      "id": "39936428",
-      "label": "Potential New Treatments for Chronic Kidney Diseases: A Concise Review.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39936428",
-        "title": "Potential New Treatments for Chronic Kidney Diseases: A Concise Review.",
-        "pubDate": "2025",
-        "source": "Curr Pharm Des",
-        "authors": [
-          "Al-Horani RA"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39936428/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39936428/"
-    },
-    {
-      "scope": "literature",
-      "id": "39400355",
-      "label": "Glucagon and glucagon-like peptide-1 dual agonist therapy: A possible future towards fatty kidney disease.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39400355",
-        "title": "Glucagon and glucagon-like peptide-1 dual agonist therapy: A possible future towards fatty kidney disease.",
-        "pubDate": "2025 Jan",
-        "source": "Eur J Clin Invest",
-        "authors": [
-          "Kanbay M",
-          "Copur S",
-          "Guldan M",
-          "Ozbek L",
-          "Mallamaci F",
-          "Zoccali C"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39400355/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39400355/"
-    },
-    {
-      "scope": "literature",
-      "id": "39218393",
-      "label": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39218393",
-        "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease.",
-        "pubDate": "2024 Dec",
-        "source": "Kidney Int",
-        "authors": [
-          "Selvarajah V",
-          "Robertson D",
-          "Hansen L",
-          "Jermutus L",
-          "Smith K",
-          "Coggi A",
-          "Sánchez J",
-          "Chang YT",
-          "Yu H",
-          "Parkinson J",
-          "Khan A",
-          "Chung HS",
-          "Hess S",
-          "Dumas R",
-          "Duck T",
-          "Jolly S",
-          "Elliott TG",
-          "Baker J",
-          "Lecube A",
-          "Derwahl KM",
-          "Scott R",
-          "Morales C",
-          "Peters C",
-          "Goldenberg R",
-          "Parker VER",
-          "Heerspink HJL",
-          "study investigators"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39218393/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39218393/"
-    },
-    {
-      "scope": "literature",
-      "id": "39245214",
-      "label": "Corrigendum to \"Results from three phase 1 trials of NNC9204-1177, a glucagon/GLP-1 receptor co-agonist: effects on weight loss and safety in adults with overweight or obesity\" [Mol Metab 78 (2023) 101801].",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39245214",
-        "title": "Corrigendum to \"Results from three phase 1 trials of NNC9204-1177, a glucagon/GLP-1 receptor co-agonist: effects on weight loss and safety in adults with overweight or obesity\" [Mol Metab 78 (2023) 101801].",
-        "pubDate": "2024 Nov",
-        "source": "Mol Metab",
-        "authors": [
-          "Friedrichsen MH",
-          "Endahl L",
-          "Kreiner FF",
-          "Goldwater R",
-          "Kankam M",
-          "Toubro S",
-          "Nygård SB"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39245214/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39245214/"
-    },
-    {
-      "scope": "literature",
-      "id": "38050097",
-      "label": "Evaluating Drug-Drug Interaction Risk Associated with Peptide Analogs Using advanced In Vitro Systems.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38050097",
-        "title": "Evaluating Drug-Drug Interaction Risk Associated with Peptide Analogs Using advanced In Vitro Systems.",
-        "pubDate": "2024 Oct 16",
-        "source": "Drug Metab Dispos",
-        "authors": [
-          "Nørgaard RA",
-          "Bhatt DK",
-          "Järvinen E",
-          "Stage TB",
-          "Gabel-Jensen C",
-          "Galetin A",
-          "Säll C"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38050097/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38050097/"
-    },
-    {
-      "scope": "literature",
-      "id": "38740695",
-      "label": "Safety and efficacy of GLP-1 and glucagon receptor dual agonist for the treatment of type 2 diabetes and obesity: a systematic review and meta-analysis of randomized controlled trials.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38740695",
-        "title": "Safety and efficacy of GLP-1 and glucagon receptor dual agonist for the treatment of type 2 diabetes and obesity: a systematic review and meta-analysis of randomized controlled trials.",
-        "pubDate": "2024 Oct",
-        "source": "Endocrine",
-        "authors": [
-          "Deng B",
-          "Ruan T",
-          "Lu W",
-          "Ying J",
-          "Li S",
-          "Zhou R",
-          "Mu D"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38740695/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38740695/"
-    },
-    {
-      "scope": "literature",
-      "id": "39044369",
-      "label": "Exposure-response modeling for nausea incidence for cotadutide using a Markov modeling approach.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "39044369",
-        "title": "Exposure-response modeling for nausea incidence for cotadutide using a Markov modeling approach.",
-        "pubDate": "2024 Sep",
-        "source": "CPT Pharmacometrics Syst Pharmacol",
-        "authors": [
-          "Yu H",
-          "Ueckert S",
-          "Zhou L",
-          "Cheng J",
-          "Robertson D",
-          "Hansen L",
-          "Flor A",
-          "Parker V",
-          "Hamrén B",
-          "Khan AA"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/39044369/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39044369/"
-    },
-    {
-      "scope": "literature",
-      "id": "38837628",
-      "label": "CD9 Counteracts Liver Steatosis and Mediates GCGR Agonist Hepatic Effects.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38837628",
-        "title": "CD9 Counteracts Liver Steatosis and Mediates GCGR Agonist Hepatic Effects.",
-        "pubDate": "2024 Aug",
-        "source": "Adv Sci (Weinh)",
-        "authors": [
-          "Zheng Y",
-          "Wang Y",
-          "Xiong X",
-          "Zhang L",
-          "Zhu J",
-          "Huang B",
-          "Liu X",
-          "Liu J",
-          "Zhu Z",
-          "Yang G",
-          "Qu H",
-          "Zheng H"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38837628/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38837628/"
-    },
-    {
-      "scope": "literature",
-      "id": "38948164",
-      "label": "Efficacy and safety of visepegenatide, a long-acting weekly GLP-1 receptor agonist as monotherapy in type 2 diabetes mellitus: a randomised, double-blind, parallel, placebo-controlled phase 3 trial.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38948164",
-        "title": "Efficacy and safety of visepegenatide, a long-acting weekly GLP-1 receptor agonist as monotherapy in type 2 diabetes mellitus: a randomised, double-blind, parallel, placebo-controlled phase 3 trial.",
-        "pubDate": "2024 Jun",
-        "source": "Lancet Reg Health West Pac",
-        "authors": [
-          "Yan X",
-          "Ma J",
-          "Liu Y",
-          "Wang X",
-          "Li S",
-          "Yan S",
-          "Mo Z",
-          "Zhu Y",
-          "Lin J",
-          "Liu J",
-          "Jia Y",
-          "Liu L",
-          "Ding K",
-          "Xu M",
-          "Zhou Z"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38948164/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38948164/"
-    },
-    {
-      "scope": "literature",
-      "id": "38403793",
-      "label": "Characterisation of cotadutide's dual GLP-1/glucagon receptor agonistic effects on glycaemic control using an in vivo human glucose regulation quantitative systems pharmacology model.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38403793",
-        "title": "Characterisation of cotadutide's dual GLP-1/glucagon receptor agonistic effects on glycaemic control using an in vivo human glucose regulation quantitative systems pharmacology model.",
-        "pubDate": "2024 Jun",
-        "source": "Br J Pharmacol",
-        "authors": [
-          "Bosch R",
-          "Petrone M",
-          "Arends R",
-          "Vicini P",
-          "Sijbrands EJG",
-          "Hoefman S",
-          "Snelder N"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38403793/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38403793/"
-    },
-    {
-      "scope": "literature",
-      "id": "38147963",
-      "label": "Cotadutide (GLP-1/Glucagon dual receptor agonist) modulates hypothalamic orexigenic and anorexigenic neuropeptides in obese mice.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38147963",
-        "title": "Cotadutide (GLP-1/Glucagon dual receptor agonist) modulates hypothalamic orexigenic and anorexigenic neuropeptides in obese mice.",
-        "pubDate": "2024 Mar",
-        "source": "Peptides",
-        "authors": [
-          "Spezani R",
-          "Marinho TS",
-          "Reis TS",
-          "Aguila MB",
-          "Mandarim-de-Lacerda CA"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38147963/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38147963/"
-    },
-    {
-      "scope": "literature",
-      "id": "37995806",
-      "label": "Advances in obesity pharmacotherapy; learning from metabolic surgery and beyond.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "37995806",
-        "title": "Advances in obesity pharmacotherapy; learning from metabolic surgery and beyond.",
-        "pubDate": "2024 Feb",
-        "source": "Metabolism",
-        "authors": [
-          "Tsilingiris D",
-          "Kokkinos A"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/37995806/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/37995806/"
-    },
-    {
-      "scope": "literature",
-      "id": "37638839",
-      "label": "The role of gastric function in control of food intake (and body weight) in relation to obesity, as well as pharmacological and surgical interventions.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "37638839",
-        "title": "The role of gastric function in control of food intake (and body weight) in relation to obesity, as well as pharmacological and surgical interventions.",
-        "pubDate": "2024 Feb",
-        "source": "Neurogastroenterol Motil",
-        "authors": [
-          "Camilleri M"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/37638839/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/37638839/"
-    },
-    {
-      "scope": "literature",
-      "id": "38056618",
-      "label": "OXM-104, a potential candidate for the treatment of obesity, NASH and type 2 diabetes.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38056618",
-        "title": "OXM-104, a potential candidate for the treatment of obesity, NASH and type 2 diabetes.",
-        "pubDate": "2024 Jan 5",
-        "source": "Eur J Pharmacol",
-        "authors": [
-          "Melander SA",
-          "Kayed A",
-          "Andreassen KV",
-          "Karsdal MA",
-          "Henriksen K"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38056618/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38056618/"
-    },
-    {
-      "scope": "literature",
-      "id": "38150106",
-      "label": "Polyagonists in Type 2 Diabetes Management.",
-      "detectedAt": "2026-07-27T06:46:12.834Z",
-      "after": {
-        "pmid": "38150106",
-        "title": "Polyagonists in Type 2 Diabetes Management.",
-        "pubDate": "2024 Jan",
-        "source": "Curr Diab Rep",
-        "authors": [
-          "Dissanayake HA",
-          "Somasundaram NP"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/38150106/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/38150106/"
-    }
-  ],
+  "currentChanges": [],
   "changes": [
     {
       "scope": "discovery",
