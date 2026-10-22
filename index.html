@@ -20,10 +20,12 @@
   </header>
 
   <nav class="section-nav" aria-label="보고서 탭" role="tablist">
+    <a href="#pipeline" role="tab" aria-selected="false" id="pipelineTab" hidden>파이프라인 한눈에</a>
     <a href="#master" role="tab" aria-selected="true" class="active">경쟁물질 비교표</a>
     <a href="#timeline" role="tab" aria-selected="false">개발 경과 및 향후 일정</a>
     <a href="#records" role="tab" aria-selected="false">물질별 프로파일</a>
     <a href="#sources" role="tab" aria-selected="false">전체 레퍼런스</a>
+    <a href="#vault" role="tab" aria-selected="false" id="vaultTab" hidden>볼트 연결</a>
   </nav>
 
   <main>
@@ -214,6 +216,34 @@
         </p>
       </div>
     </section>
+
+    <section id="pipeline" class="panel report-tab-panel" role="tabpanel" hidden>
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">PIPELINE</p>
+          <h2>경쟁 파이프라인 한눈에</h2>
+        </div>
+        <p class="heading-note">옵시디언 볼트 경쟁 총괄표(한 물질 한 줄)를 그대로 보여 줍니다. 경쟁 유형·기전·적응증·개발 단계를 골라 좁혀 봅니다. 같은 줄 안에서는 하나라도 맞으면, 줄끼리는 모두 맞아야 표시합니다. 최근 30일 안에 바뀐 줄은 굵게 표시합니다.</p>
+      </div>
+      <div class="pipeline-filters" id="pipelineFilters"></div>
+      <p class="pipeline-count" id="pipelineCount"></p>
+      <div class="vault-table-wrap"><table class="vault-table pipeline-table">
+        <thead><tr><th>물질</th><th>회사 (국가)</th><th>기전</th><th>적응증</th><th>경쟁 유형</th><th>단계 (확인일)</th><th>핵심 수치</th><th>최근 변화</th><th>다음 이벤트</th></tr></thead>
+        <tbody id="pipelineRows"><tr><td colspan="9" class="vault-empty">볼트를 읽는 중입니다.</td></tr></tbody>
+      </table></div>
+      <p class="table-note" id="pipelineNote"></p>
+    </section>
+
+    <section id="vault" class="panel report-tab-panel" role="tabpanel" hidden>
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">OBSIDIAN VAULT</p>
+          <h2>볼트 연결</h2>
+        </div>
+        <p class="heading-note">옵시디언 볼트의 경쟁 기록을 읽어, 이 대시보드에 아직 반영하지 않은 변경을 보여 줍니다. 볼트는 읽기만 하며, 비교표 수치는 임상등록·논문·회사 원문으로만 고칩니다.</p>
+      </div>
+      <div id="vaultBody"><p class="vault-empty">볼트를 읽는 중입니다.</p></div>
+    </section>
   </main>
 
   <dialog id="methodDialog">
@@ -231,6 +261,6 @@
     </ul>
   </dialog>
 
-  <script src="app.js?v=20260725-33"></script>
+  <script src="app.js?v=20260804-34"></script>
 </body>
 </html>

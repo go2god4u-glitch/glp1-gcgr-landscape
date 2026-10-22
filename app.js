@@ -76,7 +76,7 @@ const assets = [
     signal: "MOMENTUM 48주 −15.6%. MASH·AUD·ALD로 적응증을 넓히며 PERFORMA Phase 3를 준비.",
     origin: "Spitfire Pharma의 SP-1373. Altimmune이 2019년 Spitfire를 인수한 뒤 ALT-801, pemvidutide로 전환했다.",
     strategy: "DA-1726의 MetALD 방향과 가장 가까운 적응증 경쟁자.",
-    watch: ["2026 H2: PERFORMA Phase 3 개시 계획", "2027 Q3: RESTORE ALD completion", "RECLAIM AUD 결과 공개 일정"],
+    watch: ["2026 H2: PERFORMA Phase 3 개시 계획", "2027 Q3: RESTORE ALD completion", "RECLAIM AUD 완료 · 결과 공개 대기"],
     source: "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-first-quarter-2026-financial-results-and"
   },
   {
@@ -121,12 +121,12 @@ const assets = [
   },
   {
     id: "da1726", name: "DA-1726", aliases: "—", company: "Dong-A ST / MetaVia",
-    phase: "Phase 1 Part 3", stage: 1.45, tier: "core", tone: "internal",
+    phase: "Phase 1 Part 3a/3b", stage: 1.45, tier: "core", tone: "internal",
     mechanism: "GLP-1R/GCGR dual",
-    signal: "비적정 48 mg, n=6에서 Day 54 −9.1%. Part 3는 적정 48/64 mg 목표용량을 검증 중.",
+    signal: "비적정 48 mg, n=6에서 Day 54 −9.1%. Part 1a·1b·2a 완료, 적정 Part 3a·3b 진행 중.",
     origin: "Dong-A ST 개발. 2022년 NeuroBo(현 MetaVia)가 한국 제외 글로벌 권리를 라이선스했다.",
     strategy: "내부 기준자산. 후기 경쟁력의 관문은 적정 후 목표용량 도달률과 GI 중단률.",
-    watch: ["2026 Q4: FIH 등록상 completion", "Part 3 적정 48/64 mg 데이터", "표본 확대 내약성·MetALD 전략"],
+    watch: ["2026 Q4: FIH 등록상 completion", "Part 3a/3b 적정 48/64 mg 데이터", "표본 확대 내약성·MetALD 전략"],
     source: "https://www.sec.gov/Archives/edgar/data/1638287/000110465926082116/tm2620006d1_8k.htm"
   },
   {
@@ -277,7 +277,7 @@ const events = [
   {year: 2023, asset: "Efinopegdutide", sub: "Phase 2a", type: "data", title: "체중보다 강한 간지방 차별화", text: "24주 체중변화 −8.5% vs semaglutide −7.1%. 체중차가 작아도 간지방 감소에서 더 큰 효과를 보이며 간 중심 포지션을 강화했다."},
   {year: 2023, asset: "Survodutide", sub: "SYNCHRONIZE", type: "clinical", title: "글로벌 Phase 3 프로그램 진입", text: "비만 후기개발과 MASH 개발을 병렬화하며 class의 글로벌 선두로 이동했다."},
   {year: 2023, asset: "Mazdutide", sub: "GLORY / DREAMS", type: "clinical", title: "중국 Phase 3 다적응증 확대", text: "비만과 T2D를 중심으로 semaglutide·dulaglutide 비교 및 대사 동반질환 시험군을 구축했다."},
-  {year: 2024, asset: "DA-1726", sub: "NCT06252220", type: "clinical", title: "First-in-human Phase 1 개시", text: "비만 성인에서 SAD/MAD를 통해 안전성·PK·체중변화를 평가하는 임상 단계에 진입했다."},
+  {year: 2024, asset: "DA-1726", sub: "NCT06252220", type: "clinical", title: "First-in-human Phase 1 개시", text: "비만 성인에서 Part 1a/1b(SAD)·Part 2a(MAD)로 안전성·PK·체중변화를 평가하는 임상 단계에 진입했다. 등록에는 Part 1(SAD)·2(MAD)·3(적정)까지만 표기되고 a/b 세부 코호트 구분은 사내 확인이다."},
   {year: 2024, asset: "Zabopegdutide", sub: "FDA Fast Track", type: "regulatory", title: "MASH Fast Track 지정", text: "초기 간지방 감소 신호를 바탕으로 미국 FDA의 신속개발 지원 대상으로 지정됐다."},
   {year: 2024, asset: "Zabopegdutide", sub: "China rights", type: "deal", title: "중국 비만 개발권 Salubris로 확장", text: "중국 파트너가 비만 대상 Phase 1 IND 승인을 확보해 미국 MASH와 중국 비만의 이중 경로가 만들어졌다."},
   {year: 2024, asset: "PB-718", sub: "NCT06147544", type: "data", title: "고정용량 조합의 초기 임상 완료", text: "PB-119 GLP-1RA와 PB-722 GCGR agonist의 조합으로 동일 수용체쌍을 구현. 단일분자와 다른 개발 아키텍처다."},
@@ -290,7 +290,7 @@ const events = [
   {year: 2026, asset: "Survodutide", sub: "SYNCHRONIZE-1", type: "data", title: "Phase 3 최대 −16.6%, GI 유지율이 쟁점", text: "76주 efficacy estimand 최대 −16.6%. 전체 GI AE 80.9–89.7%, GI AE 중단 약 19%가 후기 benchmark를 형성했다."},
   {year: 2026, asset: "Zabopegdutide", sub: "NCT06410924", type: "data", title: "48주 조직학 POC", text: "소규모 per-protocol 분석에서 섬유화 개선 50.0% vs 15.8%, MASH 해소 62.5% vs 5.3%. 다음 등록시험은 아직 확인되지 않았다."},
   {year: 2026, asset: "AZD9550", sub: "ASCEND", type: "clinical", title: "Phase 2 완료, 결과 대기", text: "2026년 5월 시험은 완료됐으나 공개 결과가 없어 클래스의 가장 큰 단기 정보 공백 중 하나다."},
-  {year: 2026, asset: "DA-1726", sub: "Part 3", type: "clinical", title: "적정 48/64 mg 목표용량 검증", text: "활성 환자들이 목표용량에 도달. 효능보다 목표용량 도달률, GI 발생·중단, 표본 확대 시 재현성이 다음 관문이다."},
+  {year: 2026, asset: "DA-1726", sub: "Part 3a/3b", type: "clinical", title: "적정 48/64 mg 목표용량 검증 진행 중", text: "Part 1a·1b·2a는 완료됐고 적정 코호트 3a·3b가 진행 중이다(a/b 구분은 사내 확인). 활성 환자들이 목표용량에 도달. 효능보다 목표용량 도달률, GI 발생·중단, 표본 확대 시 재현성이 다음 관문이다."},
   {year: 2026, asset: "Pemvidutide", sub: "PERFORMA", type: "clinical", title: "MASH Phase 3 전환 계획", text: "Altimmune은 2026년 하반기 PERFORMA 개시를 계획. AUD·ALD 임상과 함께 간질환 프랜차이즈를 구축한다."},
   {year: 2025, asset: "CagriSema", sub: "REDEFINE 1", type: "data", title: "Phase 3 비만 −22.7%", text: "비당뇨 비만·과체중에서 68주 trial-product estimand CagriSema −22.7%, semaglutide −16.1%, cagrilintide −11.8%, 위약 −2.3%."},
   {year: 2025, asset: "Zenagamtide", sub: "amycretin SC", type: "data", title: "비만 SC 36주 −24.3%", text: "Phase 1b/2a에서 주 1회 SC 최대 60 mg, 36주 평균 체중 −24.3% vs 위약 −1.1% (Lancet)."},
@@ -368,6 +368,7 @@ const references = {
   "NMA-BODYCOMP": ["Comparative effects of drugs for adults with overweight or obesity: 네트워크 메타분석 — tirzepatide 지방 −25.7% · 제지방 −8.3%", "BMJ (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/42419792/"],
   "PM-MOMENTUM": ["Altimmune, MOMENTUM 48-week Phase 2 obesity results", "Sponsor clinical-results deck", "https://ir.altimmune.com/node/15686/pdf"],
   "PM-IMPACT": ["Altimmune (2025), IMPACT Phase 2b pemvidutide MASH topline", "Sponsor primary source", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-positive-topline-results-impact-phase-2b"],
+  "PM-RECLAIM": ["Altimmune, RECLAIM Phase 2 AUD study record (completed · results not posted)", "ClinicalTrials.gov registry (T0)", "https://clinicaltrials.gov/study/NCT06987513"],
   "PM-ACQ": ["Altimmune (2019), acquisition of Spitfire Pharma and ALT-801", "Sponsor transaction announcement", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-closing-acquisition-spitfire-pharma-inc"],
   "PM-UPDATE": ["Altimmune (2026), pemvidutide program and PERFORMA plan", "Sponsor corporate update", "https://ir.altimmune.com/news-releases/news-release-details/altimmune-announces-first-quarter-2026-financial-results-and"],
   "EF-P2": ["Merck, NCT04944992 Phase 2a — CT.gov Results 등록 결과표", "ClinicalTrials.gov Results (T0)", "https://clinicaltrials.gov/study/NCT04944992?tab=results"],
@@ -437,7 +438,7 @@ const assetReferenceMap = {
   MariTide: ["MT-NEJM", "MT-MECH"],
   Mazdutide: ["MZ-GLORY2", "MZ-APPROVAL", "MZ-RESULTS"],
   Survodutide: ["SV-P3", "SV-MASH", "SV-SAFETY", "SV-DEAL"],
-  Pemvidutide: ["PM-MOMENTUM", "PM-IMPACT", "PM-ACQ", "PM-UPDATE"],
+  Pemvidutide: ["PM-MOMENTUM", "PM-IMPACT", "PM-RECLAIM", "PM-ACQ", "PM-UPDATE"],
   Efinopegdutide: ["EF-P2", "EF-DEAL", "EF-PIPELINE"],
   AZD9550: ["AZ-ASCEND", "AZ-CONTEMPO"],
   Zabopegdutide: ["DD-P2", "DD-CHINA"],
@@ -586,7 +587,7 @@ const comparison = {
       },
       {
         id: "mash_p2",
-        label: "MASH Phase 2",
+        label: "1404-0043",
         meta: "NCT04771273 · P2 · 48주 · MASH",
         nct: "NCT04771273",
         hasLiver: true,
@@ -782,7 +783,7 @@ const comparison = {
     indication: "비만, MASH<br>AUD·ALD",
     rights: "Spitfire SP-1373 기원<br>2019 Altimmune 인수",
     next: "PERFORMA P3<br>AUD·ALD 결과",
-    nextNcts: ["NCT07009860", "NCT05989711"],
+    nextNcts: ["NCT06987513", "NCT07009860", "NCT05989711"],
     defaultTrialId: "momentum",
     trials: [
       {
@@ -813,6 +814,23 @@ const comparison = {
         lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
         heartRate: "[CT.gov 미게시]<br><small>심박수 를 결과지표로 등록했으나 Results 미게시 — 게시되면 채울 수 있다</small>",
         refs: { trial: ["PM-IMPACT"], weight: ["PM-IMPACT"], liver: ["PM-IMPACT"], discontinuation: ["PM-IMPACT"] }
+      },
+      {
+        id: "reclaim",
+        label: "RECLAIM",
+        meta: "NCT06987513 · P2 · 24주 · AUD(비만·과체중)",
+        nct: "NCT06987513",
+        hasLiver: false,
+        weight: "[CT.gov 미게시]<br><small>24주 체중변화가 결과지표로 등록돼 있으나 Results 미게시 · 공개되면 수집·검토 후 반영</small>",
+        liver: "[회사 미공개]<br><small>AUD 본시험에 간 약효 결과지표가 등록돼 있지 않음 · 공개되면 수집·검토 후 반영</small>",
+        gi: "[CT.gov 미게시]<br><small>시험은 완료됐으나 GI 발생률 Results 미게시 · 공개되면 수집·검토 후 반영</small>",
+        discontinuation: "[CT.gov 미게시]<br><small>시험은 완료됐으나 치료중단 Results 미게시 · 공개되면 수집·검토 후 반영</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 결과지표가 등록돼 있지 않음 · 공개되면 수집·검토 후 반영</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 결과지표가 등록돼 있지 않음 · 공개되면 수집·검토 후 반영</small>",
+        refs: {
+          trial: ["PM-RECLAIM"], weight: ["PM-RECLAIM"], liver: ["PM-RECLAIM"],
+          gi: ["PM-RECLAIM"], discontinuation: ["PM-RECLAIM"], lean: ["PM-RECLAIM"], heartRate: ["PM-RECLAIM"]
+        }
       }
     ],
     rightsRefs: ["PM-ACQ"]
@@ -905,8 +923,8 @@ const comparison = {
         liver: "[1차 미확보]<br><small>간 지표 공개 여부 미확인</small>",
         gi: "[1차 미확보]<br><small>NCT 식별 안 됨 · 안전성 수치 1차 출처 미확보</small>",
         discontinuation: "[1차 미확보]<br><small>NCT 식별 안 됨 · 중단률 1차 출처 미확보</small>",
-        lean: "[1차 미확보]<br><small>등록 NCT 미식별 · 제지방·체성분 공개 여부 확인 안 됨</small>",
-        heartRate: "[1차 미확보]<br><small>등록 NCT 미식별 · 심박수 공개 여부 확인 안 됨</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: { trial: ["CMS-ANNUAL"], weight: ["CMS-ANNUAL"], gi: ["CMS-ANNUAL"], discontinuation: ["CMS-ANNUAL"] }
       }
     ],
@@ -915,13 +933,13 @@ const comparison = {
   da1726: {
     indication: "비만<br>MASH·MetALD 계획",
     rights: "Dong-A ST 개발<br>2022 MetaVia: 한국 제외 글로벌 권리",
-    next: "Part 3 적정<br>48/64 mg 데이터",
+    next: "Part 3a/3b 적정<br>48/64 mg 데이터",
     nextNcts: ["NCT06252220"],
     defaultTrialId: "fih",
     trials: [
       {
         id: "fih",
-        label: "First-in-human",
+        label: "DA-1726-1001",
         meta: "NCT06252220 · P1 · 비만",
         nct: "NCT06252220",
         hasLiver: false,
@@ -1248,15 +1266,15 @@ const comparison = {
       {
         id: "redefine2",
         label: "REDEFINE 2",
-        meta: "P3 · 68주 · 비만·과체중 + T2D · n=1206",
-        nct: null,
+        meta: "NCT05394519 · P3 · 68주 · 비만·과체중 + T2D · n=1206",
+        nct: "NCT05394519",
         hasLiver: false,
         weight: "<b>CagriSema −15.7%</b> vs 위약 −3.1%<br><small>68주 · trial-product · Company PR/NEJM Davies</small><br>treatment-policy: −13.7% vs 위약 −3.4%",
         liver: "<span class=\"result-empty\">[회사 미공개]</span><br><small>REDEFINE 2 PR에 간 약효 수치 없음</small>",
         gi: "REDEFINE 1과 유사하다고 PR에 명시<br><span class=\"result-empty\">[회사 미공개]</span> R2 단독 GI % 표<br><small>CT.gov Results 미게시 · PR에 R2 세부 GI 표 없음</small>",
         discontinuation: "<b>AE 중단 8.4%</b> vs 위약 3%<br><small>Company PR</small><br><span class=\"result-empty\">[회사 미공개]</span> GI 단독 중단%",
-        lean: "[1차 미확보]<br><small>등록 NCT 미식별 · 제지방·체성분 공개 여부 확인 안 됨</small>",
-        heartRate: "[1차 미확보]<br><small>등록 NCT 미식별 · 심박수 공개 여부 확인 안 됨</small>",
+        lean: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 제지방·체성분 항목 없음</small>",
+        heartRate: "[회사 미공개]<br><small>등록 결과표·결과지표 어디에도 심박수 항목 없음</small>",
         refs: {
           trial: ["CS-SAFETY"],
           weight: ["CS-SAFETY"],
@@ -1365,7 +1383,7 @@ const comparison = {
     trials: [
       {
         id: "apricus",
-        label: "APRICUS Phase 2",
+        label: "APRICUS",
         meta: "NCT06595238 · P2 · 비만·과체중+동반질환 · n=262",
         nct: "NCT06595238",
         hasLiver: false,
@@ -2313,6 +2331,24 @@ function readDraftField(draftId, field) {
   return value ? value.replaceAll("\n", "<br>") : null;
 }
 
+// 후보 초안 칸은 기본 접힘(제목·건수만). 펼치면 모든 탭 내용이 한참 아래로 밀려 첫 화면 표가 안 보였다(2026-10-23).
+// 예전 「접기」는 칸을 숨겼지만 갱신 때마다 다시 펼쳐졌다. 이제는 접힘 상태를 기억한다.
+const TRIAL_DRAFT_COLLAPSE_KEY = "competitor-trial-drafts-collapsed-v1";
+function trialDraftCollapsed() {
+  try { return localStorage.getItem(TRIAL_DRAFT_COLLAPSE_KEY) !== "0"; } catch { return true; }
+}
+function applyTrialDraftCollapse() {
+  const panel = document.querySelector("#trialDraftPanel");
+  const btn = document.querySelector("#closeTrialDrafts");
+  if (!panel) return;
+  const collapsed = trialDraftCollapsed();
+  panel.classList.toggle("collapsed", collapsed);
+  if (btn) {
+    btn.textContent = collapsed ? "펼치기" : "접기";
+    btn.setAttribute("aria-expanded", String(!collapsed));
+  }
+}
+
 function renderTrialDraftPanel() {
   const panel = document.querySelector("#trialDraftPanel");
   const list = document.querySelector("#trialDraftList");
@@ -2321,6 +2357,7 @@ function renderTrialDraftPanel() {
   const drafts = (trialDraftStore.drafts || []).filter(d => d.status === "draft");
   countEl.textContent = drafts.length ? `${drafts.length}건` : "";
   panel.hidden = drafts.length === 0;
+  applyTrialDraftCollapse();
   if (!drafts.length) {
     list.innerHTML = "";
     return;
@@ -2463,7 +2500,8 @@ function initTrialDraftHandlers() {
   const closeBtn = document.querySelector("#closeTrialDrafts");
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
-      document.querySelector("#trialDraftPanel").hidden = true;
+      try { localStorage.setItem(TRIAL_DRAFT_COLLAPSE_KEY, trialDraftCollapsed() ? "0" : "1"); } catch { /* 무시 */ }
+      applyTrialDraftCollapse();
     });
   }
   if (!list || list.dataset.bound === "1") return;
@@ -2519,6 +2557,8 @@ async function refreshAllViews(snapshot) {
   renderSources();     // 정적 refs + 등록 NCT + PubMed + 감시 원문
   renderChanges(snapshot);
   renderTrialDraftPanel();
+  // 볼트 연결 탭(로컬 서버 전용, 정적 배포에서는 숨김). 볼트 쪽 오류가 본 갱신을 정적 모드로 떨어뜨리지 않게 격리한다.
+  try { await loadVaultLink(); } catch (error) { console.warn("[vault] 볼트 연결 탭 표시 실패", error); }
 }
 
 async function applyLiveSnapshot(snapshot) {
@@ -3342,8 +3382,352 @@ function renderSources() {
     baseCards + monitoredCards + registryCards + literatureCards + discoveryCards;
 }
 
+// 옵시디언 볼트 연결 탭. 서버 /api/vault(로컬 전용)만 읽는다. 볼트 내용은 이 파일에 넣지 않는다
+// (이 파일은 GitHub Pages 공개본에도 올라간다). API가 없으면 탭을 숨긴다.
+// 볼트는 사실 출처가 아니라 "대시보드에 아직 반영하지 않은 변경"을 알려 주는 용도다.
+// 「파이프라인 한눈에」: 볼트 총괄표(한 물질 한 줄)를 그대로 보여 주고, 대시보드에만 있는 자산을 덧붙인다.
+// 표 내용은 실행 중에 /api/vault에서 받는다(이 파일에는 볼트 내용을 넣지 않는다).
+const PIPELINE_TYPES = ["자사", "동일기전·비만", "동일기전·간", "동일기전·관찰", "다른 기전·비만", "다른 기전·간", "중단"];
+const PIPELINE_FILTER_KEY = "competitor-pipeline-filter-v1";
+// 기전·적응증·단계는 볼트 표의 글자에서 규칙으로 나눈다(볼트 내용이 아니라 분류 규칙만 이 파일에 둔다).
+// 기전: 칸을 쉼표로 나눈 조각마다 분류하고 합친다. 한 물질이 여러 기전에 걸리면(디앤디파마텍 물질군 등) 모두에 속한다.
+const PIPELINE_MECHS = [
+  { key: "gcg", label: "GLP-1/글루카곤", test: s => /글루카곤|GCG/i.test(s) && !/삼중|GIP/i.test(s) },
+  { key: "triple", label: "삼중 (GLP-1/GIP/글루카곤)", test: s => /삼중|triple/i.test(s) },
+  { key: "gip", label: "GLP-1/GIP", test: s => /GIP/i.test(s) && !/삼중/.test(s) },
+  { key: "glp1", label: "GLP-1 단독", test: s => /GLP-1/i.test(s) && !/글루카곤|GIP|삼중|아밀린|GLP-2/i.test(s) },
+  { key: "amylin", label: "아밀린 계열", test: s => /아밀린|amylin/i.test(s) },
+  { key: "liver", label: "간 표적 (THR-β·FGF21)", test: s => /THR|FGF21/i.test(s) },
+  { key: "other", label: "기타", test: () => false }
+];
+// 적응증: "(비만 적응증 없음)"처럼 없다는 괄호를 먼저 지운 뒤 본다.
+const PIPELINE_INDICATIONS = [
+  { key: "obesity", label: "비만", test: s => /비만/.test(s) },
+  { key: "t2d", label: "당뇨", test: s => /T2D|당뇨/i.test(s) },
+  { key: "mash", label: "MASH·간지방", test: s => /MASH|NASH|MASLD|간지방|간경변/i.test(s) },
+  { key: "alcohol", label: "MetALD·알코올", test: s => /MetALD|ALD|AUD|알코올/.test(s) },
+  { key: "etc", label: "OSA·심혈관", test: s => /OSA|심혈관/i.test(s) }
+];
+// 회사: 개발 지역(지역 선택)과 다르다. 회사 칸 첫 괄호의 국가가 한국이면 국내 업체(한미 기원이라도 지금 MSD면 해외).
+const PIPELINE_COMPANIES = [{ key: "domestic", label: "국내 업체" }, { key: "foreign", label: "해외 업체" }];
+const PIPELINE_STAGES = ["허가·신청", "3상", "2상", "1상", "초기", "중단"];
+const PIPELINE_SORTS = [["master", "총괄표 순서"], ["stage", "단계 높은 순"], ["recent", "최근 변화 순"], ["name", "물질 이름 순"]];
+let pipelineData = [];
+let pipelineFilter = pipelineDefaultFilter();
+let pipelineLanded = false;
+
+function pipelineDefaultFilter() {
+  return { types: new Set(), mechs: new Set(), indications: new Set(), stages: new Set(), companies: new Set(), region: "all", recentOnly: false, linkedOnly: false, sort: "master", query: "" };
+}
+
+function pipelineMechKeys(text) {
+  const keys = new Set();
+  String(text || "").split(/[,，]/).forEach(part => PIPELINE_MECHS.forEach(m => { if (m.test(part)) keys.add(m.key); }));
+  if (!keys.size) keys.add("other");
+  return keys;
+}
+
+function pipelineIndicationKeys(text) {
+  const cleaned = String(text || "").replace(/\([^)]*없음[^)]*\)/g, " ");
+  return new Set(PIPELINE_INDICATIONS.filter(i => i.test(cleaned)).map(i => i.key));
+}
+
+// 단계: 경쟁 유형이 중단이면 중단, 아니면 글자에 나온 가장 높은 단계.
+function pipelineStageBucket(row) {
+  // "3상 계획"처럼 아직 들어가지 않은 단계는 빼고 본다.
+  const s = String(row.stage || "").replace(/\d\s*[a-z]?상\s*(계획|예정|준비)/gi, " ");
+  if (row.type === "중단") return "중단";
+  if (/허가|NDA|BLA/.test(s)) return "허가·신청";
+  if (/3상|Phase 3/i.test(s)) return "3상";
+  if (/2상|2b|2a|Phase 2/i.test(s)) return "2상";
+  if (/1상|Phase 1/i.test(s)) return "1상";
+  return "초기";
+}
+
+function decoratePipelineRows(rows) {
+  return rows.map((r, index) => ({ ...r, order: index, mechKeys: pipelineMechKeys(r.mechanism), indicationKeys: pipelineIndicationKeys(r.indication), stageBucket: pipelineStageBucket(r), companyKey: /\(한국/.test(r.company || "") ? "domestic" : "foreign" }));
+}
+
+function loadPipelineFilter() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(PIPELINE_FILTER_KEY) || "null");
+    if (saved) pipelineFilter = {
+      ...pipelineDefaultFilter(),
+      types: new Set(saved.types || []),
+      mechs: new Set(saved.mechs || []),
+      indications: new Set(saved.indications || []),
+      stages: new Set(saved.stages || []),
+      companies: new Set(saved.companies || []),
+      region: saved.region || "all",
+      recentOnly: Boolean(saved.recentOnly),
+      linkedOnly: Boolean(saved.linkedOnly),
+      sort: PIPELINE_SORTS.some(([k]) => k === saved.sort) ? saved.sort : "master"
+    };
+  } catch { /* 저장소를 못 쓰면 기본값 */ }
+}
+
+function savePipelineFilter() {
+  try {
+    const f = pipelineFilter;
+    localStorage.setItem(PIPELINE_FILTER_KEY, JSON.stringify({ types: [...f.types], mechs: [...f.mechs], indications: [...f.indications], stages: [...f.stages], companies: [...f.companies], region: f.region, recentOnly: f.recentOnly, linkedOnly: f.linkedOnly, sort: f.sort }));
+  } catch { /* 무시 */ }
+}
+
+// 총괄표에 없는 대시보드 자산(1차 출처로 큐레이션된 것)은 「대시보드만」 줄로 붙인다. 경쟁 유형은 기존 필드로만 정한다.
+function dashboardOnlyPipelineRows(vaultRows) {
+  const covered = new Set(vaultRows.map(r => r.assetId).filter(Boolean));
+  return assets.filter(a => !covered.has(a.id)).map(a => ({
+    name: a.aliases && a.aliases !== "—" ? `${a.name} (${a.aliases})` : a.name,
+    company: a.company,
+    region: "글로벌",
+    mechanism: a.mechanism,
+    indication: comparison[a.id]?.indication ? String(comparison[a.id].indication).replace(/<[^>]+>/g, " ") : "—",
+    type: a.tier === "historical" ? "중단" : /GCGR/i.test(a.mechanism || "") ? "동일기전·관찰" : "다른 기전·비만",
+    stage: a.phase,
+    keyData: a.signal || "—",
+    recent: "—",
+    next: Array.isArray(a.watch) ? a.watch.join(" · ") : "—",
+    assetId: a.id,
+    detailLinks: [],
+    dashboardOnly: true
+  }));
+}
+
+// 그룹 안은 "또는", 그룹끼리는 "그리고". skip은 칩 개수를 셀 때 그 그룹만 빼고 보기 위한 것.
+function pipelineRowPasses(r, skip = "") {
+  const f = pipelineFilter;
+  const q = f.query.trim().toLowerCase();
+  return (skip === "types" || !f.types.size || f.types.has(r.type)) &&
+    (skip === "mechs" || !f.mechs.size || [...f.mechs].some(k => r.mechKeys.has(k))) &&
+    (skip === "indications" || !f.indications.size || [...f.indications].some(k => r.indicationKeys.has(k))) &&
+    (skip === "companies" || !f.companies.size || f.companies.has(r.companyKey)) &&
+    (skip === "stages" || !f.stages.size || f.stages.has(r.stageBucket)) &&
+    (f.region === "all" || r.region === f.region) &&
+    (!f.recentOnly || r.recentChange) &&
+    (!f.linkedOnly || r.assetId) &&
+    (!q || `${r.name} ${r.company} ${r.indication} ${r.mechanism} ${r.stage} ${r.keyData} ${r.next}`.toLowerCase().includes(q));
+}
+
+function sortPipelineRows(rows) {
+  const stageRank = Object.fromEntries(PIPELINE_STAGES.map((s, i) => [s, i]));
+  const sorted = [...rows];
+  if (pipelineFilter.sort === "stage") sorted.sort((a, b) => stageRank[a.stageBucket] - stageRank[b.stageBucket] || a.order - b.order);
+  if (pipelineFilter.sort === "recent") sorted.sort((a, b) => String(b.lastDate || "").localeCompare(String(a.lastDate || "")) || a.order - b.order);
+  if (pipelineFilter.sort === "name") sorted.sort((a, b) => String(a.name).localeCompare(String(b.name), "ko"));
+  return sorted;
+}
+
+function pipelineChipRow(group, label, items) {
+  const active = pipelineFilter[group];
+  const chips = items.map(({ key, label: text }) => {
+    const n = pipelineData.filter(r => pipelineRowPasses(r, group) && (
+      group === "types" ? r.type === key :
+      group === "companies" ? r.companyKey === key :
+      group === "mechs" ? r.mechKeys.has(key) :
+      group === "indications" ? r.indicationKeys.has(key) : r.stageBucket === key)).length;
+    const on = active.has(key);
+    if (!n && !on && group === "mechs" && key === "other") return "";
+    return `<button type="button" class="pipeline-chip${on ? " active" : ""}${!n && !on ? " empty" : ""}" data-group="${group}" data-key="${escapeHtml(key)}" aria-pressed="${on}">${escapeHtml(text)} <span>${n}</span></button>`;
+  }).join("");
+  return `<div class="pipeline-filter-row" role="group" aria-label="${escapeHtml(label)}">
+    <span class="pipeline-filter-label">${escapeHtml(label)}</span>
+    <div class="pipeline-chips">${chips}${active.size ? `<button type="button" class="pipeline-chip-clear" data-clear="${group}">전체</button>` : ""}</div>
+  </div>`;
+}
+
+function renderPipeline() {
+  const filters = document.querySelector("#pipelineFilters");
+  const rowsEl = document.querySelector("#pipelineRows");
+  if (!filters || !rowsEl) return;
+  const f = pipelineFilter;
+  filters.innerHTML = `
+    ${pipelineChipRow("types", "경쟁 유형", PIPELINE_TYPES.map(t => ({ key: t, label: t })))}
+    ${pipelineChipRow("mechs", "기전", PIPELINE_MECHS)}
+    ${pipelineChipRow("indications", "적응증", PIPELINE_INDICATIONS)}
+    ${pipelineChipRow("companies", "회사", PIPELINE_COMPANIES)}
+    ${pipelineChipRow("stages", "개발 단계", PIPELINE_STAGES.map(s => ({ key: s, label: s })))}
+    <div class="pipeline-controls">
+      <label>지역 <select id="pipelineRegion">
+        ${[["all", "전체"], ["국내", "국내"], ["글로벌", "글로벌"]].map(([v, t]) => `<option value="${v}"${f.region === v ? " selected" : ""}>${t}</option>`).join("")}
+      </select></label>
+      <label>정렬 <select id="pipelineSort">
+        ${PIPELINE_SORTS.map(([v, t]) => `<option value="${v}"${f.sort === v ? " selected" : ""}>${t}</option>`).join("")}
+      </select></label>
+      <label class="pipeline-check"><input type="checkbox" id="pipelineRecent"${f.recentOnly ? " checked" : ""}> 최근 30일 변화만</label>
+      <label class="pipeline-check"><input type="checkbox" id="pipelineLinked"${f.linkedOnly ? " checked" : ""}> 비교표 수치 있는 물질만</label>
+      <input type="search" id="pipelineQuery" placeholder="물질·회사·적응증·임상명 검색" value="${escapeHtml(f.query)}">
+      <button type="button" class="pipeline-reset" id="pipelineReset">필터 모두 지우기</button>
+    </div>`;
+  const visible = sortPipelineRows(pipelineData.filter(r => pipelineRowPasses(r)));
+  const activeCount = f.types.size + f.mechs.size + f.indications.size + f.stages.size + f.companies.size + (f.region !== "all") + f.recentOnly + f.linkedOnly + Boolean(f.query.trim());
+  const dashOnly = pipelineData.filter(r => r.dashboardOnly).length;
+  document.querySelector("#pipelineCount").textContent =
+    `${visible.length}개 표시 / 전체 ${pipelineData.length}개${activeCount ? ` · 조건 ${activeCount}개 적용` : ""}${dashOnly ? ` (볼트 총괄표 ${pipelineData.length - dashOnly} + 대시보드에만 있는 자산 ${dashOnly})` : ""}`;
+  rowsEl.innerHTML = visible.map(r => {
+    // 근거 링크는 물질 칸 아래에 작게 둔다(별도 열이면 표가 화면보다 넓어지고 줄 높이가 커졌다).
+    const links = [
+      r.detailLinks.length ? `<a href="${escapeHtml(r.detailLinks[0].link || "#")}" title="${escapeHtml(r.detailLinks.map(d => d.name).join(", "))}">볼트</a>` : "",
+      r.assetId ? `<a href="#master" class="pipeline-to-master" data-asset-id="${escapeHtml(r.assetId)}">비교표 수치</a>` : ""
+    ].filter(Boolean).join(" · ");
+    return `<tr class="${r.recentChange ? "pipeline-recent" : ""}${r.type === "중단" ? " pipeline-stopped" : ""}">
+      <td><b>${escapeHtml(r.name)}</b><div class="pipeline-tags"><span class="pipeline-tag">${escapeHtml(r.region || "—")}</span><span class="pipeline-tag">${escapeHtml(r.stageBucket)}</span>${r.recentChange ? `<span class="pipeline-tag pipeline-tag-new">최근 ${escapeHtml(r.lastDate)}</span>` : ""}${r.dashboardOnly ? "<span class=\"pipeline-tag\">대시보드만</span>" : ""}</div>${links ? `<div class="pipeline-links">${links}</div>` : ""}</td>
+      <td>${escapeHtml(r.company || "—")}</td>
+      <td>${escapeHtml(r.mechanism || "—")}</td>
+      <td>${escapeHtml(r.indication || "—")}</td>
+      <td class="pipeline-type">${escapeHtml(r.type || "—")}</td>
+      <td>${escapeHtml(r.stage || "—")}</td>
+      <td>${escapeHtml(r.keyData || "—")}</td>
+      <td>${escapeHtml(r.recent || "—")}</td>
+      <td>${escapeHtml(r.next || "—")}</td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="9" class="vault-empty">조건에 맞는 물질이 없습니다.</td></tr>`;
+}
+
+function initPipelineEvents() {
+  const panel = document.querySelector("#pipeline");
+  if (!panel || panel.dataset.bound) return;
+  panel.dataset.bound = "1";
+  panel.addEventListener("click", event => {
+    const chip = event.target.closest(".pipeline-chip");
+    if (chip) {
+      const set = pipelineFilter[chip.dataset.group];
+      const key = chip.dataset.key;
+      set.has(key) ? set.delete(key) : set.add(key);
+      savePipelineFilter();
+      renderPipeline();
+      return;
+    }
+    const clear = event.target.closest(".pipeline-chip-clear");
+    if (clear) {
+      pipelineFilter[clear.dataset.clear].clear();
+      savePipelineFilter();
+      renderPipeline();
+      return;
+    }
+    if (event.target.closest("#pipelineReset")) {
+      pipelineFilter = pipelineDefaultFilter();
+      savePipelineFilter();
+      renderPipeline();
+      return;
+    }
+    const toMaster = event.target.closest(".pipeline-to-master");
+    if (toMaster) {
+      event.preventDefault();
+      activateReportTab("master");
+      const row = document.querySelector(`#masterRows tr[data-asset-id="${CSS.escape(toMaster.dataset.assetId)}"]`);
+      if (row) row.scrollIntoView({ block: "center" });
+    }
+  });
+  panel.addEventListener("change", event => {
+    const id = event.target.id;
+    if (id === "pipelineRegion") pipelineFilter.region = event.target.value;
+    else if (id === "pipelineSort") pipelineFilter.sort = event.target.value;
+    else if (id === "pipelineRecent") pipelineFilter.recentOnly = event.target.checked;
+    else if (id === "pipelineLinked") pipelineFilter.linkedOnly = event.target.checked;
+    else return;
+    savePipelineFilter();
+    renderPipeline();
+  });
+  panel.addEventListener("input", event => {
+    if (event.target.id !== "pipelineQuery") return;
+    pipelineFilter.query = event.target.value;
+    const pos = event.target.selectionStart;
+    renderPipeline();
+    const box = document.querySelector("#pipelineQuery");
+    box.focus();
+    box.setSelectionRange(pos, pos);
+  });
+}
+
+function setupPipeline(data, pipeTab) {
+  if (!data?.ok || !Array.isArray(data.pipeline)) return;
+  pipeTab.hidden = false;
+  if (!pipelineLanded) loadPipelineFilter();
+  pipelineData = decoratePipelineRows([...data.pipeline, ...dashboardOnlyPipelineRows(data.pipeline)]);
+  initPipelineEvents();
+  const note = document.querySelector("#pipelineNote");
+  if (note) note.innerHTML = data.static
+    ? `원본: 옵시디언 볼트 경쟁 총괄표 (updated ${escapeHtml(data.master?.updated || "—")}, 공유판 저장 ${escapeHtml(formatUpdateTimestamp(data.generatedAt))}).`
+    : `원본: 옵시디언 볼트 <a href="${escapeHtml(data.master.link)}">Competitor_Pipeline_Master</a> (updated ${escapeHtml(data.master.updated || "—")}). 표를 고치려면 볼트 총괄표를 고치고 이 페이지를 새로고침합니다.${data.pipelineMeta?.missingTable ? " <b>볼트에서 「전체 물질 표」 절을 찾지 못했습니다.</b>" : ""}`;
+  renderPipeline();
+  // 첫 화면: 주소에 탭 지정이 없으면 한눈에 표부터 연다.
+  if (!pipelineLanded && !location.hash) activateReportTab("pipeline", false);
+  pipelineLanded = true;
+}
+
+// 서버 없는 공유판(GitHub Pages): 로컬 서버가 써 둔 data/pipeline.json으로 한눈에 표만 보여 준다.
+async function loadStaticPipeline(pipeTab) {
+  if (!pipeTab || location.protocol === "file:") return;
+  try {
+    const response = await fetch("data/pipeline.json", { cache: "no-store" });
+    if (response.ok) setupPipeline(await response.json(), pipeTab);
+  } catch { /* 스냅샷이 없으면 탭을 숨긴 채 둔다 */ }
+}
+
+async function loadVaultLink() {
+  const tab = document.querySelector("#vaultTab");
+  const pipeTab = document.querySelector("#pipelineTab");
+  const body = document.querySelector("#vaultBody");
+  if (!tab || !body || !liveBackend || location.protocol === "file:") {
+    if (tab) tab.hidden = true;
+    if (pipeTab) pipeTab.hidden = true;
+    await loadStaticPipeline(pipeTab);
+    return;
+  }
+  let data;
+  try {
+    const response = await fetch("/api/vault", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    data = await response.json();
+  } catch {
+    tab.hidden = true;
+    if (pipeTab) pipeTab.hidden = true;
+    await loadStaticPipeline(pipeTab);
+    return;
+  }
+  tab.hidden = false;
+  if (pipeTab) setupPipeline(data, pipeTab);
+  if (!data.ok) {
+    body.innerHTML = `<p class="vault-empty">볼트를 읽지 못했습니다: ${escapeHtml(data.error)}</p>`;
+    return;
+  }
+  tab.textContent = data.pending.length ? `볼트 연결 · 반영 대기 ${data.pending.length}` : "볼트 연결";
+  const link = (href, text) => `<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`;
+  const pendingRows = data.pending.map(item => `
+    <tr>
+      <td class="vault-date">${escapeHtml(item.date)}</td>
+      <td>${escapeHtml(item.title)} <span class="vault-op">${escapeHtml(item.op)}</span></td>
+      <td>${item.assets.length ? escapeHtml(item.assets.join(", ")) : "경쟁 전반"}</td>
+    </tr>`).join("");
+  const assetRows = data.assets
+    .filter(asset => asset.page || asset.mentions.length)
+    .sort((a, b) => String(b.newest || "").localeCompare(String(a.newest || "")))
+    .map(asset => `
+    <tr>
+      <td><b>${escapeHtml(asset.name)}</b></td>
+      <td>${asset.page ? (asset.page.missing ? `${escapeHtml(asset.page.title)} (파일 없음)` : `${link(asset.page.link, asset.page.title)}<br><small>updated ${escapeHtml(asset.page.updated || "—")}</small>`) : "<span class=\"result-empty\">전용 페이지 없음</span>"}</td>
+      <td>${asset.mentions.map(m => `<div>${escapeHtml(m.date)} · ${escapeHtml(m.title)}</div>`).join("") || "<span class=\"result-empty\">최근 기록 없음</span>"}</td>
+      <td>${asset.vaultNewer ? "<span class=\"vault-flag\">볼트가 더 최신</span>" : "변화없음"}</td>
+    </tr>`).join("");
+  const onlyRows = data.vaultOnly.map(item => `
+    <tr>
+      <td><b>${escapeHtml(item.name)}</b></td>
+      <td>${escapeHtml(item.company || "—")}</td>
+      <td>${escapeHtml(item.stage || "—")}</td>
+      <td>${escapeHtml(item.tables.join(" · "))}</td>
+    </tr>`).join("");
+  body.innerHTML = `
+    <p class="vault-summary">경쟁 총괄표 ${link(data.master.link, "Competitor_Pipeline_Master")} updated ${escapeHtml(data.master.updated || "—")} · 대시보드 마지막 반영 검토일 ${escapeHtml(data.curatedAt)} · 반영 대기 ${data.pending.length}건 · 볼트 읽은 시각 ${escapeHtml(formatUpdateTimestamp(data.generatedAt))}</p>
+    <h3 class="vault-h">반영 대기 <small>${escapeHtml(data.curatedAt)} 이후 볼트에 쌓인 경쟁 기록</small></h3>
+    ${pendingRows ? `<div class="vault-table-wrap"><table class="vault-table"><thead><tr><th>날짜</th><th>볼트 기록</th><th>관련 물질</th></tr></thead><tbody>${pendingRows}</tbody></table></div>` : "<p class=\"vault-empty\">반영 대기 없음</p>"}
+    <h3 class="vault-h">물질별 볼트 기록</h3>
+    <div class="vault-table-wrap"><table class="vault-table"><thead><tr><th>물질</th><th>볼트 페이지</th><th>최근 볼트 기록</th><th>대시보드 대비</th></tr></thead><tbody>${assetRows}</tbody></table></div>
+    <h3 class="vault-h">볼트에만 있는 물질 <small>경쟁 총괄표에는 있고 이 대시보드 자산은 아님. 등록은 §19 절차(1차 출처)로만</small></h3>
+    ${onlyRows ? `<div class="vault-table-wrap"><table class="vault-table"><thead><tr><th>물질</th><th>회사</th><th>단계</th><th>총괄표</th></tr></thead><tbody>${onlyRows}</tbody></table></div>` : "<p class=\"vault-empty\">없음</p>"}`;
+}
+
 function activateReportTab(tabId, updateHash = true) {
-  const validId = ["master", "timeline", "records", "sources"].includes(tabId) ? tabId : "master";
+  const validId = ["pipeline", "master", "timeline", "records", "sources", "vault"].includes(tabId) ? tabId : "master";
   document.querySelectorAll(".report-tab-panel").forEach(panel => {
     panel.hidden = panel.id !== validId;
   });
