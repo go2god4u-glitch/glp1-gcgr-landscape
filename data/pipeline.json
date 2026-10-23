@@ -1,7 +1,7 @@
 {
   "ok": true,
   "static": true,
-  "generatedAt": "2026-10-22T23:33:43.150Z",
+  "generatedAt": "2026-10-23T02:13:57.791Z",
   "master": {
     "updated": "2026-10-23"
   },
@@ -343,6 +343,22 @@
       "detailLinks": []
     },
     {
+      "name": "HM17321 (RG7985)",
+      "company": "한미약품 (한국) → Genentech·Roche 라이선스 (한국 제외 전 세계)",
+      "region": "국내",
+      "mechanism": "UCN2 유사체 (CRFR2 선택적, 장기지속형)",
+      "indication": "비만",
+      "type": "다른 기전·비만",
+      "stage": "1상 (한미 진행 중, 완료 후 제넨텍이 2상부터) (2026-10-23)",
+      "keyData": "—",
+      "recent": "로슈 3Q 콘퍼런스콜에서 RG7985로 임상1상 비만 파이프라인 신규 편입, 새 임상 데이터 없음 (2026-10-23 더바이오). 2026-08-24 라이선스: 업프론트 1억9000만달러, 최대 23억500만달러",
+      "next": "한미 1상 완료 후 제넨텍 2상",
+      "assetId": null,
+      "lastDate": "2026-10-23",
+      "recentChange": true,
+      "detailLinks": []
+    },
+    {
       "name": "HM15275",
       "company": "한미약품 (한국)",
       "region": "국내",
@@ -353,7 +369,7 @@
       "keyData": "—",
       "recent": "—",
       "next": "임상 결과",
-      "assetId": null,
+      "assetId": "hm15275",
       "lastDate": null,
       "recentChange": false,
       "detailLinks": []
@@ -369,7 +385,7 @@
       "keyData": "1b/2a 12주 간지방 -81.2% (0.08 mg/kg) vs 위약 -5.7%",
       "recent": "2상 완료 확인 (2026-10-21)",
       "next": "2상 결과 (회사 목표 2026 하반기 임상 완료)",
-      "assetId": null,
+      "assetId": "efocipegtrutide",
       "lastDate": "2026-10-21",
       "recentChange": true,
       "detailLinks": []
@@ -463,11 +479,11 @@
       "type": "다른 기전·비만",
       "stage": "NDA",
       "keyData": "—",
-      "recent": "—",
-      "next": "허가 결정",
+      "recent": "REDEFINE 1 여성 사후분석 68주 -25.0% (위약 -3.0%), 폐경 단계별 -23.1%~-26.7%, 탐색적 분석 (2026-10-21 더바이오)",
+      "next": "허가 결정 (2026 4분기 예상)",
       "assetId": "cagrisema",
-      "lastDate": null,
-      "recentChange": false,
+      "lastDate": "2026-10-21",
+      "recentChange": true,
       "detailLinks": []
     },
     {
@@ -625,7 +641,7 @@
       "keyData": "중국 2상 24주 최대 -19.7%",
       "recent": "—",
       "next": "—",
-      "assetId": null,
+      "assetId": "ubt251",
       "lastDate": null,
       "recentChange": false,
       "detailLinks": []

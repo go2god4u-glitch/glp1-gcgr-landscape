@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T23:30:09.646Z",
-  "registryCheckedAt": "2026-10-22T23:30:03.525Z",
-  "sourcesCheckedAt": "2026-10-22T23:05:29.723Z",
-  "discoveryCheckedAt": "2026-10-22T23:05:15.672Z",
-  "literatureCheckedAt": "2026-10-22T23:05:23.079Z",
+  "generatedAt": "2026-10-23T02:11:47.085Z",
+  "registryCheckedAt": "2026-10-23T02:10:58.810Z",
+  "sourcesCheckedAt": "2026-10-23T02:11:31.425Z",
+  "discoveryCheckedAt": "2026-10-23T02:11:15.745Z",
+  "literatureCheckedAt": "2026-10-23T02:11:23.464Z",
   "programs": {
     "cms": {
       "id": "cms",
       "label": "CMS-D005",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [],
       "nextMilestone": null,
       "note": "no-ctgov-nct"
@@ -17,34 +17,66 @@
     "mazdutide": {
       "id": "mazdutide",
       "label": "Mazdutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
-          "nctId": "NCT06164873",
-          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
-          "status": "UNKNOWN",
+          "nctId": "NCT06937749",
+          "title": "A Study of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
+          "status": "ACTIVE_NOT_RECRUITING",
           "phase": [
-            "PHASE3"
+            "PHASE2"
           ],
-          "enrollment": 462,
+          "enrollment": 181,
           "enrollmentType": "ACTUAL",
-          "startDate": "2023-12-27",
-          "primaryCompletion": "2025-06-27",
-          "completion": "2025-09-19",
-          "lastUpdate": "2024-08-27",
+          "startDate": "2025-06-20",
+          "primaryCompletion": "2026-09-23",
+          "completion": "2027-07-22",
+          "lastUpdate": "2026-10-20",
           "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
           "conditions": [
-            "Obesity"
+            "Metabolic Dysfunction-associated Steatohepatitis (MASH)"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "IBI362",
+              "name": "Placebo",
               "otherNames": []
             },
             {
               "type": "DRUG",
-              "name": "Placebo",
+              "name": "IBI362",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06862908",
+          "title": "A Study of IBI362 in Subjects With HFpEF or HFmrEF Combined With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 141,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-03-26",
+          "primaryCompletion": "2026-09-24",
+          "completion": "2027-02-11",
+          "lastUpdate": "2026-09-22",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity",
+            "Heart Failure With Preserved Ejection Fraction (HFPEF)",
+            "Heart Failure With Mildly Reduced Ejection Fraction"
+          ],
+          "interventions": [
+            {
+              "type": "OTHER",
+              "name": "placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "IBI362",
               "otherNames": []
             }
           ]
@@ -77,6 +109,36 @@
             {
               "type": "DRUG",
               "name": "IBI362",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06164873",
+          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
+          "status": "UNKNOWN",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 462,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2023-12-27",
+          "primaryCompletion": "2025-06-27",
+          "completion": "2025-09-19",
+          "lastUpdate": "2024-08-27",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "IBI362",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
               "otherNames": []
             }
           ]
@@ -118,36 +180,6 @@
           ]
         },
         {
-          "nctId": "NCT06937749",
-          "title": "A Study of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 181,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-06-20",
-          "primaryCompletion": "2026-09-23",
-          "completion": "2027-07-22",
-          "lastUpdate": "2026-10-20",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Metabolic Dysfunction-associated Steatohepatitis (MASH)"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            }
-          ]
-        },
-        {
           "nctId": "NCT06884293",
           "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Overweight or Obese Adults With Metabolic Dysfunction-associated Fatty Liver Disease （MAFLD）",
           "status": "ACTIVE_NOT_RECRUITING",
@@ -174,70 +206,6 @@
             {
               "type": "DRUG",
               "name": "semaglutide",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06862908",
-          "title": "A Study of IBI362 in Subjects With HFpEF or HFmrEF Combined With Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 141,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-03-26",
-          "primaryCompletion": "2026-09-24",
-          "completion": "2027-02-11",
-          "lastUpdate": "2026-09-22",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Obesity",
-            "Heart Failure With Preserved Ejection Fraction (HFPEF)",
-            "Heart Failure With Mildly Reduced Ejection Fraction"
-          ],
-          "interventions": [
-            {
-              "type": "OTHER",
-              "name": "placebo",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07469800",
-          "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 336,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2026-04-23",
-          "primaryCompletion": "2026-08-01",
-          "completion": "2027-04-15",
-          "lastUpdate": "2026-05-27",
-          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
-          "conditions": [
-            "Overweight",
-            "Obesity",
-            "Hypertensive"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "IBI362",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
               "otherNames": []
             }
           ]
@@ -304,38 +272,33 @@
           ]
         },
         {
-          "nctId": "NCT07654062",
-          "title": "Mazdutide for Adults With Prediabetes: A Randomized, Double-Blind, Placebo-Controlled Trial (DREAM-PRE)",
-          "status": "NOT_YET_RECRUITING",
+          "nctId": "NCT07469800",
+          "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
+          "status": "RECRUITING",
           "phase": [
-            "PHASE4"
+            "PHASE3"
           ],
-          "enrollment": 150,
+          "enrollment": 336,
           "enrollmentType": "ESTIMATED",
-          "startDate": "2026-07",
-          "primaryCompletion": "2028-06",
-          "completion": "2029-07",
-          "lastUpdate": "2026-06-17",
-          "leadSponsor": "Shandong Provincial Hospital",
+          "startDate": "2026-04-23",
+          "primaryCompletion": "2026-08-01",
+          "completion": "2027-04-15",
+          "lastUpdate": "2026-05-27",
+          "leadSponsor": "Innovent Biologics (Suzhou) Co. Ltd.",
           "conditions": [
-            "Prediabetes",
-            "Impaired Fasting Glucose",
-            "Impaired Glucose Tolerance (Prediabetes)"
+            "Overweight",
+            "Obesity",
+            "Hypertensive"
           ],
           "interventions": [
             {
               "type": "DRUG",
-              "name": "Mazdutide",
+              "name": "IBI362",
               "otherNames": []
             },
             {
               "type": "DRUG",
               "name": "Placebo",
-              "otherNames": []
-            },
-            {
-              "type": "BEHAVIORAL",
-              "name": "Standardized Lifestyle Intervention",
               "otherNames": []
             }
           ]
@@ -380,6 +343,43 @@
               "otherNames": []
             }
           ]
+        },
+        {
+          "nctId": "NCT07654062",
+          "title": "Mazdutide for Adults With Prediabetes: A Randomized, Double-Blind, Placebo-Controlled Trial (DREAM-PRE)",
+          "status": "NOT_YET_RECRUITING",
+          "phase": [
+            "PHASE4"
+          ],
+          "enrollment": 150,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-07",
+          "primaryCompletion": "2028-06",
+          "completion": "2029-07",
+          "lastUpdate": "2026-06-17",
+          "leadSponsor": "Shandong Provincial Hospital",
+          "conditions": [
+            "Prediabetes",
+            "Impaired Fasting Glucose",
+            "Impaired Glucose Tolerance (Prediabetes)"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Mazdutide",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "BEHAVIORAL",
+              "name": "Standardized Lifestyle Intervention",
+              "otherNames": []
+            }
+          ]
         }
       ],
       "nextMilestone": {
@@ -393,7 +393,7 @@
     "survodutide": {
       "id": "survodutide",
       "label": "Survodutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06066515",
@@ -423,72 +423,6 @@
             {
               "type": "COMBINATION_PRODUCT",
               "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06745284",
-          "title": "A Study to Test Whether Survodutide Improves How the Body Uses Energy and Breaks Down Fat in People With Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 64,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-03-26",
-          "primaryCompletion": "2027-01-08",
-          "completion": "2027-01-10",
-          "lastUpdate": "2026-05-12",
-          "leadSponsor": "Boehringer Ingelheim",
-          "conditions": [
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Survodutide",
-              "otherNames": [
-                "BI 456906"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Semaglutide",
-              "otherNames": [
-                "Wegovy®"
-              ]
-            }
-          ]
-        },
-        {
-          "nctId": "NCT07407348",
-          "title": "A Study in People With Overweight or Obesity to Compare How 2 Different Formulations of Survodutide Are Taken up by the Body",
-          "status": "ACTIVE_NOT_RECRUITING",
-          "phase": [
-            "PHASE1"
-          ],
-          "enrollment": 80,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2026-03-11",
-          "primaryCompletion": "2027-01-26",
-          "completion": "2027-03-02",
-          "lastUpdate": "2026-09-09",
-          "leadSponsor": "Boehringer Ingelheim",
-          "conditions": [
-            "Healthy",
-            "Obesity",
-            "Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Formulation A",
-              "otherNames": []
-            },
-            {
-              "type": "COMBINATION_PRODUCT",
-              "name": "Formulation B6",
               "otherNames": []
             }
           ]
@@ -526,21 +460,53 @@
           ]
         },
         {
-          "nctId": "NCT04771273",
-          "title": "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)",
-          "status": "COMPLETED",
+          "nctId": "NCT07407348",
+          "title": "A Study in People With Overweight or Obesity to Compare How 2 Different Formulations of Survodutide Are Taken up by the Body",
+          "status": "ACTIVE_NOT_RECRUITING",
           "phase": [
-            "PHASE2"
+            "PHASE1"
           ],
-          "enrollment": 295,
+          "enrollment": 80,
           "enrollmentType": "ACTUAL",
-          "startDate": "2021-04-27",
-          "primaryCompletion": "2023-11-09",
-          "completion": "2023-12-21",
-          "lastUpdate": "2024-12-03",
+          "startDate": "2026-03-11",
+          "primaryCompletion": "2027-01-26",
+          "completion": "2027-03-02",
+          "lastUpdate": "2026-09-09",
           "leadSponsor": "Boehringer Ingelheim",
           "conditions": [
-            "Non-alcoholic Steatohepatitis (NASH)"
+            "Healthy",
+            "Obesity",
+            "Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Formulation A",
+              "otherNames": []
+            },
+            {
+              "type": "COMBINATION_PRODUCT",
+              "name": "Formulation B6",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06745284",
+          "title": "A Study to Test Whether Survodutide Improves How the Body Uses Energy and Breaks Down Fat in People With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 64,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-03-26",
+          "primaryCompletion": "2027-01-08",
+          "completion": "2027-01-10",
+          "lastUpdate": "2026-05-12",
+          "leadSponsor": "Boehringer Ingelheim",
+          "conditions": [
+            "Obesity"
           ],
           "interventions": [
             {
@@ -552,8 +518,10 @@
             },
             {
               "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
+              "name": "Semaglutide",
+              "otherNames": [
+                "Wegovy®"
+              ]
             }
           ]
         },
@@ -621,6 +589,38 @@
               "otherNames": []
             }
           ]
+        },
+        {
+          "nctId": "NCT04771273",
+          "title": "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 295,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2021-04-27",
+          "primaryCompletion": "2023-11-09",
+          "completion": "2023-12-21",
+          "lastUpdate": "2024-12-03",
+          "leadSponsor": "Boehringer Ingelheim",
+          "conditions": [
+            "Non-alcoholic Steatohepatitis (NASH)"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Survodutide",
+              "otherNames": [
+                "BI 456906"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
         }
       ],
       "nextMilestone": {
@@ -634,38 +634,8 @@
     "pemvidutide": {
       "id": "pemvidutide",
       "label": "Pemvidutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
-        {
-          "nctId": "NCT05295875",
-          "title": "Efficacy and Safety of ALT-801 in the Treatment of Obesity",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 391,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2022-03-31",
-          "primaryCompletion": "2023-09-28",
-          "completion": "2023-09-28",
-          "lastUpdate": "2023-11-29",
-          "leadSponsor": "Altimmune, Inc.",
-          "conditions": [
-            "Obesity/Overweight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "ALT-801",
-              "otherNames": []
-            },
-            {
-              "type": "OTHER",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        },
         {
           "nctId": "NCT05989711",
           "title": "IMPACT TRIAL: Efficacy and Safety of Pemvidutide in Subjects With Nonalcoholic Steatohepatitis (NASH)",
@@ -691,6 +661,36 @@
             },
             {
               "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT05295875",
+          "title": "Efficacy and Safety of ALT-801 in the Treatment of Obesity",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 391,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2022-03-31",
+          "primaryCompletion": "2023-09-28",
+          "completion": "2023-09-28",
+          "lastUpdate": "2023-11-29",
+          "leadSponsor": "Altimmune, Inc.",
+          "conditions": [
+            "Obesity/Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "ALT-801",
+              "otherNames": []
+            },
+            {
+              "type": "OTHER",
               "name": "Placebo",
               "otherNames": []
             }
@@ -768,7 +768,7 @@
     "efino": {
       "id": "efino",
       "label": "Efinopegdutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT04944992",
@@ -894,7 +894,7 @@
     "azd9550": {
       "id": "azd9550",
       "label": "AZD9550",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06862791",
@@ -1096,10 +1096,49 @@
         "status": "ACTIVE_NOT_RECRUITING"
       }
     },
+    "dd01": {
+      "id": "dd01",
+      "label": "Zabopegdutide",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
+      "studies": [
+        {
+          "nctId": "NCT06410924",
+          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 67,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-06-13",
+          "primaryCompletion": "2025-05-20",
+          "completion": "2026-04-21",
+          "lastUpdate": "2026-05-01",
+          "leadSponsor": "Neuraly, Inc.",
+          "conditions": [
+            "NAFLD",
+            "NASH"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "DD01",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
     "da1726": {
       "id": "da1726",
       "label": "DA-1726",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06252220",
@@ -1140,49 +1179,10 @@
         "status": "RECRUITING"
       }
     },
-    "dd01": {
-      "id": "dd01",
-      "label": "Zabopegdutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
-      "studies": [
-        {
-          "nctId": "NCT06410924",
-          "title": "A Study to Evaluate DD01 in Overweight/Obese Subjects With MASLD/MASH",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 67,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2024-06-13",
-          "primaryCompletion": "2025-05-20",
-          "completion": "2026-04-21",
-          "lastUpdate": "2026-05-01",
-          "leadSponsor": "Neuraly, Inc.",
-          "conditions": [
-            "NAFLD",
-            "NASH"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "DD01",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
-        }
-      ],
-      "nextMilestone": null
-    },
     "pb718": {
       "id": "pb718",
       "label": "PB-718",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06147544",
@@ -1221,7 +1221,7 @@
     "retatrutide": {
       "id": "retatrutide",
       "label": "Retatrutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT05929066",
@@ -1295,7 +1295,7 @@
     "cagrisema": {
       "id": "cagrisema",
       "label": "CagriSema",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT05567796",
@@ -1385,7 +1385,7 @@
     "zenagamtide": {
       "id": "zenagamtide",
       "label": "Zenagamtide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06064006",
@@ -1464,7 +1464,7 @@
     "eloralintide": {
       "id": "eloralintide",
       "label": "Eloralintide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06230523",
@@ -1544,7 +1544,7 @@
     "cotadutide": {
       "id": "cotadutide",
       "label": "Cotadutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT03235050",
@@ -1628,7 +1628,7 @@
     "nn1177": {
       "id": "nn1177",
       "label": "NN1177",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT03308721",
@@ -1698,7 +1698,7 @@
     "sar425899": {
       "id": "sar425899",
       "label": "SAR425899",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT02973321",
@@ -1783,7 +1783,7 @@
     "opk88003": {
       "id": "opk88003",
       "label": "Pegapamodutide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT03406377",
@@ -1821,7 +1821,7 @@
     "g3215": {
       "id": "g3215",
       "label": "G3215",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT02692040",
@@ -1862,7 +1862,7 @@
     "petrelintide": {
       "id": "petrelintide",
       "label": "Petrelintide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06662539",
@@ -1936,7 +1936,7 @@
     "azd6234": {
       "id": "azd6234",
       "label": "AZD6234",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06595238",
@@ -2041,8 +2041,49 @@
     "cagrilintide": {
       "id": "cagrilintide",
       "label": "Cagrilintide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
+        {
+          "nctId": "NCT03856047",
+          "title": "Research Study Investigating How Well NNC0174-0833 Works in People Suffering From Overweight or Obesity.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 706,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2019-03-01",
+          "primaryCompletion": "2020-03-02",
+          "completion": "2021-03-25",
+          "lastUpdate": "2024-07-05",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "NNC0174-0833",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo (NNC0174-0833)",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Liraglutide 3.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo (Liraglutide 3.0 mg)",
+              "otherNames": []
+            }
+          ]
+        },
         {
           "nctId": "NCT07220642",
           "title": "Weight Loss in People Living With Overweight or Obesity Following Treatment With Cagrilintide",
@@ -2145,47 +2186,6 @@
               "otherNames": []
             }
           ]
-        },
-        {
-          "nctId": "NCT03856047",
-          "title": "Research Study Investigating How Well NNC0174-0833 Works in People Suffering From Overweight or Obesity.",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 706,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2019-03-01",
-          "primaryCompletion": "2020-03-02",
-          "completion": "2021-03-25",
-          "lastUpdate": "2024-07-05",
-          "leadSponsor": "Novo Nordisk A/S",
-          "conditions": [
-            "Overweight",
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "NNC0174-0833",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo (NNC0174-0833)",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Liraglutide 3.0 mg",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo (Liraglutide 3.0 mg)",
-              "otherNames": []
-            }
-          ]
         }
       ],
       "nextMilestone": {
@@ -2199,7 +2199,7 @@
     "tirzepatide": {
       "id": "tirzepatide",
       "label": "Tirzepatide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT04184622",
@@ -2269,22 +2269,22 @@
           ]
         },
         {
-          "nctId": "NCT05556512",
-          "title": "A Study of Tirzepatide (LY3298176) on the Reduction on Morbidity and Mortality in Adults With Obesity",
-          "status": "ACTIVE_NOT_RECRUITING",
+          "nctId": "NCT06439277",
+          "title": "A Study of Tirzepatide in Adolescents With Obesity and Weight-Related Comorbidities (SURMOUNT-ADOLESCENTS-2)",
+          "status": "RECRUITING",
           "phase": [
             "PHASE3"
           ],
-          "enrollment": 15374,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2022-10-11",
+          "enrollment": 300,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2024-06-03",
           "primaryCompletion": "2027-10",
-          "completion": "2027-10",
-          "lastUpdate": "2026-10-07",
+          "completion": "2030-12",
+          "lastUpdate": "2026-09-24",
           "leadSponsor": "Eli Lilly and Company",
           "conditions": [
             "Obesity",
-            "Overweight"
+            "Weight Gain"
           ],
           "interventions": [
             {
@@ -2302,22 +2302,22 @@
           ]
         },
         {
-          "nctId": "NCT06439277",
-          "title": "A Study of Tirzepatide in Adolescents With Obesity and Weight-Related Comorbidities (SURMOUNT-ADOLESCENTS-2)",
-          "status": "RECRUITING",
+          "nctId": "NCT05556512",
+          "title": "A Study of Tirzepatide (LY3298176) on the Reduction on Morbidity and Mortality in Adults With Obesity",
+          "status": "ACTIVE_NOT_RECRUITING",
           "phase": [
             "PHASE3"
           ],
-          "enrollment": 300,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2024-06-03",
+          "enrollment": 15374,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2022-10-11",
           "primaryCompletion": "2027-10",
-          "completion": "2030-12",
-          "lastUpdate": "2026-09-24",
+          "completion": "2027-10",
+          "lastUpdate": "2026-10-07",
           "leadSponsor": "Eli Lilly and Company",
           "conditions": [
             "Obesity",
-            "Weight Gain"
+            "Overweight"
           ],
           "interventions": [
             {
@@ -2369,17 +2369,17 @@
         }
       ],
       "nextMilestone": {
-        "nctId": "NCT05556512",
-        "title": "A Study of Tirzepatide (LY3298176) on the Reduction on Morbidity and Mortality in Adults With Obesity",
+        "nctId": "NCT06439277",
+        "title": "A Study of Tirzepatide in Adolescents With Obesity and Weight-Related Comorbidities (SURMOUNT-ADOLESCENTS-2)",
         "kind": "primary completion",
         "date": "2027-10",
-        "status": "ACTIVE_NOT_RECRUITING"
+        "status": "RECRUITING"
       }
     },
     "enicepatide": {
       "id": "enicepatide",
       "label": "Enicepatide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06525935",
@@ -2580,7 +2580,7 @@
     "vk2735": {
       "id": "vk2735",
       "label": "VK2735",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT06068946",
@@ -2704,8 +2704,48 @@
     "ribupatide": {
       "id": "ribupatide",
       "label": "Ribupatide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
+        {
+          "nctId": "NCT06841445",
+          "title": "Efficacy and Safety of HRS9531 Tablet in Obese Subjects",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 166,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-04-07",
+          "primaryCompletion": "2026-01-08",
+          "completion": "2026-01-08",
+          "lastUpdate": "2026-04-03",
+          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
+          "conditions": [
+            "Chronic Management of Body Weight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "HRS9531 Tablet placebo",
+              "otherNames": []
+            }
+          ]
+        },
         {
           "nctId": "NCT05881837",
           "title": "A Study to Evaluate the Efficacy and Safety of HRS9531 Injection in Obese Subjects Without Diabetes",
@@ -2762,46 +2802,6 @@
             {
               "type": "DRUG",
               "name": "HRS9531 injection Placebo",
-              "otherNames": []
-            }
-          ]
-        },
-        {
-          "nctId": "NCT06841445",
-          "title": "Efficacy and Safety of HRS9531 Tablet in Obese Subjects",
-          "status": "COMPLETED",
-          "phase": [
-            "PHASE2"
-          ],
-          "enrollment": 166,
-          "enrollmentType": "ACTUAL",
-          "startDate": "2025-04-07",
-          "primaryCompletion": "2026-01-08",
-          "completion": "2026-01-08",
-          "lastUpdate": "2026-04-03",
-          "leadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd.",
-          "conditions": [
-            "Chronic Management of Body Weight"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "HRS9531 Tablet",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "HRS9531 Tablet",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "HRS9531 Tablet",
-              "otherNames": []
-            },
-            {
-              "type": "DRUG",
-              "name": "HRS9531 Tablet placebo",
               "otherNames": []
             }
           ]
@@ -2911,7 +2911,7 @@
     "maritide": {
       "id": "maritide",
       "label": "MariTide",
-      "checkedAt": "2026-10-22T23:30:03.525Z",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
       "studies": [
         {
           "nctId": "NCT05669599",
@@ -2938,6 +2938,41 @@
               "name": "Maridebart Cafraglutide",
               "otherNames": [
                 "AMG 133"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07037433",
+          "title": "Evaluating the Impact of Maridebart Cafraglutide on Cardiovascular Outcomes in Participants With Atherosclerotic Cardiovascular Disease and Overweight or Obesity",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 12800,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-07-25",
+          "primaryCompletion": "2028-06-30",
+          "completion": "2030-09-29",
+          "lastUpdate": "2026-10-08",
+          "leadSponsor": "Amgen",
+          "conditions": [
+            "Atherosclerotic Cardiovascular Disease",
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "Maridebart Cafraglutide",
+              "otherNames": [
+                "AMG 133",
+                "MariTide"
               ]
             },
             {
@@ -3044,41 +3079,6 @@
               "otherNames": []
             }
           ]
-        },
-        {
-          "nctId": "NCT07037433",
-          "title": "Evaluating the Impact of Maridebart Cafraglutide on Cardiovascular Outcomes in Participants With Atherosclerotic Cardiovascular Disease and Overweight or Obesity",
-          "status": "RECRUITING",
-          "phase": [
-            "PHASE3"
-          ],
-          "enrollment": 12800,
-          "enrollmentType": "ESTIMATED",
-          "startDate": "2025-07-25",
-          "primaryCompletion": "2028-06-30",
-          "completion": "2030-09-29",
-          "lastUpdate": "2026-10-08",
-          "leadSponsor": "Amgen",
-          "conditions": [
-            "Atherosclerotic Cardiovascular Disease",
-            "Overweight",
-            "Obesity"
-          ],
-          "interventions": [
-            {
-              "type": "DRUG",
-              "name": "Maridebart Cafraglutide",
-              "otherNames": [
-                "AMG 133",
-                "MariTide"
-              ]
-            },
-            {
-              "type": "DRUG",
-              "name": "Placebo",
-              "otherNames": []
-            }
-          ]
         }
       ],
       "nextMilestone": {
@@ -3087,6 +3087,387 @@
         "kind": "study completion",
         "date": "2026-11-10",
         "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
+    "efocipegtrutide": {
+      "id": "efocipegtrutide",
+      "label": "Efocipegtrutide",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
+      "studies": [
+        {
+          "nctId": "NCT04505436",
+          "title": "Efocipegtrutide (HM15211) in Adults With Biopsy-Confirmed Nonalcoholic Steatohepatitis (NASH)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 215,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2020-07-31",
+          "primaryCompletion": "2026-06-26",
+          "completion": "2026-07-15",
+          "lastUpdate": "2026-10-05",
+          "leadSponsor": "Hanmi Pharmaceutical Company Limited",
+          "conditions": [
+            "NASH - Nonalcoholic Steatohepatitis"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HM15211",
+              "otherNames": [
+                "efocipegtrutide"
+              ]
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo of HM15211",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT03744182",
+          "title": "A Study of Multiple Doses of HM15211(Efocipegtrutide) in Obese Subjects With NAFLD",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 66,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2018-11-01",
+          "primaryCompletion": "2020-03-18",
+          "completion": "2020-03-18",
+          "lastUpdate": "2025-01-27",
+          "leadSponsor": "Hanmi Pharmaceutical Company Limited",
+          "conditions": [
+            "NAFLD"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HM15211",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo of HM15211",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": null
+    },
+    "hm15275": {
+      "id": "hm15275",
+      "label": "HM15275",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
+      "studies": [
+        {
+          "nctId": "NCT07205900",
+          "title": "Study to Evaluate HM15275 in Obese or Overweight Subjects Without Diabetes Mellitus",
+          "status": "ACTIVE_NOT_RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 267,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-12-02",
+          "primaryCompletion": "2027-01",
+          "completion": "2027-01",
+          "lastUpdate": "2026-04-08",
+          "leadSponsor": "Hanmi Pharmaceutical Company Limited",
+          "conditions": [
+            "Obese",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HM15275",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo of HM15275",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07527650",
+          "title": "Study to Evaluate HM15275 in Subjects With Type 2 Diabetes Mellitus",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 180,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-05-18",
+          "primaryCompletion": "2027-10",
+          "completion": "2027-10",
+          "lastUpdate": "2026-10-19",
+          "leadSponsor": "Hanmi Pharmaceutical Company Limited",
+          "conditions": [
+            "Type 2 Diabetes Mellitus",
+            "T2DM"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HM15275",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo of HM15275",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT06481098",
+          "title": "A Phase 1 Study to Assess HM15275 in Healthy and Obese Subjects.",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE1"
+          ],
+          "enrollment": 74,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2024-05-28",
+          "primaryCompletion": "2025-05-02",
+          "completion": "2025-05-02",
+          "lastUpdate": "2025-05-22",
+          "leadSponsor": "Hanmi Pharmaceutical Company Limited",
+          "conditions": [
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "HM15275",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo of HM15275",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT07205900",
+        "title": "Study to Evaluate HM15275 in Obese or Overweight Subjects Without Diabetes Mellitus",
+        "kind": "primary completion",
+        "date": "2027-01",
+        "status": "ACTIVE_NOT_RECRUITING"
+      }
+    },
+    "ubt251": {
+      "id": "ubt251",
+      "label": "UBT251",
+      "checkedAt": "2026-10-23T02:10:58.810Z",
+      "studies": [
+        {
+          "nctId": "NCT07177469",
+          "title": "UBT251 Injection Phase II Study (Overweight or Obesity)",
+          "status": "COMPLETED",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 205,
+          "enrollmentType": "ACTUAL",
+          "startDate": "2025-03-14",
+          "primaryCompletion": "2025-10-22",
+          "completion": "2025-11-19",
+          "lastUpdate": "2026-09-24",
+          "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+          "conditions": [
+            "Obesity &Amp; Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 2.0 mg and UBT251 Injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 4.0 mg (ID 0.5 mg) and UBT251 Injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 4.0 mg (ID 1.0 mg) and UBT251 Injection Placebo",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 6.0 mg and UBT251 Injection Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07648225",
+          "title": "UBT251 Injection Phase Ⅲ Study (Overweight or Obesity)",
+          "status": "NOT_YET_RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 600,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-07-31",
+          "primaryCompletion": "2027-09-29",
+          "completion": "2027-11-03",
+          "lastUpdate": "2026-06-15",
+          "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+          "conditions": [
+            "Obesity & Overweight"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 4.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 6.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection Placebo 4.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection Placebo 6.0 mg",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07395687",
+          "title": "A Research Study on How Well Different Doses of the Medicine UBT251 Help People Living With Overweight or Obesity",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 333,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-02-02",
+          "primaryCompletion": "2027-01-14",
+          "completion": "2027-02-18",
+          "lastUpdate": "2026-04-21",
+          "leadSponsor": "Novo Nordisk A/S",
+          "conditions": [
+            "Overweight",
+            "Obesity"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "UBT251",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07145151",
+          "title": "A Study of UBT251 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE2"
+          ],
+          "enrollment": 156,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2025-09-30",
+          "primaryCompletion": "2027-06-04",
+          "completion": "2027-08-31",
+          "lastUpdate": "2025-11-20",
+          "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+          "conditions": [
+            "Metabolic Dysfunction-associated Steatohepatitis (MASH)"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "UBT251",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "Placebo",
+              "otherNames": []
+            }
+          ]
+        },
+        {
+          "nctId": "NCT07659574",
+          "title": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes Mellitus With Inadequate Glycemic Control on Diet and Exercise Alone（UNIGUIDE-1）",
+          "status": "RECRUITING",
+          "phase": [
+            "PHASE3"
+          ],
+          "enrollment": 360,
+          "enrollmentType": "ESTIMATED",
+          "startDate": "2026-09-07",
+          "primaryCompletion": "2027-09-24",
+          "completion": "2027-10-22",
+          "lastUpdate": "2026-09-15",
+          "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+          "conditions": [
+            "Type 2 Diabetes"
+          ],
+          "interventions": [
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 2.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 4.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection 6.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection Placebo 2.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection Placebo 4.0 mg",
+              "otherNames": []
+            },
+            {
+              "type": "DRUG",
+              "name": "UBT251 Injection Placebo 6.0 mg",
+              "otherNames": []
+            }
+          ]
+        }
+      ],
+      "nextMilestone": {
+        "nctId": "NCT07395687",
+        "title": "A Research Study on How Well Different Doses of the Medicine UBT251 Help People Living With Overweight or Obesity",
+        "kind": "primary completion",
+        "date": "2027-01-14",
+        "status": "RECRUITING"
       }
     }
   },
@@ -3108,7 +3489,7 @@
         "hostname": "en.innoventbio.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.079Z",
+      "checkedAt": "2026-10-23T02:11:23.464Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3137,7 +3518,7 @@
         "hostname": "www.zealandpharma.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.080Z",
+      "checkedAt": "2026-10-23T02:11:23.466Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -3166,7 +3547,7 @@
         "hostname": "ir.altimmune.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.081Z",
+      "checkedAt": "2026-10-23T02:11:23.467Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3195,7 +3576,7 @@
         "hostname": "www.merck.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.082Z",
+      "checkedAt": "2026-10-23T02:11:23.468Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3224,7 +3605,7 @@
         "hostname": "www.astrazenecaclinicaltrials.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.450Z",
+      "checkedAt": "2026-10-23T02:11:23.749Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
@@ -3253,11 +3634,11 @@
         "hostname": "www.sec.gov",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.682Z",
+      "checkedAt": "2026-10-23T02:11:24.035Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
-      "bytes": 29814,
+      "bytes": 29816,
       "etag": null,
       "lastModified": "Thu, 09 Jul 2026 12:36:00 GMT",
       "hash": "c3da4f6555afe65f3507ac162b5d458e28b5edeca2adf23ddfc4376d1c8f53f2",
@@ -3282,13 +3663,13 @@
         "hostname": "ddpharmatech.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.855Z",
+      "checkedAt": "2026-10-23T02:11:24.154Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "bytes": 47870,
       "etag": null,
-      "lastModified": "Thu, 22 Oct 2026 23:05:23 GMT",
+      "lastModified": "Fri, 23 Oct 2026 02:11:24 GMT",
       "hash": "8ec1217f7d6d56cae746e978c57da5ad5481615bc019cc6636bc77325a3003f9",
       "fingerprint": "8ec1217f7d6d56cae746e978c57da5ad5481615bc019cc6636bc77325a3003f9",
       "changed": false,
@@ -3311,7 +3692,7 @@
         "hostname": "www.hkexnews.hk",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.881Z",
+      "checkedAt": "2026-10-23T02:11:24.206Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -3340,7 +3721,7 @@
         "hostname": "web.cms.net.cn",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:23.913Z",
+      "checkedAt": "2026-10-23T02:11:24.386Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3369,7 +3750,7 @@
         "hostname": "www1.hkexnews.hk",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.032Z",
+      "checkedAt": "2026-10-23T02:11:24.469Z",
       "ok": true,
       "status": 200,
       "contentType": "application/pdf",
@@ -3398,7 +3779,7 @@
         "hostname": "www.prnewswire.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.128Z",
+      "checkedAt": "2026-10-23T02:11:24.593Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3427,7 +3808,7 @@
         "hostname": "www.prnewswire.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.309Z",
+      "checkedAt": "2026-10-23T02:11:24.661Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3456,7 +3837,7 @@
         "hostname": "www.prnewswire.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.337Z",
+      "checkedAt": "2026-10-23T02:11:24.695Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3485,7 +3866,7 @@
         "hostname": "www.prnewswire.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.367Z",
+      "checkedAt": "2026-10-23T02:11:24.731Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
@@ -3514,7 +3895,7 @@
         "hostname": "www.roche.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.394Z",
+      "checkedAt": "2026-10-23T02:11:24.762Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
@@ -3543,7 +3924,7 @@
         "hostname": "clinicaltrials.gov",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.606Z",
+      "checkedAt": "2026-10-23T02:11:24.868Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
@@ -3572,7 +3953,7 @@
         "hostname": "clinicaltrials.gov",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.630Z",
+      "checkedAt": "2026-10-23T02:11:25.104Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
@@ -3601,13 +3982,13 @@
         "hostname": "www.prnewswire.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.845Z",
+      "checkedAt": "2026-10-23T02:11:25.316Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html;charset=utf-8",
       "bytes": 251740,
       "etag": null,
-      "lastModified": "Thu, 22 Oct 2026 23:05:26 GMT",
+      "lastModified": "Fri, 23 Oct 2026 02:11:27 GMT",
       "hash": "6403554503d3813d4d45ac18663e59a905783b9a6d6466967934a27481c23eef",
       "fingerprint": "6403554503d3813d4d45ac18663e59a905783b9a6d6466967934a27481c23eef",
       "changed": false,
@@ -3630,7 +4011,7 @@
         "hostname": "www.roche.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:24.856Z",
+      "checkedAt": "2026-10-23T02:11:25.384Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
@@ -3659,13 +4040,13 @@
         "hostname": "ir.vikingtherapeutics.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:25.033Z",
+      "checkedAt": "2026-10-23T02:11:25.499Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=UTF-8",
       "bytes": 100168,
       "etag": null,
-      "lastModified": "Thu, 22 Oct 2026 23:04:12 GMT",
+      "lastModified": "Fri, 23 Oct 2026 01:47:26 GMT",
       "hash": "8b5c378fcdebd77e4b3deeac2e2e476b49bada436bf59dc834743feb734f350c",
       "fingerprint": "8b5c378fcdebd77e4b3deeac2e2e476b49bada436bf59dc834743feb734f350c",
       "changed": false,
@@ -3688,7 +4069,7 @@
         "hostname": "www.hengrui.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:25.362Z",
+      "checkedAt": "2026-10-23T02:11:25.581Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
@@ -3717,7 +4098,7 @@
         "hostname": "www.amgen.com",
         "trusted": true
       },
-      "checkedAt": "2026-10-22T23:05:26.323Z",
+      "checkedAt": "2026-10-23T02:11:27.256Z",
       "ok": true,
       "status": 200,
       "contentType": "text/html; charset=utf-8",
@@ -3726,6 +4107,93 @@
       "lastModified": null,
       "hash": "f89a571c798e682b87e0a5bba21e53acfdbfb28dd614b34550b40c7843f0dbdd",
       "fingerprint": "f89a571c798e682b87e0a5bba21e53acfdbfb28dd614b34550b40c7843f0dbdd",
+      "changed": false,
+      "changedFields": []
+    },
+    "efocipegtrutide-hanmi": {
+      "id": "efocipegtrutide-hanmi",
+      "programId": "efocipegtrutide",
+      "label": "Hanmi · Efocipegtrutide pipeline",
+      "publisher": "Hanmi Pharmaceutical",
+      "official": true,
+      "tier": 3,
+      "expectedContentTypes": [
+        "text/html"
+      ],
+      "url": "https://www.hanmipharm.com/science/pipeline/focused/efocipegtrutide.hm",
+      "authority": {
+        "tier": 3,
+        "authority": "개발사 공식 원문",
+        "hostname": "www.hanmipharm.com",
+        "trusted": true
+      },
+      "checkedAt": "2026-10-23T02:11:27.334Z",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 50563,
+      "etag": null,
+      "lastModified": null,
+      "hash": "df2e073a3330b97d21d439019cf3e22d37aadc2723d80de8d2eb563fe1411bfc",
+      "fingerprint": "df2e073a3330b97d21d439019cf3e22d37aadc2723d80de8d2eb563fe1411bfc",
+      "changed": false,
+      "changedFields": []
+    },
+    "hm15275-hanmi-ow25": {
+      "id": "hm15275-hanmi-ow25",
+      "programId": "hm15275",
+      "label": "Hanmi · HM15275 ObesityWeek 2025 poster",
+      "publisher": "Hanmi Pharmaceutical",
+      "official": true,
+      "tier": 3,
+      "expectedContentTypes": [
+        "application/pdf"
+      ],
+      "url": "https://hanmi.co.kr/science-pdf/HM15275/2025_ObesityWeek_Poster_HM15275_218.pdf",
+      "authority": {
+        "tier": 3,
+        "authority": "개발사 공식 원문",
+        "hostname": "hanmi.co.kr",
+        "trusted": true
+      },
+      "checkedAt": "2026-10-23T02:11:28.146Z",
+      "ok": true,
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 535673,
+      "etag": "\"82c79-65e66032738c8\"",
+      "lastModified": "Thu, 22 Oct 2026 04:08:12 GMT",
+      "hash": "fdbd4f8a6c2309d42f931bb6ca6ae52cdefeb00d56d3206dc4689e79350c4b63",
+      "fingerprint": "fdbd4f8a6c2309d42f931bb6ca6ae52cdefeb00d56d3206dc4689e79350c4b63",
+      "changed": false,
+      "changedFields": []
+    },
+    "ubt251-novo": {
+      "id": "ubt251-novo",
+      "programId": "ubt251",
+      "label": "Novo Nordisk · UBT251 China Phase 2",
+      "publisher": "Novo Nordisk",
+      "official": true,
+      "tier": 3,
+      "expectedContentTypes": [
+        "text/html"
+      ],
+      "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+      "authority": {
+        "tier": 3,
+        "authority": "개발사 공식 원문",
+        "hostname": "www.novonordisk.com",
+        "trusted": true
+      },
+      "checkedAt": "2026-10-23T02:11:29.046Z",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html;charset=utf-8",
+      "bytes": 57037,
+      "etag": null,
+      "lastModified": null,
+      "hash": "82d688eb4846ebf5a773157e89683c51dc88a54d3a2af1e6c66525f536961f2f",
+      "fingerprint": "82d688eb4846ebf5a773157e89683c51dc88a54d3a2af1e6c66525f536961f2f",
       "changed": false,
       "changedFields": []
     }
@@ -3861,8 +4329,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Enicepatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null,
@@ -3982,8 +4450,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         null
       ]
@@ -4004,8 +4472,8 @@
         "Plaque Psoriasis"
       ],
       "interventions": [],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist",
         null
@@ -4242,7 +4710,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -4277,7 +4745,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -4314,7 +4782,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -4401,7 +4869,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -4444,7 +4912,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -4486,7 +4954,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -4528,7 +4996,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -4639,7 +5107,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -4677,7 +5145,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -4717,7 +5185,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -4861,8 +5329,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(VK2735)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -4896,8 +5364,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(VK2735)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -4950,7 +5418,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -5173,7 +5641,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -5210,7 +5678,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -5653,8 +6121,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -5692,8 +6160,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -5744,7 +6212,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -5859,7 +6327,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip",
@@ -5906,7 +6374,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -5945,7 +6413,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -5984,7 +6452,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6024,7 +6492,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6063,7 +6531,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6250,8 +6718,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -6290,7 +6758,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6327,7 +6795,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6366,7 +6834,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6434,7 +6902,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -6475,7 +6943,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6619,6 +7087,51 @@
       ]
     },
     {
+      "nctId": "NCT07668388",
+      "title": "A Research Study Comparing How Well Different Doses of the Medicine UBT251 Lower Blood Sugar in People With Type 2 Diabetes",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE2"
+      ],
+      "enrollment": 300,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-06-22",
+      "primaryCompletion": "2027-10-04",
+      "completion": "2027-11-15",
+      "lastUpdate": "2026-10-07",
+      "leadSponsor": "Novo Nordisk A/S",
+      "conditions": [
+        "Diabetes Mellitus, Type 2"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Placebo",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Semaglutide",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Semaglutide Placebo",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
       "nctId": "NCT06982859",
       "title": "A Study to Evaluate the Effect of Retatrutide on Insulin Secretion and Insulin Sensitivity in Adult Participants With Type 2 Diabetes Mellitus",
       "status": "ACTIVE_NOT_RECRUITING",
@@ -6656,7 +7169,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -6693,7 +7206,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -6771,8 +7284,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Ribupatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -6816,8 +7329,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Ribupatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -6914,8 +7427,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Enicepatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -6954,8 +7467,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Enicepatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -7220,8 +7733,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -7259,8 +7772,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -7292,7 +7805,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         null
@@ -7518,8 +8031,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Ribupatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -7660,7 +8173,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cagrisema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -7696,7 +8209,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -7743,7 +8256,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -7780,7 +8293,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -7821,7 +8334,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -7859,7 +8372,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -7989,7 +8502,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -8222,8 +8735,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3841136)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -8289,8 +8802,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -8336,7 +8849,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -8374,7 +8887,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -8415,7 +8928,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -8451,7 +8964,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -8557,8 +9070,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -8594,8 +9107,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -8634,7 +9147,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -8674,7 +9187,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -8934,7 +9447,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -8969,8 +9482,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(VK2735)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -9005,7 +9518,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Pemvidutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -9047,7 +9560,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -9239,7 +9752,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -9277,7 +9790,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -9314,7 +9827,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -9352,7 +9865,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -9441,8 +9954,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -9475,8 +9988,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -9509,7 +10022,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist"
@@ -9689,6 +10202,56 @@
       ]
     },
     {
+      "nctId": "NCT07163624",
+      "title": "UBT251 Injection Phase II (Type 2 Diabetes Mellitus) Study",
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE2"
+      ],
+      "enrollment": 211,
+      "enrollmentType": "ACTUAL",
+      "startDate": "2025-03-22",
+      "primaryCompletion": "2025-11-21",
+      "completion": "2025-12-30",
+      "lastUpdate": "2026-09-21",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Type 2 Diabetes Mellitus (T2DM)"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 2.0 mg and UBT251 Injection Placebo",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 4.0 mg (ID 0.5 mg) and UBT251 Injection Placebo",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 4.0 mg (ID 1.0 mg) and UBT251 Injection Placebo",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 6.0 mg and UBT251 Injection Placebo",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Semaglutide Injection (Ozempic®)",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
       "nctId": "NCT07169136",
       "title": "Effects of Glucagon-like Peptide-1 (GLP-1) Agonist in Neuro-reproductive Function in Obese Adolescent Females With Polycystic Ovary Syndrome (PCOS)",
       "status": "RECRUITING",
@@ -9711,8 +10274,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -9822,7 +10385,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist"
@@ -9897,8 +10460,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -10094,8 +10657,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -10264,6 +10827,51 @@
       ]
     },
     {
+      "nctId": "NCT07653477",
+      "title": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes With Inadequate Glycemic Control on Metformin ± Sulfonylurea/SGLT2 Inhibitor Therapy (UNIGUIDE-2)",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE3"
+      ],
+      "enrollment": 956,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-09-07",
+      "primaryCompletion": "2028-02-29",
+      "completion": "2028-02-29",
+      "lastUpdate": "2026-09-14",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Type 2 Diabetes"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 2.0 mg group",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 4.0 mg group",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251 Injection 6.0 mg group",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Semaglutide Injection",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
       "nctId": "NCT05536804",
       "title": "A Study of Tirzepatide (LY3298176) in Participants With Overweight or Obesity and Chronic Kidney Disease With or Without Type 2 Diabetes",
       "status": "COMPLETED",
@@ -10342,7 +10950,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -10379,7 +10987,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -10415,7 +11023,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -10550,7 +11158,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -10590,7 +11198,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -10837,10 +11445,51 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
+      ]
+    },
+    {
+      "nctId": "NCT07806851",
+      "title": "UBT251 Injection Phase Ⅲ Study (OSA-PAP)",
+      "status": "NOT_YET_RECRUITING",
+      "phase": [
+        "PHASE3"
+      ],
+      "enrollment": 150,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-10-10",
+      "primaryCompletion": "2029-03",
+      "completion": "2029-04",
+      "lastUpdate": "2026-09-08",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Obstructive Sleep Apnea",
+        "Obesity"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Placebo",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
       ]
     },
     {
@@ -10879,7 +11528,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -10916,7 +11565,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11096,7 +11745,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist"
@@ -11231,7 +11880,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist",
@@ -11269,7 +11918,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11407,7 +12056,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11443,7 +12092,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11777,8 +12426,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -11819,7 +12468,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11855,7 +12504,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -11889,6 +12538,138 @@
       ]
     },
     {
+      "nctId": "NCT07785934",
+      "title": "Phase I Drug-Drug Interaction Study of UBT251 Injection in Participants With Overweight or Obesity",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "enrollment": 48,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-05-27",
+      "primaryCompletion": "2026-12",
+      "completion": "2026-12",
+      "lastUpdate": "2026-08-25",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Drug Drug Interaction (DDI)",
+        "Pharmacokinetics and Pharmacodynamics"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Metformin hydrochloride",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Warfarin Sodium",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Atorvastatin calcium",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Digoxin",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
+      "nctId": "NCT07710729",
+      "title": "A Research Study Looking Into How UBT251 Works With Birth Control Tablets and Emptying of the Stomach in Women With Excess Body Weight Not Able to Become Pregnant",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "enrollment": 40,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-07-17",
+      "primaryCompletion": "2027-04-27",
+      "completion": "2027-04-27",
+      "lastUpdate": "2026-08-25",
+      "leadSponsor": "Novo Nordisk A/S",
+      "conditions": [
+        "Overweight",
+        "Obesity"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Oral contraceptive",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Acetaminophen",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
+      "nctId": "NCT07767942",
+      "title": "UBT251 Injection Phase Ⅲ Study (OSA-NPAP)",
+      "status": "NOT_YET_RECRUITING",
+      "phase": [
+        "PHASE3"
+      ],
+      "enrollment": 150,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-09-18",
+      "primaryCompletion": "2028-09",
+      "completion": "2028-10",
+      "lastUpdate": "2026-08-25",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Obstructive Sleep Apnea, Obesity"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Placebo",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
       "nctId": "NCT07668401",
       "title": "AMAZE 13: A Research Study Investigating How Well the Medicine Zenagamtide Helps People in Asia With Excess Body Weight Lose Weight",
       "status": "NOT_YET_RECRUITING",
@@ -11919,7 +12700,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Zenagamtide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -11968,7 +12749,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -12242,7 +13023,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -12285,7 +13066,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -12323,7 +13104,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -12402,6 +13183,42 @@
       ]
     },
     {
+      "nctId": "NCT07710768",
+      "title": "A Research Study on How UBT251 Affects Levels of Midazolam, Caffeine and Warfarin in the Blood of Participants With Excess Body Weight",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "enrollment": 44,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2026-07-15",
+      "primaryCompletion": "2027-04-07",
+      "completion": "2027-04-07",
+      "lastUpdate": "2026-08-18",
+      "leadSponsor": "Novo Nordisk A/S",
+      "conditions": [
+        "Obesity",
+        "Overweight"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "Cocktail (Warfarin/Caffeine/Midazolam)",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
+      ]
+    },
+    {
       "nctId": "NCT07767552",
       "title": "Mazdutide for Remission of Type 2 Diabetes: Multicentre, Double Blind, Randomised, Placebo Controlled Trial",
       "status": "NOT_YET_RECRUITING",
@@ -12431,7 +13248,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist"
@@ -12645,7 +13462,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -12680,8 +13497,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -12939,8 +13756,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -12971,7 +13788,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -13010,7 +13827,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -13111,7 +13928,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -13275,8 +14092,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         null
       ]
@@ -13394,7 +14211,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -13433,7 +14250,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -13504,8 +14321,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -13609,8 +14426,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         null
       ]
@@ -13664,8 +14481,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -13890,8 +14707,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -13930,7 +14747,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip",
@@ -13968,7 +14785,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist"
@@ -14006,7 +14823,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -14151,8 +14968,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -14222,8 +15039,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Ribupatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -14260,7 +15077,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -14298,7 +15115,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -14451,8 +15268,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Ribupatide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -14630,8 +15447,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -14736,8 +15553,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         null
       ]
@@ -14805,7 +15622,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -14841,7 +15658,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -15039,7 +15856,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -15371,7 +16188,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -15580,7 +16397,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -15678,8 +16495,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -15791,7 +16608,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -15902,8 +16719,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -15943,7 +16760,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -16053,8 +16870,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -16089,8 +16906,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -16228,7 +17045,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -16309,7 +17126,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         null
@@ -16532,7 +17349,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -16749,7 +17566,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(MK-6024)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -16779,8 +17596,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -17273,8 +18090,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -17319,7 +18136,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -17487,7 +18304,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -17966,7 +18783,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -18131,7 +18948,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -18189,8 +19006,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -18312,8 +19129,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -18351,7 +19168,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -18388,7 +19205,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -18424,7 +19241,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -18582,8 +19399,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -18908,7 +19725,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -19099,7 +19916,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -19485,7 +20302,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -19626,7 +20443,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -19697,7 +20514,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -19855,8 +20672,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist",
         null
@@ -20637,7 +21454,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20687,7 +21504,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20726,7 +21543,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20759,7 +21576,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20813,7 +21630,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20853,7 +21670,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-dual-agonist",
@@ -20920,7 +21737,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -20949,8 +21766,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -21040,7 +21857,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -21078,7 +21895,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -21196,7 +22013,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -21289,8 +22106,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -21331,8 +22148,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -21443,7 +22260,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -21816,7 +22633,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -21956,7 +22773,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin",
@@ -22154,7 +22971,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Petrelintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -22388,7 +23205,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -22463,7 +23280,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -22604,7 +23421,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -22650,8 +23467,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3841136)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -22897,7 +23714,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -22939,7 +23756,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -22980,7 +23797,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(CagriSema)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -23127,8 +23944,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -23213,8 +24030,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -23251,8 +24068,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(Maridebart Cafraglutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -23436,7 +24253,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -23482,7 +24299,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -23772,7 +24589,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -23806,7 +24623,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -23877,8 +24694,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -23980,8 +24797,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(KAI-9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24089,7 +24906,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -24133,6 +24950,47 @@
       "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
+      ]
+    },
+    {
+      "nctId": "NCT07134335",
+      "title": "UBT251 Injection Phase II Clinical Study (CKD)",
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE2"
+      ],
+      "enrollment": 180,
+      "enrollmentType": "ESTIMATED",
+      "startDate": "2025-09-01",
+      "primaryCompletion": "2030-07-11",
+      "completion": "2030-07-11",
+      "lastUpdate": "2025-11-25",
+      "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd.",
+      "conditions": [
+        "Obesity &Amp; Overweight",
+        "Chronic Kidney Disease"
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        },
+        {
+          "type": "DRUG",
+          "name": "UBT251",
+          "otherNames": []
+        }
+      ],
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "matchedQueries": [
+        "ctgov-auto-asset-names-1"
       ]
     },
     {
@@ -24205,8 +25063,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24284,7 +25142,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Eloralintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -24355,8 +25213,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -24448,8 +25306,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -24478,8 +25336,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24513,8 +25371,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24546,7 +25404,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD6234)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -24623,7 +25481,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Efinopegdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -24694,8 +25552,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(CT-388)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24815,8 +25673,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3841136)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -24971,8 +25829,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -25007,7 +25865,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -25262,8 +26120,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -25442,8 +26300,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -25692,7 +26550,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -25794,8 +26652,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -25830,7 +26688,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -25868,8 +26726,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip",
         "ctgov-amylin"
@@ -26094,7 +26952,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Mazdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -26364,7 +27222,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -26443,8 +27301,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -26474,8 +27332,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -26554,7 +27412,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(ALT-801)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -26611,7 +27469,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Pemvidutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -26724,8 +27582,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -26804,8 +27662,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -26842,7 +27700,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "등록 자산명 적중(Retatrutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -26903,8 +27761,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -27056,8 +27914,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -27156,8 +28014,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -27194,8 +28052,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist",
         null
@@ -27230,8 +28088,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(ZP8396)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -27268,7 +28126,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(JNJ-64565111)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-oxyntomodulin"
       ]
@@ -27391,7 +28249,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Survodutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -27421,8 +28279,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -27494,7 +28352,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -28025,7 +28883,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Amycretin)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -28097,7 +28955,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Efinopegdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -28204,8 +29062,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(AMG 133)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -28244,7 +29102,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Efinopegdutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -28355,8 +29213,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(VK2735)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-dual-agonist",
         null
@@ -28455,10 +29313,11 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HM15211)—감시 NCT 추가 검토",
       "matchedQueries": [
-        "ctgov-triple-gip"
+        "ctgov-triple-gip",
+        "ctgov-auto-asset-names-1"
       ]
     },
     {
@@ -28661,7 +29520,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -28751,8 +29610,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -29109,8 +29968,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -29189,8 +30048,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -29224,8 +30083,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -29271,8 +30130,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -29310,8 +30169,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -29364,7 +30223,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(Cagrilintide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-amylin"
@@ -29700,8 +30559,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -29961,8 +30820,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -30148,8 +31007,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -30188,8 +31047,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -30223,8 +31082,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -30258,7 +31117,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -30452,8 +31311,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -30567,8 +31426,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(ZP8396)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -30996,7 +31855,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(DD01)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -31221,8 +32080,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -31317,8 +32176,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -31416,8 +32275,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -31786,7 +32645,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip",
         null
@@ -31865,8 +32724,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -31976,7 +32835,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(AZD9550)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32091,8 +32950,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -32166,8 +33025,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32257,8 +33116,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32325,7 +33184,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32432,7 +33291,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(BI 456906)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32540,8 +33399,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -32642,8 +33501,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32752,8 +33611,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -32856,8 +33715,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-dual-agonist",
         "ctgov-auto-asset-names-1"
@@ -32894,8 +33753,8 @@
           ]
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-dual-agonist",
         "ctgov-auto-asset-names-1"
@@ -32933,7 +33792,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(ALT-801)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -32970,7 +33829,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(ALT-801)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -33205,8 +34064,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -33245,8 +34104,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -33717,8 +34576,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -33850,7 +34709,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -34128,7 +34987,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -34444,8 +35303,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -34499,7 +35358,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -34534,8 +35393,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(ZP8396)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -34800,8 +35659,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -35164,8 +36023,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB 718)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -35248,8 +36107,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(HRS9531)—감시 NCT 추가 검토",
       "matchedQueries": [
         null
       ]
@@ -35351,8 +36210,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -35823,8 +36682,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(SAR425899)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -35864,7 +36723,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "등록 자산명 적중(SAR425899)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -35893,8 +36752,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(SAR425899)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -36000,8 +36859,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -36036,8 +36895,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(SAR425899)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -37230,7 +38089,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -37322,8 +38181,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(IBI362)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -37394,8 +38253,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -37896,8 +38755,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -38330,8 +39189,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -38408,8 +39267,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names",
         "ctgov-triple-gip"
@@ -38788,8 +39647,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -39149,7 +40008,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -39345,8 +40204,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -39506,8 +40365,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -39611,7 +40470,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "등록 자산명 적중—감시 NCT 추가 검토",
+      "reviewReason": "등록 자산명 적중(Cotadutide)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -39909,8 +40768,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(NNC9204-1177)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -39954,8 +40813,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -39999,8 +40858,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -40044,8 +40903,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -40099,8 +40958,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -40173,8 +41032,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -40387,8 +41246,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MOD-6031)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-oxyntomodulin",
         "ctgov-auto-asset-names-1"
@@ -40803,8 +41662,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3437943)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -40988,8 +41847,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -41256,8 +42115,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -41992,8 +42851,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -42487,8 +43346,8 @@
           ]
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -42562,8 +43421,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -42669,8 +43528,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -42704,8 +43563,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -43430,8 +44289,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-dual-agonist"
       ]
@@ -43732,8 +44591,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(LY3305677)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -44000,7 +44859,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -44347,8 +45206,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -44382,8 +45241,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -44412,8 +45271,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(PB-119)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-auto-asset-names-1"
       ]
@@ -46823,8 +47682,8 @@
           "otherNames": []
         }
       ],
-      "relevant": false,
-      "reviewReason": "검색 적중—기전 확인 필요",
+      "relevant": true,
+      "reviewReason": "등록 자산명 적중(MEDI0382)—감시 NCT 추가 검토",
       "matchedQueries": [
         "ctgov-known-names"
       ]
@@ -46968,7 +47827,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -52390,8 +53249,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -52758,7 +53617,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -53012,7 +53871,7 @@
       ],
       "interventions": [],
       "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "reviewReason": "amylin 축 후보—경쟁군 편입 검토",
       "matchedQueries": [
         "ctgov-amylin"
       ]
@@ -53087,7 +53946,7 @@
         }
       ],
       "relevant": true,
-      "reviewReason": "triple/GIP 신호—기전 축 확장 검토",
+      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -53188,8 +54047,8 @@
           "otherNames": []
         }
       ],
-      "relevant": true,
-      "reviewReason": "GLP-1R/GCGR dual 후보—경쟁군 편입 검토",
+      "relevant": false,
+      "reviewReason": "검색 적중—기전 확인 필요",
       "matchedQueries": [
         "ctgov-triple-gip"
       ]
@@ -53319,9 +54178,9 @@
     {
       "id": "ctgov-auto-asset-names-1",
       "label": "CT.gov · 자동 커버리지 등록 자산명 1 (app.js 기준)",
-      "term": "\"PB-718\" OR \"PB-119\" OR \"PB-722\" OR \"NN1177\" OR \"NNC9204-1177\" OR \"SAR425899\" OR \"Pegapamodutide\" OR \"OPK-88003\" OR \"MOD-6031\" OR \"G3215\"",
+      "term": "\"PB-718\" OR \"PB-119\" OR \"PB-722\" OR \"NN1177\" OR \"NNC9204-1177\" OR \"SAR425899\" OR \"Pegapamodutide\" OR \"OPK-88003\" OR \"MOD-6031\" OR \"G3215\" OR \"Efocipegtrutide\" OR \"HM15211\" OR \"에포시페그트루타이드\" OR \"HM15275\" OR \"UBT251\"",
       "totalCount": null,
-      "returned": 24
+      "returned": 44
     }
   ],
   "literature": [
@@ -59421,33 +60280,46 @@
         "Zou C"
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42163094/"
+    },
+    {
+      "pmid": "40949933",
+      "title": "Efficacy and safety of incretin co-agonists: Transformative advances in cardiometabolic healthcare.",
+      "pubDate": "2025 Aug 26",
+      "source": "World J Cardiol",
+      "authors": [
+        "Bhat S",
+        "Fernandez CJ",
+        "Lakshmi V",
+        "Pappachan JM"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40949933/"
     }
   ],
   "refreshSummary": {
-    "programCount": 26,
-    "appAssetCount": 26,
-    "knownStudies": 82,
+    "programCount": 29,
+    "appAssetCount": 29,
+    "knownStudies": 92,
     "registryPasses": 3,
     "autoAddedPrograms": [],
     "autoAddedNcts": 0,
     "coverageOk": true,
     "coverageIssues": 0,
-    "discoveryResults": 1292,
-    "relevantCandidates": 256,
-    "literature": 389,
-    "monitoredSources": 22,
-    "changes": 0,
+    "discoveryResults": 1301,
+    "relevantCandidates": 369,
+    "literature": 390,
+    "monitoredSources": 25,
+    "changes": 10,
     "errors": 0,
     "verification": "pass",
-    "verifiedRegistry": 82,
-    "expectedRegistry": 82,
-    "verifiedSources": 22,
-    "expectedSources": 22
+    "verifiedRegistry": 92,
+    "expectedRegistry": 92,
+    "verifiedSources": 25,
+    "expectedSources": 25
   },
   "coverage": {
-    "appAssetCount": 26,
-    "programCount": 26,
-    "nctCount": 82,
+    "appAssetCount": 29,
+    "programCount": 29,
+    "nctCount": 92,
     "addedPrograms": [],
     "addedNcts": [],
     "addedDiscoveryNames": [
@@ -59460,7 +60332,12 @@
       "Pegapamodutide",
       "OPK-88003",
       "MOD-6031",
-      "G3215"
+      "G3215",
+      "Efocipegtrutide",
+      "HM15211",
+      "에포시페그트루타이드",
+      "HM15275",
+      "UBT251"
     ],
     "addedLiteratureNames": [
       "Tirzepatide",
@@ -59488,12 +60365,17 @@
       "Pegapamodutide",
       "OPK-88003",
       "MOD-6031",
-      "G3215"
+      "G3215",
+      "Efocipegtrutide",
+      "HM15211",
+      "에포시페그트루타이드",
+      "HM15275",
+      "UBT251"
     ],
     "notes": [
-      "app assets 26 · programs after merge 26",
-      "탐색 자동 커버리지 10종: PB-718, PB-119, PB-722, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215",
-      "문헌 자동 커버리지 26종: Tirzepatide, LY3298176, Mounjaro, Zepbound, Enicepatide, CT-388, VK2735, Ribupatide, HRS9531, KAI-9531, MariTide, maridebart cafraglutide, AMG 133, CMS-D005, PB-718, PB-119, PB-722, Cotadutide, MEDI0382, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215"
+      "app assets 29 · programs after merge 29",
+      "탐색 자동 커버리지 15종: PB-718, PB-119, PB-722, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215, Efocipegtrutide, HM15211, 에포시페그트루타이드, HM15275, UBT251",
+      "문헌 자동 커버리지 31종: Tirzepatide, LY3298176, Mounjaro, Zepbound, Enicepatide, CT-388, VK2735, Ribupatide, HRS9531, KAI-9531, MariTide, maridebart cafraglutide, AMG 133, CMS-D005, PB-718, PB-119, PB-722, Cotadutide, MEDI0382, NN1177, NNC9204-1177, SAR425899, Pegapamodutide, OPK-88003, MOD-6031, G3215, Efocipegtrutide, HM15211, 에포시페그트루타이드, HM15275, UBT251"
     ],
     "assetIds": [
       "tirzepatide",
@@ -59521,7 +60403,10 @@
       "eloralintide",
       "petrelintide",
       "azd6234",
-      "cagrilintide"
+      "cagrilintide",
+      "efocipegtrutide",
+      "hm15275",
+      "ubt251"
     ],
     "programIds": [
       "mazdutide",
@@ -59549,7 +60434,10 @@
       "enicepatide",
       "vk2735",
       "ribupatide",
-      "maritide"
+      "maritide",
+      "efocipegtrutide",
+      "hm15275",
+      "ubt251"
     ],
     "audit": {
       "ok": true,
@@ -59576,19 +60464,19 @@
           "assetId": "g3215"
         }
       ],
-      "checkedAssets": 26,
-      "snapshotPrograms": 26
+      "checkedAssets": 29,
+      "snapshotPrograms": 29
     }
   },
   "verification": {
     "policyVersion": "trusted-primary-sources-v1",
     "result": "pass",
     "autoApplyAllowed": true,
-    "checkedAt": "2026-10-22T23:30:09.490Z",
+    "checkedAt": "2026-10-23T02:11:31.428Z",
     "checks": {
       "registry": {
-        "expected": 82,
-        "verified": 82,
+        "expected": 92,
+        "verified": 92,
         "complete": true
       },
       "discoveryQueries": {
@@ -59602,13 +60490,8 @@
         "complete": true
       },
       "officialSources": {
-        "expected": 22,
-        "verified": 22,
-        "complete": true
-      },
-      "appCoverage": {
-        "expected": 26,
-        "verified": 26,
+        "expected": 25,
+        "verified": 25,
         "complete": true
       }
     },
@@ -59977,6 +60860,48 @@
           "literature": true,
           "companyOrFiling": true
         }
+      },
+      {
+        "programId": "efocipegtrutide",
+        "label": "Efocipegtrutide",
+        "registryExpected": 2,
+        "registryVerified": 2,
+        "missingRegistryIds": [],
+        "officialSourcesExpected": 1,
+        "officialSourcesVerified": 1,
+        "evidenceAreas": {
+          "registry": true,
+          "literature": true,
+          "companyOrFiling": true
+        }
+      },
+      {
+        "programId": "hm15275",
+        "label": "HM15275",
+        "registryExpected": 3,
+        "registryVerified": 3,
+        "missingRegistryIds": [],
+        "officialSourcesExpected": 1,
+        "officialSourcesVerified": 1,
+        "evidenceAreas": {
+          "registry": true,
+          "literature": true,
+          "companyOrFiling": true
+        }
+      },
+      {
+        "programId": "ubt251",
+        "label": "UBT251",
+        "registryExpected": 5,
+        "registryVerified": 5,
+        "missingRegistryIds": [],
+        "officialSourcesExpected": 1,
+        "officialSourcesVerified": 1,
+        "evidenceAreas": {
+          "registry": true,
+          "literature": true,
+          "companyOrFiling": true
+        }
       }
     ],
     "limitations": [
@@ -59987,9 +60912,9 @@
     "factGate": {
       "ran": true,
       "exitCode": 0,
-      "mode": "offline",
+      "mode": "full",
       "policyVersion": "fact-gate-v1",
-      "checkedAt": "2026-10-22T23:30:09.624Z",
+      "checkedAt": "2026-10-23T02:11:46.988Z",
       "blocking": 0,
       "machineChecked": {
         "label": "기계 대조 위반",
@@ -59999,13 +60924,13 @@
         "verifiedClaimEdited": 0,
         "narrativeUnsourced": 0,
         "warnings": 0,
-        "registryChecked": 0,
-        "registryTargets": 66
+        "registryChecked": 75,
+        "registryTargets": 75
       },
       "humanEvidence": {
         "label": "사람 1차출처 확인 기록 (수치 주장 기준)",
-        "total": 87,
-        "verified": 73,
+        "total": 98,
+        "verified": 84,
         "stale": 0,
         "drifted": 0,
         "knownUnverified": 13,
@@ -60014,8 +60939,445 @@
       "blockingFindings": []
     }
   },
-  "currentChanges": [],
+  "currentChanges": [
+    {
+      "scope": "discovery",
+      "id": "NCT07668388",
+      "label": "A Research Study Comparing How Well Different Doses of the Medicine UBT251 Lower Blood Sugar in People With Type 2 Diabetes",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study Comparing How Well Different Doses of the Medicine UBT251 Lower Blood Sugar in People With Type 2 Diabetes",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 300,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-06-22",
+        "primaryCompletion": "2027-10-04",
+        "completion": "2027-11-15",
+        "lastUpdate": "2026-10-07",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07668388"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07163624",
+      "label": "UBT251 Injection Phase II (Type 2 Diabetes Mellitus) Study",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase II (Type 2 Diabetes Mellitus) Study",
+        "status": "COMPLETED",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 211,
+        "enrollmentType": "ACTUAL",
+        "startDate": "2025-03-22",
+        "primaryCompletion": "2025-11-21",
+        "completion": "2025-12-30",
+        "lastUpdate": "2026-09-21",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07163624"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07653477",
+      "label": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes With Inadequate Glycemic Control on Metformin ± Sulfonylurea/SGLT2 Inhibitor Therapy (UNIGUIDE-2)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes With Inadequate Glycemic Control on Metformin ± Sulfonylurea/SGLT2 Inhibitor Therapy (UNIGUIDE-2)",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 956,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-09-07",
+        "primaryCompletion": "2028-02-29",
+        "completion": "2028-02-29",
+        "lastUpdate": "2026-09-14",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07653477"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07806851",
+      "label": "UBT251 Injection Phase Ⅲ Study (OSA-PAP)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase Ⅲ Study (OSA-PAP)",
+        "status": "NOT_YET_RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 150,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-10-10",
+        "primaryCompletion": "2029-03",
+        "completion": "2029-04",
+        "lastUpdate": "2026-09-08",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07806851"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07785934",
+      "label": "Phase I Drug-Drug Interaction Study of UBT251 Injection in Participants With Overweight or Obesity",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "Phase I Drug-Drug Interaction Study of UBT251 Injection in Participants With Overweight or Obesity",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 48,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-05-27",
+        "primaryCompletion": "2026-12",
+        "completion": "2026-12",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07785934"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07710729",
+      "label": "A Research Study Looking Into How UBT251 Works With Birth Control Tablets and Emptying of the Stomach in Women With Excess Body Weight Not Able to Become Pregnant",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study Looking Into How UBT251 Works With Birth Control Tablets and Emptying of the Stomach in Women With Excess Body Weight Not Able to Become Pregnant",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 40,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-07-17",
+        "primaryCompletion": "2027-04-27",
+        "completion": "2027-04-27",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07710729"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07767942",
+      "label": "UBT251 Injection Phase Ⅲ Study (OSA-NPAP)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase Ⅲ Study (OSA-NPAP)",
+        "status": "NOT_YET_RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 150,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-09-18",
+        "primaryCompletion": "2028-09",
+        "completion": "2028-10",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07767942"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07710768",
+      "label": "A Research Study on How UBT251 Affects Levels of Midazolam, Caffeine and Warfarin in the Blood of Participants With Excess Body Weight",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study on How UBT251 Affects Levels of Midazolam, Caffeine and Warfarin in the Blood of Participants With Excess Body Weight",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 44,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-07-15",
+        "primaryCompletion": "2027-04-07",
+        "completion": "2027-04-07",
+        "lastUpdate": "2026-08-18",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07710768"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07134335",
+      "label": "UBT251 Injection Phase II Clinical Study (CKD)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase II Clinical Study (CKD)",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 180,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2025-09-01",
+        "primaryCompletion": "2030-07-11",
+        "completion": "2030-07-11",
+        "lastUpdate": "2025-11-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07134335"
+    },
+    {
+      "scope": "literature",
+      "id": "40949933",
+      "label": "Efficacy and safety of incretin co-agonists: Transformative advances in cardiometabolic healthcare.",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "after": {
+        "pmid": "40949933",
+        "title": "Efficacy and safety of incretin co-agonists: Transformative advances in cardiometabolic healthcare.",
+        "pubDate": "2025 Aug 26",
+        "source": "World J Cardiol",
+        "authors": [
+          "Bhat S",
+          "Fernandez CJ",
+          "Lakshmi V",
+          "Pappachan JM"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40949933/"
+      },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40949933/"
+    }
+  ],
   "changes": [
+    {
+      "scope": "discovery",
+      "id": "NCT07668388",
+      "label": "A Research Study Comparing How Well Different Doses of the Medicine UBT251 Lower Blood Sugar in People With Type 2 Diabetes",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study Comparing How Well Different Doses of the Medicine UBT251 Lower Blood Sugar in People With Type 2 Diabetes",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 300,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-06-22",
+        "primaryCompletion": "2027-10-04",
+        "completion": "2027-11-15",
+        "lastUpdate": "2026-10-07",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07668388"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07163624",
+      "label": "UBT251 Injection Phase II (Type 2 Diabetes Mellitus) Study",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase II (Type 2 Diabetes Mellitus) Study",
+        "status": "COMPLETED",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 211,
+        "enrollmentType": "ACTUAL",
+        "startDate": "2025-03-22",
+        "primaryCompletion": "2025-11-21",
+        "completion": "2025-12-30",
+        "lastUpdate": "2026-09-21",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07163624"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07653477",
+      "label": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes With Inadequate Glycemic Control on Metformin ± Sulfonylurea/SGLT2 Inhibitor Therapy (UNIGUIDE-2)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "Phase III Study of UBT251 Injection in Patients With Type 2 Diabetes With Inadequate Glycemic Control on Metformin ± Sulfonylurea/SGLT2 Inhibitor Therapy (UNIGUIDE-2)",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 956,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-09-07",
+        "primaryCompletion": "2028-02-29",
+        "completion": "2028-02-29",
+        "lastUpdate": "2026-09-14",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07653477"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07806851",
+      "label": "UBT251 Injection Phase Ⅲ Study (OSA-PAP)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase Ⅲ Study (OSA-PAP)",
+        "status": "NOT_YET_RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 150,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-10-10",
+        "primaryCompletion": "2029-03",
+        "completion": "2029-04",
+        "lastUpdate": "2026-09-08",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07806851"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07785934",
+      "label": "Phase I Drug-Drug Interaction Study of UBT251 Injection in Participants With Overweight or Obesity",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "Phase I Drug-Drug Interaction Study of UBT251 Injection in Participants With Overweight or Obesity",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 48,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-05-27",
+        "primaryCompletion": "2026-12",
+        "completion": "2026-12",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07785934"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07710729",
+      "label": "A Research Study Looking Into How UBT251 Works With Birth Control Tablets and Emptying of the Stomach in Women With Excess Body Weight Not Able to Become Pregnant",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study Looking Into How UBT251 Works With Birth Control Tablets and Emptying of the Stomach in Women With Excess Body Weight Not Able to Become Pregnant",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 40,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-07-17",
+        "primaryCompletion": "2027-04-27",
+        "completion": "2027-04-27",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07710729"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07767942",
+      "label": "UBT251 Injection Phase Ⅲ Study (OSA-NPAP)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase Ⅲ Study (OSA-NPAP)",
+        "status": "NOT_YET_RECRUITING",
+        "phase": [
+          "PHASE3"
+        ],
+        "enrollment": 150,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-09-18",
+        "primaryCompletion": "2028-09",
+        "completion": "2028-10",
+        "lastUpdate": "2026-08-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07767942"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07710768",
+      "label": "A Research Study on How UBT251 Affects Levels of Midazolam, Caffeine and Warfarin in the Blood of Participants With Excess Body Weight",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "A Research Study on How UBT251 Affects Levels of Midazolam, Caffeine and Warfarin in the Blood of Participants With Excess Body Weight",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE1"
+        ],
+        "enrollment": 44,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2026-07-15",
+        "primaryCompletion": "2027-04-07",
+        "completion": "2027-04-07",
+        "lastUpdate": "2026-08-18",
+        "leadSponsor": "Novo Nordisk A/S"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07710768"
+    },
+    {
+      "scope": "discovery",
+      "id": "NCT07134335",
+      "label": "UBT251 Injection Phase II Clinical Study (CKD)",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "reviewReason": "등록 자산명 적중(UBT251)—감시 NCT 추가 검토",
+      "after": {
+        "title": "UBT251 Injection Phase II Clinical Study (CKD)",
+        "status": "RECRUITING",
+        "phase": [
+          "PHASE2"
+        ],
+        "enrollment": 180,
+        "enrollmentType": "ESTIMATED",
+        "startDate": "2025-09-01",
+        "primaryCompletion": "2030-07-11",
+        "completion": "2030-07-11",
+        "lastUpdate": "2025-11-25",
+        "leadSponsor": "The United Bio-Technology (Hengqin) Co., Ltd."
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07134335"
+    },
+    {
+      "scope": "literature",
+      "id": "40949933",
+      "label": "Efficacy and safety of incretin co-agonists: Transformative advances in cardiometabolic healthcare.",
+      "detectedAt": "2026-10-23T02:10:58.810Z",
+      "after": {
+        "pmid": "40949933",
+        "title": "Efficacy and safety of incretin co-agonists: Transformative advances in cardiometabolic healthcare.",
+        "pubDate": "2025 Aug 26",
+        "source": "World J Cardiol",
+        "authors": [
+          "Bhat S",
+          "Fernandez CJ",
+          "Lakshmi V",
+          "Pappachan JM"
+        ],
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40949933/"
+      },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40949933/"
+    },
     {
       "scope": "discovery",
       "id": "NCT03350191",
@@ -62009,227 +63371,6 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/42832185/"
       },
       "url": "https://pubmed.ncbi.nlm.nih.gov/42832185/"
-    },
-    {
-      "scope": "literature",
-      "id": "42788826",
-      "label": "Considerations and challenges in microdosing of GLP-1-based receptor agonists.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42788826",
-        "title": "Considerations and challenges in microdosing of GLP-1-based receptor agonists.",
-        "pubDate": "2026 Oct 5",
-        "source": "Expert Opin Pharmacother",
-        "authors": [
-          "Beck H",
-          "Clements JN"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42788826/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42788826/"
-    },
-    {
-      "scope": "literature",
-      "id": "42823936",
-      "label": "Diet and nutrition in obesity treated with incretin-based therapies: A scientific statement of the Polish Society of Dietetics.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42823936",
-        "title": "Diet and nutrition in obesity treated with incretin-based therapies: A scientific statement of the Polish Society of Dietetics.",
-        "pubDate": "2026 Oct 2",
-        "source": "Adv Clin Exp Med",
-        "authors": [
-          "Kwaśny A",
-          "Słoma-Krześlak M",
-          "Kostelecki G",
-          "Rychter AM",
-          "Brzegowy M",
-          "Jeziorek M",
-          "Kręgielska-Narożna M",
-          "Lange E",
-          "Boniecka I",
-          "Prejbisz A",
-          "Dobrowolski P",
-          "Czapla M"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42823936/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42823936/"
-    },
-    {
-      "scope": "literature",
-      "id": "42830469",
-      "label": "Glucagon-Like Peptide-1 Agonists and Blood Pressure Regulation: Molecular Mechanisms and Cardiovascular Implications.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42830469",
-        "title": "Glucagon-Like Peptide-1 Agonists and Blood Pressure Regulation: Molecular Mechanisms and Cardiovascular Implications.",
-        "pubDate": "2026 Oct",
-        "source": "Pharmacol Res Perspect",
-        "authors": [
-          "Alharbi NHJ"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42830469/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42830469/"
-    },
-    {
-      "scope": "literature",
-      "id": "42822650",
-      "label": "GLP-1 receptor agonists in psoriasis management.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42822650",
-        "title": "GLP-1 receptor agonists in psoriasis management.",
-        "pubDate": "2026 Oct 1",
-        "source": "Clin Dermatol",
-        "authors": [
-          "Cutrona M",
-          "Talia J",
-          "Cices A"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42822650/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42822650/"
-    },
-    {
-      "scope": "literature",
-      "id": "42821207",
-      "label": "Beyond metabolic control: the potential role of antidiabetic therapies in modulating male reproductive function and spermatogenesis.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42821207",
-        "title": "Beyond metabolic control: the potential role of antidiabetic therapies in modulating male reproductive function and spermatogenesis.",
-        "pubDate": "2026 Oct 1",
-        "source": "Rev Endocr Metab Disord",
-        "authors": [
-          "Paternò V",
-          "Abdel Malek R",
-          "Delli Paoli E",
-          "Conflitti AC",
-          "Maddaloni E",
-          "Gabriele C",
-          "Piticchio T",
-          "Le Moli R",
-          "Geraci G",
-          "Buzzetti R",
-          "Lombardo F",
-          "Paoli D",
-          "Pallotti F"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42821207/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42821207/"
-    },
-    {
-      "scope": "literature",
-      "id": "42756500",
-      "label": "Simultaneous and recurrent hordeola and chalazia associated with tirzepatide therapy: a case series.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42756500",
-        "title": "Simultaneous and recurrent hordeola and chalazia associated with tirzepatide therapy: a case series.",
-        "pubDate": "2026 Oct",
-        "source": "JCEM Case Rep",
-        "authors": [
-          "Kolker A"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42756500/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42756500/"
-    },
-    {
-      "scope": "literature",
-      "id": "42734425",
-      "label": "Cardiovascular effects of chronic GIPR and GLP-1R agonism in lean and diet-induced obese mice: sex differences and dose-dependent remodeling.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42734425",
-        "title": "Cardiovascular effects of chronic GIPR and GLP-1R agonism in lean and diet-induced obese mice: sex differences and dose-dependent remodeling.",
-        "pubDate": "2026 Oct 1",
-        "source": "Am J Physiol Heart Circ Physiol",
-        "authors": [
-          "Göktaş SŞ",
-          "Francisco A",
-          "Duarte JMN",
-          "Meissner A",
-          "Magnusson M"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42734425/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42734425/"
-    },
-    {
-      "scope": "literature",
-      "id": "42733128",
-      "label": "Weight Reduction Heterogenicity and Mediators of GLP-1RAs and Dual Agonists for Individuals With Obesity: A Meta-Analysis.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42733128",
-        "title": "Weight Reduction Heterogenicity and Mediators of GLP-1RAs and Dual Agonists for Individuals With Obesity: A Meta-Analysis.",
-        "pubDate": "2026 Oct",
-        "source": "Clin Obes",
-        "authors": [
-          "Lu D",
-          "Li N",
-          "Yuan Z",
-          "Gao Y"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42733128/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42733128/"
-    },
-    {
-      "scope": "literature",
-      "id": "42728528",
-      "label": "The Expanding Role of GLP-1 Receptor Agonists and Dual GIP/GLP-1 Agonists in Dermatology: From Immunometabolism to Clinical Practice.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42728528",
-        "title": "The Expanding Role of GLP-1 Receptor Agonists and Dual GIP/GLP-1 Agonists in Dermatology: From Immunometabolism to Clinical Practice.",
-        "pubDate": "2026 Oct",
-        "source": "Dermatol Ther (Heidelb)",
-        "authors": [
-          "Giorgio CM",
-          "Romanò C",
-          "Arisi M",
-          "Rossi M",
-          "Venturini M",
-          "Mezzana S",
-          "Grigolato L",
-          "Galli B",
-          "Nicoletti MM",
-          "Tomasi C",
-          "Licata G"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42728528/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42728528/"
-    },
-    {
-      "scope": "literature",
-      "id": "42691476",
-      "label": "Additive effects of metformin on glucose homeostasis after metabolic-bariatric surgery in nonobese insulin-deficient diabetic rats.",
-      "detectedAt": "2026-10-22T22:43:23.609Z",
-      "after": {
-        "pmid": "42691476",
-        "title": "Additive effects of metformin on glucose homeostasis after metabolic-bariatric surgery in nonobese insulin-deficient diabetic rats.",
-        "pubDate": "2026 Oct 1",
-        "source": "Am J Physiol Endocrinol Metab",
-        "authors": [
-          "Hirlemann M",
-          "Garmon M",
-          "Ribeiro-Parenti L",
-          "Bailbé D",
-          "Willemetz A",
-          "El-Jindi Shahrour H",
-          "Movassat J",
-          "Carette C",
-          "Le Gall M"
-        ],
-        "url": "https://pubmed.ncbi.nlm.nih.gov/42691476/"
-      },
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42691476/"
     }
   ],
   "errors": []

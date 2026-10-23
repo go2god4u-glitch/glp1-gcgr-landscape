@@ -258,6 +258,36 @@ const assets = [
     strategy: "복합(CagriSema)과 분리된 단독 amylin 벤치마크. P3 단독 시험 진행.",
     watch: ["단독 P3 결과", "CagriSema 규제와 단독 포지셔닝", "GI 프로파일 비교"],
     source: "https://pubmed.ncbi.nlm.nih.gov/34798060/"
+  },
+  {
+    id: "efocipegtrutide", name: "Efocipegtrutide", aliases: "HM15211 · 에포시페그트루타이드", company: "Hanmi Pharmaceutical",
+    phase: "Phase 2 (MASH 2b 완료 · 결과 미공개)", stage: 2.2, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP/GCGR triple",
+    signal: "Phase 1b/2a(12주, 비당뇨 비만 NAFLD) 0.08 mg/kg 간지방(MRI-PDFF) 상대 −81.2% vs 위약 −5.7%. MASH Phase 2b(NCT04505436, 215명) 완료, 결과 미공개.",
+    origin: "한미약품 개발 triple agonist. 인간 IgG Fc에 PEG 링커로 결합한 장기지속형.",
+    strategy: "DA-1726과 같은 MASH 축의 국내 triple. Phase 2b 조직학 결과가 간 약효 직접 비교 기준이 된다.",
+    watch: ["MASH Phase 2b(NCT04505436) 조직학 결과 공개", "후속 단계 결정"],
+    source: "https://clinicaltrials.gov/study/NCT04505436"
+  },
+  {
+    id: "hm15275", name: "HM15275", aliases: "—", company: "Hanmi Pharmaceutical",
+    phase: "Phase 2", stage: 2, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP/GCGR triple",
+    signal: "Phase 1 MAD(4주, 비당뇨 비만) 최고 용량 경로 29일 위약 보정 −4.81%. 비만 Phase 2(NCT07205900, 267명)·T2D Phase 2(NCT07527650) 진행.",
+    origin: "한미약품 개발 장기지속형 GLP-1/GIP/GCG triple co-agonist.",
+    strategy: "국내 triple 비만 후발. 비만 Phase 2에서 고용량 체중·제지방이 다음 비교 기준.",
+    watch: ["비만 Phase 2(NCT07205900) 결과", "T2D Phase 2(NCT07527650) 진행"],
+    source: "https://clinicaltrials.gov/study/NCT07205900"
+  },
+  {
+    id: "ubt251", name: "UBT251", aliases: "—", company: "United Laboratories (TUL) · Novo Nordisk",
+    phase: "Phase 3 (중국)", stage: 3, tier: "core", tone: "live",
+    mechanism: "GLP-1R/GIP/GCGR triple",
+    signal: "중국 비만 Phase 2(205명, 24주) 최대 −19.7% vs 위약 −2.0% (efficacy estimand, 회사 발표). 중국 3상·글로벌 1b/2a·MASH Phase 2 진행.",
+    origin: "United Biotechnology 개발 triple agonist. 중국 본토·홍콩·마카오·대만은 United Biotechnology, 그 밖은 Novo Nordisk 개발.",
+    strategy: "Novo의 triple 축. 중국 3상과 글로벌 1b/2a(토플라인 2027 예정)가 다음 비교 기준.",
+    watch: ["중국 비만 Phase 3(NCT07648225)", "글로벌 Phase 1b/2a 토플라인(2027 예정)", "MASH Phase 2(NCT07145151)"],
+    source: "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916503"
   }
 ];
 
@@ -302,7 +332,10 @@ const events = [
   {year: 2025, asset: "Cagrilintide", sub: "REDEFINE 1 단독 암", type: "data", title: "P3 프로그램 내 단독 −11.8%", text: "REDEFINE 1에서 cagrilintide 2.4 mg 단독 trial-product 68주 −11.8% vs 위약 −2.3% (CagriSema 구성 암)."},
   {year: 2025, asset: "Retatrutide", sub: "TRIUMPH-4", type: "data", title: "OA 동반 비만 Phase 3 체중 신호", text: "68주 12 mg 평균 약 −28.7% 체중 감소 등 회사 공개 topline (OA 통증 개선 포함)."},
   {year: 2026, asset: "Retatrutide", sub: "TRIUMPH-1", type: "data", title: "비만 Phase 3 80주 −28.3%", text: "비당뇨 비만·과체중 TRIUMPH-1에서 12 mg 80주 평균 −28.3%, BMI≥35 연장 104주 −30.3%."},
-  {year: 2026, asset: "Zenagamtide", sub: "ADA 2026 T2D", type: "data", title: "T2D Phase 2 A1C·체중", text: "T2D 대상 SC Phase 2에서 A1C 유의 감소와 체중 최대 약 −14.6% (회사 ADA 2026 공개)."}
+  {year: 2026, asset: "Zenagamtide", sub: "ADA 2026 T2D", type: "data", title: "T2D Phase 2 A1C·체중", text: "T2D 대상 SC Phase 2에서 A1C 유의 감소와 체중 최대 약 −14.6% (회사 ADA 2026 공개)."},
+  {year: 2020, asset: "Efocipegtrutide", sub: "EASL 2020", type: "data", title: "NAFLD 1b/2a 간지방 −81.2%", text: "비당뇨 비만 NAFLD 12주 0.08 mg/kg 간지방(MRI-PDFF) 상대 −81.2% vs 위약 −5.7% (학회 포스터)."},
+  {year: 2025, asset: "HM15275", sub: "ObesityWeek 2025", type: "data", title: "Phase 1 MAD 4주 −4.81%", text: "비당뇨 비만 4주 투여 최고 용량 경로(0.5/2.0/4.0/8.0 mg) 29일 위약 보정 체중 −4.81% (학회 포스터)."},
+  {year: 2026, asset: "UBT251", sub: "중국 Phase 2", type: "data", title: "비만 24주 최대 −19.7%", text: "중국 비만·과체중 Phase 2(205명) 24주 최대 −19.7% vs 위약 −2.0% (Novo Nordisk·TUL 2026-02-24 발표)."}
 ];
 
 // null은 공개 근거에서 분기까지 확정하지 못한 이벤트다. 임의 추정하지 않고 연도 전체 밴드로 표시한다.
@@ -311,7 +344,10 @@ const eventQuarterHints = [
   3, 2, 2, 3, null, 1, 1, 4, 2, 4,
   null, 2, 3, null, 1, 2, 2, 2, 3, null,
   // CagriSema, Zenagamtide, Eloralintide, Retatrutide TRIUMPH-4, TRIUMPH-1, Zenagamtide T2D
-  2, null, 4, 4, 2, 2
+  2, null, 4, 4, 2, 2,
+  // Petrelintide 등 5건(분기 미기입 유지), Efocipegtrutide EASL 2020, HM15275 ObesityWeek 2025, UBT251 중국 P2
+  null, null, null, null, null,
+  3, 4, 1
 ];
 events.forEach((event, index) => { event.quarter = eventQuarterHints[index]; });
 
@@ -421,13 +457,23 @@ const references = {
   "PT-ROCHE": ["Roche (2026-03-05), ZUPREME-1 petrelintide Phase 2 topline: weight up to −10.7% vs placebo −1.7% at week 42; AE disc 4.8% vs 4.9%", "Company PR", "https://www.roche.com/media/releases/med-cor-2026-03-05"],
   "PT-NCT": ["Petrelintide ZUPREME-1 NCT06662539 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06662539"],
   "PT-ZUP2": ["Petrelintide ZUPREME-2 NCT06926842 T2D obesity Phase 2", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06926842"],
+  "PT-ZUP2-PR": ["Zealand Pharma company announcement No. 54/2026 (2026-10-07), ZUPREME-2 topline: weight up to −9.2% vs placebo −2.0% at week 28; GI AE disc 1.9% vs 1.7%", "Company announcement (Nasdaq Copenhagen)", "https://view.news.eu.nasdaq.com/view?id=1468986"],
   "AZ-6234-APRICUS": ["AZD6234 Phase 2 APRICUS NCT06595238 obesity/overweight (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06595238"],
   "AZ-6234-P1": ["AZD6234 Phase 1 SAD NCT05511025 (Results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT05511025"],
   "AZ-6234-COMBO": ["AZD9550 ± AZD6234 ASCEND/related combo program (registry)", "Sponsor / ClinicalTrials.gov", "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/"],
   "CG-P2-CTG": ["Cagrilintide Phase 2 dose-finding NCT03856047 posted results (weight %, AE)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03856047"],
   "CG-P2-LANCET": ["Lau et al. (2021), once-weekly cagrilintide Phase 2 weight management", "Lancet / PubMed", "https://pubmed.ncbi.nlm.nih.gov/34798060/"],
   "CG-REDEFINE-MONO": ["REDEFINE 1 cagrilintide 2.4 mg 단독 암 (trial-product −11.8% vs 위약 −2.3%, 68주) — 초록은 treatment-policy 만 제시하고 단독 암 값은 본문 표에 있다", "New England Journal of Medicine (peer-reviewed, T1)", "https://pubmed.ncbi.nlm.nih.gov/40544433/"],
-  "CG-P3": ["Cagrilintide monotherapy Phase 3 NCT07220642 / NCT07220759", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07220642"]
+  "CG-P3": ["Cagrilintide monotherapy Phase 3 NCT07220642 / NCT07220759", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07220642"],
+  "EF-P1B-CTG": ["Efocipegtrutide (HM15211) Phase 1b/2a NCT03744182 obese NAFLD 12 weeks posted results (AE)", "ClinicalTrials.gov Results", "https://clinicaltrials.gov/study/NCT03744182"],
+  "EF-EASL20": ["Abdelmalek et al., EASL 2020 poster — HM15211 Phase 1b/2a liver fat (MRI-PDFF), body weight, TEAE table", "Conference poster (Hanmi)", "https://www.hanmipharm.com/science-pdf/HM15211/2020_EASL_Poster_efocipegtrutide.pdf"],
+  "EF-P2B": ["Efocipegtrutide Phase 2b biopsy-confirmed NASH NCT04505436 (completed, results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT04505436"],
+  "HM5-P1-NCT": ["HM15275 first-in-human Phase 1 SAD/MAD NCT06481098 (results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT06481098"],
+  "HM5-OW25": ["Choi et al., ObesityWeek 2025 poster P-218 — HM15275 MAD body weight, TEAE table", "Conference poster (Hanmi)", "https://hanmi.co.kr/science-pdf/HM15275/2025_ObesityWeek_Poster_HM15275_218.pdf"],
+  "HM5-P2": ["HM15275 Phase 2 obesity/overweight without diabetes NCT07205900", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07205900"],
+  "UB-NOVO-PR": ["Novo Nordisk·TUL (2026-02-24), UBT251 China Phase 2 topline (24 weeks, efficacy estimand)", "Company PR", "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916503"],
+  "UB-P2-NCT": ["UBT251 China Phase 2 overweight/obesity NCT07177469 (results not posted at audit)", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07177469"],
+  "UB-P3-NCT": ["UBT251 China Phase 3 overweight/obesity NCT07648225", "ClinicalTrials.gov", "https://clinicaltrials.gov/study/NCT07648225"]
 };
 
 const assetReferenceMap = {
@@ -454,9 +500,12 @@ const assetReferenceMap = {
   CagriSema: ["CS-REDEFINE1", "CS-SAFETY", "CS-NCT"],
   Zenagamtide: ["ZN-LANCET", "ZN-NCT", "ZN-ADA"],
   Eloralintide: ["EL-CTG", "EL-LANCET", "EL-LILLY"],
-  Petrelintide: ["PT-ROCHE", "PT-NCT", "PT-ZUP2"],
+  Petrelintide: ["PT-ROCHE", "PT-NCT", "PT-ZUP2", "PT-ZUP2-PR"],
   AZD6234: ["AZ-6234-APRICUS", "AZ-6234-P1", "AZ-6234-COMBO"],
-  Cagrilintide: ["CG-P2-CTG", "CG-P2-LANCET", "CG-REDEFINE-MONO", "CG-P3"]
+  Cagrilintide: ["CG-P2-CTG", "CG-P2-LANCET", "CG-REDEFINE-MONO", "CG-P3"],
+  Efocipegtrutide: ["EF-P1B-CTG", "EF-EASL20", "EF-P2B"],
+  HM15275: ["HM5-P1-NCT", "HM5-OW25", "HM5-P2"],
+  UBT251: ["UB-NOVO-PR", "UB-P2-NCT", "UB-P3-NCT"]
 };
 
 function registryCitation(nct) {
@@ -1310,6 +1359,25 @@ const comparison = {
           gi: ["ZN-LANCET"],
           discontinuation: ["ZN-LANCET"]
         }
+      },
+      {
+        id: "t2d_p2",
+        label: "SC Phase 2 T2D",
+        meta: "NCT06542874 · P2 · 36주 · T2D(메트포르민±SGLT2i) · SC 262명 (CT.gov 전체 448명은 경구 포함)",
+        nct: "NCT06542874",
+        hasLiver: false,
+        weight: "<b>Zenagamtide 40 mg −14.60%</b><br>20 mg −13.13% · 10 mg −12.92% · 5 mg −8.19% · 1.5 mg −7.62% · 0.4 mg −4.35%<br>위약 −2.10%<br><small>36주 · on-treatment without rescue · HbA1c 40 mg −1.71%p vs 위약 −0.14%p · Company PR (ADA 2026) · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
+        gi: "[회사 미공개]<br><small>가장 흔한 AE가 GI(대부분 경~중등도)라는 서술만 있고 발생률 없음 · CT.gov Results 미게시</small>",
+        discontinuation: "[회사 미공개]<br><small>PR에 중단률 없음 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: {
+          trial: ["ZN-ADA"],
+          weight: ["ZN-ADA"],
+          gi: ["ZN-ADA"],
+          discontinuation: ["ZN-ADA"]
+        }
       }
     ],
     rightsRefs: ["ZN-LANCET", "ZN-ADA"]
@@ -1347,7 +1415,7 @@ const comparison = {
   petrelintide: {
     indication: "비만·과체중 (±동반질환)",
     rights: "Zealand Pharma 발명 · Roche 공동개발·상업화 (2025)",
-    next: "Phase 3 개시 (2026 하반기 계획)<br>ZUPREME-2 T2D 결과",
+    next: "Phase 3 개시 (2026 하반기 계획)<br>ZUPREME-2 전체 결과 학회 발표",
     nextNcts: ["NCT06662539", "NCT06926842"],
     defaultTrialId: "zupreme1",
     trials: [
@@ -1369,6 +1437,25 @@ const comparison = {
           weight: ["PT-ROCHE"],
           gi: ["PT-ROCHE"],
           discontinuation: ["PT-ROCHE"]
+        }
+      },
+      {
+        id: "zupreme2",
+        label: "ZUPREME-2",
+        meta: "NCT06926842 · P2 · 28주 · 비만·과체중 + T2D · n=221 (CT.gov 등록)",
+        nct: "NCT06926842",
+        hasLiver: false,
+        weight: "<b>Petrelintide 최대 −9.2%</b> (3개 용량 −7.4%~−9.2%)<br>위약 −2.0%<br><small>28주 · efficacy estimand · 용량별 값 미공개 · HbA1c 최대 −0.65%p vs 위약 +0.23%p · Company announcement · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>비만·T2D 본시험이라 간 지표가 설정돼 있지 않음</small>",
+        gi: "[회사 미공개]<br><small>가장 흔한 AE가 GI라는 서술만 있고 발생률 없음 · CT.gov Results 미게시</small>",
+        discontinuation: "<b>GI AE로 인한 중단</b> 1.9% (약물군) vs 위약 1.7%<br><small>전체 AE 중단은 미공개 · Company announcement · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: {
+          trial: ["PT-ZUP2-PR", "PT-ZUP2"],
+          weight: ["PT-ZUP2-PR"],
+          gi: ["PT-ZUP2-PR"],
+          discontinuation: ["PT-ZUP2-PR"]
         }
       }
     ],
@@ -1469,6 +1556,108 @@ const comparison = {
       }
     ],
     rightsRefs: ["CG-P2-LANCET", "CG-REDEFINE-MONO"]
+  },
+  efocipegtrutide: {
+    indication: "MASH (생검 확진)<br>비만 동반 NAFLD (1b/2a)",
+    rights: "한미약품 개발 (임상 스폰서)",
+    next: "MASH Phase 2b 결과 공개",
+    nextNcts: ["NCT04505436"],
+    defaultTrialId: "p1b2a",
+    trials: [
+      {
+        id: "p1b2a",
+        label: "Phase 1b/2a NAFLD",
+        meta: "NCT03744182 · P1 · 12주 · 비당뇨 비만 NAFLD",
+        nct: "NCT03744182",
+        hasLiver: true,
+        weight: "<b>Efocipegtrutide 0.08 mg/kg −5.1%</b> (위약 보정)<br>0.06 mg/kg −3.8% · 0.04 −2.1% · 0.02 −3.4% · 0.01 −1.9%<br><small>12주 · 위약 보정 % · 학회 포스터(EASL 2020) · CT.gov Results에 체중 변화 지표 없음</small>",
+        liver: "<b>간지방(MRI-PDFF) 상대 변화 0.08 mg/kg −81.2%</b><br>위약 −5.7%<br>0.06 −59.3% · 0.04 −38.0% · 0.02 −36.0% · 0.01 −19.6%<br>≥30% 감소 0.08 mg/kg 100% (8/8) vs 위약 13.3% (2/15)<br><small>12주 · 조직학 없음 · 학회 포스터(EASL 2020) · CT.gov 결과표에 간지방 지표 없음</small>",
+        gi: "오심 0.08 mg/kg <b>3/9</b> · 0.06 3/9 · 0.04 2/12 · 0.02 1/10 · 0.01 1/9<br>위약 1/17<br>구토 0.08 1/9 · 0.06 1/9 · 0.04 0/12 · 0.02 0/10 · 0.01 1/9 vs 위약 1/17<br><small>12주 · CT.gov Results AE 표 · 분모는 용량군별 표기</small>",
+        discontinuation: "<b>전체 AE 중단</b> (GI 미분리)<br>0.08 mg/kg 1/9 (11.1%) · 0.06 0/9 · 0.04 1/12 (8.3%) · 0.02 1/10 (10.0%) · 0.01 0/9<br>위약 0/17<br><small>TEAE로 인한 시험 중단 · 학회 포스터(EASL 2020) · CT.gov 결과표에 중단 사유 수 없음</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: {
+          trial: ["EF-P1B-CTG", "EF-EASL20"],
+          weight: ["EF-EASL20"],
+          liver: ["EF-EASL20"],
+          gi: ["EF-P1B-CTG"],
+          discontinuation: ["EF-EASL20"]
+        }
+      },
+      {
+        id: "p2b_mash",
+        label: "Phase 2b MASH",
+        meta: "NCT04505436 · P2 · 완료 · MASH (생검 확진)",
+        nct: "NCT04505436",
+        hasLiver: true,
+        weight: "[CT.gov 미게시]<br><small>Phase 2b 완료했으나 등록 결과표 미게시 · 회사 발표도 확인 안 됨(2026-10-23 확인)</small>",
+        liver: "[CT.gov 미게시]<br><small>조직학 결과 미공개 · 회사 발표 확인 안 됨(2026-10-23 확인)</small>",
+        gi: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · GI 발생률 없음</small>",
+        discontinuation: "[CT.gov 미게시]<br><small>등록 결과표 미게시 · 치료중단률 없음</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: { trial: ["EF-P2B"], weight: ["EF-P2B"], liver: ["EF-P2B"], gi: ["EF-P2B"], discontinuation: ["EF-P2B"] }
+      }
+    ],
+    rightsRefs: ["EF-P2B"]
+  },
+  hm15275: {
+    indication: "비만·과체중<br>T2D (Phase 2 등록)",
+    rights: "한미약품 개발 (임상 스폰서)",
+    next: "비만 Phase 2 결과<br>T2D Phase 2 진행",
+    nextNcts: ["NCT07205900", "NCT07527650"],
+    defaultTrialId: "p1_mad",
+    trials: [
+      {
+        id: "p1_mad",
+        label: "Phase 1 MAD",
+        meta: "NCT06481098 · P1 · 4주 투여 · 비당뇨 비만",
+        nct: "NCT06481098",
+        hasLiver: false,
+        weight: "<b>HM15275 0.5/2.0/4.0/8.0 mg −4.81%</b> (위약 보정)<br>1.0 mg 고정 −3.65% · 0.5/0.5/2.0/2.0 −2.96% · 0.5/1.0/2.0/4.0 −2.70% · 0.5 mg 고정 −2.12%<br><small>29일 · 위약 보정 % · 학회 포스터(ObesityWeek 2025) · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>비만 Phase 1이라 간 지표가 설정돼 있지 않음</small>",
+        gi: "오심 최고 용량 경로 <b>5/8 (62.5%)</b> vs 위약 2/10 (20.0%)<br>구토 2/8 (25.0%) vs 1/10 (10.0%)<br>GI 관련 TRAE 6/8 (75.0%) vs 4/10 (40.0%)<br><small>4주 · 코호트당 8명 · 학회 포스터(ObesityWeek 2025) · CT.gov Results 미게시</small>",
+        discontinuation: "<b>전체 AE 중단</b> 1.0 mg 고정 1/8 (12.5%) · 0.5/0.5/2.0/2.0 1/8 (12.5%) · 나머지 3개 용량군 0/8<br>위약 0/10<br><small>두 건 모두 시험약과 무관 판정(통풍 악화·심방세동) · GI 중단 없음 · 학회 포스터 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: {
+          trial: ["HM5-P1-NCT", "HM5-OW25"],
+          weight: ["HM5-OW25"],
+          gi: ["HM5-OW25"],
+          discontinuation: ["HM5-OW25"]
+        }
+      }
+    ],
+    rightsRefs: ["HM5-P1-NCT"]
+  },
+  ubt251: {
+    indication: "비만·과체중<br>T2D·MASH·CKD·OSA 프로그램",
+    rights: "United Biotechnology: 중국 본토·홍콩·마카오·대만<br>Novo Nordisk: 그 밖 지역",
+    next: "중국 비만 Phase 3<br>글로벌 Phase 1b/2a 토플라인(2027 예정)",
+    nextNcts: ["NCT07648225", "NCT07395687", "NCT07145151"],
+    defaultTrialId: "cn_p2",
+    trials: [
+      {
+        id: "cn_p2",
+        label: "중국 비만 Phase 2",
+        meta: "NCT07177469 · P2 · 24주 · 비만·과체중(중국) · n=205",
+        nct: "NCT07177469",
+        hasLiver: false,
+        weight: "<b>UBT251 최대 −19.7%</b> (−17.5 kg)<br>위약 −2.0% (−1.6 kg)<br><small>24주 · efficacy estimand · 2/4/6 mg 용량별 값 미공개 · Company PR · CT.gov Results 미게시</small>",
+        liver: "[회사 미공개]<br><small>비만 Phase 2 토플라인에 간 지표 없음</small>",
+        gi: "[회사 미공개]<br><small>가장 흔한 AE가 GI(대부분 경~중등도)라는 서술만 있고 발생률 없음 · CT.gov Results 미게시</small>",
+        discontinuation: "[회사 미공개]<br><small>토플라인 PR에 중단률 없음 · CT.gov Results 미게시</small>",
+        lean: "[회사 미공개]<br><small>제지방·체성분 를 결과지표로 등록하지 않음</small>",
+        heartRate: "[회사 미공개]<br><small>심박수 를 결과지표로 등록하지 않음</small>",
+        refs: {
+          trial: ["UB-P2-NCT", "UB-NOVO-PR"],
+          weight: ["UB-NOVO-PR"],
+          gi: ["UB-NOVO-PR"],
+          discontinuation: ["UB-NOVO-PR"]
+        }
+      }
+    ],
+    rightsRefs: ["UB-NOVO-PR"]
   }
 };
 
@@ -1924,6 +2113,27 @@ const mechanismProfiles = {
     ratio: null,
     text: "<b>장기 amylin 유사체</b><br>AMY subtype + calcitonin 수용체 친화<br>주 1회 SC · CagriSema 구성 성분",
     refs: ["CG-P2-LANCET"]
+  },
+  efocipegtrutide: {
+    targets: ["GLP-1R", "GIP", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>단일분자 triple agonist (Fc 결합)</b><br>GLP-1R · GIP · GCGR<br>인간 IgG Fc에 PEG 링커로 결합 · 주 1회 SC<br>활성비 공개 표준값: <b>없음</b>",
+    refs: ["EF-EASL20"]
+  },
+  hm15275: {
+    targets: ["GLP-1R", "GIP", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>장기지속형 triple co-agonist</b><br>GLP-1R · GIP · GCGR<br>펩타이드 + 지방산 결합 · 주 1회 SC<br>활성비 공개 표준값: <b>없음</b> (회사는 균형 활성이라고만 표기)",
+    refs: ["HM5-OW25"]
+  },
+  ubt251: {
+    targets: ["GLP-1R", "GIP", "GCGR"],
+    format: "unimolecular",
+    ratio: null,
+    text: "<b>triple agonist</b><br>GLP-1R · GIP · GCGR<br>주 1회 SC<br>활성비 공개 표준값: <b>없음</b>",
+    refs: ["UB-NOVO-PR"]
   }
 };
 
